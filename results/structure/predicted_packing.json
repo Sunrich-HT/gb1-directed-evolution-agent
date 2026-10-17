@@ -1,0 +1,1806 @@
+{
+ "thresholds": {
+  "strain_A": 3.2,
+  "loop_deg": 30.0,
+  "basis": "van der Waals contact distance; dihedral deviation vs the wild-type prediction - not tuned against fitness"
+ },
+ "reference": "VDGV",
+ "criteria": [
+  "strain: a side-chain carbon within 3.2 A of another carbon",
+  "loop: predicted site-41 backbone outside non-glycine favoured regions"
+ ],
+ "observations": {
+  "FAAA": {
+   "variant": "FAAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.26,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.889
+    },
+    "40": {
+     "min_cc_contact_A": 5.54,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.759
+    },
+    "41": {
+     "min_cc_contact_A": 3.26,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.812
+    },
+    "54": {
+     "min_cc_contact_A": 3.51,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.94
+    }
+   },
+   "loop41": {
+    "phi": -152.8,
+    "psi": 162.4,
+    "region": "beta"
+   }
+  },
+  "FFAA": {
+   "variant": "FFAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.26,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.883
+    },
+    "40": {
+     "min_cc_contact_A": 3.86,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.772
+    },
+    "41": {
+     "min_cc_contact_A": 3.26,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.804
+    },
+    "54": {
+     "min_cc_contact_A": 3.48,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.942
+    }
+   },
+   "loop41": {
+    "phi": -147.3,
+    "psi": 165.7,
+    "region": "beta"
+   }
+  },
+  "FFAG": {
+   "variant": "FFAG",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.47,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.871
+    },
+    "40": {
+     "min_cc_contact_A": 3.77,
+     "closest_partner": "GLY38:CA",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.855
+    },
+    "41": {
+     "min_cc_contact_A": 3.7,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.834
+    }
+   },
+   "loop41": {
+    "phi": -83.8,
+    "psi": 156.6,
+    "region": "beta"
+   }
+  },
+  "FHAA": {
+   "variant": "FHAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.22,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.898
+    },
+    "40": {
+     "min_cc_contact_A": 3.98,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 6,
+     "plddt": 0.816
+    },
+    "41": {
+     "min_cc_contact_A": 3.22,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.816
+    },
+    "54": {
+     "min_cc_contact_A": 3.53,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.938
+    }
+   },
+   "loop41": {
+    "phi": -139.5,
+    "psi": 163.8,
+    "region": "beta"
+   }
+  },
+  "FIAA": {
+   "variant": "FIAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.22,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.894
+    },
+    "40": {
+     "min_cc_contact_A": 4.61,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.813
+    },
+    "41": {
+     "min_cc_contact_A": 3.22,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.832
+    },
+    "54": {
+     "min_cc_contact_A": 3.48,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.951
+    }
+   },
+   "loop41": {
+    "phi": -145.9,
+    "psi": 161.7,
+    "region": "beta"
+   }
+  },
+  "FKAA": {
+   "variant": "FKAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.56,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 28,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.887
+    },
+    "40": {
+     "min_cc_contact_A": 4.31,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 5,
+     "plddt": 0.803
+    },
+    "41": {
+     "min_cc_contact_A": 5.68,
+     "closest_partner": "GLU56:C",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.704
+    },
+    "54": {
+     "min_cc_contact_A": 3.45,
+     "closest_partner": "TRP43:CE3",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.94
+    }
+   },
+   "loop41": {
+    "phi": -130.1,
+    "psi": 169.5,
+    "region": "beta"
+   }
+  },
+  "FNAA": {
+   "variant": "FNAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.27,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.907
+    },
+    "40": {
+     "min_cc_contact_A": 5.36,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.847
+    },
+    "41": {
+     "min_cc_contact_A": 3.27,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.85
+    },
+    "54": {
+     "min_cc_contact_A": 3.5,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.945
+    }
+   },
+   "loop41": {
+    "phi": -134.7,
+    "psi": 160.5,
+    "region": "beta"
+   }
+  },
+  "FRAA": {
+   "variant": "FRAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.39,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.753
+    },
+    "40": {
+     "min_cc_contact_A": 4.95,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.698
+    },
+    "41": {
+     "min_cc_contact_A": 3.31,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.651
+    },
+    "54": {
+     "min_cc_contact_A": 3.47,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 29,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.86
+    }
+   },
+   "loop41": {
+    "phi": -159.2,
+    "psi": 171.7,
+    "region": "beta"
+   }
+  },
+  "FWAA": {
+   "variant": "FWAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.17,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.901
+    },
+    "40": {
+     "min_cc_contact_A": 3.6,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.791
+    },
+    "41": {
+     "min_cc_contact_A": 3.17,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.828
+    },
+    "54": {
+     "min_cc_contact_A": 3.51,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.943
+    }
+   },
+   "loop41": {
+    "phi": -145.2,
+    "psi": 164.7,
+    "region": "beta"
+   }
+  },
+  "FWAG": {
+   "variant": "FWAG",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.35,
+     "closest_partner": "GLY54:C",
+     "heavy_atoms_within_6A": 20,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.697
+    },
+    "40": {
+     "min_cc_contact_A": 3.69,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.6
+    },
+    "41": {
+     "min_cc_contact_A": 3.53,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 15,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.586
+    }
+   },
+   "loop41": {
+    "phi": -80.0,
+    "psi": 174.0,
+    "region": "beta"
+   }
+  },
+  "FWGC": {
+   "variant": "FWGC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.5,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.878
+    },
+    "40": {
+     "min_cc_contact_A": 3.42,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.844
+    },
+    "54": {
+     "min_cc_contact_A": 3.72,
+     "closest_partner": "PHE39:CE1",
+     "heavy_atoms_within_6A": 29,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.919
+    }
+   },
+   "loop41": {
+    "phi": -84.1,
+    "psi": -172.7,
+    "region": "beta_low"
+   }
+  },
+  "FYAA": {
+   "variant": "FYAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.22,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.847
+    },
+    "40": {
+     "min_cc_contact_A": 3.85,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.699
+    },
+    "41": {
+     "min_cc_contact_A": 3.22,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.747
+    },
+    "54": {
+     "min_cc_contact_A": 3.52,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.923
+    }
+   },
+   "loop41": {
+    "phi": -142.9,
+    "psi": 166.3,
+    "region": "beta"
+   }
+  },
+  "FYAG": {
+   "variant": "FYAG",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.47,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.781
+    },
+    "40": {
+     "min_cc_contact_A": 3.69,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.67
+    },
+    "41": {
+     "min_cc_contact_A": 3.63,
+     "closest_partner": "PHE39:CZ",
+     "heavy_atoms_within_6A": 17,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.648
+    }
+   },
+   "loop41": {
+    "phi": -70.1,
+    "psi": 160.6,
+    "region": "beta"
+   }
+  },
+  "IFAC": {
+   "variant": "IFAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.5,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.829
+    },
+    "40": {
+     "min_cc_contact_A": 4.47,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.775
+    },
+    "41": {
+     "min_cc_contact_A": 3.99,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 15,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.768
+    },
+    "54": {
+     "min_cc_contact_A": 3.75,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.899
+    }
+   },
+   "loop41": {
+    "phi": -150.7,
+    "psi": -176.1,
+    "region": "beta_low"
+   }
+  },
+  "IHAC": {
+   "variant": "IHAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.48,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.854
+    },
+    "40": {
+     "min_cc_contact_A": 5.33,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 6,
+     "plddt": 0.793
+    },
+    "41": {
+     "min_cc_contact_A": 3.28,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.796
+    },
+    "54": {
+     "min_cc_contact_A": 3.54,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.89
+    }
+   },
+   "loop41": {
+    "phi": -147.8,
+    "psi": -171.8,
+    "region": "beta_low"
+   }
+  },
+  "INAC": {
+   "variant": "INAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.64,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 19,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.833
+    },
+    "40": {
+     "min_cc_contact_A": 5.06,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.788
+    },
+    "41": {
+     "min_cc_contact_A": 3.29,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 14,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.772
+    },
+    "54": {
+     "min_cc_contact_A": 3.77,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.867
+    }
+   },
+   "loop41": {
+    "phi": -135.5,
+    "psi": 178.4,
+    "region": "beta"
+   }
+  },
+  "IVAA": {
+   "variant": "IVAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.6,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.845
+    },
+    "40": {
+     "min_cc_contact_A": 4.92,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.812
+    },
+    "41": {
+     "min_cc_contact_A": 3.55,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.829
+    },
+    "54": {
+     "min_cc_contact_A": 3.76,
+     "closest_partner": "TRP43:CZ2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.93
+    }
+   },
+   "loop41": {
+    "phi": -135.3,
+    "psi": 162.3,
+    "region": "beta"
+   }
+  },
+  "IVAG": {
+   "variant": "IVAG",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.56,
+     "closest_partner": "THR11:CB",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.854
+    },
+    "40": {
+     "min_cc_contact_A": 5.05,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.801
+    },
+    "41": {
+     "min_cc_contact_A": 3.74,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.811
+    }
+   },
+   "loop41": {
+    "phi": -130.6,
+    "psi": 155.5,
+    "region": "beta"
+   }
+  },
+  "IWAA": {
+   "variant": "IWAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.65,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.856
+    },
+    "40": {
+     "min_cc_contact_A": 3.9,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 4,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.81
+    },
+    "41": {
+     "min_cc_contact_A": 3.32,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.775
+    },
+    "54": {
+     "min_cc_contact_A": 3.73,
+     "closest_partner": "TRP43:CZ2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.92
+    }
+   },
+   "loop41": {
+    "phi": -115.6,
+    "psi": 170.5,
+    "region": "beta"
+   }
+  },
+  "IWAC": {
+   "variant": "IWAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.48,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.811
+    },
+    "40": {
+     "min_cc_contact_A": 3.15,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.741
+    },
+    "41": {
+     "min_cc_contact_A": 4.02,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 15,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.744
+    },
+    "54": {
+     "min_cc_contact_A": 3.71,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.893
+    }
+   },
+   "loop41": {
+    "phi": -149.7,
+    "psi": 178.0,
+    "region": "beta"
+   }
+  },
+  "IWGC": {
+   "variant": "IWGC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.75,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.846
+    },
+    "40": {
+     "min_cc_contact_A": 3.17,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.809
+    },
+    "54": {
+     "min_cc_contact_A": 3.65,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.907
+    }
+   },
+   "loop41": {
+    "phi": -95.9,
+    "psi": -161.7,
+    "region": "beta_low"
+   }
+  },
+  "IYAC": {
+   "variant": "IYAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.57,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.789
+    },
+    "40": {
+     "min_cc_contact_A": 4.0,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.721
+    },
+    "41": {
+     "min_cc_contact_A": 3.59,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.729
+    },
+    "54": {
+     "min_cc_contact_A": 3.7,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.882
+    }
+   },
+   "loop41": {
+    "phi": -148.6,
+    "psi": -164.3,
+    "region": "beta_low"
+   }
+  },
+  "LFAC": {
+   "variant": "LFAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.36,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 19,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.827
+    },
+    "40": {
+     "min_cc_contact_A": 3.98,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.763
+    },
+    "41": {
+     "min_cc_contact_A": 3.58,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.762
+    },
+    "54": {
+     "min_cc_contact_A": 3.87,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.92
+    }
+   },
+   "loop41": {
+    "phi": -146.5,
+    "psi": -146.2,
+    "region": "outside non-glycine favoured regions"
+   }
+  },
+  "LHAC": {
+   "variant": "LHAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.35,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.844
+    },
+    "40": {
+     "min_cc_contact_A": 4.92,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 6,
+     "plddt": 0.782
+    },
+    "41": {
+     "min_cc_contact_A": 3.46,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.767
+    },
+    "54": {
+     "min_cc_contact_A": 3.87,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.924
+    }
+   },
+   "loop41": {
+    "phi": -148.8,
+    "psi": -162.5,
+    "region": "beta_low"
+   }
+  },
+  "LVAA": {
+   "variant": "LVAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 2.94,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.832
+    },
+    "40": {
+     "min_cc_contact_A": 4.97,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.728
+    },
+    "41": {
+     "min_cc_contact_A": 3.48,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.767
+    },
+    "54": {
+     "min_cc_contact_A": 3.76,
+     "closest_partner": "TRP43:CZ2",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.927
+    }
+   },
+   "loop41": {
+    "phi": -140.8,
+    "psi": 165.3,
+    "region": "beta"
+   }
+  },
+  "LVAG": {
+   "variant": "LVAG",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.67,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 13,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.836
+    },
+    "40": {
+     "min_cc_contact_A": 4.64,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.752
+    },
+    "41": {
+     "min_cc_contact_A": 3.69,
+     "closest_partner": "LEU7:CD1",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.798
+    }
+   },
+   "loop41": {
+    "phi": -146.4,
+    "psi": 157.9,
+    "region": "beta"
+   }
+  },
+  "LWAC": {
+   "variant": "LWAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.3,
+     "closest_partner": "GLU56:CB",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.827
+    },
+    "40": {
+     "min_cc_contact_A": 3.37,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.734
+    },
+    "41": {
+     "min_cc_contact_A": 3.34,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.717
+    },
+    "54": {
+     "min_cc_contact_A": 3.83,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.918
+    }
+   },
+   "loop41": {
+    "phi": -150.7,
+    "psi": -171.1,
+    "region": "beta_low"
+   }
+  },
+  "LWGC": {
+   "variant": "LWGC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.12,
+     "closest_partner": "GLU56:CB",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.888
+    },
+    "40": {
+     "min_cc_contact_A": 3.48,
+     "closest_partner": "ASN35:CA",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.84
+    },
+    "54": {
+     "min_cc_contact_A": 3.74,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.936
+    }
+   },
+   "loop41": {
+    "phi": -101.1,
+    "psi": -164.5,
+    "region": "beta_low"
+   }
+  },
+  "LYAC": {
+   "variant": "LYAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.41,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.835
+    },
+    "40": {
+     "min_cc_contact_A": 3.78,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.762
+    },
+    "41": {
+     "min_cc_contact_A": 3.45,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.763
+    },
+    "54": {
+     "min_cc_contact_A": 3.82,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.923
+    }
+   },
+   "loop41": {
+    "phi": -149.0,
+    "psi": -159.1,
+    "region": "beta_low"
+   }
+  },
+  "MVAA": {
+   "variant": "MVAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.65,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.903
+    },
+    "40": {
+     "min_cc_contact_A": 5.05,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.784
+    },
+    "41": {
+     "min_cc_contact_A": 3.88,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.869
+    },
+    "54": {
+     "min_cc_contact_A": 3.89,
+     "closest_partner": "LEU5:CD1",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.956
+    }
+   },
+   "loop41": {
+    "phi": -138.4,
+    "psi": 157.2,
+    "region": "beta"
+   }
+  },
+  "MWAC": {
+   "variant": "MWAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.59,
+     "closest_partner": "GLY9:CA",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.856
+    },
+    "40": {
+     "min_cc_contact_A": 3.35,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.773
+    },
+    "41": {
+     "min_cc_contact_A": 3.44,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 17,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.734
+    },
+    "54": {
+     "min_cc_contact_A": 3.88,
+     "closest_partner": "TRP43:CZ2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.937
+    }
+   },
+   "loop41": {
+    "phi": -149.6,
+    "psi": -172.9,
+    "region": "beta_low"
+   }
+  },
+  "MYAC": {
+   "variant": "MYAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.66,
+     "closest_partner": "GLY9:CA",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.881
+    },
+    "40": {
+     "min_cc_contact_A": 3.86,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.784
+    },
+    "41": {
+     "min_cc_contact_A": 4.84,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 7,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.779
+    },
+    "54": {
+     "min_cc_contact_A": 3.87,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.949
+    }
+   },
+   "loop41": {
+    "phi": -110.4,
+    "psi": 158.5,
+    "region": "beta"
+   }
+  },
+  "VDGV": {
+   "variant": "VDGV",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.91,
+     "closest_partner": "VAL54:CG1",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.884
+    },
+    "40": {
+     "min_cc_contact_A": 5.2,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.859
+    },
+    "54": {
+     "min_cc_contact_A": 3.56,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 28,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.958
+    }
+   },
+   "loop41": {
+    "phi": -149.8,
+    "psi": -154.2,
+    "region": "beta_low"
+   }
+  },
+  "VFAC": {
+   "variant": "VFAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.57,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.801
+    },
+    "40": {
+     "min_cc_contact_A": 3.82,
+     "closest_partner": "LYS31:CD",
+     "heavy_atoms_within_6A": 10,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.737
+    },
+    "41": {
+     "min_cc_contact_A": 3.68,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 11,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.785
+    },
+    "54": {
+     "min_cc_contact_A": 3.85,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.912
+    }
+   },
+   "loop41": {
+    "phi": -143.6,
+    "psi": -116.6,
+    "region": "outside non-glycine favoured regions"
+   }
+  },
+  "VHAC": {
+   "variant": "VHAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.59,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.873
+    },
+    "40": {
+     "min_cc_contact_A": 5.23,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 6,
+     "plddt": 0.857
+    },
+    "41": {
+     "min_cc_contact_A": 3.69,
+     "closest_partner": "GLU56:CB",
+     "heavy_atoms_within_6A": 14,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.825
+    },
+    "54": {
+     "min_cc_contact_A": 3.81,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.867
+    }
+   },
+   "loop41": {
+    "phi": -150.2,
+    "psi": 178.8,
+    "region": "beta"
+   }
+  },
+  "VIAC": {
+   "variant": "VIAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 5.15,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.622
+    },
+    "40": {
+     "min_cc_contact_A": 3.13,
+     "closest_partner": "TRP43:CD1",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.68
+    },
+    "41": {
+     "min_cc_contact_A": 3.83,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 7,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.739
+    },
+    "54": {
+     "min_cc_contact_A": 3.75,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.889
+    }
+   },
+   "loop41": {
+    "phi": -102.8,
+    "psi": -37.3,
+    "region": "alpha_R"
+   }
+  },
+  "VNAC": {
+   "variant": "VNAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.95,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.861
+    },
+    "40": {
+     "min_cc_contact_A": 5.07,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.786
+    },
+    "41": {
+     "min_cc_contact_A": 3.21,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 14,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.798
+    },
+    "54": {
+     "min_cc_contact_A": 3.83,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.911
+    }
+   },
+   "loop41": {
+    "phi": -137.7,
+    "psi": 179.8,
+    "region": "beta"
+   }
+  },
+  "VVAA": {
+   "variant": "VVAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.59,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 20,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.831
+    },
+    "40": {
+     "min_cc_contact_A": 5.45,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 0,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.797
+    },
+    "41": {
+     "min_cc_contact_A": 3.89,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.84
+    },
+    "54": {
+     "min_cc_contact_A": 3.8,
+     "closest_partner": "TRP43:CH2",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.92
+    }
+   },
+   "loop41": {
+    "phi": -129.3,
+    "psi": 158.0,
+    "region": "beta"
+   }
+  },
+  "VVAG": {
+   "variant": "VVAG",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.84,
+     "closest_partner": "ALA34:C",
+     "heavy_atoms_within_6A": 19,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.709
+    },
+    "40": {
+     "min_cc_contact_A": 5.04,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.68
+    },
+    "41": {
+     "min_cc_contact_A": 3.6,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.68
+    }
+   },
+   "loop41": {
+    "phi": -150.2,
+    "psi": 160.6,
+    "region": "beta"
+   }
+  },
+  "VWAC": {
+   "variant": "VWAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.0,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 20,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.786
+    },
+    "40": {
+     "min_cc_contact_A": 3.49,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.705
+    },
+    "41": {
+     "min_cc_contact_A": 3.9,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 13,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.697
+    },
+    "54": {
+     "min_cc_contact_A": 3.68,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.873
+    }
+   },
+   "loop41": {
+    "phi": -152.2,
+    "psi": -178.6,
+    "region": "beta_low"
+   }
+  },
+  "VYAC": {
+   "variant": "VYAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 5.63,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 0,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.574
+    },
+    "40": {
+     "min_cc_contact_A": 3.23,
+     "closest_partner": "GLY9:CA",
+     "heavy_atoms_within_6A": 19,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.656
+    },
+    "41": {
+     "min_cc_contact_A": 5.94,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.68
+    },
+    "54": {
+     "min_cc_contact_A": 3.84,
+     "closest_partner": "TRP43:CH2",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.891
+    }
+   },
+   "loop41": {
+    "phi": -109.8,
+    "psi": -29.5,
+    "region": "alpha_R"
+   }
+  }
+ },
+ "flags": {
+  "FAAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 43.4,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FFAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 40.1,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FFAG": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 66.0,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FHAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 42.0,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FIAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 44.1,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FKAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 36.3,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FNAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 45.3,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FRAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 34.1,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FWAA": {
+   "strained_sites": [
+    "39",
+    "41"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 41.1,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "FWAG": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 69.8,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FWGC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 65.7,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FYAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 39.5,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FYAG": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 79.7,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "IFAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 21.9,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "IHAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 17.6,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "INAC": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 27.4,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "IVAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 43.5,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "IVAG": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 50.3,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "IWAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 35.3,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "IWAC": {
+   "strained_sites": [
+    "40"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 27.8,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "IWGC": {
+   "strained_sites": [
+    "40"
+   ],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 53.9,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "IYAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 10.1,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "LFAC": {
+   "strained_sites": [],
+   "loop41_region": "outside non-glycine favoured regions",
+   "loop41_deviation_from_wt_deg": 8.0,
+   "loop41_outside_nonglycine_regions": true,
+   "flagged": true
+  },
+  "LHAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 8.3,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "LVAA": {
+   "strained_sites": [
+    "39"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 40.5,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "LVAG": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 47.9,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "LWAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 16.9,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "LWGC": {
+   "strained_sites": [
+    "39"
+   ],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 48.7,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "LYAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 4.9,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "MVAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 48.6,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "MWAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 18.7,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "MYAC": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 47.3,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VDGV": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 0.0,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VFAC": {
+   "strained_sites": [],
+   "loop41_region": "outside non-glycine favoured regions",
+   "loop41_deviation_from_wt_deg": 37.6,
+   "loop41_outside_nonglycine_regions": true,
+   "flagged": true
+  },
+  "VHAC": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 27.0,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VIAC": {
+   "strained_sites": [
+    "40"
+   ],
+   "loop41_region": "alpha_R",
+   "loop41_deviation_from_wt_deg": 116.9,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "VNAC": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 26.0,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VVAA": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 47.8,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VVAG": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": 45.2,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VWAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": 24.4,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VYAC": {
+   "strained_sites": [],
+   "loop41_region": "alpha_R",
+   "loop41_deviation_from_wt_deg": 124.7,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  }
+ },
+ "n_flagged": 8,
+ "n_total": 41
+}

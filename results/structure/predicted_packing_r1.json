@@ -1,0 +1,1096 @@
+{
+ "thresholds": {
+  "strain_A": 3.2,
+  "loop_deg": 30.0,
+  "basis": "van der Waals contact distance; dihedral deviation vs the wild-type prediction - not tuned against fitness"
+ },
+ "reference": "VDGV",
+ "criteria": [
+  "strain: a side-chain carbon within 3.2 A of another carbon",
+  "loop: predicted site-41 backbone outside non-glycine favoured regions"
+ ],
+ "observations": {
+  "AVAT": {
+   "variant": "AVAT",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.55,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 22,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.685
+    },
+    "40": {
+     "min_cc_contact_A": 3.39,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 7,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.682
+    },
+    "41": {
+     "min_cc_contact_A": 3.34,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 10,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.713
+    },
+    "54": {
+     "min_cc_contact_A": 3.52,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.876
+    }
+   },
+   "loop41": {
+    "phi": -165.6,
+    "psi": -125.1,
+    "region": "outside non-glycine favoured regions"
+   }
+  },
+  "AWAT": {
+   "variant": "AWAT",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 5.64,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.567
+    },
+    "40": {
+     "min_cc_contact_A": 2.74,
+     "closest_partner": "TRP43:CD1",
+     "heavy_atoms_within_6A": 14,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.611
+    },
+    "41": {
+     "min_cc_contact_A": 4.85,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 4,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.692
+    },
+    "54": {
+     "min_cc_contact_A": 3.67,
+     "closest_partner": "LEU12:CD2",
+     "heavy_atoms_within_6A": 28,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.827
+    }
+   },
+   "loop41": {
+    "phi": -92.2,
+    "psi": -63.6,
+    "region": "alpha_R"
+   }
+  },
+  "AWNT": {
+   "variant": "AWNT",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.28,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 4,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.617
+    },
+    "40": {
+     "min_cc_contact_A": 1.56,
+     "closest_partner": "TRP43:CD1",
+     "heavy_atoms_within_6A": 19,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.634
+    },
+    "41": {
+     "min_cc_contact_A": 3.88,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 5,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.682
+    },
+    "54": {
+     "min_cc_contact_A": 3.28,
+     "closest_partner": "TRP43:CH2",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.791
+    }
+   },
+   "loop41": {
+    "phi": -116.9,
+    "psi": -82.9,
+    "region": "outside non-glycine favoured regions"
+   }
+  },
+  "AWPT": {
+   "variant": "AWPT",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.88,
+     "closest_partner": "ASN37:C",
+     "heavy_atoms_within_6A": 5,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.802
+    },
+    "40": {
+     "min_cc_contact_A": 3.28,
+     "closest_partner": "PHE30:CB",
+     "heavy_atoms_within_6A": 7,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.763
+    },
+    "41": {
+     "min_cc_contact_A": 2.76,
+     "closest_partner": "TRP43:CD1",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.71
+    },
+    "54": {
+     "min_cc_contact_A": 3.4,
+     "closest_partner": "TRP43:CZ3",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.72
+    }
+   },
+   "loop41": {
+    "phi": -70.4,
+    "psi": 157.0,
+    "region": "beta"
+   }
+  },
+  "EPPF": {
+   "variant": "EPPF",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.64,
+     "closest_partner": "ASN37:C",
+     "heavy_atoms_within_6A": 5,
+     "n_side_chain_atoms": 5,
+     "plddt": 0.788
+    },
+    "40": {
+     "min_cc_contact_A": 4.85,
+     "closest_partner": "ALA34:CB",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.741
+    },
+    "41": {
+     "min_cc_contact_A": 3.54,
+     "closest_partner": "TYR33:CG",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.701
+    },
+    "54": {
+     "min_cc_contact_A": 2.32,
+     "closest_partner": "LEU5:CD1",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.713
+    }
+   },
+   "loop41": {
+    "phi": -73.4,
+    "psi": 155.8,
+    "region": "beta"
+   }
+  },
+  "FEPK": {
+   "variant": "FEPK",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.53,
+     "closest_partner": "THR11:CB",
+     "heavy_atoms_within_6A": 14,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.599
+    },
+    "40": {
+     "min_cc_contact_A": 4.14,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 5,
+     "n_side_chain_atoms": 5,
+     "plddt": 0.637
+    },
+    "41": {
+     "min_cc_contact_A": 3.04,
+     "closest_partner": "ALA34:CB",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.598
+    },
+    "54": {
+     "min_cc_contact_A": 3.35,
+     "closest_partner": "PRO41:CB",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 5,
+     "plddt": 0.715
+    }
+   },
+   "loop41": {
+    "phi": -73.2,
+    "psi": 155.2,
+    "region": "beta"
+   }
+  },
+  "FFAC": {
+   "variant": "FFAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.46,
+     "closest_partner": "GLY9:CA",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.852
+    },
+    "40": {
+     "min_cc_contact_A": 3.68,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.755
+    },
+    "41": {
+     "min_cc_contact_A": 5.58,
+     "closest_partner": "GLU56:C",
+     "heavy_atoms_within_6A": 4,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.704
+    },
+    "54": {
+     "min_cc_contact_A": 3.76,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.932
+    }
+   },
+   "loop41": {
+    "phi": -136.3,
+    "psi": 169.3,
+    "region": "beta"
+   }
+  },
+  "FGAC": {
+   "variant": "FGAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.61,
+     "closest_partner": "GLY9:CA",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.873
+    },
+    "41": {
+     "min_cc_contact_A": 4.18,
+     "closest_partner": "GLU56:C",
+     "heavy_atoms_within_6A": 4,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.742
+    },
+    "54": {
+     "min_cc_contact_A": 3.89,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 29,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.933
+    }
+   },
+   "loop41": {
+    "phi": -73.0,
+    "psi": -44.4,
+    "region": "alpha_R"
+   }
+  },
+  "FHAC": {
+   "variant": "FHAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.57,
+     "closest_partner": "GLU56:CB",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.888
+    },
+    "40": {
+     "min_cc_contact_A": 3.75,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 6,
+     "plddt": 0.794
+    },
+    "41": {
+     "min_cc_contact_A": 3.76,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 9,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.783
+    },
+    "54": {
+     "min_cc_contact_A": 3.92,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.941
+    }
+   },
+   "loop41": {
+    "phi": -102.7,
+    "psi": -138.0,
+    "region": "outside non-glycine favoured regions"
+   }
+  },
+  "FVAA": {
+   "variant": "FVAA",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.04,
+     "closest_partner": "ALA41:CB",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.908
+    },
+    "40": {
+     "min_cc_contact_A": 4.66,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.743
+    },
+    "41": {
+     "min_cc_contact_A": 3.04,
+     "closest_partner": "PHE39:CE1",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.79
+    },
+    "54": {
+     "min_cc_contact_A": 3.56,
+     "closest_partner": "PHE39:CE1",
+     "heavy_atoms_within_6A": 30,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.948
+    }
+   },
+   "loop41": {
+    "phi": -152.7,
+    "psi": 165.5,
+    "region": "beta"
+   }
+  },
+  "FVAG": {
+   "variant": "FVAG",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 2.79,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 19,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.741
+    },
+    "40": {
+     "min_cc_contact_A": 5.16,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.637
+    },
+    "41": {
+     "min_cc_contact_A": 3.31,
+     "closest_partner": "PHE39:CE2",
+     "heavy_atoms_within_6A": 28,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.681
+    }
+   },
+   "loop41": {
+    "phi": -141.6,
+    "psi": 156.2,
+    "region": "beta"
+   }
+  },
+  "FWAC": {
+   "variant": "FWAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.46,
+     "closest_partner": "GLY9:CA",
+     "heavy_atoms_within_6A": 28,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.864
+    },
+    "40": {
+     "min_cc_contact_A": 3.48,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.759
+    },
+    "41": {
+     "min_cc_contact_A": 5.18,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.689
+    },
+    "54": {
+     "min_cc_contact_A": 3.19,
+     "closest_partner": "TRP43:CE3",
+     "heavy_atoms_within_6A": 28,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.922
+    }
+   },
+   "loop41": {
+    "phi": -114.7,
+    "psi": 165.8,
+    "region": "beta"
+   }
+  },
+  "FYAC": {
+   "variant": "FYAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.5,
+     "closest_partner": "GLY9:CA",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 7,
+     "plddt": 0.855
+    },
+    "40": {
+     "min_cc_contact_A": 3.7,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.76
+    },
+    "41": {
+     "min_cc_contact_A": 5.24,
+     "closest_partner": "GLU56:C",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.714
+    },
+    "54": {
+     "min_cc_contact_A": 3.17,
+     "closest_partner": "TRP43:CE3",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.93
+    }
+   },
+   "loop41": {
+    "phi": -116.3,
+    "psi": 167.0,
+    "region": "beta"
+   }
+  },
+  "IVAC": {
+   "variant": "IVAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.46,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.807
+    },
+    "40": {
+     "min_cc_contact_A": 4.83,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.739
+    },
+    "41": {
+     "min_cc_contact_A": 3.32,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 17,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.749
+    },
+    "54": {
+     "min_cc_contact_A": 3.6,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.882
+    }
+   },
+   "loop41": {
+    "phi": -151.4,
+    "psi": -178.7,
+    "region": "beta_low"
+   }
+  },
+  "LVAC": {
+   "variant": "LVAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.05,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.822
+    },
+    "40": {
+     "min_cc_contact_A": 4.32,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 4,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.745
+    },
+    "41": {
+     "min_cc_contact_A": 3.38,
+     "closest_partner": "THR55:C",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.748
+    },
+    "54": {
+     "min_cc_contact_A": 3.87,
+     "closest_partner": "TRP43:CZ2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.92
+    }
+   },
+   "loop41": {
+    "phi": -153.0,
+    "psi": -168.9,
+    "region": "beta_low"
+   }
+  },
+  "LWGT": {
+   "variant": "LWGT",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 2.85,
+     "closest_partner": "GLU56:CB",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.814
+    },
+    "40": {
+     "min_cc_contact_A": 3.63,
+     "closest_partner": "GLY38:C",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.756
+    },
+    "54": {
+     "min_cc_contact_A": 3.63,
+     "closest_partner": "LEU39:CD2",
+     "heavy_atoms_within_6A": 27,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.89
+    }
+   },
+   "loop41": {
+    "phi": -83.5,
+    "psi": -171.3,
+    "region": "beta_low"
+   }
+  },
+  "NWAT": {
+   "variant": "NWAT",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.34,
+     "closest_partner": "ASN37:C",
+     "heavy_atoms_within_6A": 10,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.673
+    },
+    "40": {
+     "min_cc_contact_A": 3.6,
+     "closest_partner": "ASN35:CB",
+     "heavy_atoms_within_6A": 9,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.713
+    },
+    "41": {
+     "min_cc_contact_A": 3.18,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.691
+    },
+    "54": {
+     "min_cc_contact_A": 3.31,
+     "closest_partner": "TRP43:CH2",
+     "heavy_atoms_within_6A": 25,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.816
+    }
+   },
+   "loop41": {
+    "phi": -160.8,
+    "psi": 161.3,
+    "region": "beta"
+   }
+  },
+  "NWGT": {
+   "variant": "NWGT",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 5.16,
+     "closest_partner": "THR11:CG2",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.672
+    },
+    "40": {
+     "min_cc_contact_A": 2.46,
+     "closest_partner": "TRP43:CD1",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.683
+    },
+    "54": {
+     "min_cc_contact_A": 3.72,
+     "closest_partner": "TRP43:CE2",
+     "heavy_atoms_within_6A": 29,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.839
+    }
+   },
+   "loop41": {
+    "phi": -98.2,
+    "psi": -131.4,
+    "region": "outside non-glycine favoured regions"
+   }
+  },
+  "SVAC": {
+   "variant": "SVAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.06,
+     "closest_partner": "ALA34:CB",
+     "heavy_atoms_within_6A": 20,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.68
+    },
+    "40": {
+     "min_cc_contact_A": 4.21,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.668
+    },
+    "41": {
+     "min_cc_contact_A": 2.92,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 16,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.658
+    },
+    "54": {
+     "min_cc_contact_A": 3.73,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 26,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.77
+    }
+   },
+   "loop41": {
+    "phi": -78.1,
+    "psi": -178.2,
+    "region": "beta_low"
+   }
+  },
+  "TDAW": {
+   "variant": "TDAW",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.9,
+     "closest_partner": "TYR33:CE2",
+     "heavy_atoms_within_6A": 12,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.701
+    },
+    "40": {
+     "min_cc_contact_A": 5.1,
+     "closest_partner": "GLU42:CG",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.726
+    },
+    "41": {
+     "min_cc_contact_A": 3.83,
+     "closest_partner": "ALA34:CB",
+     "heavy_atoms_within_6A": 28,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.684
+    },
+    "54": {
+     "min_cc_contact_A": 2.8,
+     "closest_partner": "PHE30:CE1",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.729
+    }
+   },
+   "loop41": {
+    "phi": -72.4,
+    "psi": 122.4,
+    "region": "beta"
+   }
+  },
+  "TISK": {
+   "variant": "TISK",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.59,
+     "closest_partner": "GLU42:CG",
+     "heavy_atoms_within_6A": 5,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.845
+    },
+    "40": {
+     "min_cc_contact_A": 3.67,
+     "closest_partner": "ALA34:CB",
+     "heavy_atoms_within_6A": 13,
+     "n_side_chain_atoms": 4,
+     "plddt": 0.805
+    },
+    "41": {
+     "min_cc_contact_A": 4.95,
+     "closest_partner": "THR39:C",
+     "heavy_atoms_within_6A": 3,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.856
+    },
+    "54": {
+     "min_cc_contact_A": 3.43,
+     "closest_partner": "TRP43:CE3",
+     "heavy_atoms_within_6A": 21,
+     "n_side_chain_atoms": 5,
+     "plddt": 0.858
+    }
+   },
+   "loop41": {
+    "phi": -66.7,
+    "psi": -14.6,
+    "region": "alpha_R"
+   }
+  },
+  "VHST": {
+   "variant": "VHST",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.63,
+     "closest_partner": "LEU12:CB",
+     "heavy_atoms_within_6A": 19,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.817
+    },
+    "40": {
+     "min_cc_contact_A": 4.64,
+     "closest_partner": "ASN35:CG",
+     "heavy_atoms_within_6A": 2,
+     "n_side_chain_atoms": 6,
+     "plddt": 0.783
+    },
+    "41": {
+     "min_cc_contact_A": 4.35,
+     "closest_partner": "GLU56:CG",
+     "heavy_atoms_within_6A": 13,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.751
+    },
+    "54": {
+     "min_cc_contact_A": 3.3,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.843
+    }
+   },
+   "loop41": {
+    "phi": -152.1,
+    "psi": 179.5,
+    "region": "beta"
+   }
+  },
+  "VVAC": {
+   "variant": "VVAC",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 4.83,
+     "closest_partner": "GLU56:CD",
+     "heavy_atoms_within_6A": 1,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.589
+    },
+    "40": {
+     "min_cc_contact_A": 3.1,
+     "closest_partner": "TRP43:CD1",
+     "heavy_atoms_within_6A": 18,
+     "n_side_chain_atoms": 3,
+     "plddt": 0.653
+    },
+    "41": {
+     "min_cc_contact_A": 3.63,
+     "closest_partner": "GLU56:CA",
+     "heavy_atoms_within_6A": 9,
+     "n_side_chain_atoms": 1,
+     "plddt": 0.691
+    },
+    "54": {
+     "min_cc_contact_A": 3.68,
+     "closest_partner": "LEU7:CD2",
+     "heavy_atoms_within_6A": 24,
+     "n_side_chain_atoms": 2,
+     "plddt": 0.852
+    }
+   },
+   "loop41": {
+    "phi": -102.4,
+    "psi": -44.2,
+    "region": "alpha_R"
+   }
+  },
+  "WYGK": {
+   "variant": "WYGK",
+   "sites": {
+    "39": {
+     "min_cc_contact_A": 3.42,
+     "closest_partner": "LEU12:CD1",
+     "heavy_atoms_within_6A": 17,
+     "n_side_chain_atoms": 10,
+     "plddt": 0.882
+    },
+    "40": {
+     "min_cc_contact_A": 3.77,
+     "closest_partner": "GLY38:CA",
+     "heavy_atoms_within_6A": 6,
+     "n_side_chain_atoms": 8,
+     "plddt": 0.888
+    },
+    "54": {
+     "min_cc_contact_A": 3.33,
+     "closest_partner": "TRP43:CE3",
+     "heavy_atoms_within_6A": 23,
+     "n_side_chain_atoms": 5,
+     "plddt": 0.902
+    }
+   },
+   "loop41": {
+    "phi": 109.4,
+    "psi": -172.0,
+    "region": "outside non-glycine favoured regions"
+   }
+  }
+ },
+ "flags": {
+  "AVAT": {
+   "strained_sites": [],
+   "loop41_region": "outside non-glycine favoured regions",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": true,
+   "flagged": true
+  },
+  "AWAT": {
+   "strained_sites": [
+    "40"
+   ],
+   "loop41_region": "alpha_R",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "AWNT": {
+   "strained_sites": [
+    "40"
+   ],
+   "loop41_region": "outside non-glycine favoured regions",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": true,
+   "flagged": true
+  },
+  "AWPT": {
+   "strained_sites": [
+    "41"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "EPPF": {
+   "strained_sites": [
+    "54"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "FEPK": {
+   "strained_sites": [
+    "41"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "FFAC": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FGAC": {
+   "strained_sites": [],
+   "loop41_region": "alpha_R",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "FHAC": {
+   "strained_sites": [],
+   "loop41_region": "outside non-glycine favoured regions",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": true,
+   "flagged": true
+  },
+  "FVAA": {
+   "strained_sites": [
+    "39",
+    "41"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "FVAG": {
+   "strained_sites": [
+    "39"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "FWAC": {
+   "strained_sites": [
+    "54"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "FYAC": {
+   "strained_sites": [
+    "54"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "IVAC": {
+   "strained_sites": [],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "LVAC": {
+   "strained_sites": [
+    "39"
+   ],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "LWGT": {
+   "strained_sites": [
+    "39"
+   ],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "NWAT": {
+   "strained_sites": [
+    "41"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "NWGT": {
+   "strained_sites": [
+    "40"
+   ],
+   "loop41_region": "outside non-glycine favoured regions",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": true,
+   "flagged": true
+  },
+  "SVAC": {
+   "strained_sites": [
+    "41"
+   ],
+   "loop41_region": "beta_low",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "TDAW": {
+   "strained_sites": [
+    "54"
+   ],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "TISK": {
+   "strained_sites": [],
+   "loop41_region": "alpha_R",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VHST": {
+   "strained_sites": [],
+   "loop41_region": "beta",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": false
+  },
+  "VVAC": {
+   "strained_sites": [
+    "40"
+   ],
+   "loop41_region": "alpha_R",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": false,
+   "flagged": true
+  },
+  "WYGK": {
+   "strained_sites": [],
+   "loop41_region": "outside non-glycine favoured regions",
+   "loop41_deviation_from_wt_deg": null,
+   "loop41_outside_nonglycine_regions": true,
+   "flagged": true
+  }
+ },
+ "n_flagged": 19,
+ "n_total": 24
+}

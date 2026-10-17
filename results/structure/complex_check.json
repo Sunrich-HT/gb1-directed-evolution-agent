@@ -1,0 +1,408 @@
+{
+ "crystal_contacts_gb1_side": [
+  23,
+  24,
+  25,
+  27,
+  28,
+  31,
+  32,
+  34,
+  35,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45
+ ],
+ "setups": {
+  "single_fc_chain": [
+   {
+    "file": "FFAA.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 1.97,
+    "fc_superposition_rmsd_A": 0.87,
+    "gb1_pose_rmsd_to_crystal_A": 17.64,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     7,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     29,
+     32,
+     33,
+     36,
+     37,
+     38
+    ],
+    "overlap_with_crystal_contacts": [
+     32
+    ],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   },
+   {
+    "file": "FHAA.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 1.62,
+    "fc_superposition_rmsd_A": 1.01,
+    "gb1_pose_rmsd_to_crystal_A": 22.61,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     1,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     33,
+     36,
+     37
+    ],
+    "overlap_with_crystal_contacts": [],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   },
+   {
+    "file": "FWAA.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 2.23,
+    "fc_superposition_rmsd_A": 1.03,
+    "gb1_pose_rmsd_to_crystal_A": 21.09,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     1,
+     6,
+     7,
+     8,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     33,
+     36,
+     37
+    ],
+    "overlap_with_crystal_contacts": [],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   },
+   {
+    "file": "FYAA.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 2.2,
+    "fc_superposition_rmsd_A": 1.06,
+    "gb1_pose_rmsd_to_crystal_A": 20.83,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     1,
+     6,
+     7,
+     8,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     33,
+     36,
+     37
+    ],
+    "overlap_with_crystal_contacts": [],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   },
+   {
+    "file": "IVAA.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 2.53,
+    "fc_superposition_rmsd_A": 1.17,
+    "gb1_pose_rmsd_to_crystal_A": 15.22,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     1,
+     4,
+     5,
+     12,
+     15,
+     16,
+     17,
+     18,
+     19,
+     29,
+     30,
+     33,
+     36,
+     37
+    ],
+    "overlap_with_crystal_contacts": [],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   },
+   {
+    "file": "IWAC.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 1.86,
+    "fc_superposition_rmsd_A": 0.79,
+    "gb1_pose_rmsd_to_crystal_A": 13.95,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     9,
+     10,
+     11,
+     12,
+     17,
+     32,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     56
+    ],
+    "overlap_with_crystal_contacts": [
+     32,
+     35,
+     39,
+     40
+    ],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": [
+     39,
+     40
+    ]
+   },
+   {
+    "file": "IYAC.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 0.48,
+    "fc_superposition_rmsd_A": 0.81,
+    "gb1_pose_rmsd_to_crystal_A": 16.35,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     5,
+     11,
+     12,
+     16,
+     17,
+     18,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38
+    ],
+    "overlap_with_crystal_contacts": [
+     31,
+     32,
+     34,
+     35
+    ],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   },
+   {
+    "file": "VDGV.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 2.51,
+    "fc_superposition_rmsd_A": 0.96,
+    "gb1_pose_rmsd_to_crystal_A": 14.93,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     11,
+     12,
+     16,
+     17,
+     18,
+     19,
+     29,
+     33,
+     35,
+     36,
+     37,
+     38,
+     39
+    ],
+    "overlap_with_crystal_contacts": [
+     35,
+     39
+    ],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": [
+     39
+    ]
+   },
+   {
+    "file": "VYAC.cif",
+    "chains": {
+     "A": 56,
+     "B": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "B",
+    "closest_approach_A": 1.77,
+    "fc_superposition_rmsd_A": 1.37,
+    "gb1_pose_rmsd_to_crystal_A": 40.27,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     1,
+     4,
+     11,
+     12,
+     15,
+     16,
+     17,
+     33,
+     36,
+     37,
+     38
+    ],
+    "overlap_with_crystal_contacts": [],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   }
+  ],
+  "native_fc_homodimer": [
+   {
+    "file": "FWAA.cif",
+    "chains": {
+     "A": 56,
+     "B": 206,
+     "C": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "C",
+    "closest_approach_A": 2.15,
+    "fc_superposition_rmsd_A": 0.89,
+    "gb1_pose_rmsd_to_crystal_A": 18.17,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     4,
+     6,
+     7,
+     8,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     29,
+     30,
+     33,
+     37
+    ],
+    "overlap_with_crystal_contacts": [],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   },
+   {
+    "file": "VDGV.cif",
+    "chains": {
+     "A": 56,
+     "B": 206,
+     "C": 206
+    },
+    "gb1_chain": "A",
+    "fc_chain_touched": "C",
+    "closest_approach_A": 1.97,
+    "fc_superposition_rmsd_A": 0.76,
+    "gb1_pose_rmsd_to_crystal_A": 17.86,
+    "native_binding_mode": false,
+    "predicted_gb1_interface": [
+     4,
+     6,
+     7,
+     8,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     33,
+     37
+    ],
+    "overlap_with_crystal_contacts": [],
+    "n_crystal_contacts": 16,
+    "mutable_sites_at_interface": []
+   }
+  ]
+ },
+ "verdict": "predicted complex does NOT reproduce the crystallographic binding mode; an interface-based constraint cannot be derived from it"
+}

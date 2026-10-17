@@ -30,6 +30,11 @@ TOOL_TITLE = {
     "oracle.query": ("冻结批次后查询评估器", "virtual oracle · SHA-256 committed"),
     "hypotheses.judge": ("程序裁决本轮假说", "program verdict"),
     "boltz2.predict": ("调用结构预测服务", "POST health.api.nvidia.com · Boltz-2"),
+    "boltz2.fold_complex": ("把变体与 IgG-Fc 折成复合物", "POST health.api.nvidia.com · Boltz-2 · 262 / 468 残基"),
+    "structure.check_docking": ("先验证结合模式对不对", "check_complex_docking.py"),
+    "boltz2.fold_monomers": ("折叠候选的单体结构", "POST health.api.nvidia.com · Boltz-2 · 64 个变体"),
+    "structure.learn_relation": ("在已测标签上学结构量的方向", "analyze_predicted_packing.py"),
+    "constraints.apply_C9": ("结构约束改写本轮名单", "C9_predicted_packing"),
 }
 
 
@@ -239,6 +244,65 @@ def render_step(i, s, figs) -> str:
                 + pre(esc("\n".join(res["cif_head"])))
                 + f'<img src="{figs["structure"]}" alt="Boltz-2 预测结构">')
 
+    elif tool == "boltz2.fold_complex":
+        r1, r2 = res["single_fc_chain"], res["native_fc_homodimer"]
+        body = (f'<p class="lead">{esc(call["why"])}</p>'
+                + table(["设置", "折叠数", "总残基", "中位耗时"],
+                        [["单链 Fc", r1["n_folded"], r1["residues_total"], f'{r1["median_seconds"]:.1f}s'],
+                         ["天然 Fc 同源二聚体", r2["n_folded"], r2["residues_total"], f'{r2["median_seconds"]:.1f}s']])
+                + f'<p class="lead">请求体结构：</p>' + pre(jdump(call["payload_shape"])))
+
+    elif tool == "structure.check_docking":
+        rows = [[esc(r["file"]), f'{r["fc_superposition_rmsd_A"]:.2f}',
+                 f'{r["gb1_pose_rmsd_to_crystal_A"]:.2f}',
+                 f'{len(r["overlap_with_crystal_contacts"])}/{r["n_crystal_contacts"]}',
+                 ", ".join(str(x) for x in r["mutable_sites_at_interface"]) or "无"]
+                for r in res["per_structure"]]
+        body = (f'<p class="lead">{esc(call["test"])}；通过条件：{esc(call["pass_condition"])}</p>'
+                + table(["预测结构", "Fc 叠合 RMSD (Å)", "GB1 位姿 RMSD (Å)",
+                         "与晶体接触面重合", "界面上的可变位点"], rows, "wide")
+                + f'<p class="lead warn"><b>结论：</b>{esc(res["verdict"])}。'
+                  f'{res["n_native_mode"]} / {len(res["per_structure"])} 个预测复合物达到天然结合模式。'
+                  f'这一步的作用是<b>否决</b>——没有它，后面任何"预测界面面积"都是在错误的位姿上量出来的。</p>')
+
+    elif tool == "boltz2.fold_monomers":
+        body = (f'<p class="lead">{esc(call["why"])}。测量的量：</p><ul>'
+                + "".join(f'<li>{esc(o)}</li>' for o in res["observables"]) + '</ul>'
+                + f'<p class="lead">单个变体的原始观测：</p>' + pre(jdump(res["example_observation"]))
+                + f'<p class="lead">本次运行累计 {res["n_receipts_total"]} 条 NVIDIA 回执。</p>')
+
+    elif tool == "structure.learn_relation":
+        rows = [[k, f'{v["rho"]:+.3f}', f'{v["p"]:.3f}',
+                 "显著" if v["p"] < 0.05 else "不显著"]
+                for k, v in res["spearman_against_known_fitness"].items()]
+        body = (f'<p class="lead">{esc(call["rule"])}（{esc(call["training_set"])}）</p>'
+                + table(["结构观测量", "与已知适应度的 Spearman ρ", "p", ""], rows))
+
+    elif tool == "constraints.apply_C9":
+        t = res["transfer_check_on_heldout_shortlist"]
+        m = res["median_split"]
+        bm = res["batch_metrics"]
+        body = (f'<p class="lead">{esc(call["definition"])}<br>标定依据：{esc(call["calibrated_on"])}</p>'
+                + f'<p class="lead">迁移检验（决策时未揭示标签的 40 条短名单）：'
+                  f'Spearman ρ = <b>{t["spearman_rho"]:+.3f}</b>，p = {t["p"]}，n = {t["n"]}</p>'
+                + table(["按预测堆积密度中位数切分", "条数", "实测均值", "实测最好"],
+                        [["密度高的一半", m["high_density_half"]["n"],
+                          f'{m["high_density_half"]["mean_fitness"]:.3f}',
+                          f'{m["high_density_half"]["best"]:.3f}'],
+                         ["密度低的一半", m["low_density_half"]["n"],
+                          f'{m["low_density_half"]["mean_fitness"]:.3f}',
+                          f'{m["low_density_half"]["best"]:.3f}']])
+                + f'<p class="lead">对本轮 96 条名单的实际改动：剔除 '
+                  f'<code>{esc(", ".join(res["dropped"]))}</code>，补入 '
+                  f'<code>{esc(", ".join(res["backfilled"]))}</code>。</p>'
+                + table(["", "批次均值", "批次最好"],
+                        [["不加 C9", f'{bm["A"]["mean"]:.3f}', f'{bm["A"]["best"]:.3f}'],
+                         ["加 C9", f'{bm["B"]["mean"]:.3f}', f'{bm["B"]["best"]:.3f}']])
+                + f'<p class="lead warn">结构量确实迁移到了未揭示的候选上，方向也和在已测标签上学到的一致；'
+                  f'但在 96 条的预算下它对批次的改变很小（均值 {bm["A"]["mean"]:.3f} → {bm["B"]["mean"]:.3f}），'
+                  f'最好值不变，全局最优仍被保留（{"是" if res["global_optimum_retained"] else "否"}）。'
+                  f'这是它真实的量级，不是一个被放大的卖点。</p>')
+
     return f"""
 <section class="turn tool">
   <div class="gutter"><span class="idx">{i}</span></div>
@@ -271,6 +335,18 @@ def main() -> None:
                 + "<b>" + esc(SEQ[53]) + "</b>" + esc(SEQ[54:]))
 
     steps = "".join(render_step(i + 1, s, figs) for i, s in enumerate(T["steps"]))
+
+    struct_html = ""
+    sp = Path("results/trace_structure.json")
+    if sp.exists():
+        ST = json.loads(sp.read_text())
+        n0 = len(T["steps"])
+        struct_html = (
+            '<h2 class="sect">结构信息如何进入下一轮的策略</h2>'
+            '<p class="sub">上面那一轮里，结构只提供了静态的证据（晶体坐标）。'
+            '这一节是把结构预测服务真正接进决策回路的完整过程：先折复合物，'
+            '验证结合模式，否决掉不能用的部分，再用能用的部分造出一条约束，并量出它的实际效果。</p>'
+            + "".join(render_step(n0 + i + 1, s, figs) for i, s in enumerate(ST["steps"])))
 
     css = """
 :root{--ink:#18181b;--mut:#71717a;--line:#e4e4e7;--bg:#fafaf9;--card:#fff;
@@ -338,6 +414,7 @@ img{width:100%;height:auto;border:1px solid var(--line);border-radius:7px;margin
 pre.seq{background:#fafafa;border:1px solid var(--line);border-radius:7px;padding:10px;
 font:12px ui-monospace,SFMono-Regular,Menlo,monospace;overflow-x:auto;margin:10px 0}
 pre.seq b{color:#b45309}
+h2.sect{font-size:19px;margin:44px 0 6px;padding-top:26px;border-top:2px solid var(--line)}
 footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:12.5px}
 @media(max-width:700px){.two{grid-template-columns:1fr}}
 """
@@ -371,6 +448,7 @@ trace 由 <code>scripts/capture_trace.py</code> 抓取（结构文件是现场�
   </div>
 </section>
 {steps}
+{struct_html}
 <footer>本页是 results/trace_seed302.json 的视图，由 scripts/make_demo_page.py 渲染；
 页面上的每个数字都能在该 trace 文件中找到对应字段。</footer>
 </div></body></html>"""

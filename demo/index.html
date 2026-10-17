@@ -68,6 +68,7 @@ img{width:100%;height:auto;border:1px solid var(--line);border-radius:7px;margin
 pre.seq{background:#fafafa;border:1px solid var(--line);border-radius:7px;padding:10px;
 font:12px ui-monospace,SFMono-Regular,Menlo,monospace;overflow-x:auto;margin:10px 0}
 pre.seq b{color:#b45309}
+h2.sect{font-size:19px;margin:44px 0 6px;padding-top:26px;border-top:2px solid var(--line)}
 footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:12.5px}
 @media(max-width:700px){.two{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
@@ -1090,6 +1091,179 @@ _struct.title &#x27;BioNeMo Inference Runtime Prediction&#x27;</pre><img src="da
   &quot;sampling_steps&quot;: 50,
   &quot;diffusion_samples&quot;: 1
  }
+}</pre></details>
+    </div>
+  </div>
+</section>
+<h2 class="sect">结构信息如何进入下一轮的策略</h2><p class="sub">上面那一轮里，结构只提供了静态的证据（晶体坐标）。这一节是把结构预测服务真正接进决策回路的完整过程：先折复合物，验证结合模式，否决掉不能用的部分，再用能用的部分造出一条约束，并量出它的实际效果。</p>
+<section class="turn tool">
+  <div class="gutter"><span class="idx">11</span></div>
+  <div class="block">
+    <div class="bar">
+      <span class="name">把变体与 IgG-Fc 折成复合物</span>
+      <code class="sig">POST health.api.nvidia.com · Boltz-2 · 262 / 468 残基</code>
+    </div>
+    <div class="inner">
+      <p class="note">两种设置都真实跑了：单链 Fc（262 残基）与天然 Fc 同源二聚体（468 残基）。</p>
+      <p class="lead">单体折叠与结合强弱无关：每个变体都折成同一个结构域。本任务的表型是与 IgG-Fc 结合，所以能提供信息的是复合物。</p><table class=""><thead><tr><th>设置</th><th>折叠数</th><th>总残基</th><th>中位耗时</th></tr></thead><tbody><tr><td>单链 Fc</td><td>9</td><td>262</td><td>17.2s</td></tr><tr><td>天然 Fc 同源二聚体</td><td>2</td><td>468</td><td>29.2s</td></tr></tbody></table><p class="lead">请求体结构：</p><pre class="raw ">{
+ &quot;polymers&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;molecule_type&quot;: &quot;protein&quot;,
+   &quot;sequence&quot;: &quot;&lt;GB1 variant, 56 aa&gt;&quot;
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;molecule_type&quot;: &quot;protein&quot;,
+   &quot;sequence&quot;: &quot;&lt;IgG1 Fc, 206 aa, 1FCC chain A&gt;&quot;
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;molecule_type&quot;: &quot;protein&quot;,
+   &quot;sequence&quot;: &quot;&lt;second Fc chain, only in the homodimer setup&gt;&quot;
+  }
+ ],
+ &quot;recycling_steps&quot;: 3,
+ &quot;sampling_steps&quot;: 50,
+ &quot;diffusion_samples&quot;: 1
+}</pre>
+      <details><summary>查看这一步的调用参数（原始 JSON）</summary><pre class="raw ">{
+ &quot;endpoint&quot;: &quot;https://health.api.nvidia.com/v1/biology/mit/boltz2/predict&quot;,
+ &quot;method&quot;: &quot;POST&quot;,
+ &quot;payload_shape&quot;: {
+  &quot;polymers&quot;: [
+   {
+    &quot;id&quot;: &quot;A&quot;,
+    &quot;molecule_type&quot;: &quot;protein&quot;,
+    &quot;sequence&quot;: &quot;&lt;GB1 variant, 56 aa&gt;&quot;
+   },
+   {
+    &quot;id&quot;: &quot;B&quot;,
+    &quot;molecule_type&quot;: &quot;protein&quot;,
+    &quot;sequence&quot;: &quot;&lt;IgG1 Fc, 206 aa, 1FCC chain A&gt;&quot;
+   },
+   {
+    &quot;id&quot;: &quot;C&quot;,
+    &quot;molecule_type&quot;: &quot;protein&quot;,
+    &quot;sequence&quot;: &quot;&lt;second Fc chain, only in the homodimer setup&gt;&quot;
+   }
+  ],
+  &quot;recycling_steps&quot;: 3,
+  &quot;sampling_steps&quot;: 50,
+  &quot;diffusion_samples&quot;: 1
+ },
+ &quot;why&quot;: &quot;单体折叠与结合强弱无关：每个变体都折成同一个结构域。本任务的表型是与 IgG-Fc 结合，所以能提供信息的是复合物。&quot;
+}</pre></details>
+    </div>
+  </div>
+</section>
+<section class="turn tool">
+  <div class="gutter"><span class="idx">12</span></div>
+  <div class="block">
+    <div class="bar">
+      <span class="name">先验证结合模式对不对</span>
+      <code class="sig">check_complex_docking.py</code>
+    </div>
+    <div class="inner">
+      <p class="note">Fc 本身叠得很准（0.76–1.37 A），但 GB1 结构域偏离晶体位姿 13.9–40.3 A，四个可变位点基本不在预测界面上——所以界面类约束不能建立在它之上。</p>
+      <p class="lead">把 GB1 实际接触的那条 Fc 链叠合到 1FCC 链 A，再看 GB1 结构域落在哪里；通过条件：GB1 位姿 RMSD &lt; 5 A，且界面包含晶体接触残基</p><table class="wide"><thead><tr><th>预测结构</th><th>Fc 叠合 RMSD (Å)</th><th>GB1 位姿 RMSD (Å)</th><th>与晶体接触面重合</th><th>界面上的可变位点</th></tr></thead><tbody><tr><td>FFAA.cif</td><td>0.87</td><td>17.64</td><td>1/16</td><td>无</td></tr><tr><td>FHAA.cif</td><td>1.01</td><td>22.61</td><td>0/16</td><td>无</td></tr><tr><td>FWAA.cif</td><td>1.03</td><td>21.09</td><td>0/16</td><td>无</td></tr><tr><td>FYAA.cif</td><td>1.06</td><td>20.83</td><td>0/16</td><td>无</td></tr><tr><td>IVAA.cif</td><td>1.17</td><td>15.22</td><td>0/16</td><td>无</td></tr><tr><td>IWAC.cif</td><td>0.79</td><td>13.95</td><td>4/16</td><td>39, 40</td></tr><tr><td>IYAC.cif</td><td>0.81</td><td>16.35</td><td>4/16</td><td>无</td></tr><tr><td>VDGV.cif</td><td>0.96</td><td>14.93</td><td>2/16</td><td>39</td></tr><tr><td>VYAC.cif</td><td>1.37</td><td>40.27</td><td>0/16</td><td>无</td></tr><tr><td>FWAA.cif</td><td>0.89</td><td>18.17</td><td>0/16</td><td>无</td></tr><tr><td>VDGV.cif</td><td>0.76</td><td>17.86</td><td>0/16</td><td>无</td></tr></tbody></table><p class="lead warn"><b>结论：</b>predicted complex does NOT reproduce the crystallographic binding mode; an interface-based constraint cannot be derived from it。0 / 11 个预测复合物达到天然结合模式。这一步的作用是<b>否决</b>——没有它，后面任何"预测界面面积"都是在错误的位姿上量出来的。</p>
+      <details><summary>查看这一步的调用参数（原始 JSON）</summary><pre class="raw ">{
+ &quot;script&quot;: &quot;scripts/check_complex_docking.py&quot;,
+ &quot;test&quot;: &quot;把 GB1 实际接触的那条 Fc 链叠合到 1FCC 链 A，再看 GB1 结构域落在哪里&quot;,
+ &quot;pass_condition&quot;: &quot;GB1 位姿 RMSD &lt; 5 A，且界面包含晶体接触残基&quot;
+}</pre></details>
+    </div>
+  </div>
+</section>
+<section class="turn tool">
+  <div class="gutter"><span class="idx">13</span></div>
+  <div class="block">
+    <div class="bar">
+      <span class="name">折叠候选的单体结构</span>
+      <code class="sig">POST health.api.nvidia.com · Boltz-2 · 64 个变体</code>
+    </div>
+    <div class="inner">
+      <p class="note">阈值用的是物理标准（vdW 接触距离、拉氏图区域），不是对着适应度调出来的。</p>
+      <p class="lead">单体折叠本身是准的（FWAA 对野生型 Ca RMSD 0.51 A），所以它能诚实报告的是四个位点周围的局部几何。测量的量：</p><ul><li>最近的碳-碳接触距离（张力）</li><li>侧链质心 6 A 内的重原子数（局部堆积密度）</li><li>41 位主链是否落在非甘氨酸允许区</li><li>位点处的 pLDDT</li></ul><p class="lead">单个变体的原始观测：</p><pre class="raw ">{
+ &quot;variant&quot;: &quot;FYAA&quot;,
+ &quot;sites&quot;: {
+  &quot;39&quot;: {
+   &quot;min_cc_contact_A&quot;: 3.22,
+   &quot;closest_partner&quot;: &quot;ALA41:CB&quot;,
+   &quot;heavy_atoms_within_6A&quot;: 27,
+   &quot;n_side_chain_atoms&quot;: 7,
+   &quot;plddt&quot;: 0.847
+  },
+  &quot;40&quot;: {
+   &quot;min_cc_contact_A&quot;: 3.85,
+   &quot;closest_partner&quot;: &quot;GLY38:C&quot;,
+   &quot;heavy_atoms_within_6A&quot;: 6,
+   &quot;n_side_chain_atoms&quot;: 8,
+   &quot;plddt&quot;: 0.699
+  },
+  &quot;41&quot;: {
+   &quot;min_cc_contact_A&quot;: 3.22,
+   &quot;closest_partner&quot;: &quot;PHE39:CE2&quot;,
+   &quot;heavy_atoms_within_6A&quot;: 25,
+   &quot;n_side_chain_atoms&quot;: 1,
+   &quot;plddt&quot;: 0.747
+  },
+  &quot;54&quot;: {
+   &quot;min_cc_contact_A&quot;: 3.52,
+   &quot;closest_partner&quot;: &quot;PHE39:CE2&quot;,
+   &quot;heavy_atoms_within_6A&quot;: 30,
+   &quot;n_side_chain_atoms&quot;: 1,
+   &quot;plddt&quot;: 0.923
+  }
+ },
+ &quot;loop41&quot;: {
+  &quot;phi&quot;: -142.9,
+  &quot;psi&quot;: 166.3,
+  &quot;region&quot;: &quot;beta&quot;
+ }
+}</pre><p class="lead">本次运行累计 171 条 NVIDIA 回执。</p>
+      <details><summary>查看这一步的调用参数（原始 JSON）</summary><pre class="raw ">{
+ &quot;endpoint&quot;: &quot;https://health.api.nvidia.com/v1/biology/mit/boltz2/predict&quot;,
+ &quot;sets&quot;: {
+  &quot;labelled round-1 variants&quot;: 24,
+  &quot;round-2 shortlist (top 40 by combined score)&quot;: 40
+ },
+ &quot;why&quot;: &quot;单体折叠本身是准的（FWAA 对野生型 Ca RMSD 0.51 A），所以它能诚实报告的是四个位点周围的局部几何&quot;
+}</pre></details>
+    </div>
+  </div>
+</section>
+<section class="turn tool">
+  <div class="gutter"><span class="idx">14</span></div>
+  <div class="block">
+    <div class="bar">
+      <span class="name">在已测标签上学结构量的方向</span>
+      <code class="sig">analyze_predicted_packing.py</code>
+    </div>
+    <div class="inner">
+      <p class="note">最初按直觉写的判据（接触太近=有害）在已测数据上并不成立（rho=+0.213, p=0.32）；站得住的是局部堆积密度（rho=+0.429, p=0.037）。</p>
+      <p class="lead">只用已经花掉预算测过的标签来定这个结构量的方向与强度，不碰未揭示的候选（第 1 轮已揭示标签的 24 个变体）</p><table class=""><thead><tr><th>结构观测量</th><th>与已知适应度的 Spearman ρ</th><th>p</th><th></th></tr></thead><tbody><tr><td>min_cc</td><td>+0.213</td><td>0.318</td><td>不显著</td></tr><tr><td>mean_cc</td><td>+0.134</td><td>0.533</td><td>不显著</td></tr><tr><td>packing_density</td><td>+0.429</td><td>0.037</td><td>显著</td></tr><tr><td>plddt_sites</td><td>+0.295</td><td>0.162</td><td>不显著</td></tr><tr><td>loop41_outside</td><td>-0.188</td><td>0.380</td><td>不显著</td></tr></tbody></table>
+      <details><summary>查看这一步的调用参数（原始 JSON）</summary><pre class="raw ">{
+ &quot;training_set&quot;: &quot;第 1 轮已揭示标签的 24 个变体&quot;,
+ &quot;rule&quot;: &quot;只用已经花掉预算测过的标签来定这个结构量的方向与强度，不碰未揭示的候选&quot;
+}</pre></details>
+    </div>
+  </div>
+</section>
+<section class="turn tool">
+  <div class="gutter"><span class="idx">15</span></div>
+  <div class="block">
+    <div class="bar">
+      <span class="name">结构约束改写本轮名单</span>
+      <code class="sig">C9_predicted_packing</code>
+    </div>
+    <div class="inner">
+      <p class="note">结构量确实迁移到了未揭示的候选上（rho=+0.49, p=0.001），但在这个预算下对批次的改变很小：均值 2.642 -&gt; 2.685，最好值不变，全局最优仍被保留。</p>
+      <p class="lead">对已折叠的短名单，按预测的局部堆积密度重排；剔除密度最低的 10 条，用组合分数上的后续候选补足<br>标定依据：第 1 轮已揭示标签（上一步），不是本轮候选</p><p class="lead">迁移检验（决策时未揭示标签的 40 条短名单）：Spearman ρ = <b>+0.490</b>，p = 0.001，n = 40</p><table class=""><thead><tr><th>按预测堆积密度中位数切分</th><th>条数</th><th>实测均值</th><th>实测最好</th></tr></thead><tbody><tr><td>密度高的一半</td><td>22</td><td>4.314</td><td>8.762</td></tr><tr><td>密度低的一半</td><td>18</td><td>3.315</td><td>6.509</td></tr></tbody></table><p class="lead">对本轮 96 条名单的实际改动：剔除 <code>VYAC, VIAC, LVAG, FWAG, VNAC, VHAC, INAC, IFAC, MYAC, FYAG</code>，补入 <code>IWAA, IRAC, FMAA, FLAA, IHAA, LWAA, LNAC, LYAA, VKAC, FNAG</code>。</p><table class=""><thead><tr><th></th><th>批次均值</th><th>批次最好</th></tr></thead><tbody><tr><td>不加 C9</td><td>2.642</td><td>8.762</td></tr><tr><td>加 C9</td><td>2.685</td><td>8.762</td></tr></tbody></table><p class="lead warn">结构量确实迁移到了未揭示的候选上，方向也和在已测标签上学到的一致；但在 96 条的预算下它对批次的改变很小（均值 2.642 → 2.685），最好值不变，全局最优仍被保留（是）。这是它真实的量级，不是一个被放大的卖点。</p>
+      <details><summary>查看这一步的调用参数（原始 JSON）</summary><pre class="raw ">{
+ &quot;constraint&quot;: &quot;C9_predicted_packing&quot;,
+ &quot;definition&quot;: &quot;对已折叠的短名单，按预测的局部堆积密度重排；剔除密度最低的 10 条，用组合分数上的后续候选补足&quot;,
+ &quot;calibrated_on&quot;: &quot;第 1 轮已揭示标签（上一步），不是本轮候选&quot;
 }</pre></details>
     </div>
   </div>

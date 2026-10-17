@@ -1,0 +1,651 @@
+{
+ "steps": [
+  {
+   "tool": "boltz2.fold_complex",
+   "call": {
+    "endpoint": "https://health.api.nvidia.com/v1/biology/mit/boltz2/predict",
+    "method": "POST",
+    "payload_shape": {
+     "polymers": [
+      {
+       "id": "A",
+       "molecule_type": "protein",
+       "sequence": "<GB1 variant, 56 aa>"
+      },
+      {
+       "id": "B",
+       "molecule_type": "protein",
+       "sequence": "<IgG1 Fc, 206 aa, 1FCC chain A>"
+      },
+      {
+       "id": "C",
+       "molecule_type": "protein",
+       "sequence": "<second Fc chain, only in the homodimer setup>"
+      }
+     ],
+     "recycling_steps": 3,
+     "sampling_steps": 50,
+     "diffusion_samples": 1
+    },
+    "why": "单体折叠与结合强弱无关：每个变体都折成同一个结构域。本任务的表型是与 IgG-Fc 结合，所以能提供信息的是复合物。"
+   },
+   "result": {
+    "single_fc_chain": {
+     "n_folded": 9,
+     "median_seconds": 17.2,
+     "residues_total": 262,
+     "example": {
+      "VDGV": {
+       "variant_sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVDGEWTYDDATKTFTVTE",
+       "n_residues_total": 262,
+       "confidence_scores": [
+        0.7515039443969727
+       ],
+       "cif_bytes": 206242,
+       "seconds": 16.5
+      },
+      "FYAA": {
+       "variant_sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGFYAEWTYDDATKTFTATE",
+       "n_residues_total": 262,
+       "confidence_scores": [
+        0.7248777747154236
+       ],
+       "cif_bytes": 206655,
+       "seconds": 15.3
+      }
+     }
+    },
+    "native_fc_homodimer": {
+     "n_folded": 2,
+     "median_seconds": 29.2,
+     "residues_total": 468,
+     "confidence": {
+      "VDGV": [
+       0.8835086822509766
+      ],
+      "FWAA": [
+       0.8987617492675781
+      ]
+     }
+    }
+   },
+   "note": "两种设置都真实跑了：单链 Fc（262 残基）与天然 Fc 同源二聚体（468 残基）。"
+  },
+  {
+   "tool": "structure.check_docking",
+   "call": {
+    "script": "scripts/check_complex_docking.py",
+    "test": "把 GB1 实际接触的那条 Fc 链叠合到 1FCC 链 A，再看 GB1 结构域落在哪里",
+    "pass_condition": "GB1 位姿 RMSD < 5 A，且界面包含晶体接触残基"
+   },
+   "result": {
+    "crystal_contacts_gb1_side": [
+     23,
+     24,
+     25,
+     27,
+     28,
+     31,
+     32,
+     34,
+     35,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45
+    ],
+    "per_structure": [
+     {
+      "file": "FFAA.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 1.97,
+      "fc_superposition_rmsd_A": 0.87,
+      "gb1_pose_rmsd_to_crystal_A": 17.64,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       7,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       29,
+       32,
+       33,
+       36,
+       37,
+       38
+      ],
+      "overlap_with_crystal_contacts": [
+       32
+      ],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "FHAA.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 1.62,
+      "fc_superposition_rmsd_A": 1.01,
+      "gb1_pose_rmsd_to_crystal_A": 22.61,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       1,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       33,
+       36,
+       37
+      ],
+      "overlap_with_crystal_contacts": [],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "FWAA.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 2.23,
+      "fc_superposition_rmsd_A": 1.03,
+      "gb1_pose_rmsd_to_crystal_A": 21.09,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       1,
+       6,
+       7,
+       8,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       33,
+       36,
+       37
+      ],
+      "overlap_with_crystal_contacts": [],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "FYAA.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 2.2,
+      "fc_superposition_rmsd_A": 1.06,
+      "gb1_pose_rmsd_to_crystal_A": 20.83,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       1,
+       6,
+       7,
+       8,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       33,
+       36,
+       37
+      ],
+      "overlap_with_crystal_contacts": [],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "IVAA.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 2.53,
+      "fc_superposition_rmsd_A": 1.17,
+      "gb1_pose_rmsd_to_crystal_A": 15.22,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       1,
+       4,
+       5,
+       12,
+       15,
+       16,
+       17,
+       18,
+       19,
+       29,
+       30,
+       33,
+       36,
+       37
+      ],
+      "overlap_with_crystal_contacts": [],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "IWAC.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 1.86,
+      "fc_superposition_rmsd_A": 0.79,
+      "gb1_pose_rmsd_to_crystal_A": 13.95,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       9,
+       10,
+       11,
+       12,
+       17,
+       32,
+       33,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       56
+      ],
+      "overlap_with_crystal_contacts": [
+       32,
+       35,
+       39,
+       40
+      ],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": [
+       39,
+       40
+      ]
+     },
+     {
+      "file": "IYAC.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 0.48,
+      "fc_superposition_rmsd_A": 0.81,
+      "gb1_pose_rmsd_to_crystal_A": 16.35,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       5,
+       11,
+       12,
+       16,
+       17,
+       18,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38
+      ],
+      "overlap_with_crystal_contacts": [
+       31,
+       32,
+       34,
+       35
+      ],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "VDGV.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 2.51,
+      "fc_superposition_rmsd_A": 0.96,
+      "gb1_pose_rmsd_to_crystal_A": 14.93,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       11,
+       12,
+       16,
+       17,
+       18,
+       19,
+       29,
+       33,
+       35,
+       36,
+       37,
+       38,
+       39
+      ],
+      "overlap_with_crystal_contacts": [
+       35,
+       39
+      ],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": [
+       39
+      ]
+     },
+     {
+      "file": "VYAC.cif",
+      "chains": {
+       "A": 56,
+       "B": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "B",
+      "closest_approach_A": 1.77,
+      "fc_superposition_rmsd_A": 1.37,
+      "gb1_pose_rmsd_to_crystal_A": 40.27,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       1,
+       4,
+       11,
+       12,
+       15,
+       16,
+       17,
+       33,
+       36,
+       37,
+       38
+      ],
+      "overlap_with_crystal_contacts": [],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "FWAA.cif",
+      "chains": {
+       "A": 56,
+       "B": 206,
+       "C": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "C",
+      "closest_approach_A": 2.15,
+      "fc_superposition_rmsd_A": 0.89,
+      "gb1_pose_rmsd_to_crystal_A": 18.17,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       4,
+       6,
+       7,
+       8,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       29,
+       30,
+       33,
+       37
+      ],
+      "overlap_with_crystal_contacts": [],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     },
+     {
+      "file": "VDGV.cif",
+      "chains": {
+       "A": 56,
+       "B": 206,
+       "C": 206
+      },
+      "gb1_chain": "A",
+      "fc_chain_touched": "C",
+      "closest_approach_A": 1.97,
+      "fc_superposition_rmsd_A": 0.76,
+      "gb1_pose_rmsd_to_crystal_A": 17.86,
+      "native_binding_mode": false,
+      "predicted_gb1_interface": [
+       4,
+       6,
+       7,
+       8,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       33,
+       37
+      ],
+      "overlap_with_crystal_contacts": [],
+      "n_crystal_contacts": 16,
+      "mutable_sites_at_interface": []
+     }
+    ],
+    "fc_superposition_rmsd_range": [
+     0.76,
+     1.37
+    ],
+    "gb1_pose_rmsd_range": [
+     13.95,
+     40.27
+    ],
+    "n_native_mode": 0,
+    "verdict": "predicted complex does NOT reproduce the crystallographic binding mode; an interface-based constraint cannot be derived from it"
+   },
+   "note": "Fc 本身叠得很准（0.76–1.37 A），但 GB1 结构域偏离晶体位姿 13.9–40.3 A，四个可变位点基本不在预测界面上——所以界面类约束不能建立在它之上。"
+  },
+  {
+   "tool": "boltz2.fold_monomers",
+   "call": {
+    "endpoint": "https://health.api.nvidia.com/v1/biology/mit/boltz2/predict",
+    "sets": {
+     "labelled round-1 variants": 24,
+     "round-2 shortlist (top 40 by combined score)": 40
+    },
+    "why": "单体折叠本身是准的（FWAA 对野生型 Ca RMSD 0.51 A），所以它能诚实报告的是四个位点周围的局部几何"
+   },
+   "result": {
+    "observables": [
+     "最近的碳-碳接触距离（张力）",
+     "侧链质心 6 A 内的重原子数（局部堆积密度）",
+     "41 位主链是否落在非甘氨酸允许区",
+     "位点处的 pLDDT"
+    ],
+    "example_observation": {
+     "variant": "FYAA",
+     "sites": {
+      "39": {
+       "min_cc_contact_A": 3.22,
+       "closest_partner": "ALA41:CB",
+       "heavy_atoms_within_6A": 27,
+       "n_side_chain_atoms": 7,
+       "plddt": 0.847
+      },
+      "40": {
+       "min_cc_contact_A": 3.85,
+       "closest_partner": "GLY38:C",
+       "heavy_atoms_within_6A": 6,
+       "n_side_chain_atoms": 8,
+       "plddt": 0.699
+      },
+      "41": {
+       "min_cc_contact_A": 3.22,
+       "closest_partner": "PHE39:CE2",
+       "heavy_atoms_within_6A": 25,
+       "n_side_chain_atoms": 1,
+       "plddt": 0.747
+      },
+      "54": {
+       "min_cc_contact_A": 3.52,
+       "closest_partner": "PHE39:CE2",
+       "heavy_atoms_within_6A": 30,
+       "n_side_chain_atoms": 1,
+       "plddt": 0.923
+      }
+     },
+     "loop41": {
+      "phi": -142.9,
+      "psi": 166.3,
+      "region": "beta"
+     }
+    },
+    "n_receipts_total": 171
+   },
+   "note": "阈值用的是物理标准（vdW 接触距离、拉氏图区域），不是对着适应度调出来的。"
+  },
+  {
+   "tool": "structure.learn_relation",
+   "call": {
+    "training_set": "第 1 轮已揭示标签的 24 个变体",
+    "rule": "只用已经花掉预算测过的标签来定这个结构量的方向与强度，不碰未揭示的候选"
+   },
+   "result": {
+    "spearman_against_known_fitness": {
+     "min_cc": {
+      "rho": 0.213,
+      "p": 0.318
+     },
+     "mean_cc": {
+      "rho": 0.134,
+      "p": 0.533
+     },
+     "packing_density": {
+      "rho": 0.429,
+      "p": 0.037
+     },
+     "plddt_sites": {
+      "rho": 0.295,
+      "p": 0.162
+     },
+     "loop41_outside": {
+      "rho": -0.188,
+      "p": 0.38
+     }
+    }
+   },
+   "note": "最初按直觉写的判据（接触太近=有害）在已测数据上并不成立（rho=+0.213, p=0.32）；站得住的是局部堆积密度（rho=+0.429, p=0.037）。"
+  },
+  {
+   "tool": "constraints.apply_C9",
+   "call": {
+    "constraint": "C9_predicted_packing",
+    "definition": "对已折叠的短名单，按预测的局部堆积密度重排；剔除密度最低的 10 条，用组合分数上的后续候选补足",
+    "calibrated_on": "第 1 轮已揭示标签（上一步），不是本轮候选"
+   },
+   "result": {
+    "transfer_check_on_heldout_shortlist": {
+     "spearman_rho": 0.49,
+     "p": 0.001,
+     "n": 40
+    },
+    "median_split": {
+     "high_density_half": {
+      "n": 22,
+      "mean_fitness": 4.314,
+      "best": 8.762
+     },
+     "low_density_half": {
+      "n": 18,
+      "mean_fitness": 3.315,
+      "best": 6.509
+     }
+    },
+    "dropped": [
+     "VYAC",
+     "VIAC",
+     "LVAG",
+     "FWAG",
+     "VNAC",
+     "VHAC",
+     "INAC",
+     "IFAC",
+     "MYAC",
+     "FYAG"
+    ],
+    "backfilled": [
+     "IWAA",
+     "IRAC",
+     "FMAA",
+     "FLAA",
+     "IHAA",
+     "LWAA",
+     "LNAC",
+     "LYAA",
+     "VKAC",
+     "FNAG"
+    ],
+    "batch_metrics": {
+     "A": {
+      "best": 8.76196565571,
+      "mean": 2.6418114992455357
+     },
+     "B": {
+      "best": 8.76196565571,
+      "mean": 2.6848270160034526
+     }
+    },
+    "global_optimum_retained": true
+   },
+   "note": "结构量确实迁移到了未揭示的候选上（rho=+0.49, p=0.001），但在这个预算下对批次的改变很小：均值 2.642 -> 2.685，最好值不变，全局最优仍被保留。"
+  }
+ ]
+}

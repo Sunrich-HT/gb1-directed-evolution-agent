@@ -1,0 +1,20 @@
+{
+ "VDGV": {
+  "variant_sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVDGEWTYDDATKTFTVTE",
+  "n_residues_total": 262,
+  "confidence_scores": [
+   0.8835086822509766
+  ],
+  "cif_bytes": 363958,
+  "seconds": 30.7
+ },
+ "FWAA": {
+  "variant_sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGFWAEWTYDDATKTFTATE",
+  "n_residues_total": 262,
+  "confidence_scores": [
+   0.8987617492675781
+  ],
+  "cif_bytes": 364742,
+  "seconds": 27.7
+ }
+}
