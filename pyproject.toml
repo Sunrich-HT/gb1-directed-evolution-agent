@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gb1-directed-evolution-agent"
+version = "2.0.0"
+description = "Prior- and constraint-driven directed-evolution agent on the GB1 four-site landscape"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.7",
+    "requests>=2.31",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]          # only needed to re-run ProteinMPNN locally
+report = ["pymupdf>=1.23"]      # page checks on the built PDF
+
+[project.scripts]
+gb1-recommend = "gb1agent.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Sunrich-HT/gb1-directed-evolution-agent"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

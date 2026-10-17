@@ -2,17 +2,21 @@
 from __future__ import annotations
 
 import numpy as np
-from scipy.stats import spearmanr
+from scipy.stats import pearsonr, spearmanr
 
 
 def regression_metrics(y_true, y_pred) -> dict:
     y_true = np.asarray(y_true, float)
     y_pred = np.asarray(y_pred, float)
     rho = spearmanr(y_true, y_pred).statistic
+    r = pearsonr(y_true, y_pred).statistic
+    mse = float(np.mean((y_true - y_pred) ** 2))
     return {
         "n": int(y_true.size),
         "spearman": float(rho),
-        "rmse": float(np.sqrt(np.mean((y_true - y_pred) ** 2))),
+        "pearson": float(r),
+        "mse": mse,
+        "rmse": float(np.sqrt(mse)),
     }
 
 

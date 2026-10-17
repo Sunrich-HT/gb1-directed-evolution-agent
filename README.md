@@ -1,186 +1,148 @@
 # GB1 Directed-Evolution Agent
 
+[![tests](https://github.com/Sunrich-HT/gb1-directed-evolution-agent/actions/workflows/tests.yml/badge.svg)](https://github.com/Sunrich-HT/gb1-directed-evolution-agent/actions/workflows/tests.yml)
+[![python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 A directed-evolution agent for the GB1 four-site fitness landscape, built as a
-controlled comparison of **seven arms** that share one starting set of 192 labels
-and one budget of 3 x 96 measurements: `random`, `greedy`, `greedy_explore`,
-`llm_agent`, `llm_knowledge`, `prior_fixed` (evidence prior + explicit constraints,
-rules frozen, **no language model**) and `prior_constraint` (the same, with the
-model allowed to edit rule parameters each round).
+**controlled comparison of seven batch-selection strategies** that share one starting
+set of 192 labels and one budget of 3 × 96 measurements.
 
-Round 1 is driven by an evidence prior compiled from crystal/NMR structures, the
-IgG-Fc complex and 62 curated literature claims - it uses **no multi-mutant label**
-and still ranks variants as well as a prior built from measured single mutants.
-Every later round applies explicit non-sequence constraints, and every rule that
-fires leaves an audit record.
+The question is narrow on purpose: *before any multi-mutant label exists, how much can
+structures, physical chemistry and published literature tell you — and does a language
+model add anything on top of that?*
 
-**Headline result.** The prior and the constraints do the work: they lift the rate
-of reaching the global optimum from 20% (3/15 seeds, predictor-greedy) to 60%
-(9/15), paired McNemar p = 0.031. The language model adds nothing measurable on top
-of them - freezing the rules changes nothing (Wilcoxon p = 1.000), and used as a
-picker it reproduces greedy on 14 of 15 seeds.
+**Headline result.** The evidence prior and the explicit constraints do the work: they
+lift the rate of reaching the global optimum from **20 %** (3/15 seeds, predictor-greedy)
+to **60 %** (9/15), paired McNemar *p* = 0.031. The language model adds nothing
+measurable on top of them — freezing the rules changes nothing (Wilcoxon *p* = 1.000),
+and used as a picker it reproduces greedy on 14 of 15 seeds.
 
-- **Demo page (one complete case, input to output):** [`demo/index.html`](demo/index.html) - open in a browser, self-contained.
-- **Paper:** [`paper/main.pdf`](paper/main.pdf) (XeLaTeX sources in `paper/`).
+| | |
+|---|---|
+| Report | [`paper/main.pdf`](paper/main.pdf) — 正文 6 页 + 附录 A–D |
+| Call-trace demo | [`demo/index.html`](demo/index.html) — one round's 15 tool calls, inputs and outputs, raw JSON expandable |
+| One-shot recommender | `python scripts/recommend.py --top-k 10` |
 
-The measured landscape is used as a *virtual* evaluator. No wet-lab experiment is
+The measured landscape is used as a **virtual evaluator**. No wet-lab experiment is
 performed or claimed anywhere in this repository.
 
 ---
 
-## What question this answers
+## The seven arms
 
-Given a few hundred measured variants, can an agent propose which variants to
-measure next so that each round finds better protein than the last — and does a
-language model in the loop beat simply trusting the predictor?
+| arm | what it does | final best (mean of 15 seeds) | hits the optimum |
+|---|---|---|---|
+| `random` | uniform sampling | 4.34 | 0/15 |
+| `greedy` | predictor top-*k* | 7.60 | 3/15 |
+| `greedy_explore` | 75 % greedy + 25 % random | 7.13 | 3/15 |
+| `llm_agent` | LLM picks from the model's shortlist | 7.62 | 3/15 |
+| `llm_knowledge` | same, plus a knowledge block | 7.60 | 3/15 |
+| `prior_fixed` | evidence prior + constraints, rules frozen, **no LLM** | **8.03** | **9/15** |
+| `prior_constraint` | the same, LLM may edit rule parameters each round | **8.07** | **9/15** |
 
-Three things make the comparison informative:
+Global optimum: FWAA, fitness 8.762.
 
-1. **The candidate pool contains the answer.** The pool is the whole unobserved
-   landscape, including its global optimum (FWAA, fitness 8.76). A pool whose
-   ceiling is below the starting incumbent would force a null result before any
-   model runs.
-2. **An exploration-only control.** `greedy_explore` is the predictor with a 25%
-   random exploration quota and no language model, so any LLM advantage can be
-   separated from the advantage of simply not being greedy.
-3. **Hypotheses are graded by the program.** The agent must register falsifiable
-   site-level hypotheses before labels are revealed; the code, not the model,
-   decides whether each one was supported or refuted.
+## How it works
 
-## Results (v2: evidence prior + explicit constraints)
+1. **Evidence prior** (`src/gb1agent/evidence.py`) — a 4 × 20 substitution table plus a
+   site-pair term, summed from independently switchable components: inverse-folding
+   log-odds (muted at site 40 on documented grounds), C-beta packing headroom, a
+   buried-charge penalty, an IgG-Fc interface bonus, 41/54 volume compensation, and 62
+   curated literature claims. It uses **no multi-mutant label** and still ranks variants
+   as well as a prior built from measured single mutants (ρ = +0.295 vs +0.294 on the
+   ≥3-mutation subset).
+2. **Constraint engine** (`src/gb1agent/constraints.py`) — rules are data, not code
+   branches: each declares an id, a kind (hard filter / soft penalty / composition quota),
+   its parameters and its evidence. Every round emits an audit record: how many candidates
+   each filter removed, whether each quota bound, and how many of the 96 slots changed
+   relative to the same score without constraints.
+3. **Knowledge graph** (`knowledge/knowledge_graph.json`, 666 nodes / 2124 edges) —
+   `Position`, `AminoAcid`, `Mutation`, `Variant`, `Claim`, `Source`, related by
+   `OCCURS_AT`, `HAS_PROPERTY`, `IMPROVES`/`HARMS`, `CONTAINS`, `SUPPORTS`/`REFUTES`,
+   `COMPENSATES`. `IMPROVES`/`HARMS` edges use only labels the campaign already paid for.
+4. **Program verdicts** (`src/gb1agent/interpret.py`) — hypotheses are judged by the
+   program after the labels are revealed, not by the model; refuted substitutions become
+   the next round's penalty term automatically.
 
-Protocol: 192 starting labels, 3 rounds x 96 picks, **15 seeds**, identical start and budget for every arm.
-Candidate pool = the 139,169 unobserved variants, which contains the global optimum FWAA (fitness 8.762).
+![architecture](figures/paper/fig5_architecture.png)
 
-| arm | final best (mean of 15 seeds) | median | hits the global optimum | batch diversity |
-|---|---|---|---|---|
-| random | 4.336 | 4.437 | 0/15 | 3.80 |
-| predictor-greedy | 7.595 | 7.313 | 3/15 | 2.45 |
-| predictor + 25% exploration | 7.129 | 7.313 | 3/15 | 2.99 |
-| LLM agent (DeepSeek) | 7.617 | 7.555 | 3/15 | 2.45 |
-| LLM + knowledge block | 7.595 | 7.313 | 3/15 | 2.47 |
-| **evidence prior + constraints, no LLM** | 8.031 | 8.762 | 9/15 | 3.15 |
-| evidence prior + constraints, LLM-steered | 8.070 | 8.762 | 9/15 | 3.27 |
+## Quickstart
 
-**What the comparison shows**
-
-1. *Evidence beats more model rounds.* A prior built only from the crystal structure, biophysics and
-   62 curated literature rows — no multi-mutant label — ranks the landscape at Spearman
-   rho = +0.295 on the >=3-mutation subset, matching the measured-single-mutant upper
-   bound (+0.294) that uses oracle labels.
-2. *Constraints triple the hit rate.* Evidence prior + constraints reaches the global optimum in 9/15 seeds
-   against 3/15 for predictor-greedy (paired McNemar, 6 vs 0 discordant seeds, exact p = 0.031).
-3. *The language model adds nothing on top.* Letting DeepSeek rewrite the constraint set each round is
-   indistinguishable from freezing the rules (8.070 vs 8.031, Wilcoxon p = 1.00), and using the LLM as a
-   *picker* reproduces predictor-greedy on 14 of 15 seeds.
-4. *Zero-shot folding scores are not binding predictors.* ProteinMPNN alone reaches rho = +0.170;
-   NVIDIA-hosted Boltz-2 confidence correlates with fitness at +0.21 and adds -0.002 Spearman as a feature.
-5. *A structural assumption was falsified mid-project.* The common "glycine is required at 41" rule is not
-   supported by the crystal structure (phi/psi -137.6/-159.8 in 1PGA, ordinary beta region); the real
-   constraint there is side-chain packing, compensable at site 54. The filter was removed.
-
-Paper: [`paper/main.pdf`](paper/main.pdf) (7 pages, Chinese, LaTeX/XeLaTeX, real citations).
-Figures: `figures/paper/` — built to `figures/FIGURE_CONTRACT.md` and passing panel-alignment,
-PDF text-collision and 5 pt glyph audits.
-Evidence base: `knowledge/evidence_base.json` (62 rows, 21 sources) + `knowledge/references.bib`.
-Cost: 154 DeepSeek calls across both campaigns, $0.523 total; ledgers under `results/`.
-
-## Install
-
-```sh
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+```bash
+git clone https://github.com/Sunrich-HT/gb1-directed-evolution-agent
+cd gb1-directed-evolution-agent
+make install          # pip install -e .
+make data             # fetch the landscape (checksum-verified) and 1PGA / 2GB1 / 1FCC
+make test             # 7 unit tests
+make recommend        # a ranked mutation proposal from the wild-type sequence
 ```
 
-## Get the data (once)
+`make help` lists every target. `make all` runs everything that does not need an API key
+(prior, baselines, analyses, figures, paper, demo page).
 
-```sh
-mkdir -p data
-curl -L -o data/four_mutations_full_data.csv.zip \
-  https://raw.githubusercontent.com/J-SNACKKB/FLIP/62cace8735f5610e2743cf06ce0f944b37fffaa6/splits/gb1/four_mutations_full_data.csv.zip
+### Reproducing a single campaign
+
+```bash
+python scripts/run_experiment.py --data data/gb1_flip.zip \
+    --arms random greedy prior_fixed --seeds 302
 ```
 
-The loader verifies the archive's SHA-256 (`85692d80…c383bff`) and refuses to run
-on anything else.
+The two LLM-steered arms need `DEEPSEEK_API_KEY`; the structure work needs
+`NVIDIA_API_KEYS`. Copy `.env.example` to `.env` and fill it in — `.env` is git-ignored
+and no key is ever written to `results/`, where API calls are recorded by **key index**
+only. A smoke test that needs no key at all:
 
-## Small-scale reproduction (about a minute, no API key, no network)
-
-```sh
-python scripts/reproduce_small.py data/four_mutations_full_data.csv.zip
+```bash
+python scripts/reproduce_small.py --data data/gb1_flip.zip
 ```
 
-Runs the complete chain — split, cross-validated model selection, agent tool
-loop, commit-then-reveal oracle, feedback, metrics — with a deterministic mock
-agent backend. It verifies the machinery; it is not a scientific result.
-
-## Full experiment
-
-```sh
-# baseline prediction and high-value identification
-python scripts/run_baselines.py --data data/four_mutations_full_data.csv.zip
-
-# five-arm campaign; omit --backend deepseek to stay offline
-export DEEPSEEK_API_KEY=...          # never committed; see .env.example
-python scripts/run_experiment.py --data data/four_mutations_full_data.csv.zip \
-    --backend deepseek --seeds 301 302 303 --rounds 3 --batch-size 96
-
-# interpretability report
-python scripts/run_interpret.py --data data/four_mutations_full_data.csv.zip \
-    --records results/experiment/records.json
-```
-
-### Structure-informed prior (optional, already cached)
-
-`config/mpnn_log_odds.json` holds a 4x20 inverse-folding log-odds table computed
-locally from ProteinMPNN (soluble `v_48_002`, pinned commit
-`8907e667…cdef57`, weights SHA-256 `0877f840…a7c448`) on RCSB **2GB1** chain A.
-Recompute with:
-
-```sh
-python vendor/proteinmpnn/protein_mpnn_run.py --pdb_path data/2gb1.pdb \
-    --pdb_path_chains A --out_folder /tmp/mpnn_out --unconditional_probs_only 1 \
-    --path_to_model_weights vendor/proteinmpnn/soluble_model_weights --model_name v_48_002
-```
-
-## Layout
+## Repository map
 
 ```
-src/gb1agent/
-  data.py         landscape loading, frozen splits, commit-then-reveal oracle
-  features.py     additive (80-dim) and pairwise/epistatic (2480-dim) encodings
-  predictors.py   ridge / random forest / FCNN + cross-validated selection
-  priors.py       zero-shot priors and the substitution-wise z-scoring
-  agent.py        prompts, shortlist tools, hypothesis registration and grading
-  llm.py          DeepSeek client with a hard budget ledger; offline mock
-  nvidia.py       NVIDIA hosted inference with multi-key rotation
-  loop.py         the five-arm campaign driver
-  interpret.py    model-, decision- and failure-layer interpretability
-  metrics.py      Spearman, top-k recall, top-5% precision, per-round gain
-scripts/          runnable entry points (baselines, campaign, structure, interpretability,
-                  figures, report)
-config/           cached zero-shot prior tables
-vendor/           third-party source, pinned and checksummed
+src/gb1agent/        data loading, features, predictors, evidence prior, constraint
+                     engine, round protocol, verdicts, LLM client, CLI
+scripts/             one entry point per step; every figure and every generated
+                     section of the paper is produced by a script in here
+knowledge/           evidence base (62 claims, 21 sources), structural evidence,
+                     knowledge graph, references.bib
+results/             committed on purpose: per-round prompts and raw replies, API
+                     receipts, constraint audits, oracle query log, spend ledger
+figures/paper/       every figure in the report, PDF + PNG + collision audit
+paper/               XeLaTeX sources; generated/ holds machine-written sections
+demo/index.html      the call trace rendered as a page
+tests/               unit tests (run in CI on 3.10 and 3.12)
+vendor/proteinmpnn/  pinned upstream ProteinMPNN (MIT, its own LICENSE retained)
 ```
 
-## Secrets
+## Environment
 
-No key, token or credential is stored in this repository. `llm.py` and
-`nvidia.py` read `DEEPSEEK_API_KEY` and `NVIDIA_API_KEYS` from the environment
-only, failures are reported by key *index*, and the request logs under
-`results/` are git-ignored.
+Python ≥ 3.10; numpy, pandas, scipy, scikit-learn, matplotlib, requests, pillow
+(`pyproject.toml`). Torch is needed only to recompute ProteinMPNN log-odds locally —
+the committed `config/mpnn_log_odds.json` records the model version, the pinned commit
+and the weight SHA-256, so the pipeline runs without it. The report is built with
+XeLaTeX (CJK via `fontspec`).
 
-## External resources used
+## Data and provenance
 
-| Resource | Use | Licence |
+| resource | source | how it is used |
 |---|---|---|
-| FLIP GB1 four-site DMS (Wu et al. 2016; Dallago et al. 2021) | fitness data and virtual evaluator | data CC BY 4.0, code AFL-3.0 |
-| ProteinMPNN `v_48_002` (Dauparas et al. 2022) | structure-informed zero-shot prior | MIT |
-| RCSB 2GB1 (Gronenborn et al. 1991) | backbone for the inverse-folding prior | public |
-| DeepSeek chat API | the LLM agent arms | commercial API |
-| NVIDIA hosted inference | optional structure services | commercial API |
+| GB1 four-site DMS | FLIP benchmark, commit `62cace8`, SHA-256 verified in the loader | the virtual evaluator only |
+| 1PGA / 2GB1 / 1FCC | RCSB, fetched on demand with receipts | solvent accessibility, dihedrals, interface burial, packing headroom |
+| ProteinMPNN | soluble `v_48_002`, pinned commit, weight SHA-256 recorded | inverse-folding log-odds; muted at site 40 |
+| Boltz-2 | NVIDIA hosted inference | monomer and complex folding; see appendix B of the report |
+| DeepSeek-chat | API | sets each round's rules and weights; never names a variant |
+| literature | 21 public sources | 62 structured claims with provenance and confidence |
 
-Every number in the report comes from a run recorded under
-`results/`.
+About 6.6 % of the dataset's variants are imputed rather than measured; the report states
+this and every other limitation.
 
-## Licence
+## Citation
 
-MIT (see `LICENSE`).
+See [`CITATION.cff`](CITATION.cff).
+
+## License
+
+MIT, see [`LICENSE`](LICENSE). Vendored ProteinMPNN keeps its own licence in
+`vendor/proteinmpnn/LICENSE`. The FLIP dataset and the RCSB structures are governed by
+their own terms and are not redistributed here.

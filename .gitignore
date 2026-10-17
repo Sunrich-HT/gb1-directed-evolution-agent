@@ -7,6 +7,10 @@ __pycache__/
 # data and model weights are fetched by the documented commands, not committed
 data/*.zip
 data/*.csv
+# structures the scripts re-download on demand (the three reference PDBs are kept)
+data/trace_*.pdb
+# intermediate archives; the predicted structures themselves are committed
+results/structure/*.tgz
 vendor/proteinmpnn/soluble_model_weights/
 *.log
 .DS_Store

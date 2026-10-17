@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: Prior- and constraint-driven directed-evolution agent (GB1 four-site landscape)
+message: If you refer to this work, please cite the repository.
+type: software
+authors:
+  - name: Sunrich-HT
+version: 2.0.0
+license: MIT
+repository-code: https://github.com/Sunrich-HT/gb1-directed-evolution-agent
+abstract: >-
+  A controlled comparison of seven batch-selection strategies on the GB1 four-site
+  fitness landscape, testing whether an evidence prior compiled from structures and
+  published literature, plus explicit non-sequence constraints, outperforms a fitted
+  predictor and whether a language model adds anything on top of them.
+keywords:
+  - directed evolution
+  - protein fitness landscape
+  - active learning
+  - interpretability
