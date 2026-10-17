@@ -1,0 +1,2124 @@
+{
+ "seed": 302,
+ "round": 2,
+ "captured_at": "2026-10-17 21:02",
+ "steps": [
+  {
+   "tool": "http.get",
+   "call": {
+    "endpoint": "https://files.rcsb.org/download/{PDB_ID}.pdb",
+    "ids": [
+     "1PGA",
+     "1FCC"
+    ],
+    "method": "GET"
+   },
+   "result": {
+    "1pga": {
+     "url": "https://files.rcsb.org/download/1PGA.pdb",
+     "status": 200,
+     "content_type": "text/plain",
+     "bytes": 59049,
+     "sha256": "908f8dbf3bb7567f36eec4683eb8cfab5ac0c011dfee1b9c940cab7f482bc841",
+     "seconds": 0.48,
+     "saved_to": "data/trace_1pga.pdb",
+     "head": [
+      "HEADER    IMMUNOGLOBULIN BINDING PROTEIN          23-NOV-93   1PGA              ",
+      "TITLE     TWO CRYSTAL STRUCTURES OF THE B1 IMMUNOGLOBULIN-BINDING DOMAIN OF     ",
+      "TITLE    2 STREPTOCOCCAL PROTEIN G AND COMPARISON WITH NMR                      "
+     ]
+    },
+    "1fcc": {
+     "url": "https://files.rcsb.org/download/1FCC.pdb",
+     "status": 200,
+     "content_type": "text/plain",
+     "bytes": 380295,
+     "sha256": "76ea4cf44d886a499bd5e0ee2db17dc6ed1f24e82080df25aaefbed3eba81516",
+     "seconds": 0.71,
+     "saved_to": "data/trace_1fcc.pdb",
+     "head": [
+      "HEADER    COMPLEX (ANTIBODY/ANTIGEN)              17-JAN-95   1FCC              ",
+      "TITLE     CRYSTAL STRUCTURE OF THE C2 FRAGMENT OF STREPTOCOCCAL PROTEIN G IN    ",
+      "TITLE    2 COMPLEX WITH THE FC DOMAIN OF HUMAN IGG                              "
+     ]
+    }
+   },
+   "note": "1PGA 为自由态晶体结构（2.07 A），1FCC 为蛋白 G 结构域与 IgG1 Fc 的复合物。"
+  },
+  {
+   "tool": "structure.analyze",
+   "call": {
+    "function": "shrake_rupley + dihedrals",
+    "input": "data/trace_1pga.pdb (chain A)",
+    "probe_radius_A": 1.4,
+    "n_sphere_points": 256,
+    "reference": "Tien et al. 2013 theoretical maxima"
+   },
+   "result": {
+    "n_residues": 56,
+    "per_residue": [
+     {
+      "resseq": 1,
+      "aa": "M",
+      "rel_sasa": 0.535,
+      "phi": null,
+      "psi": 151.3,
+      "region": null
+     },
+     {
+      "resseq": 2,
+      "aa": "T",
+      "rel_sasa": 0.534,
+      "phi": -101.0,
+      "psi": 123.5,
+      "region": "beta"
+     },
+     {
+      "resseq": 3,
+      "aa": "Y",
+      "rel_sasa": 0.016,
+      "phi": -112.6,
+      "psi": 155.1,
+      "region": "beta"
+     },
+     {
+      "resseq": 4,
+      "aa": "K",
+      "rel_sasa": 0.276,
+      "phi": -118.4,
+      "psi": 148.5,
+      "region": "beta"
+     },
+     {
+      "resseq": 5,
+      "aa": "L",
+      "rel_sasa": 0.0,
+      "phi": -126.9,
+      "psi": 124.5,
+      "region": "beta"
+     },
+     {
+      "resseq": 6,
+      "aa": "I",
+      "rel_sasa": 0.311,
+      "phi": -104.6,
+      "psi": 116.9,
+      "region": "beta"
+     },
+     {
+      "resseq": 7,
+      "aa": "L",
+      "rel_sasa": 0.042,
+      "phi": -100.8,
+      "psi": 117.1,
+      "region": "beta"
+     },
+     {
+      "resseq": 8,
+      "aa": "N",
+      "rel_sasa": 0.353,
+      "phi": -117.6,
+      "psi": 69.5,
+      "region": "bridge"
+     },
+     {
+      "resseq": 9,
+      "aa": "G",
+      "rel_sasa": 0.046,
+      "phi": -91.8,
+      "psi": -176.6,
+      "region": "beta_low"
+     },
+     {
+      "resseq": 10,
+      "aa": "K",
+      "rel_sasa": 0.685,
+      "phi": -77.4,
+      "psi": -35.5,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 11,
+      "aa": "T",
+      "rel_sasa": 0.787,
+      "phi": -103.2,
+      "psi": -40.5,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 12,
+      "aa": "L",
+      "rel_sasa": 0.276,
+      "phi": -112.1,
+      "psi": 128.6,
+      "region": "beta"
+     },
+     {
+      "resseq": 13,
+      "aa": "K",
+      "rel_sasa": 0.532,
+      "phi": -137.7,
+      "psi": 138.1,
+      "region": "beta"
+     },
+     {
+      "resseq": 14,
+      "aa": "G",
+      "rel_sasa": 0.315,
+      "phi": 168.9,
+      "psi": -160.9,
+      "region": "outside non-glycine favoured regions"
+     },
+     {
+      "resseq": 15,
+      "aa": "E",
+      "rel_sasa": 0.514,
+      "phi": -146.3,
+      "psi": 134.8,
+      "region": "beta"
+     },
+     {
+      "resseq": 16,
+      "aa": "T",
+      "rel_sasa": 0.259,
+      "phi": -140.0,
+      "psi": 172.7,
+      "region": "beta"
+     },
+     {
+      "resseq": 17,
+      "aa": "T",
+      "rel_sasa": 0.531,
+      "phi": -134.4,
+      "psi": 164.6,
+      "region": "beta"
+     },
+     {
+      "resseq": 18,
+      "aa": "T",
+      "rel_sasa": 0.153,
+      "phi": -147.1,
+      "psi": 162.5,
+      "region": "beta"
+     },
+     {
+      "resseq": 19,
+      "aa": "E",
+      "rel_sasa": 0.598,
+      "phi": -110.1,
+      "psi": 130.4,
+      "region": "beta"
+     },
+     {
+      "resseq": 20,
+      "aa": "A",
+      "rel_sasa": 0.065,
+      "phi": -156.1,
+      "psi": 154.8,
+      "region": "beta"
+     },
+     {
+      "resseq": 21,
+      "aa": "V",
+      "rel_sasa": 0.721,
+      "phi": -60.9,
+      "psi": -38.6,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 22,
+      "aa": "D",
+      "rel_sasa": 0.342,
+      "phi": -152.9,
+      "psi": 174.0,
+      "region": "beta"
+     },
+     {
+      "resseq": 23,
+      "aa": "A",
+      "rel_sasa": 0.202,
+      "phi": -63.5,
+      "psi": -35.1,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 24,
+      "aa": "A",
+      "rel_sasa": 0.399,
+      "phi": -63.5,
+      "psi": -33.4,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 25,
+      "aa": "T",
+      "rel_sasa": 0.338,
+      "phi": -79.2,
+      "psi": -41.4,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 26,
+      "aa": "A",
+      "rel_sasa": 0.0,
+      "phi": -63.5,
+      "psi": -36.6,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 27,
+      "aa": "E",
+      "rel_sasa": 0.254,
+      "phi": -59.9,
+      "psi": -38.3,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 28,
+      "aa": "K",
+      "rel_sasa": 0.46,
+      "phi": -69.1,
+      "psi": -43.9,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 29,
+      "aa": "V",
+      "rel_sasa": 0.366,
+      "phi": -62.8,
+      "psi": -49.1,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 30,
+      "aa": "F",
+      "rel_sasa": 0.022,
+      "phi": -63.9,
+      "psi": -41.8,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 31,
+      "aa": "K",
+      "rel_sasa": 0.285,
+      "phi": -62.6,
+      "psi": -44.4,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 32,
+      "aa": "Q",
+      "rel_sasa": 0.512,
+      "phi": -63.3,
+      "psi": -42.7,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 33,
+      "aa": "Y",
+      "rel_sasa": 0.318,
+      "phi": -54.6,
+      "psi": -51.6,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 34,
+      "aa": "A",
+      "rel_sasa": 0.011,
+      "phi": -57.4,
+      "psi": -47.2,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 35,
+      "aa": "N",
+      "rel_sasa": 0.54,
+      "phi": -60.0,
+      "psi": -45.9,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 36,
+      "aa": "D",
+      "rel_sasa": 0.649,
+      "phi": -65.3,
+      "psi": -20.5,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 37,
+      "aa": "N",
+      "rel_sasa": 0.396,
+      "phi": -102.2,
+      "psi": 15.1,
+      "region": "bridge"
+     },
+     {
+      "resseq": 38,
+      "aa": "G",
+      "rel_sasa": 0.597,
+      "phi": 77.1,
+      "psi": 13.0,
+      "region": "alpha_L"
+     },
+     {
+      "resseq": 39,
+      "aa": "V",
+      "rel_sasa": 0.064,
+      "phi": -91.1,
+      "psi": 139.6,
+      "region": "beta"
+     },
+     {
+      "resseq": 40,
+      "aa": "D",
+      "rel_sasa": 0.654,
+      "phi": -151.4,
+      "psi": 90.4,
+      "region": "beta"
+     },
+     {
+      "resseq": 41,
+      "aa": "G",
+      "rel_sasa": 0.269,
+      "phi": -137.6,
+      "psi": -159.8,
+      "region": "beta_low"
+     },
+     {
+      "resseq": 42,
+      "aa": "E",
+      "rel_sasa": 0.673,
+      "phi": -93.7,
+      "psi": 141.4,
+      "region": "beta"
+     },
+     {
+      "resseq": 43,
+      "aa": "W",
+      "rel_sasa": 0.232,
+      "phi": -115.2,
+      "psi": 155.3,
+      "region": "beta"
+     },
+     {
+      "resseq": 44,
+      "aa": "T",
+      "rel_sasa": 0.462,
+      "phi": -147.4,
+      "psi": 155.7,
+      "region": "beta"
+     },
+     {
+      "resseq": 45,
+      "aa": "Y",
+      "rel_sasa": 0.304,
+      "phi": -137.3,
+      "psi": 130.7,
+      "region": "beta"
+     },
+     {
+      "resseq": 46,
+      "aa": "D",
+      "rel_sasa": 0.364,
+      "phi": -122.1,
+      "psi": 102.9,
+      "region": "beta"
+     },
+     {
+      "resseq": 47,
+      "aa": "D",
+      "rel_sasa": 0.442,
+      "phi": -61.7,
+      "psi": -33.0,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 48,
+      "aa": "A",
+      "rel_sasa": 0.713,
+      "phi": -59.2,
+      "psi": -23.5,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 49,
+      "aa": "T",
+      "rel_sasa": 0.488,
+      "phi": -127.3,
+      "psi": 3.1,
+      "region": "alpha_R"
+     },
+     {
+      "resseq": 50,
+      "aa": "K",
+      "rel_sasa": 0.226,
+      "phi": 58.3,
+      "psi": 35.5,
+      "region": "alpha_L"
+     },
+     {
+      "resseq": 51,
+      "aa": "T",
+      "rel_sasa": 0.095,
+      "phi": -112.6,
+      "psi": 137.1,
+      "region": "beta"
+     },
+     {
+      "resseq": 52,
+      "aa": "F",
+      "rel_sasa": 0.028,
+      "phi": -111.9,
+      "psi": 145.6,
+      "region": "beta"
+     },
+     {
+      "resseq": 53,
+      "aa": "T",
+      "rel_sasa": 0.21,
+      "phi": -135.8,
+      "psi": 139.7,
+      "region": "beta"
+     },
+     {
+      "resseq": 54,
+      "aa": "V",
+      "rel_sasa": 0.011,
+      "phi": -121.2,
+      "psi": 140.1,
+      "region": "beta"
+     },
+     {
+      "resseq": 55,
+      "aa": "T",
+      "rel_sasa": 0.311,
+      "phi": -137.9,
+      "psi": 126.9,
+      "region": "beta"
+     },
+     {
+      "resseq": 56,
+      "aa": "E",
+      "rel_sasa": 0.409,
+      "phi": -97.1,
+      "psi": null,
+      "region": null
+     }
+    ],
+    "mutable_sites": {
+     "39": {
+      "wild_type": "V",
+      "rel_sasa": 0.064,
+      "burial": "buried",
+      "phi": -91.1,
+      "psi": 139.6,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+       "34": 3.02,
+       "37": 3.34,
+       "56": 3.53,
+       "54": 3.81,
+       "35": 4.0,
+       "12": 4.12,
+       "41": 4.18,
+       "7": 4.38,
+       "9": 4.76
+      },
+      "interface": {
+       "mapped_resseq": 39,
+       "mapped_aa": "V",
+       "min_distance_to_fc": 3.28,
+       "buried_surface_on_binding_A2": 1.7,
+       "at_interface": false
+      },
+      "wt_volume": 140.0,
+      "packing_headroom": {
+       "virtual_cbeta_nearest": [
+        {
+         "distance": 3.51,
+         "resseq": 34,
+         "atom": "O"
+        },
+        {
+         "distance": 4.05,
+         "resseq": 34,
+         "atom": "CB"
+        },
+        {
+         "distance": 4.1,
+         "resseq": 34,
+         "atom": "C"
+        },
+        {
+         "distance": 4.18,
+         "resseq": 34,
+         "atom": "CA"
+        }
+       ],
+       "free_radius": 3.51
+      }
+     },
+     "40": {
+      "wild_type": "D",
+      "rel_sasa": 0.654,
+      "burial": "exposed",
+      "phi": -151.4,
+      "psi": 90.4,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+       "56": 2.9,
+       "38": 4.01,
+       "42": 4.75,
+       "54": 4.78,
+       "55": 4.9
+      },
+      "interface": {
+       "mapped_resseq": 40,
+       "mapped_aa": "D",
+       "min_distance_to_fc": 3.37,
+       "buried_surface_on_binding_A2": 41.9,
+       "at_interface": true
+      },
+      "wt_volume": 111.1,
+      "packing_headroom": {
+       "virtual_cbeta_nearest": [
+        {
+         "distance": 4.13,
+         "resseq": 56,
+         "atom": "OE2"
+        },
+        {
+         "distance": 4.99,
+         "resseq": 38,
+         "atom": "O"
+        },
+        {
+         "distance": 5.18,
+         "resseq": 56,
+         "atom": "CD"
+        },
+        {
+         "distance": 5.35,
+         "resseq": 56,
+         "atom": "CG"
+        }
+       ],
+       "free_radius": 4.13
+      }
+     },
+     "41": {
+      "wild_type": "G",
+      "rel_sasa": 0.269,
+      "burial": "partially exposed",
+      "phi": -137.6,
+      "psi": -159.8,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta_low",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+       "55": 3.07,
+       "43": 3.66,
+       "54": 3.67,
+       "56": 4.05,
+       "39": 4.18
+      },
+      "interface": {
+       "mapped_resseq": 41,
+       "mapped_aa": "G",
+       "min_distance_to_fc": 3.59,
+       "buried_surface_on_binding_A2": 7.2,
+       "at_interface": false
+      },
+      "wt_volume": 60.1,
+      "packing_headroom": {
+       "virtual_cbeta_nearest": [
+        {
+         "distance": 2.11,
+         "resseq": 55,
+         "atom": "O"
+        },
+        {
+         "distance": 2.48,
+         "resseq": 55,
+         "atom": "C"
+        },
+        {
+         "distance": 2.98,
+         "resseq": 56,
+         "atom": "N"
+        },
+        {
+         "distance": 3.12,
+         "resseq": 55,
+         "atom": "N"
+        }
+       ],
+       "free_radius": 2.11
+      }
+     },
+     "54": {
+      "wild_type": "V",
+      "rel_sasa": 0.011,
+      "burial": "buried",
+      "phi": -121.2,
+      "psi": 140.1,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+       "8": 2.83,
+       "6": 2.89,
+       "42": 3.09,
+       "41": 3.67,
+       "43": 3.68,
+       "7": 3.79,
+       "39": 3.81,
+       "5": 4.22,
+       "56": 4.39,
+       "52": 4.43,
+       "9": 4.56,
+       "40": 4.78,
+       "34": 4.84
+      },
+      "interface": {
+       "mapped_resseq": 54,
+       "mapped_aa": "V",
+       "min_distance_to_fc": 4.62,
+       "buried_surface_on_binding_A2": 0.5,
+       "at_interface": false
+      },
+      "wt_volume": 140.0,
+      "packing_headroom": {
+       "virtual_cbeta_nearest": [
+        {
+         "distance": 3.69,
+         "resseq": 43,
+         "atom": "CE2"
+        },
+        {
+         "distance": 3.82,
+         "resseq": 43,
+         "atom": "CZ2"
+        },
+        {
+         "distance": 3.93,
+         "resseq": 43,
+         "atom": "CD2"
+        },
+        {
+         "distance": 4.07,
+         "resseq": 42,
+         "atom": "O"
+        }
+       ],
+       "free_radius": 3.69
+      }
+     }
+    },
+    "fc_contact_residues": [
+     {
+      "b1_resseq": 23,
+      "aa": "A",
+      "distance": 3.91,
+      "buried_surface_A2": 10.4
+     },
+     {
+      "b1_resseq": 24,
+      "aa": "A",
+      "distance": 3.41,
+      "buried_surface_A2": 42.0
+     },
+     {
+      "b1_resseq": 25,
+      "aa": "T",
+      "distance": 4.37,
+      "buried_surface_A2": 25.6
+     },
+     {
+      "b1_resseq": 27,
+      "aa": "E",
+      "distance": 2.49,
+      "buried_surface_A2": 65.5
+     },
+     {
+      "b1_resseq": 28,
+      "aa": "K",
+      "distance": 2.73,
+      "buried_surface_A2": 138.8
+     },
+     {
+      "b1_resseq": 31,
+      "aa": "K",
+      "distance": 3.06,
+      "buried_surface_A2": 73.3
+     },
+     {
+      "b1_resseq": 32,
+      "aa": "Q",
+      "distance": 3.27,
+      "buried_surface_A2": 55.5
+     },
+     {
+      "b1_resseq": 34,
+      "aa": "A",
+      "distance": 3.13,
+      "buried_surface_A2": 1.4
+     },
+     {
+      "b1_resseq": 35,
+      "aa": "N",
+      "distance": 2.44,
+      "buried_surface_A2": 75.5
+     },
+     {
+      "b1_resseq": 39,
+      "aa": "V",
+      "distance": 3.28,
+      "buried_surface_A2": 1.7
+     },
+     {
+      "b1_resseq": 40,
+      "aa": "D",
+      "distance": 3.37,
+      "buried_surface_A2": 41.9
+     },
+     {
+      "b1_resseq": 41,
+      "aa": "G",
+      "distance": 3.59,
+      "buried_surface_A2": 7.2
+     },
+     {
+      "b1_resseq": 42,
+      "aa": "E",
+      "distance": 2.68,
+      "buried_surface_A2": 39.2
+     },
+     {
+      "b1_resseq": 43,
+      "aa": "W",
+      "distance": 2.81,
+      "buried_surface_A2": 60.3
+     },
+     {
+      "b1_resseq": 44,
+      "aa": "T",
+      "distance": 3.59,
+      "buried_surface_A2": 12.6
+     },
+     {
+      "b1_resseq": 45,
+      "aa": "Y",
+      "distance": 3.69,
+      "buried_surface_A2": 25.6
+     }
+    ]
+   },
+   "note": "全部 56 个残基都算了可及度与主链二面角；下面的判断只用到其中四个可变位点与 16 个 Fc 接触残基。"
+  },
+  {
+   "tool": "inverse_folding.load",
+   "call": {
+    "file": "config/mpnn_log_odds.json",
+    "model": "ProteinMPNN soluble v_48_002",
+    "structure": "RCSB 2GB1 chain A (56 aa NMR structure of the GB1 domain)",
+    "weights_sha256": "0877f840978fe770be6fcec025784d8f50c438571db3260c05e41aa207a7c448",
+    "backend": "local, pinned commit 8907e6671bfbfc92303b5f79c4b5e6ce47cdef57"
+   },
+   "result": {
+    "convention": "unconditional inverse-folding log-odds, log p(mut|backbone) - log p(wt|backbone), per site",
+    "positions": [
+     39,
+     40,
+     41,
+     54
+    ],
+    "wild_type": "VDGV",
+    "log_odds_by_site": {
+     "39": {
+      "A": -3.56,
+      "C": -3.11,
+      "D": -4.48,
+      "E": -4.76,
+      "F": -4.67,
+      "G": -4.85,
+      "H": -4.68,
+      "I": -1.39,
+      "K": -4.55,
+      "L": -3.85,
+      "M": -4.73,
+      "N": -4.12,
+      "P": -5.09,
+      "Q": -5.0,
+      "R": -4.79,
+      "S": -4.27,
+      "T": -3.27,
+      "V": 0.0,
+      "W": -4.85,
+      "Y": -4.59
+     },
+     "40": {
+      "A": -1.25,
+      "C": -1.75,
+      "D": 0.0,
+      "E": 0.98,
+      "F": -1.35,
+      "G": -1.53,
+      "H": -1.14,
+      "I": 0.85,
+      "K": -0.23,
+      "L": 1.19,
+      "M": -0.59,
+      "N": 0.18,
+      "P": -2.31,
+      "Q": -0.14,
+      "R": -0.55,
+      "S": -0.02,
+      "T": 0.84,
+      "V": 0.33,
+      "W": -2.18,
+      "Y": -1.11
+     },
+     "41": {
+      "A": -1.4,
+      "C": -3.85,
+      "D": -1.25,
+      "E": -1.46,
+      "F": -3.84,
+      "G": 0.0,
+      "H": -3.0,
+      "I": -4.13,
+      "K": -1.02,
+      "L": -3.78,
+      "M": -3.9,
+      "N": -1.21,
+      "P": -4.31,
+      "Q": -2.48,
+      "R": -1.95,
+      "S": -1.4,
+      "T": -3.52,
+      "V": -3.95,
+      "W": -4.17,
+      "Y": -3.71
+     },
+     "54": {
+      "A": -0.23,
+      "C": -1.46,
+      "D": -3.7,
+      "E": -3.55,
+      "F": -3.41,
+      "G": -2.63,
+      "H": -3.84,
+      "I": -0.89,
+      "K": -2.78,
+      "L": -1.99,
+      "M": -2.82,
+      "N": -3.28,
+      "P": -4.04,
+      "Q": -3.67,
+      "R": -2.95,
+      "S": -2.22,
+      "T": -1.08,
+      "V": 0.0,
+      "W": -3.49,
+      "Y": -3.34
+     }
+    }
+   },
+   "note": "这是本轮唯一一个被证据否决的分量：40 位的零样本分数按 EV053 被静音。"
+  },
+  {
+   "tool": "prior.score",
+   "call": {
+    "function": "EvidencePrior.score_variants",
+    "n_variants": 149361,
+    "components": "see evidence.py"
+   },
+   "result": {
+    "attribution_global_optimum": {
+     "mpnn": 2.427,
+     "packing_headroom": 1.305,
+     "burial_charge": 0.618,
+     "interface_bonus": 1.625,
+     "pair_volume_compensation": 0.827,
+     "literature": 2.771,
+     "total": 9.573
+    },
+    "attribution_wild_type": {
+     "mpnn": 7.389,
+     "packing_headroom": 2.012,
+     "burial_charge": 0.618,
+     "interface_bonus": -0.52,
+     "pair_volume_compensation": 0.284,
+     "literature": -0.563,
+     "total": 9.22
+    },
+    "rank_of_global_optimum": 911,
+    "zero_label_evaluation": {
+     "spearman_all": 0.30566462674005423,
+     "spearman_hd3plus": 0.29468723799843066,
+     "top5pct_precision": 0.27035350830208893,
+     "best_in_top96": 6.12380479492,
+     "enrichment_top1pct": 17.71556848626926,
+     "recall_top100_in_prior_top1pct": 0.35
+    },
+    "measured_single_mutant_upper_bound": {
+     "spearman_all": 0.30549272447677867,
+     "spearman_hd3plus": 0.29449951987266976,
+     "top5pct_precision": 0.2963310123192287,
+     "best_in_top96": 5.77203220934,
+     "enrichment_top1pct": 63.56762809778968,
+     "recall_top100_in_prior_top1pct": 0.24
+    }
+   },
+   "note": "先验在不使用任何多突变标签的情况下，把全局最优排到第 911 名。"
+  },
+  {
+   "tool": "predictor.fit",
+   "call": {
+    "function": "select_model + FitnessModel.fit",
+    "n_train": 288,
+    "cv_folds": 3,
+    "candidates": [
+     "ridge[additive80](alpha=1.0)",
+     "ridge[pairwise2480](alpha=0.1)",
+     "ridge[pairwise2480](alpha=1.0)",
+     "ridge[pairwise2480](alpha=10.0)",
+     "rf[additive80](min_samples_leaf=1)",
+     "fcnn[pairwise2480]"
+    ]
+   },
+   "result": {
+    "selected": "ridge[pairwise2480] {'alpha': 10.0}",
+    "cv_table": [
+     {
+      "order": 0,
+      "spec": "ridge[additive80](alpha=1.0)",
+      "cv_spearman": 0.611181498262691,
+      "cv_rmse": 0.492245576054457
+     },
+     {
+      "order": 1,
+      "spec": "ridge[pairwise2480](alpha=0.1)",
+      "cv_spearman": 0.5471598693141352,
+      "cv_rmse": 0.5025581927844377
+     },
+     {
+      "order": 2,
+      "spec": "ridge[pairwise2480](alpha=1.0)",
+      "cv_spearman": 0.5687519708446245,
+      "cv_rmse": 0.48764433457052986
+     },
+     {
+      "order": 3,
+      "spec": "ridge[pairwise2480](alpha=10.0)",
+      "cv_spearman": 0.611886005554965,
+      "cv_rmse": 0.47981250288104027
+     },
+     {
+      "order": 4,
+      "spec": "rf[additive80](min_samples_leaf=1)",
+      "cv_spearman": 0.5718968008560403,
+      "cv_rmse": 0.4893449826673404
+     },
+     {
+      "order": 5,
+      "spec": "fcnn[pairwise2480]",
+      "cv_spearman": 0.5416697496839915,
+      "cv_rmse": 0.4798896006564799
+     }
+    ],
+    "prediction_for_global_optimum": 0.87,
+    "model_rank_of_global_optimum": 10,
+    "n_pool": 139073
+   },
+   "note": "预测器只用 288 条标签；它对全局最优的预测值是 0.870，而实测是 8.762。"
+  },
+  {
+   "tool": "llm.set_rules",
+   "call": {
+    "provider": "DeepSeek",
+    "model": "deepseek-chat",
+    "response_format": "json_object",
+    "payload": {
+     "round": 2,
+     "task": "Set the rules for this round: hypotheses, constraint updates, and the prior/model weights. The program selects the batch under them.",
+     "evidence_prior": {
+      "components": [
+       {
+        "name": "mpnn",
+        "weight": 1.0,
+        "provenance": "ProteinMPNN ProteinMPNN soluble v_48_002 log-odds on RCSB 2GB1 chain A (56 aa NMR structure of the GB1 domain); muted at site (40,) because zero-shot scores mis-rank that position"
+       },
+       {
+        "name": "packing_headroom",
+        "weight": 1.0,
+        "provenance": "penalty for added side-chain volume, scaled by the clash severity of the reconstructed C-beta in 1PGA (per-site severity {39: 0.0, 40: 0.0, 41: 0.93, 54: 0.0})"
+       },
+       {
+        "name": "burial_charge",
+        "weight": 0.6,
+        "provenance": "desolvation penalty for a formal charge, scaled by relative SASA in 1PGA"
+       },
+       {
+        "name": "interface_bonus",
+        "weight": 0.8,
+        "provenance": "bonus for large/aromatic side chains at positions that bury surface against IgG-Fc in 1FCC (buried area per site: {39: 1.7, 40: 41.9, 41: 7.2, 54: 0.5})"
+       },
+       {
+        "name": "pair_volume_compensation",
+        "weight": 0.8,
+        "provenance": "volume transfer between sites 41 and 54: the strongest published positive epistasis (G41L/V54G) works by moving side-chain volume from the buried core to the loop, and V54A flips site-41 substitutions from deleterious to beneficial"
+       },
+       {
+        "name": "literature",
+        "weight": 1.0,
+        "provenance": "per-substitution claims from the curated evidence base, weighted by confidence; rows derived from the oracle DMS excluded"
+       }
+      ],
+      "top_substitutions_per_site": {
+       "39": [
+        "V(+3.52)",
+        "I(+2.41)",
+        "C(+1.04)",
+        "T(+0.91)",
+        "A(+0.68)",
+        "L(+0.45)"
+       ],
+       "40": [
+        "W(+1.62)",
+        "F(+1.13)",
+        "I(+1.13)",
+        "L(+1.13)",
+        "M(+1.13)",
+        "Y(+1.13)"
+       ],
+       "41": [
+        "G(+3.83)",
+        "L(+2.93)",
+        "A(+2.06)",
+        "S(+2.06)",
+        "D(+1.62)",
+        "N(+1.58)"
+       ],
+       "54": [
+        "A(+5.25)",
+        "G(+3.25)",
+        "V(+2.11)",
+        "I(+1.37)",
+        "T(+1.22)",
+        "C(+0.89)"
+       ]
+      }
+     },
+     "current_constraints": [
+      {
+       "id": "C1_no_remeasure",
+       "kind": "filter",
+       "description": "a variant whose label is already known is never selected again",
+       "params": {},
+       "evidence": "campaign protocol",
+       "active": true
+      },
+      {
+       "id": "C2_volume_window",
+       "kind": "filter",
+       "description": "where the backbone leaves no room, added side-chain volume is capped",
+       "params": {
+        "sites": [
+         41
+        ],
+        "max_added_volume": 90.0
+       },
+       "evidence": "reconstructed C-beta within 3.0 A of a neighbouring heavy atom at sites [41] (1PGA); a cap, not a ban, because the published G41L/V54G pair shows the strain can be compensated elsewhere",
+       "active": true
+      },
+      {
+       "id": "C3_buried_charge",
+       "kind": "penalty",
+       "description": "burying a formal charge costs score",
+       "params": {
+        "sites": [
+         39,
+         54
+        ],
+        "weight": 0.8
+       },
+       "evidence": "buried sites [39, 54]; desolvation penalty for charged side chains",
+       "active": true
+      },
+      {
+       "id": "C4_charge_pair_balance",
+       "kind": "penalty",
+       "description": "two new buried charges in one variant are penalised together",
+       "params": {
+        "sites": [
+         39,
+         54
+        ],
+        "weight": 0.5
+       },
+       "evidence": "desolvation cost is super-additive when several charges are buried",
+       "active": true
+      },
+      {
+       "id": "C5_batch_diversity",
+       "kind": "quota",
+       "description": "each site shows at least k distinct amino acids in the batch",
+       "params": {
+        "min_distinct_aa_per_site": 6,
+        "max_fraction_same_aa_per_site": 0.5
+       },
+       "evidence": "exploration requirement: a batch that collapses onto one motif cannot inform the next model",
+       "active": true
+      },
+      {
+       "id": "C6_exploration_quota",
+       "kind": "quota",
+       "description": "a fixed share of the batch comes from outside the top of the ranking",
+       "params": {
+        "fraction": 0.3
+       },
+       "evidence": "epistatic landscape: the ranking is trained on few labels and is unreliable in the tail",
+       "active": true
+      },
+      {
+       "id": "C7_interface_contact",
+       "kind": "penalty",
+       "description": "candidates that remove every large side chain from the Fc contact positions are penalised",
+       "params": {
+        "sites": [
+         40
+        ],
+        "weight": 0.2
+       },
+       "evidence": "sites burying >= 10 A^2 against IgG-Fc in 1FCC: [40] (off by default; the agent may switch it on)",
+       "active": true
+      },
+      {
+       "id": "C8_refuted_substitutions",
+       "kind": "penalty",
+       "description": "substitutions whose registered hypothesis was refuted lose score",
+       "params": {
+        "substitutions": {
+         "V54T": 1.0,
+         "D40W": 1.0,
+         "V39A": 1.0,
+         "V39I": 0.5
+        },
+        "weight": 1.0
+       },
+       "evidence": "set from the program's verdict on the previous round's hypotheses",
+       "active": true
+      }
+     ],
+     "labelled_data_summary": {
+      "n_known": 288,
+      "best_known_fitness": 4.035,
+      "wild_type_fitness": 1.0,
+      "top_known": [
+       {
+        "variant": "FVAA",
+        "fitness": 4.035
+       },
+       {
+        "variant": "FYAC",
+        "fitness": 3.32
+       },
+       {
+        "variant": "FWAC",
+        "fitness": 3.137
+       },
+       {
+        "variant": "IVAC",
+        "fitness": 2.906
+       },
+       {
+        "variant": "FVAG",
+        "fitness": 2.606
+       },
+       {
+        "variant": "VVAC",
+        "fitness": 2.562
+       },
+       {
+        "variant": "LVAC",
+        "fitness": 2.341
+       },
+       {
+        "variant": "FFAC",
+        "fitness": 2.298
+       }
+      ]
+     },
+     "per_site_statistics_of_labelled_data": {
+      "39": {
+       "F": {
+        "n": 42,
+        "mean": 0.693,
+        "best": 4.035
+       },
+       "L": {
+        "n": 9,
+        "mean": 0.545,
+        "best": 2.341
+       },
+       "I": {
+        "n": 17,
+        "mean": 0.309,
+        "best": 2.906
+       },
+       "V": {
+        "n": 26,
+        "mean": 0.266,
+        "best": 2.562
+       },
+       "M": {
+        "n": 7,
+        "mean": 0.244,
+        "best": 1.695
+       },
+       "A": {
+        "n": 20,
+        "mean": 0.172,
+        "best": 2.227
+       },
+       "W": {
+        "n": 8,
+        "mean": 0.135,
+        "best": 0.616
+       },
+       "C": {
+        "n": 11,
+        "mean": 0.09,
+        "best": 0.888
+       }
+      },
+      "40": {
+       "V": {
+        "n": 34,
+        "mean": 0.632,
+        "best": 4.035
+       },
+       "Y": {
+        "n": 8,
+        "mean": 0.421,
+        "best": 3.32
+       },
+       "W": {
+        "n": 36,
+        "mean": 0.326,
+        "best": 3.137
+       },
+       "H": {
+        "n": 19,
+        "mean": 0.295,
+        "best": 1.828
+       },
+       "F": {
+        "n": 11,
+        "mean": 0.227,
+        "best": 2.298
+       },
+       "N": {
+        "n": 10,
+        "mean": 0.175,
+        "best": 1.129
+       },
+       "I": {
+        "n": 13,
+        "mean": 0.134,
+        "best": 1.396
+       },
+       "R": {
+        "n": 10,
+        "mean": 0.095,
+        "best": 0.923
+       }
+      },
+      "41": {
+       "A": {
+        "n": 61,
+        "mean": 0.698,
+        "best": 4.035
+       },
+       "G": {
+        "n": 11,
+        "mean": 0.461,
+        "best": 2.08
+       },
+       "F": {
+        "n": 11,
+        "mean": 0.215,
+        "best": 2.227
+       },
+       "L": {
+        "n": 16,
+        "mean": 0.17,
+        "best": 1.483
+       },
+       "C": {
+        "n": 11,
+        "mean": 0.089,
+        "best": 0.458
+       },
+       "S": {
+        "n": 16,
+        "mean": 0.033,
+        "best": 0.392
+       },
+       "M": {
+        "n": 8,
+        "mean": 0.012,
+        "best": 0.034
+       },
+       "E": {
+        "n": 10,
+        "mean": 0.007,
+        "best": 0.046
+       }
+      },
+      "54": {
+       "C": {
+        "n": 39,
+        "mean": 0.79,
+        "best": 3.32
+       },
+       "A": {
+        "n": 14,
+        "mean": 0.332,
+        "best": 4.035
+       },
+       "T": {
+        "n": 40,
+        "mean": 0.319,
+        "best": 2.227
+       },
+       "G": {
+        "n": 9,
+        "mean": 0.305,
+        "best": 2.606
+       },
+       "S": {
+        "n": 10,
+        "mean": 0.137,
+        "best": 1.201
+       },
+       "M": {
+        "n": 11,
+        "mean": 0.085,
+        "best": 0.419
+       },
+       "L": {
+        "n": 12,
+        "mean": 0.044,
+        "best": 0.274
+       },
+       "V": {
+        "n": 10,
+        "mean": 0.028,
+        "best": 0.233
+       }
+      }
+     },
+     "previous_round_feedback": {
+      "round": 1,
+      "selected_mean": 0.49061365804953955,
+      "selected_best": 4.03463617661,
+      "incumbent_now": 4.03463617661,
+      "top_results": [
+       {
+        "variant": "FVAA",
+        "predicted": 0.333,
+        "measured": 4.035
+       },
+       {
+        "variant": "FYAC",
+        "predicted": 0.382,
+        "measured": 3.32
+       },
+       {
+        "variant": "FWAC",
+        "predicted": 0.348,
+        "measured": 3.137
+       },
+       {
+        "variant": "IVAC",
+        "predicted": 0.298,
+        "measured": 2.906
+       },
+       {
+        "variant": "FVAG",
+        "predicted": 0.348,
+        "measured": 2.606
+       },
+       {
+        "variant": "VVAC",
+        "predicted": 0.312,
+        "measured": 2.562
+       },
+       {
+        "variant": "LVAC",
+        "predicted": 0.326,
+        "measured": 2.341
+       },
+       {
+        "variant": "FFAC",
+        "predicted": 0.362,
+        "measured": 2.298
+       },
+       {
+        "variant": "LWGT",
+        "predicted": 0.265,
+        "measured": 2.08
+       },
+       {
+        "variant": "FHAC",
+        "predicted": 0.349,
+        "measured": 1.828
+       }
+      ],
+      "hypothesis_verdicts": [
+       {
+        "statement": "At site 54, threonine is enriched among high-fitness variants relative to alanine and glycine.",
+        "verdict": "refuted",
+        "evidence": {
+         "n_with_substitution": 30,
+         "mean_with": 0.2844,
+         "mean_without": 0.5844,
+         "delta": -0.3
+        }
+       },
+       {
+        "statement": "At site 41, phenylalanine and leucine raise fitness more than glycine when site 54 is not glycine.",
+        "verdict": "undetermined",
+        "evidence": {
+         "n_with_substitution": 0,
+         "reason": "insufficient contrast in batch"
+        }
+       },
+       {
+        "statement": "At site 40, tryptophan remains the top substitution, exceeding histidine and valine in mean fitness.",
+        "verdict": "refuted",
+        "evidence": {
+         "n_with_substitution": 22,
+         "mean_with": 0.4259,
+         "mean_without": 0.5098,
+         "delta": -0.0839
+        }
+       },
+       {
+        "statement": "At site 39, alanine and valine outperform isoleucine and phenylalanine in mean fitness.",
+        "verdict": "refuted",
+        "evidence": {
+         "n_with_substitution": 7,
+         "mean_with": 0.0533,
+         "mean_without": 0.525,
+         "delta": -0.4718
+        }
+       }
+      ]
+     },
+     "previous_round_constraint_audit": {
+      "n_pool": 139169,
+      "n_legal_after_filters": 56443,
+      "filters_removed": {
+       "C1_no_remeasure": 0,
+       "C2_volume_window": 82726
+      },
+      "penalty_mean_contribution": {
+       "C3_buried_charge": 0.3021,
+       "C4_charge_pair_balance": 0.017,
+       "C7_interface_contact": 0.0764
+      },
+      "exploration_quota": 29,
+      "diversity_blocks": 1,
+      "distinct_aa_per_site": [
+       19,
+       19,
+       8,
+       18
+      ],
+      "diversity_satisfied": true,
+      "changed_vs_unconstrained": 85,
+      "active_constraints": [
+       "C1_no_remeasure",
+       "C2_volume_window",
+       "C3_buried_charge",
+       "C4_charge_pair_balance",
+       "C5_batch_diversity",
+       "C6_exploration_quota",
+       "C7_interface_contact",
+       "C8_refuted_substitutions"
+      ]
+     },
+     "required_output": {
+      "hypotheses": "3 to 4 items of {statement, site, substitution, direction}; each statement at most 25 words and testable by the next batch",
+      "constraint_updates": "list of {id, params, active, reason}; only ids listed in current_constraints; reason at most 25 words; [] is allowed",
+      "weights": "{prior: float in [0,2], model: float in [0,2]} for this round's score",
+      "rationale": "at most 60 words on why these rules follow from the evidence so far"
+     }
+    }
+   },
+   "result": {
+    "raw_response": "{\"hypotheses\":[{\"statement\":\"At site 39, phenylalanine raises fitness more than valine when site 41 is alanine and site 54 is cysteine.\",\"site\":39,\"substitution\":\"F\",\"direction\":\"greater_than_V\"},{\"statement\":\"At site 54, cysteine outperforms alanine in mean fitness across variants sharing site-41 alanine.\",\"site\":54,\"substitution\":\"C\",\"direction\":\"greater_than_A\"},{\"statement\":\"At site 41, alanine exceeds glycine in mean fitness when site 54 is cysteine.\",\"site\":41,\"substitution\":\"A\",\"direction\":\"greater_than_G\"},{\"statement\":\"At site 40, valine and tyrosine exceed tryptophan in mean fitness among variants with site-41 alanine.\",\"site\":40,\"substitution\":\"V\",\"direction\":\"greater_than_W\"}],\"constraint_updates\":[{\"id\":\"C2_volume_window\",\"params\":{\"sites\":[41],\"max_added_volume\":90.0},\"active\":true,\"reason\":\"G41L/V54G compensation and LWGT success suggest the 60 A cap over-pruned useful site-41 bulk\"},{\"id\":\"C7_interface_contact\",\"params\":{\"sites\":[40],\"weight\":0.2},\"active\":true,\"reason\":\"W at 40 was refuted as top; lower weight so Fc-contact bonus stops inflating tryptophan\"},{\"id\":\"C8_refuted_substitutions\",\"params\":{\"substitutions\":{\"V54T\":1.0,\"D40W\":1.0,\"V39A\":1.0,\"V39I\":0.5},\"weight\":1.0},\"active\":true,\"reason\":\"V39A refuted; add mild penalty on V39I given site-39 isoleucine underperformed alanine/valine\"}],\"weights\":{\"prior\":1.0,\"model\":1.4},\"rationale\":\"Round 1 showed the model badly under-ranked the true top variants (FVAA predicted 0.33, measured 4.03), so raise model weight and loosen the site-41 volume cap that removed 83k candidates. Refuted W40 and V54T claims justify lowering the interface bonus and keeping refutation penalties.\"}",
+    "ledger": {
+     "tag": "prior_constraint_s302_r2",
+     "prompt_tokens": 3484,
+     "completion_tokens": 475,
+     "cost_usd": 0.0014631800000000001,
+     "ts": 1792228343.8528204
+    }
+   },
+   "note": "模型看到的就是左边这些字段；它只能回规则与权重，不能点名变体。"
+  },
+  {
+   "tool": "constraints.apply",
+   "call": {
+    "function": "ConstraintSet.select",
+    "batch_size": 96,
+    "weights": {
+     "prior": 1.0,
+     "model": 1.4
+    },
+    "rule_set_A": "第 1 轮的规则（体积上限 60 A^3，界面惩罚 0.5，无 C8）",
+    "rule_set_B": "第 2 轮的规则（体积上限 90 A^3，界面惩罚 0.2，C8 降权四个被推翻的取代）"
+   },
+   "result": {
+    "audit_A": {
+     "n_pool": 139073,
+     "n_legal_after_filters": 56347,
+     "filters_removed": {
+      "C1_no_remeasure": 0,
+      "C2_volume_window": 82726
+     },
+     "penalty_mean_contribution": {
+      "C3_buried_charge": 0.3023,
+      "C4_charge_pair_balance": 0.017,
+      "C7_interface_contact": 0.0764
+     },
+     "exploration_quota": 24,
+     "diversity_blocks": 103,
+     "distinct_aa_per_site": [
+      16,
+      15,
+      8,
+      15
+     ],
+     "diversity_satisfied": true,
+     "changed_vs_unconstrained": 39,
+     "active_constraints": [
+      "C1_no_remeasure",
+      "C2_volume_window",
+      "C3_buried_charge",
+      "C4_charge_pair_balance",
+      "C5_batch_diversity",
+      "C6_exploration_quota",
+      "C7_interface_contact",
+      "C8_refuted_substitutions"
+     ]
+    },
+    "audit_B": {
+     "n_pool": 139073,
+     "n_legal_after_filters": 76845,
+     "filters_removed": {
+      "C1_no_remeasure": 0,
+      "C2_volume_window": 62228
+     },
+     "penalty_mean_contribution": {
+      "C3_buried_charge": 0.3023,
+      "C4_charge_pair_balance": 0.017,
+      "C7_interface_contact": 0.0306,
+      "C8_refuted_substitutions": 0.16
+     },
+     "exploration_quota": 24,
+     "diversity_blocks": 118,
+     "distinct_aa_per_site": [
+      17,
+      20,
+      10,
+      12
+     ],
+     "diversity_satisfied": true,
+     "changed_vs_unconstrained": 39,
+     "active_constraints": [
+      "C1_no_remeasure",
+      "C2_volume_window",
+      "C3_buried_charge",
+      "C4_charge_pair_balance",
+      "C5_batch_diversity",
+      "C6_exploration_quota",
+      "C7_interface_contact",
+      "C8_refuted_substitutions"
+     ]
+    },
+    "n_entered": 28,
+    "n_left": 28,
+    "entered": [
+     {
+      "variant": "FSAA",
+      "refuted": []
+     },
+     {
+      "variant": "MHAC",
+      "refuted": []
+     },
+     {
+      "variant": "VHGC",
+      "refuted": []
+     },
+     {
+      "variant": "FHGA",
+      "refuted": []
+     },
+     {
+      "variant": "NYST",
+      "refuted": [
+       "V54T"
+      ]
+     },
+     {
+      "variant": "SMTA",
+      "refuted": []
+     },
+     {
+      "variant": "ASSG",
+      "refuted": [
+       "V39A"
+      ]
+     },
+     {
+      "variant": "RGQY",
+      "refuted": []
+     },
+     {
+      "variant": "HGTP",
+      "refuted": []
+     },
+     {
+      "variant": "GVDN",
+      "refuted": []
+     },
+     {
+      "variant": "NYVN",
+      "refuted": []
+     },
+     {
+      "variant": "VPVQ",
+      "refuted": []
+     },
+     {
+      "variant": "LWNG",
+      "refuted": [
+       "D40W"
+      ]
+     },
+     {
+      "variant": "YSDG",
+      "refuted": []
+     },
+     {
+      "variant": "FTQE",
+      "refuted": []
+     },
+     {
+      "variant": "VRDR",
+      "refuted": []
+     },
+     {
+      "variant": "IFPY",
+      "refuted": [
+       "V39I"
+      ]
+     },
+     {
+      "variant": "PATW",
+      "refuted": []
+     },
+     {
+      "variant": "VYTG",
+      "refuted": []
+     },
+     {
+      "variant": "IWPY",
+      "refuted": [
+       "V39I",
+       "D40W"
+      ]
+     },
+     {
+      "variant": "YYAY",
+      "refuted": []
+     },
+     {
+      "variant": "MSGN",
+      "refuted": []
+     },
+     {
+      "variant": "QWAM",
+      "refuted": [
+       "D40W"
+      ]
+     },
+     {
+      "variant": "QHDT",
+      "refuted": [
+       "V54T"
+      ]
+     },
+     {
+      "variant": "SSCG",
+      "refuted": []
+     },
+     {
+      "variant": "DTAE",
+      "refuted": []
+     },
+     {
+      "variant": "YECT",
+      "refuted": [
+       "V54T"
+      ]
+     },
+     {
+      "variant": "KLDC",
+      "refuted": []
+     }
+    ],
+    "left": [
+     {
+      "variant": "IWAA",
+      "refuted": [
+       "V39I",
+       "D40W"
+      ]
+     },
+     {
+      "variant": "IRAC",
+      "refuted": [
+       "V39I"
+      ]
+     },
+     {
+      "variant": "IWGG",
+      "refuted": [
+       "V39I",
+       "D40W"
+      ]
+     },
+     {
+      "variant": "IVGT",
+      "refuted": [
+       "V39I",
+       "V54T"
+      ]
+     },
+     {
+      "variant": "NRDH",
+      "refuted": []
+     },
+     {
+      "variant": "SKNT",
+      "refuted": [
+       "V54T"
+      ]
+     },
+     {
+      "variant": "YDTL",
+      "refuted": []
+     },
+     {
+      "variant": "RCDR",
+      "refuted": []
+     },
+     {
+      "variant": "GRDK",
+      "refuted": []
+     },
+     {
+      "variant": "GHDI",
+      "refuted": []
+     },
+     {
+      "variant": "NRNM",
+      "refuted": []
+     },
+     {
+      "variant": "TRGT",
+      "refuted": [
+       "V54T"
+      ]
+     },
+     {
+      "variant": "LNDS",
+      "refuted": []
+     },
+     {
+      "variant": "YRTQ",
+      "refuted": []
+     },
+     {
+      "variant": "FFSG",
+      "refuted": []
+     },
+     {
+      "variant": "VACP",
+      "refuted": []
+     },
+     {
+      "variant": "HQTA",
+      "refuted": []
+     },
+     {
+      "variant": "NSNS",
+      "refuted": []
+     },
+     {
+      "variant": "VIAR",
+      "refuted": []
+     },
+     {
+      "variant": "ILPN",
+      "refuted": [
+       "V39I"
+      ]
+     },
+     {
+      "variant": "YWTW",
+      "refuted": [
+       "D40W"
+      ]
+     },
+     {
+      "variant": "KVGP",
+      "refuted": []
+     },
+     {
+      "variant": "QRNC",
+      "refuted": []
+     },
+     {
+      "variant": "QCAM",
+      "refuted": []
+     },
+     {
+      "variant": "SQAA",
+      "refuted": []
+     },
+     {
+      "variant": "DCCP",
+      "refuted": []
+     },
+     {
+      "variant": "YCDH",
+      "refuted": []
+     },
+     {
+      "variant": "IYTC",
+      "refuted": [
+       "V39I"
+      ]
+     }
+    ],
+    "refuted_substitutions_penalised": [
+     "V39I",
+     "V39A",
+     "D40W",
+     "V54T"
+    ],
+    "n_left_carrying_refuted": 9,
+    "n_entered_carrying_refuted": 8,
+    "global_optimum_in_A": true,
+    "global_optimum_in_B": true
+   },
+   "note": "同一个模型、同一个先验、同一个候选池，只改规则：合法候选从 56,347 条增加到 76,845 条，28 个名额换人。C8 是软惩罚不是过滤，所以带着被推翻取代的变体并没有被清出批次（换出 9 个、换进 8 个，基本持平）——真正改变名单的是放宽的体积上限与重新加权的界面惩罚。"
+  },
+  {
+   "tool": "oracle.query",
+   "call": {
+    "function": "virtual oracle = published DMS lookup",
+    "n": 96,
+    "commit_sha256": "42d194020a849099b949011db4b2bd6c1de7ac76822a4ceec919f51fe69b22dc",
+    "rule": "批次先以 SHA-256 冻结，之后才允许揭示标签"
+   },
+   "result": {
+    "batch_best": 8.76196565571,
+    "batch_mean": 1.883,
+    "hit_global_optimum": true,
+    "global_optimum_row": {
+     "variant": "FWAA",
+     "predicted": 0.931622261013682,
+     "fitness": 8.76196565571
+    },
+    "top_revealed": [
+     {
+      "variant": "FWAA",
+      "predicted": 0.931622261013682,
+      "fitness": 8.76196565571
+     },
+     {
+      "variant": "FYAA",
+      "predicted": 1.2170430718789393,
+      "fitness": 8.04515200416
+     },
+     {
+      "variant": "FFAA",
+      "predicted": 1.114411234064256,
+      "fitness": 6.92825718021
+     },
+     {
+      "variant": "FYAG",
+      "predicted": 0.982141561539986,
+      "fitness": 6.50002805229
+     },
+     {
+      "variant": "FFAG",
+      "predicted": 0.9502540781801333,
+      "fitness": 5.70387305914
+     },
+     {
+      "variant": "FHAA",
+      "predicted": 1.0271546925722366,
+      "fitness": 5.6655453892
+     }
+    ]
+   },
+   "note": "揭示后本轮最好 8.762。"
+  },
+  {
+   "tool": "hypotheses.judge",
+   "call": {
+    "function": "program verdict, not the model",
+    "n_hypotheses": 4,
+    "rule": "每条陈述与带/不带该取代的实测均值对比，方向不符即判为推翻"
+   },
+   "result": {
+    "hypotheses": [
+     {
+      "statement": "At site 39, phenylalanine raises fitness more than valine when site 41 is alanine and site 54 is cysteine.",
+      "site": 39,
+      "substitution": "F",
+      "direction": "unknown",
+      "round": 0,
+      "verdict": "undetermined",
+      "evidence": {
+       "n_with_substitution": 21,
+       "mean_with": 4.1999,
+       "mean_without": 1.2348,
+       "delta": 2.9651
+      }
+     },
+     {
+      "statement": "At site 54, cysteine outperforms alanine in mean fitness across variants sharing site-41 alanine.",
+      "site": 54,
+      "substitution": "C",
+      "direction": "unknown",
+      "round": 0,
+      "verdict": "undetermined",
+      "evidence": {
+       "n_with_substitution": 32,
+       "mean_with": 2.0108,
+       "mean_without": 1.8197,
+       "delta": 0.1911
+      }
+     },
+     {
+      "statement": "At site 41, alanine exceeds glycine in mean fitness when site 54 is cysteine.",
+      "site": 41,
+      "substitution": "A",
+      "direction": "unknown",
+      "round": 0,
+      "verdict": "undetermined",
+      "evidence": {
+       "n_with_substitution": 51,
+       "mean_with": 2.918,
+       "mean_without": 0.7108,
+       "delta": 2.2072
+      }
+     },
+     {
+      "statement": "At site 40, valine and tyrosine exceed tryptophan in mean fitness among variants with site-41 alanine.",
+      "site": 40,
+      "substitution": "V",
+      "direction": "unknown",
+      "round": 0,
+      "verdict": "undetermined",
+      "evidence": {
+       "n_with_substitution": 9,
+       "mean_with": 2.859,
+       "mean_without": 1.7825,
+       "delta": 1.0765
+      }
+     }
+    ]
+   },
+   "note": "裁决由程序做；被推翻的取代自动进入下一轮的 C8 惩罚项。"
+  },
+  {
+   "tool": "boltz2.predict",
+   "call": {
+    "endpoint": "https://health.api.nvidia.com/v1/biology/mit/boltz2/predict",
+    "method": "POST",
+    "payload": {
+     "polymers": [
+      {
+       "id": "A",
+       "molecule_type": "protein",
+       "sequence": "...FWAE..."
+      }
+     ],
+     "recycling_steps": 3,
+     "sampling_steps": 50,
+     "diffusion_samples": 1
+    }
+   },
+   "result": {
+    "n_receipts": 171,
+    "last_receipts": [
+     {
+      "service": "boltz2",
+      "key_index": 3,
+      "status": 200,
+      "seconds": 4.09,
+      "ok": true,
+      "note": ""
+     },
+     {
+      "service": "boltz2",
+      "key_index": 4,
+      "status": 200,
+      "seconds": 5.79,
+      "ok": true,
+      "note": ""
+     },
+     {
+      "service": "boltz2",
+      "key_index": 0,
+      "status": 200,
+      "seconds": 5.75,
+      "ok": true,
+      "note": ""
+     }
+    ],
+    "status_counts": {
+     "200": 146,
+     "429": 25
+    },
+    "cif_head": [
+     "data_model",
+     "_entry.id model",
+     "_struct.entry_id model",
+     "_struct.pdbx_model_details .",
+     "_struct.pdbx_structure_determination_methodology computational",
+     "_struct.title 'BioNeMo Inference Runtime Prediction'"
+    ]
+   },
+   "note": "折叠是真实调用；但它的置信度与适应度几乎无关，因此没有进入打分。"
+  }
+ ]
+}

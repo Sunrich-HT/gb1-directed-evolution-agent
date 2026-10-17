@@ -145,7 +145,7 @@ class EvidencePrior:
                 table[i, AA_INDEX[a]] = v
         self.components.append(PriorComponent(
             "mpnn", self.weights["mpnn"], _z(table),
-            f"ProteinMPNN {self.mpnn.get('model', 'soluble v_48_002')} log-odds on "
+            f"{self.mpnn.get('model', 'ProteinMPNN soluble v_48_002')} log-odds on "
             f"{self.mpnn.get('structure', '1PGA/2GB1')}; muted at site "
             f"{self.ZERO_SHOT_MUTED_SITES} because zero-shot scores mis-rank that position",
             ["EV053", "EV049", "EV057"]))
