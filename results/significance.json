@@ -1,0 +1,55 @@
+{
+  "n_seeds": 15,
+  "rounds": 3,
+  "global_optimum": 8.76196565571,
+  "comparisons": {
+    "prior_constraint_vs_greedy": {
+      "mean_difference": 0.4750053707333335,
+      "wins": 7,
+      "losses": 2,
+      "ties": 6,
+      "wilcoxon_p": 0.05078125,
+      "hits_a": 9,
+      "hits_b": 3,
+      "mcnemar_b": 6,
+      "mcnemar_c": 0,
+      "mcnemar_p": 0.03125
+    },
+    "prior_fixed_vs_greedy": {
+      "mean_difference": 0.43578772959466683,
+      "wins": 7,
+      "losses": 3,
+      "ties": 5,
+      "wilcoxon_p": 0.080078125,
+      "hits_a": 9,
+      "hits_b": 3,
+      "mcnemar_b": 6,
+      "mcnemar_c": 0,
+      "mcnemar_p": 0.03125
+    },
+    "prior_constraint_vs_prior_fixed": {
+      "mean_difference": 0.03921764113866667,
+      "wins": 2,
+      "losses": 3,
+      "ties": 10,
+      "wilcoxon_p": 1.0,
+      "hits_a": 9,
+      "hits_b": 9,
+      "mcnemar_b": 1,
+      "mcnemar_c": 1,
+      "mcnemar_p": 1.0
+    },
+    "llm_agent_vs_greedy": {
+      "mean_difference": 0.021880602358666696,
+      "wins": 1,
+      "losses": 0,
+      "ties": 14,
+      "wilcoxon_p": null,
+      "hits_a": 3,
+      "hits_b": 3,
+      "mcnemar_b": 0,
+      "mcnemar_c": 0,
+      "mcnemar_p": null
+    }
+  }
+}

@@ -20,7 +20,6 @@ and used as a picker it reproduces greedy on 14 of 15 seeds.
 
 | | |
 |---|---|
-| Report | [`paper/main.pdf`](paper/main.pdf) — 正文 6 页 + 附录 A–D |
 | Call-trace demo | [`demo/index.html`](demo/index.html) — one round's 15 tool calls, inputs and outputs, raw JSON expandable |
 | One-shot recommender | `python scripts/recommend.py --top-k 10` |
 
@@ -79,7 +78,7 @@ make recommend        # a ranked mutation proposal from the wild-type sequence
 ```
 
 `make help` lists every target. `make all` runs everything that does not need an API key
-(prior, baselines, analyses, figures, paper, demo page).
+(prior, baselines, analyses, significance tests, figures, demo page).
 
 ### Reproducing a single campaign
 
@@ -102,14 +101,13 @@ python scripts/reproduce_small.py --data data/gb1_flip.zip
 ```
 src/gb1agent/        data loading, features, predictors, evidence prior, constraint
                      engine, round protocol, verdicts, LLM client, CLI
-scripts/             one entry point per step; every figure and every generated
-                     section of the paper is produced by a script in here
+scripts/             one entry point per step; every figure and every reported
+                     number is produced by a script in here
 knowledge/           evidence base (62 claims, 21 sources), structural evidence,
                      knowledge graph, references.bib
 results/             committed on purpose: per-round prompts and raw replies, API
                      receipts, constraint audits, oracle query log, spend ledger
 figures/paper/       every figure in the report, PDF + PNG + collision audit
-paper/               XeLaTeX sources; generated/ holds machine-written sections
 demo/index.html      the call trace rendered as a page
 tests/               unit tests (run in CI on 3.10 and 3.12)
 vendor/proteinmpnn/  pinned upstream ProteinMPNN (MIT, its own LICENSE retained)

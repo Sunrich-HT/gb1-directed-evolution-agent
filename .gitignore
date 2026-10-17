@@ -23,3 +23,6 @@ paper/*.out
 paper/*.bbl
 paper/*.blg
 _view_*.png
+
+# the manuscript build is not part of this repository
+paper/
