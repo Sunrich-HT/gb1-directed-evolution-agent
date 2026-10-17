@@ -22,3 +22,4 @@ paper/*.log
 paper/*.out
 paper/*.bbl
 paper/*.blg
+_view_*.png
