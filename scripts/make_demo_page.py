@@ -261,8 +261,9 @@ def render_step(i, s, figs) -> str:
         body = (f'<p class="lead">{esc(call["test"])}；通过条件：{esc(call["pass_condition"])}</p>'
                 + table(["预测结构", "Fc 叠合 RMSD (Å)", "GB1 位姿 RMSD (Å)",
                          "与晶体接触面重合", "界面上的可变位点"], rows, "wide")
-                + f'<p class="lead warn"><b>结论：</b>{esc(res["verdict"])}。'
-                  f'{res["n_native_mode"]} / {len(res["per_structure"])} 个预测复合物达到天然结合模式。'
+                + f'<img src="{figs["docking"]}" alt="预测复合物与晶体复合物的对比">'
+                + f'<p class="lead warn"><b>结论：</b>{res["n_native_mode"]} / '
+                  f'{len(res["per_structure"])} 个预测复合物达到天然结合模式。'
                   f'这一步的作用是<b>否决</b>——没有它，后面任何"预测界面面积"都是在错误的位姿上量出来的。</p>')
 
     elif tool == "boltz2.fold_monomers":
@@ -298,6 +299,7 @@ def render_step(i, s, figs) -> str:
                 + table(["", "批次均值", "批次最好"],
                         [["不加 C9", f'{bm["A"]["mean"]:.3f}', f'{bm["A"]["best"]:.3f}'],
                          ["加 C9", f'{bm["B"]["mean"]:.3f}', f'{bm["B"]["best"]:.3f}']])
+                + f'<img src="{figs["packing"]}" alt="预测单体的局部堆积与实测适应度的关系">'
                 + f'<p class="lead warn">结构量确实迁移到了未揭示的候选上，方向也和在已测标签上学到的一致；'
                   f'但在 96 条的预算下它对批次的改变很小（均值 {bm["A"]["mean"]:.3f} → {bm["B"]["mean"]:.3f}），'
                   f'最好值不变，全局最优仍被保留（{"是" if res["global_optimum_retained"] else "否"}）。'
@@ -329,7 +331,9 @@ def main() -> None:
     T = json.loads(Path(args.trace).read_text())
     F = Path("figures/paper")
     figs = {"prior": inline(F / "fig1_prior.png"),
-            "structure": inline(F / "fig6_structure.png")}
+            "structure": inline(F / "fig6_structure.png"),
+            "docking": inline(F / "fig7_docking_check.png"),
+            "packing": inline(F / "fig8_packing_basis.png")}
 
     seq_html = (esc(SEQ[:38]) + "<b>" + esc(SEQ[38:41]) + "</b>" + esc(SEQ[41:53])
                 + "<b>" + esc(SEQ[53]) + "</b>" + esc(SEQ[54:]))
