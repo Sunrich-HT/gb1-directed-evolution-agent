@@ -13,16 +13,19 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Patterns are assembled from fragments on purpose: a scanner whose source contains
+# the literals it searches for would flag itself, and exempting its own file would
+# leave a hole in the scan.
 CREDENTIALS = {
-    "OpenAI-style key": r"sk-[A-Za-z0-9]{16,}",
-    "NVIDIA key": r"nvapi-[A-Za-z0-9_\-]{18,}",
-    "GitHub token": r"gh[pousr]_[A-Za-z0-9]{20,}",
-    "AWS key id": r"AKIA[0-9A-Z]{16}",
-    "private key block": r"-----BEGIN [A-Z ]*PRIVATE KEY-----",
+    "OpenAI-style key": "sk" + r"-[A-Za-z0-9]{16,}",
+    "NVIDIA key": "nv" + "api" + r"-[A-Za-z0-9_\-]{18,}",
+    "GitHub token": "gh" + r"[pousr]_[A-Za-z0-9]{20,}",
+    "AWS key id": "AK" + "IA" + r"[0-9A-Z]{16}",
+    "private key block": "-----BEGIN " + r"[A-Z ]*PRIVATE KEY-----",
 }
 PATHS = {
     "home directory": r"/(?:Users|home)/[A-Za-z0-9._-]+",
-    "cluster scratch": r"/cadd_data[A-Za-z0-9/._-]*",
+    "cluster scratch": "/cadd" + "_data" + r"[A-Za-z0-9/._-]*",
     "sandbox workspace": r"\.[A-Za-z0-9-]+/(?:orgs|workspaces)/[0-9a-f][0-9a-f-]{7,}[A-Za-z0-9/._-]*",
     "hostname or address": r"\b(?:\d{1,3}\.){3}\d{1,3}\b",
 }
