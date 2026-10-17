@@ -1,0 +1,72 @@
+{
+  "pdf": "figures/paper/fig1_prior.pdf",
+  "auditable": true,
+  "verdict": "REVIEW REQUIRED",
+  "page_count": 1,
+  "visible_text_box_count": 54,
+  "text_trace_count": 77,
+  "stroke_path_count": 72,
+  "filled_region_count": 89,
+  "image_region_count": 2,
+  "summary": {
+    "fail": 0,
+    "warn": 2,
+    "contained_fill_overlays": 3,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "surface buried on IgG-Fc binding (Å²)",
+      "text_bbox": [
+        108.94015502929688,
+        35.924808502197266,
+        208.1177978515625,
+        41.924808502197266
+      ],
+      "other_text": null,
+      "other_bbox": [
+        134.1902313232422,
+        36.29139709472656,
+        148.58116149902344,
+        103.32809448242188
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        3000
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "global optimum 8.76",
+      "text_bbox": [
+        417.5415954589844,
+        158.8712615966797,
+        467.0937194824219,
+        164.3712615966797
+      ],
+      "other_text": null,
+      "other_bbox": [
+        320.2680969238281,
+        160.5774383544922,
+        484.7243957519531,
+        242.36221313476562
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        79000
+      ]
+    }
+  ]
+}

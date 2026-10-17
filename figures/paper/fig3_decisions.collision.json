@@ -1,0 +1,96 @@
+{
+  "pdf": "figures/paper/fig3_decisions.pdf",
+  "auditable": true,
+  "verdict": "REVIEW REQUIRED",
+  "page_count": 1,
+  "visible_text_box_count": 70,
+  "text_trace_count": 71,
+  "stroke_path_count": 67,
+  "filled_region_count": 125,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 0,
+    "warn": 3,
+    "contained_fill_overlays": 10,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "pair volume compensation",
+      "text_bbox": [
+        124.35487365722656,
+        47.63450241088867,
+        188.57623291015625,
+        53.13450241088867
+      ],
+      "other_text": null,
+      "other_bbox": [
+        154.25503540039062,
+        52.70332336425781,
+        167.29318237304688,
+        60.496490478515625
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        47000
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "supported",
+      "text_bbox": [
+        174.39712524414062,
+        170.3623046875,
+        198.87452697753906,
+        175.8623046875
+      ],
+      "other_text": null,
+      "other_bbox": [
+        171.6588897705078,
+        174.43809509277344,
+        205.64065551757812,
+        211.5872039794922
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        104000
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "undetermined",
+      "text_bbox": [
+        174.39712524414062,
+        186.185546875,
+        208.04376220703125,
+        191.685546875
+      ],
+      "other_text": null,
+      "other_bbox": [
+        171.6588897705078,
+        174.43809509277344,
+        205.64065551757812,
+        211.5872039794922
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        104000
+      ]
+    }
+  ]
+}

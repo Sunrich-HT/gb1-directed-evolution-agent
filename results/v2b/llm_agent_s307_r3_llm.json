@@ -1,0 +1,1591 @@
+{
+  "payload": {
+    "batch_size": 96,
+    "known_data_summary": {
+      "n_known": 384,
+      "best_known_fitness": 6.442,
+      "wild_type_fitness": 1.0,
+      "top_known": [
+        {
+          "variant": "LWLG",
+          "fitness": 6.442
+        },
+        {
+          "variant": "WVFG",
+          "fitness": 5.141
+        },
+        {
+          "variant": "WIFG",
+          "fitness": 5.123
+        },
+        {
+          "variant": "YIFG",
+          "fitness": 5.067
+        },
+        {
+          "variant": "LRLG",
+          "fitness": 5.041
+        },
+        {
+          "variant": "WAFG",
+          "fitness": 4.877
+        },
+        {
+          "variant": "FRFG",
+          "fitness": 4.875
+        },
+        {
+          "variant": "LILG",
+          "fitness": 4.662
+        }
+      ]
+    },
+    "shortlist": [
+      {
+        "variant": "WNLG",
+        "mutations": "V39W/D40N/G41L/V54G",
+        "predicted": 3.567,
+        "source": "model_top"
+      },
+      {
+        "variant": "WRLG",
+        "mutations": "V39W/D40R/G41L/V54G",
+        "predicted": 3.32,
+        "source": "model_top"
+      },
+      {
+        "variant": "WKFG",
+        "mutations": "V39W/D40K/G41F/V54G",
+        "predicted": 3.228,
+        "source": "model_top"
+      },
+      {
+        "variant": "WRFG",
+        "mutations": "V39W/D40R/G41F/V54G",
+        "predicted": 3.219,
+        "source": "model_top"
+      },
+      {
+        "variant": "WWLG",
+        "mutations": "V39W/D40W/G41L/V54G",
+        "predicted": 3.172,
+        "source": "model_top"
+      },
+      {
+        "variant": "WNFG",
+        "mutations": "V39W/D40N/G41F/V54G",
+        "predicted": 3.156,
+        "source": "model_top"
+      },
+      {
+        "variant": "WFLG",
+        "mutations": "V39W/D40F/G41L/V54G",
+        "predicted": 3.152,
+        "source": "model_top"
+      },
+      {
+        "variant": "WSLG",
+        "mutations": "V39W/D40S/G41L/V54G",
+        "predicted": 3.078,
+        "source": "model_top"
+      },
+      {
+        "variant": "FRLG",
+        "mutations": "V39F/D40R/G41L/V54G",
+        "predicted": 3.027,
+        "source": "model_top"
+      },
+      {
+        "variant": "WLLG",
+        "mutations": "V39W/D40L/G41L/V54G",
+        "predicted": 3.005,
+        "source": "model_top"
+      },
+      {
+        "variant": "YRLG",
+        "mutations": "V39Y/D40R/G41L/V54G",
+        "predicted": 2.927,
+        "source": "model_top"
+      },
+      {
+        "variant": "VNLG",
+        "mutations": "D40N/G41L/V54G",
+        "predicted": 2.889,
+        "source": "model_top"
+      },
+      {
+        "variant": "WWFG",
+        "mutations": "V39W/D40W/G41F/V54G",
+        "predicted": 2.882,
+        "source": "model_top"
+      },
+      {
+        "variant": "EILG",
+        "mutations": "V39E/D40I/G41L/V54G",
+        "predicted": 2.879,
+        "source": "model_top"
+      },
+      {
+        "variant": "WLFG",
+        "mutations": "V39W/D40L/G41F/V54G",
+        "predicted": 2.861,
+        "source": "model_top"
+      },
+      {
+        "variant": "WFFG",
+        "mutations": "V39W/D40F/G41F/V54G",
+        "predicted": 2.832,
+        "source": "model_top"
+      },
+      {
+        "variant": "LRFG",
+        "mutations": "V39L/D40R/G41F/V54G",
+        "predicted": 2.827,
+        "source": "model_top"
+      },
+      {
+        "variant": "VAFG",
+        "mutations": "D40A/G41F/V54G",
+        "predicted": 2.823,
+        "source": "model_top"
+      },
+      {
+        "variant": "AALG",
+        "mutations": "V39A/D40A/G41L/V54G",
+        "predicted": 2.82,
+        "source": "model_top"
+      },
+      {
+        "variant": "YWLG",
+        "mutations": "V39Y/D40W/G41L/V54G",
+        "predicted": 2.794,
+        "source": "model_top"
+      },
+      {
+        "variant": "MALG",
+        "mutations": "V39M/D40A/G41L/V54G",
+        "predicted": 2.791,
+        "source": "model_top"
+      },
+      {
+        "variant": "WQLG",
+        "mutations": "V39W/D40Q/G41L/V54G",
+        "predicted": 2.791,
+        "source": "model_top"
+      },
+      {
+        "variant": "YRFG",
+        "mutations": "V39Y/D40R/G41F/V54G",
+        "predicted": 2.773,
+        "source": "model_top"
+      },
+      {
+        "variant": "WSFG",
+        "mutations": "V39W/D40S/G41F/V54G",
+        "predicted": 2.771,
+        "source": "model_top"
+      },
+      {
+        "variant": "WMLG",
+        "mutations": "V39W/D40M/G41L/V54G",
+        "predicted": 2.77,
+        "source": "model_top"
+      },
+      {
+        "variant": "IALG",
+        "mutations": "V39I/D40A/G41L/V54G",
+        "predicted": 2.759,
+        "source": "model_top"
+      },
+      {
+        "variant": "HIFG",
+        "mutations": "V39H/D40I/G41F/V54G",
+        "predicted": 2.721,
+        "source": "model_top"
+      },
+      {
+        "variant": "CALG",
+        "mutations": "V39C/D40A/G41L/V54G",
+        "predicted": 2.717,
+        "source": "model_top"
+      },
+      {
+        "variant": "FWLG",
+        "mutations": "V39F/D40W/G41L/V54G",
+        "predicted": 2.715,
+        "source": "model_top"
+      },
+      {
+        "variant": "VRLG",
+        "mutations": "D40R/G41L/V54G",
+        "predicted": 2.708,
+        "source": "model_top"
+      },
+      {
+        "variant": "YSLG",
+        "mutations": "V39Y/D40S/G41L/V54G",
+        "predicted": 2.681,
+        "source": "model_top"
+      },
+      {
+        "variant": "AYLG",
+        "mutations": "V39A/D40Y/G41L/V54G",
+        "predicted": 2.68,
+        "source": "model_top"
+      },
+      {
+        "variant": "HALG",
+        "mutations": "V39H/D40A/G41L/V54G",
+        "predicted": 2.667,
+        "source": "model_top"
+      },
+      {
+        "variant": "MYLG",
+        "mutations": "V39M/D40Y/G41L/V54G",
+        "predicted": 2.652,
+        "source": "model_top"
+      },
+      {
+        "variant": "VCFG",
+        "mutations": "D40C/G41F/V54G",
+        "predicted": 2.649,
+        "source": "model_top"
+      },
+      {
+        "variant": "EIFG",
+        "mutations": "V39E/D40I/G41F/V54G",
+        "predicted": 2.636,
+        "source": "model_top"
+      },
+      {
+        "variant": "CAFG",
+        "mutations": "V39C/D40A/G41F/V54G",
+        "predicted": 2.632,
+        "source": "model_top"
+      },
+      {
+        "variant": "IYLG",
+        "mutations": "V39I/D40Y/G41L/V54G",
+        "predicted": 2.622,
+        "source": "model_top"
+      },
+      {
+        "variant": "ANLG",
+        "mutations": "V39A/D40N/G41L/V54G",
+        "predicted": 2.621,
+        "source": "model_top"
+      },
+      {
+        "variant": "WICG",
+        "mutations": "V39W/D40I/G41C/V54G",
+        "predicted": 2.621,
+        "source": "model_top"
+      },
+      {
+        "variant": "AKLG",
+        "mutations": "V39A/D40K/G41L/V54G",
+        "predicted": 2.62,
+        "source": "model_top"
+      },
+      {
+        "variant": "MNLG",
+        "mutations": "V39M/D40N/G41L/V54G",
+        "predicted": 2.613,
+        "source": "model_top"
+      },
+      {
+        "variant": "WTLG",
+        "mutations": "V39W/D40T/G41L/V54G",
+        "predicted": 2.608,
+        "source": "model_top"
+      },
+      {
+        "variant": "MKLG",
+        "mutations": "V39M/D40K/G41L/V54G",
+        "predicted": 2.593,
+        "source": "model_top"
+      },
+      {
+        "variant": "CYLG",
+        "mutations": "V39C/D40Y/G41L/V54G",
+        "predicted": 2.581,
+        "source": "model_top"
+      },
+      {
+        "variant": "PILG",
+        "mutations": "V39P/D40I/G41L/V54G",
+        "predicted": 2.58,
+        "source": "model_top"
+      },
+      {
+        "variant": "ACLG",
+        "mutations": "V39A/D40C/G41L/V54G",
+        "predicted": 2.578,
+        "source": "model_top"
+      },
+      {
+        "variant": "TILG",
+        "mutations": "V39T/D40I/G41L/V54G",
+        "predicted": 2.573,
+        "source": "model_top"
+      },
+      {
+        "variant": "INLG",
+        "mutations": "V39I/D40N/G41L/V54G",
+        "predicted": 2.569,
+        "source": "model_top"
+      },
+      {
+        "variant": "IKLG",
+        "mutations": "V39I/D40K/G41L/V54G",
+        "predicted": 2.563,
+        "source": "model_top"
+      },
+      {
+        "variant": "WQFG",
+        "mutations": "V39W/D40Q/G41F/V54G",
+        "predicted": 2.561,
+        "source": "model_top"
+      },
+      {
+        "variant": "QALG",
+        "mutations": "V39Q/D40A/G41L/V54G",
+        "predicted": 2.559,
+        "source": "model_top"
+      },
+      {
+        "variant": "AAFG",
+        "mutations": "V39A/D40A/G41F/V54G",
+        "predicted": 2.553,
+        "source": "model_top"
+      },
+      {
+        "variant": "EALG",
+        "mutations": "V39E/D40A/G41L/V54G",
+        "predicted": 2.549,
+        "source": "model_top"
+      },
+      {
+        "variant": "VWLG",
+        "mutations": "D40W/G41L/V54G",
+        "predicted": 2.543,
+        "source": "model_top"
+      },
+      {
+        "variant": "VRFG",
+        "mutations": "D40R/G41F/V54G",
+        "predicted": 2.542,
+        "source": "model_top"
+      },
+      {
+        "variant": "WMFG",
+        "mutations": "V39W/D40M/G41F/V54G",
+        "predicted": 2.534,
+        "source": "model_top"
+      },
+      {
+        "variant": "WDFG",
+        "mutations": "V39W/G41F/V54G",
+        "predicted": 2.531,
+        "source": "model_top"
+      },
+      {
+        "variant": "VFLG",
+        "mutations": "D40F/G41L/V54G",
+        "predicted": 2.53,
+        "source": "model_top"
+      },
+      {
+        "variant": "KILG",
+        "mutations": "V39K/D40I/G41L/V54G",
+        "predicted": 2.528,
+        "source": "model_top"
+      },
+      {
+        "variant": "ICLG",
+        "mutations": "V39I/D40C/G41L/V54G",
+        "predicted": 2.521,
+        "source": "model_top"
+      },
+      {
+        "variant": "HYLG",
+        "mutations": "V39H/D40Y/G41L/V54G",
+        "predicted": 2.516,
+        "source": "model_top"
+      },
+      {
+        "variant": "CKLG",
+        "mutations": "V39C/D40K/G41L/V54G",
+        "predicted": 2.51,
+        "source": "model_top"
+      },
+      {
+        "variant": "WELG",
+        "mutations": "V39W/D40E/G41L/V54G",
+        "predicted": 2.507,
+        "source": "model_top"
+      },
+      {
+        "variant": "HNLG",
+        "mutations": "V39H/D40N/G41L/V54G",
+        "predicted": 2.499,
+        "source": "model_top"
+      },
+      {
+        "variant": "CCFG",
+        "mutations": "V39C/D40C/G41F/V54G",
+        "predicted": 2.496,
+        "source": "model_top"
+      },
+      {
+        "variant": "YICG",
+        "mutations": "V39Y/D40I/G41C/V54G",
+        "predicted": 2.481,
+        "source": "model_top"
+      },
+      {
+        "variant": "VSLG",
+        "mutations": "D40S/G41L/V54G",
+        "predicted": 2.473,
+        "source": "model_top"
+      },
+      {
+        "variant": "YWFG",
+        "mutations": "V39Y/D40W/G41F/V54G",
+        "predicted": 2.473,
+        "source": "model_top"
+      },
+      {
+        "variant": "ARLG",
+        "mutations": "V39A/D40R/G41L/V54G",
+        "predicted": 2.47,
+        "source": "model_top"
+      },
+      {
+        "variant": "CCLG",
+        "mutations": "V39C/D40C/G41L/V54G",
+        "predicted": 2.468,
+        "source": "model_top"
+      },
+      {
+        "variant": "HKLG",
+        "mutations": "V39H/D40K/G41L/V54G",
+        "predicted": 2.467,
+        "source": "model_top"
+      },
+      {
+        "variant": "VNFG",
+        "mutations": "D40N/G41F/V54G",
+        "predicted": 2.462,
+        "source": "model_top"
+      },
+      {
+        "variant": "YLFG",
+        "mutations": "V39Y/D40L/G41F/V54G",
+        "predicted": 2.459,
+        "source": "model_top"
+      },
+      {
+        "variant": "MRLG",
+        "mutations": "V39M/D40R/G41L/V54G",
+        "predicted": 2.444,
+        "source": "model_top"
+      },
+      {
+        "variant": "WTFG",
+        "mutations": "V39W/D40T/G41F/V54G",
+        "predicted": 2.444,
+        "source": "model_top"
+      },
+      {
+        "variant": "TIFG",
+        "mutations": "V39T/D40I/G41F/V54G",
+        "predicted": 2.441,
+        "source": "model_top"
+      },
+      {
+        "variant": "WGFG",
+        "mutations": "V39W/D40G/G41F/V54G",
+        "predicted": 2.439,
+        "source": "model_top"
+      },
+      {
+        "variant": "PIFG",
+        "mutations": "V39P/D40I/G41F/V54G",
+        "predicted": 2.439,
+        "source": "model_top"
+      },
+      {
+        "variant": "CRFG",
+        "mutations": "V39C/D40R/G41F/V54G",
+        "predicted": 2.439,
+        "source": "model_top"
+      },
+      {
+        "variant": "LWFG",
+        "mutations": "V39L/D40W/G41F/V54G",
+        "predicted": 2.437,
+        "source": "model_top"
+      },
+      {
+        "variant": "HCLG",
+        "mutations": "V39H/D40C/G41L/V54G",
+        "predicted": 2.435,
+        "source": "model_top"
+      },
+      {
+        "variant": "ACFG",
+        "mutations": "V39A/D40C/G41F/V54G",
+        "predicted": 2.433,
+        "source": "model_top"
+      },
+      {
+        "variant": "WGLG",
+        "mutations": "V39W/D40G/G41L/V54G",
+        "predicted": 2.43,
+        "source": "model_top"
+      },
+      {
+        "variant": "YFFG",
+        "mutations": "V39Y/D40F/G41F/V54G",
+        "predicted": 2.427,
+        "source": "model_top"
+      },
+      {
+        "variant": "VKFG",
+        "mutations": "D40K/G41F/V54G",
+        "predicted": 2.422,
+        "source": "model_top"
+      },
+      {
+        "variant": "KIFG",
+        "mutations": "V39K/D40I/G41F/V54G",
+        "predicted": 2.406,
+        "source": "model_top"
+      },
+      {
+        "variant": "IRLG",
+        "mutations": "V39I/D40R/G41L/V54G",
+        "predicted": 2.405,
+        "source": "model_top"
+      },
+      {
+        "variant": "QYLG",
+        "mutations": "V39Q/D40Y/G41L/V54G",
+        "predicted": 2.404,
+        "source": "model_top"
+      },
+      {
+        "variant": "EYLG",
+        "mutations": "V39E/D40Y/G41L/V54G",
+        "predicted": 2.401,
+        "source": "model_top"
+      },
+      {
+        "variant": "WEFG",
+        "mutations": "V39W/D40E/G41F/V54G",
+        "predicted": 2.391,
+        "source": "model_top"
+      },
+      {
+        "variant": "MAFG",
+        "mutations": "V39M/D40A/G41F/V54G",
+        "predicted": 2.389,
+        "source": "model_top"
+      },
+      {
+        "variant": "GILG",
+        "mutations": "V39G/D40I/G41L/V54G",
+        "predicted": 2.388,
+        "source": "model_top"
+      },
+      {
+        "variant": "ENLG",
+        "mutations": "V39E/D40N/G41L/V54G",
+        "predicted": 2.382,
+        "source": "model_top"
+      },
+      {
+        "variant": "VLLG",
+        "mutations": "D40L/G41L/V54G",
+        "predicted": 2.38,
+        "source": "model_top"
+      },
+      {
+        "variant": "CRLG",
+        "mutations": "V39C/D40R/G41L/V54G",
+        "predicted": 2.377,
+        "source": "model_top"
+      },
+      {
+        "variant": "LSFG",
+        "mutations": "V39L/D40S/G41F/V54G",
+        "predicted": 2.376,
+        "source": "model_top"
+      },
+      {
+        "variant": "FQLG",
+        "mutations": "V39F/D40Q/G41L/V54G",
+        "predicted": 2.375,
+        "source": "model_top"
+      },
+      {
+        "variant": "VYFG",
+        "mutations": "D40Y/G41F/V54G",
+        "predicted": 2.372,
+        "source": "model_top"
+      },
+      {
+        "variant": "CKFG",
+        "mutations": "V39C/D40K/G41F/V54G",
+        "predicted": 2.371,
+        "source": "model_top"
+      },
+      {
+        "variant": "ARFG",
+        "mutations": "V39A/D40R/G41F/V54G",
+        "predicted": 2.364,
+        "source": "model_top"
+      },
+      {
+        "variant": "CNFG",
+        "mutations": "V39C/D40N/G41F/V54G",
+        "predicted": 2.361,
+        "source": "model_top"
+      },
+      {
+        "variant": "EKLG",
+        "mutations": "V39E/D40K/G41L/V54G",
+        "predicted": 2.358,
+        "source": "model_top"
+      },
+      {
+        "variant": "QNLG",
+        "mutations": "V39Q/D40N/G41L/V54G",
+        "predicted": 2.358,
+        "source": "model_top"
+      },
+      {
+        "variant": "YQLG",
+        "mutations": "V39Y/D40Q/G41L/V54G",
+        "predicted": 2.357,
+        "source": "model_top"
+      },
+      {
+        "variant": "LLFG",
+        "mutations": "V39L/D40L/G41F/V54G",
+        "predicted": 2.356,
+        "source": "model_top"
+      },
+      {
+        "variant": "LFFG",
+        "mutations": "V39L/D40F/G41F/V54G",
+        "predicted": 2.354,
+        "source": "model_top"
+      },
+      {
+        "variant": "QCLG",
+        "mutations": "V39Q/D40C/G41L/V54G",
+        "predicted": 2.333,
+        "source": "model_top"
+      },
+      {
+        "variant": "HRLG",
+        "mutations": "V39H/D40R/G41L/V54G",
+        "predicted": 2.332,
+        "source": "model_top"
+      },
+      {
+        "variant": "VDLG",
+        "mutations": "G41L/V54G",
+        "predicted": 2.329,
+        "source": "model_top"
+      },
+      {
+        "variant": "AWLG",
+        "mutations": "V39A/D40W/G41L/V54G",
+        "predicted": 2.326,
+        "source": "model_top"
+      },
+      {
+        "variant": "ECLG",
+        "mutations": "V39E/D40C/G41L/V54G",
+        "predicted": 2.324,
+        "source": "model_top"
+      },
+      {
+        "variant": "ICFG",
+        "mutations": "V39I/D40C/G41F/V54G",
+        "predicted": 2.312,
+        "source": "model_top"
+      },
+      {
+        "variant": "AKFG",
+        "mutations": "V39A/D40K/G41F/V54G",
+        "predicted": 2.31,
+        "source": "model_top"
+      },
+      {
+        "variant": "AFLG",
+        "mutations": "V39A/D40F/G41L/V54G",
+        "predicted": 2.31,
+        "source": "model_top"
+      },
+      {
+        "variant": "CYFG",
+        "mutations": "V39C/D40Y/G41F/V54G",
+        "predicted": 2.308,
+        "source": "model_top"
+      },
+      {
+        "variant": "MWLG",
+        "mutations": "V39M/D40W/G41L/V54G",
+        "predicted": 2.301,
+        "source": "model_top"
+      },
+      {
+        "variant": "PALG",
+        "mutations": "V39P/D40A/G41L/V54G",
+        "predicted": 2.288,
+        "source": "model_top"
+      },
+      {
+        "variant": "KYLG",
+        "mutations": "V39K/D40Y/G41L/V54G",
+        "predicted": 2.284,
+        "source": "model_top"
+      },
+      {
+        "variant": "YTLG",
+        "mutations": "V39Y/D40T/G41L/V54G",
+        "predicted": 2.28,
+        "source": "model_top"
+      },
+      {
+        "variant": "IWLG",
+        "mutations": "V39I/D40W/G41L/V54G",
+        "predicted": 2.273,
+        "source": "model_top"
+      },
+      {
+        "variant": "FICG",
+        "mutations": "V39F/D40I/G41C/V54G",
+        "predicted": 2.272,
+        "source": "model_top"
+      },
+      {
+        "variant": "ANFG",
+        "mutations": "V39A/D40N/G41F/V54G",
+        "predicted": 2.27,
+        "source": "model_top"
+      },
+      {
+        "variant": "TALG",
+        "mutations": "V39T/D40A/G41L/V54G",
+        "predicted": 2.269,
+        "source": "model_top"
+      },
+      {
+        "variant": "MFLG",
+        "mutations": "V39M/D40F/G41L/V54G",
+        "predicted": 2.268,
+        "source": "model_top"
+      },
+      {
+        "variant": "FWFG",
+        "mutations": "V39F/D40W/G41F/V54G",
+        "predicted": 2.265,
+        "source": "model_top"
+      },
+      {
+        "variant": "KALG",
+        "mutations": "V39K/D40A/G41L/V54G",
+        "predicted": 2.258,
+        "source": "model_top"
+      },
+      {
+        "variant": "IFLG",
+        "mutations": "V39I/D40F/G41L/V54G",
+        "predicted": 2.257,
+        "source": "model_top"
+      },
+      {
+        "variant": "ASLG",
+        "mutations": "V39A/D40S/G41L/V54G",
+        "predicted": 2.251,
+        "source": "model_top"
+      },
+      {
+        "variant": "WHCG",
+        "mutations": "V39W/D40H/G41C/V54G",
+        "predicted": 2.246,
+        "source": "model_top"
+      },
+      {
+        "variant": "CWLG",
+        "mutations": "V39C/D40W/G41L/V54G",
+        "predicted": 2.236,
+        "source": "model_top"
+      },
+      {
+        "variant": "AYFG",
+        "mutations": "V39A/D40Y/G41F/V54G",
+        "predicted": 2.236,
+        "source": "model_top"
+      },
+      {
+        "variant": "IRFG",
+        "mutations": "V39I/D40R/G41F/V54G",
+        "predicted": 2.235,
+        "source": "model_top"
+      },
+      {
+        "variant": "HVLG",
+        "mutations": "V39H/D40V/G41L/V54G",
+        "predicted": 2.234,
+        "source": "model_top"
+      },
+      {
+        "variant": "RILG",
+        "mutations": "V39R/D40I/G41L/V54G",
+        "predicted": 2.234,
+        "source": "model_top"
+      },
+      {
+        "variant": "QRLG",
+        "mutations": "V39Q/D40R/G41L/V54G",
+        "predicted": 2.233,
+        "source": "model_top"
+      },
+      {
+        "variant": "VQLG",
+        "mutations": "D40Q/G41L/V54G",
+        "predicted": 2.228,
+        "source": "model_top"
+      },
+      {
+        "variant": "MSLG",
+        "mutations": "V39M/D40S/G41L/V54G",
+        "predicted": 2.226,
+        "source": "model_top"
+      },
+      {
+        "variant": "VWFG",
+        "mutations": "D40W/G41F/V54G",
+        "predicted": 2.225,
+        "source": "model_top"
+      },
+      {
+        "variant": "ERLG",
+        "mutations": "V39E/D40R/G41L/V54G",
+        "predicted": 2.224,
+        "source": "model_top"
+      },
+      {
+        "variant": "CFLG",
+        "mutations": "V39C/D40F/G41L/V54G",
+        "predicted": 2.221,
+        "source": "model_top"
+      },
+      {
+        "variant": "VMLG",
+        "mutations": "D40M/G41L/V54G",
+        "predicted": 2.21,
+        "source": "model_top"
+      },
+      {
+        "variant": "MRFG",
+        "mutations": "V39M/D40R/G41F/V54G",
+        "predicted": 2.208,
+        "source": "model_top"
+      },
+      {
+        "variant": "YELG",
+        "mutations": "V39Y/D40E/G41L/V54G",
+        "predicted": 2.206,
+        "source": "model_top"
+      },
+      {
+        "variant": "GIFG",
+        "mutations": "V39G/D40I/G41F/V54G",
+        "predicted": 2.204,
+        "source": "model_top"
+      },
+      {
+        "variant": "LACG",
+        "mutations": "V39L/D40A/G41C/V54G",
+        "predicted": 2.204,
+        "source": "model_top"
+      },
+      {
+        "variant": "DILG",
+        "mutations": "V39D/D40I/G41L/V54G",
+        "predicted": 2.203,
+        "source": "model_top"
+      },
+      {
+        "variant": "IKFG",
+        "mutations": "V39I/D40K/G41F/V54G",
+        "predicted": 2.193,
+        "source": "model_top"
+      },
+      {
+        "variant": "ALLG",
+        "mutations": "V39A/D40L/G41L/V54G",
+        "predicted": 2.192,
+        "source": "model_top"
+      },
+      {
+        "variant": "ISLG",
+        "mutations": "V39I/D40S/G41L/V54G",
+        "predicted": 2.19,
+        "source": "model_top"
+      },
+      {
+        "variant": "VLFG",
+        "mutations": "D40L/G41F/V54G",
+        "predicted": 2.188,
+        "source": "model_top"
+      },
+      {
+        "variant": "VFFG",
+        "mutations": "D40F/G41F/V54G",
+        "predicted": 2.186,
+        "source": "model_top"
+      },
+      {
+        "variant": "HFLG",
+        "mutations": "V39H/D40F/G41L/V54G",
+        "predicted": 2.178,
+        "source": "model_top"
+      },
+      {
+        "variant": "HAFG",
+        "mutations": "V39H/D40A/G41F/V54G",
+        "predicted": 2.175,
+        "source": "model_top"
+      },
+      {
+        "variant": "HHFG",
+        "mutations": "V39H/D40H/G41F/V54G",
+        "predicted": 2.174,
+        "source": "model_top"
+      },
+      {
+        "variant": "CSLG",
+        "mutations": "V39C/D40S/G41L/V54G",
+        "predicted": 2.163,
+        "source": "model_top"
+      },
+      {
+        "variant": "PYLG",
+        "mutations": "V39P/D40Y/G41L/V54G",
+        "predicted": 2.162,
+        "source": "model_top"
+      },
+      {
+        "variant": "INFG",
+        "mutations": "V39I/D40N/G41F/V54G",
+        "predicted": 2.16,
+        "source": "model_top"
+      },
+      {
+        "variant": "HWLG",
+        "mutations": "V39H/D40W/G41L/V54G",
+        "predicted": 2.159,
+        "source": "model_top"
+      },
+      {
+        "variant": "MLLG",
+        "mutations": "V39M/D40L/G41L/V54G",
+        "predicted": 2.158,
+        "source": "model_top"
+      },
+      {
+        "variant": "EHFG",
+        "mutations": "V39E/D40H/G41F/V54G",
+        "predicted": 2.158,
+        "source": "model_top"
+      },
+      {
+        "variant": "QAFG",
+        "mutations": "V39Q/D40A/G41F/V54G",
+        "predicted": 2.158,
+        "source": "model_top"
+      },
+      {
+        "variant": "MKFG",
+        "mutations": "V39M/D40K/G41F/V54G",
+        "predicted": 2.157,
+        "source": "model_top"
+      },
+      {
+        "variant": "YMFG",
+        "mutations": "V39Y/D40M/G41F/V54G",
+        "predicted": 2.15,
+        "source": "model_top"
+      },
+      {
+        "variant": "WPLG",
+        "mutations": "V39W/D40P/G41L/V54G",
+        "predicted": 2.148,
+        "source": "model_top"
+      },
+      {
+        "variant": "TYLG",
+        "mutations": "V39T/D40Y/G41L/V54G",
+        "predicted": 2.148,
+        "source": "model_top"
+      },
+      {
+        "variant": "VSFG",
+        "mutations": "D40S/G41F/V54G",
+        "predicted": 2.141,
+        "source": "model_top"
+      },
+      {
+        "variant": "CWFG",
+        "mutations": "V39C/D40W/G41F/V54G",
+        "predicted": 2.139,
+        "source": "model_top"
+      },
+      {
+        "variant": "RIFG",
+        "mutations": "V39R/D40I/G41F/V54G",
+        "predicted": 2.139,
+        "source": "model_top"
+      },
+      {
+        "variant": "WACG",
+        "mutations": "V39W/D40A/G41C/V54G",
+        "predicted": 2.138,
+        "source": "model_top"
+      },
+      {
+        "variant": "EAFG",
+        "mutations": "V39E/D40A/G41F/V54G",
+        "predicted": 2.137,
+        "source": "model_top"
+      },
+      {
+        "variant": "MNFG",
+        "mutations": "V39M/D40N/G41F/V54G",
+        "predicted": 2.135,
+        "source": "model_top"
+      },
+      {
+        "variant": "PNLG",
+        "mutations": "V39P/D40N/G41L/V54G",
+        "predicted": 2.134,
+        "source": "model_top"
+      },
+      {
+        "variant": "HSLG",
+        "mutations": "V39H/D40S/G41L/V54G",
+        "predicted": 2.125,
+        "source": "model_top"
+      },
+      {
+        "variant": "CLFG",
+        "mutations": "V39C/D40L/G41F/V54G",
+        "predicted": 2.123,
+        "source": "model_top"
+      },
+      {
+        "variant": "IYFG",
+        "mutations": "V39I/D40Y/G41F/V54G",
+        "predicted": 2.122,
+        "source": "model_top"
+      },
+      {
+        "variant": "PKLG",
+        "mutations": "V39P/D40K/G41L/V54G",
+        "predicted": 2.119,
+        "source": "model_top"
+      },
+      {
+        "variant": "TNLG",
+        "mutations": "V39T/D40N/G41L/V54G",
+        "predicted": 2.115,
+        "source": "model_top"
+      },
+      {
+        "variant": "ILLG",
+        "mutations": "V39I/D40L/G41L/V54G",
+        "predicted": 2.115,
+        "source": "model_top"
+      },
+      {
+        "variant": "EVLG",
+        "mutations": "V39E/D40V/G41L/V54G",
+        "predicted": 2.11,
+        "source": "model_top"
+      },
+      {
+        "variant": "WHKH",
+        "mutations": "V39W/D40H/G41K/V54H",
+        "predicted": 0.154,
+        "source": "diverse"
+      },
+      {
+        "variant": "FFMN",
+        "mutations": "V39F/D40F/G41M/V54N",
+        "predicted": 0.23,
+        "source": "diverse"
+      },
+      {
+        "variant": "TWVS",
+        "mutations": "V39T/D40W/G41V/V54S",
+        "predicted": 0.008,
+        "source": "diverse"
+      },
+      {
+        "variant": "KQKG",
+        "mutations": "V39K/D40Q/G41K/V54G",
+        "predicted": 0.235,
+        "source": "diverse"
+      },
+      {
+        "variant": "CMIH",
+        "mutations": "V39C/D40M/G41I/V54H",
+        "predicted": -0.005,
+        "source": "diverse"
+      },
+      {
+        "variant": "QAPD",
+        "mutations": "V39Q/D40A/G41P/V54D",
+        "predicted": 0.085,
+        "source": "diverse"
+      },
+      {
+        "variant": "DTDT",
+        "mutations": "V39D/D40T/G41D/V54T",
+        "predicted": -0.101,
+        "source": "diverse"
+      },
+      {
+        "variant": "MQTP",
+        "mutations": "V39M/D40Q/G41T/V54P",
+        "predicted": -0.002,
+        "source": "diverse"
+      },
+      {
+        "variant": "LMIQ",
+        "mutations": "V39L/D40M/G41I/V54Q",
+        "predicted": 0.027,
+        "source": "diverse"
+      },
+      {
+        "variant": "RAWF",
+        "mutations": "V39R/D40A/G41W/V54F",
+        "predicted": 0.012,
+        "source": "diverse"
+      },
+      {
+        "variant": "YRTG",
+        "mutations": "V39Y/D40R/G41T/V54G",
+        "predicted": 0.779,
+        "source": "diverse"
+      },
+      {
+        "variant": "GYSP",
+        "mutations": "V39G/D40Y/G41S/V54P",
+        "predicted": -0.022,
+        "source": "diverse"
+      },
+      {
+        "variant": "QHIW",
+        "mutations": "V39Q/D40H/G41I/V54W",
+        "predicted": 0.009,
+        "source": "diverse"
+      },
+      {
+        "variant": "WSAN",
+        "mutations": "V39W/D40S/G41A/V54N",
+        "predicted": 0.252,
+        "source": "diverse"
+      },
+      {
+        "variant": "TCCN",
+        "mutations": "V39T/D40C/G41C/V54N",
+        "predicted": 0.244,
+        "source": "diverse"
+      },
+      {
+        "variant": "VRFT",
+        "mutations": "D40R/G41F/V54T",
+        "predicted": 0.581,
+        "source": "diverse"
+      },
+      {
+        "variant": "GKIY",
+        "mutations": "V39G/D40K/G41I/V54Y",
+        "predicted": -0.047,
+        "source": "diverse"
+      },
+      {
+        "variant": "NIVT",
+        "mutations": "V39N/D40I/G41V/V54T",
+        "predicted": 0.063,
+        "source": "diverse"
+      },
+      {
+        "variant": "YHVR",
+        "mutations": "V39Y/D40H/G41V/V54R",
+        "predicted": 0.172,
+        "source": "diverse"
+      },
+      {
+        "variant": "LMPT",
+        "mutations": "V39L/D40M/G41P/V54T",
+        "predicted": 0.064,
+        "source": "diverse"
+      },
+      {
+        "variant": "NYAM",
+        "mutations": "V39N/D40Y/G41A/V54M",
+        "predicted": 0.149,
+        "source": "diverse"
+      },
+      {
+        "variant": "MKCT",
+        "mutations": "V39M/D40K/G41C/V54T",
+        "predicted": 0.309,
+        "source": "diverse"
+      },
+      {
+        "variant": "PLTG",
+        "mutations": "V39P/D40L/G41T/V54G",
+        "predicted": 0.356,
+        "source": "diverse"
+      },
+      {
+        "variant": "GNMT",
+        "mutations": "V39G/D40N/G41M/V54T",
+        "predicted": 0.101,
+        "source": "diverse"
+      },
+      {
+        "variant": "KGPT",
+        "mutations": "V39K/D40G/G41P/V54T",
+        "predicted": -0.011,
+        "source": "diverse"
+      },
+      {
+        "variant": "YWAW",
+        "mutations": "V39Y/D40W/G41A/V54W",
+        "predicted": 0.188,
+        "source": "diverse"
+      },
+      {
+        "variant": "GWLL",
+        "mutations": "V39G/D40W/G41L/V54L",
+        "predicted": 0.291,
+        "source": "diverse"
+      },
+      {
+        "variant": "DKVS",
+        "mutations": "V39D/D40K/G41V/V54S",
+        "predicted": -0.018,
+        "source": "diverse"
+      },
+      {
+        "variant": "DKTR",
+        "mutations": "V39D/D40K/G41T/V54R",
+        "predicted": -0.02,
+        "source": "diverse"
+      },
+      {
+        "variant": "RCVE",
+        "mutations": "V39R/D40C/G41V/V54E",
+        "predicted": -0.027,
+        "source": "diverse"
+      },
+      {
+        "variant": "RVAV",
+        "mutations": "V39R/D40V/G41A",
+        "predicted": 0.163,
+        "source": "diverse"
+      },
+      {
+        "variant": "MILN",
+        "mutations": "V39M/D40I/G41L/V54N",
+        "predicted": 0.619,
+        "source": "diverse"
+      },
+      {
+        "variant": "TRLR",
+        "mutations": "V39T/D40R/G41L/V54R",
+        "predicted": 0.409,
+        "source": "diverse"
+      },
+      {
+        "variant": "MWGK",
+        "mutations": "V39M/D40W/V54K",
+        "predicted": 0.12,
+        "source": "diverse"
+      },
+      {
+        "variant": "SEAH",
+        "mutations": "V39S/D40E/G41A/V54H",
+        "predicted": 0.024,
+        "source": "diverse"
+      },
+      {
+        "variant": "IKKL",
+        "mutations": "V39I/D40K/G41K/V54L",
+        "predicted": 0.063,
+        "source": "diverse"
+      },
+      {
+        "variant": "LFTA",
+        "mutations": "V39L/D40F/G41T/V54A",
+        "predicted": 0.163,
+        "source": "diverse"
+      },
+      {
+        "variant": "RVSV",
+        "mutations": "V39R/D40V/G41S",
+        "predicted": -0.14,
+        "source": "diverse"
+      },
+      {
+        "variant": "PSAV",
+        "mutations": "V39P/D40S/G41A",
+        "predicted": 0.123,
+        "source": "diverse"
+      },
+      {
+        "variant": "GKNS",
+        "mutations": "V39G/D40K/G41N/V54S",
+        "predicted": -0.022,
+        "source": "diverse"
+      },
+      {
+        "variant": "IGHL",
+        "mutations": "V39I/D40G/G41H/V54L",
+        "predicted": 0.01,
+        "source": "diverse"
+      },
+      {
+        "variant": "NQSY",
+        "mutations": "V39N/D40Q/G41S/V54Y",
+        "predicted": -0.116,
+        "source": "diverse"
+      },
+      {
+        "variant": "CPLG",
+        "mutations": "V39C/D40P/G41L/V54G",
+        "predicted": 1.454,
+        "source": "diverse"
+      },
+      {
+        "variant": "NSHS",
+        "mutations": "V39N/D40S/G41H/V54S",
+        "predicted": -0.085,
+        "source": "diverse"
+      },
+      {
+        "variant": "LAKN",
+        "mutations": "V39L/D40A/G41K/V54N",
+        "predicted": 0.122,
+        "source": "diverse"
+      },
+      {
+        "variant": "HSSM",
+        "mutations": "V39H/D40S/G41S/V54M",
+        "predicted": -0.008,
+        "source": "diverse"
+      },
+      {
+        "variant": "HANS",
+        "mutations": "V39H/D40A/G41N/V54S",
+        "predicted": 0.079,
+        "source": "diverse"
+      },
+      {
+        "variant": "WHHS",
+        "mutations": "V39W/D40H/G41H/V54S",
+        "predicted": 0.192,
+        "source": "diverse"
+      },
+      {
+        "variant": "NEGY",
+        "mutations": "V39N/D40E/V54Y",
+        "predicted": 0.003,
+        "source": "diverse"
+      },
+      {
+        "variant": "WGPE",
+        "mutations": "V39W/D40G/G41P/V54E",
+        "predicted": 0.081,
+        "source": "diverse"
+      },
+      {
+        "variant": "NNTV",
+        "mutations": "V39N/D40N/G41T",
+        "predicted": 0.01,
+        "source": "diverse"
+      },
+      {
+        "variant": "KIEE",
+        "mutations": "V39K/D40I/G41E/V54E",
+        "predicted": -0.017,
+        "source": "diverse"
+      },
+      {
+        "variant": "LFRQ",
+        "mutations": "V39L/D40F/G41R/V54Q",
+        "predicted": 0.021,
+        "source": "diverse"
+      },
+      {
+        "variant": "STVF",
+        "mutations": "V39S/D40T/G41V/V54F",
+        "predicted": -0.04,
+        "source": "diverse"
+      },
+      {
+        "variant": "YDIS",
+        "mutations": "V39Y/G41I/V54S",
+        "predicted": 0.033,
+        "source": "diverse"
+      },
+      {
+        "variant": "VLQC",
+        "mutations": "D40L/G41Q/V54C",
+        "predicted": 0.097,
+        "source": "diverse"
+      },
+      {
+        "variant": "WPVY",
+        "mutations": "V39W/D40P/G41V/V54Y",
+        "predicted": 0.042,
+        "source": "diverse"
+      },
+      {
+        "variant": "GKFC",
+        "mutations": "V39G/D40K/G41F/V54C",
+        "predicted": 0.291,
+        "source": "diverse"
+      },
+      {
+        "variant": "MTEC",
+        "mutations": "V39M/D40T/G41E/V54C",
+        "predicted": 0.025,
+        "source": "diverse"
+      },
+      {
+        "variant": "YMCI",
+        "mutations": "V39Y/D40M/G41C/V54I",
+        "predicted": 0.343,
+        "source": "diverse"
+      }
+    ],
+    "previous_round_feedback": {
+      "round": 2,
+      "selected_mean": 3.131271665725207,
+      "selected_best": 6.44246985704,
+      "incumbent_now": 6.44246985704,
+      "top_results": [
+        {
+          "variant": "LWLG",
+          "predicted": 2.006,
+          "measured": 6.442
+        },
+        {
+          "variant": "WIFG",
+          "predicted": 2.281,
+          "measured": 5.123
+        },
+        {
+          "variant": "YIFG",
+          "predicted": 2.341,
+          "measured": 5.067
+        },
+        {
+          "variant": "LRLG",
+          "predicted": 2.209,
+          "measured": 5.041
+        },
+        {
+          "variant": "WAFG",
+          "predicted": 1.906,
+          "measured": 4.877
+        },
+        {
+          "variant": "FRFG",
+          "predicted": 1.86,
+          "measured": 4.875
+        },
+        {
+          "variant": "WILG",
+          "predicted": 2.327,
+          "measured": 4.486
+        },
+        {
+          "variant": "CIFG",
+          "predicted": 1.909,
+          "measured": 4.47
+        },
+        {
+          "variant": "YILG",
+          "predicted": 2.387,
+          "measured": 4.43
+        },
+        {
+          "variant": "LSLG",
+          "predicted": 2.247,
+          "measured": 4.346
+        }
+      ],
+      "hypothesis_verdicts": [
+        {
+          "statement": "Aromatic at 39 (W/F/Y) with hydrophobic 40 boosts enrichment beyond wild-type V.",
+          "verdict": "undetermined",
+          "evidence": {
+            "n_with_substitution": 17,
+            "mean_with": 3.1393,
+            "mean_without": 3.1296,
+            "delta": 0.0097
+          }
+        },
+        {
+          "statement": "Position 41 F outperforms L for high enrichment when 39 is aromatic.",
+          "verdict": "refuted",
+          "evidence": {
+            "n_with_substitution": 37,
+            "mean_with": 3.015,
+            "mean_without": 3.2042,
+            "delta": -0.1893
+          }
+        },
+        {
+          "statement": "Position 40 histidine pairs with 39W to yield top-tier enrichment.",
+          "verdict": "refuted",
+          "evidence": {
+            "n_with_substitution": 9,
+            "mean_with": 2.993,
+            "mean_without": 3.1456,
+            "delta": -0.1526
+          }
+        },
+        {
+          "statement": "Non-G at 54 (K/L) with 41L retains moderate enrichment, testing 54 tolerance.",
+          "verdict": "undetermined",
+          "evidence": {
+            "n_with_substitution": 0,
+            "reason": "insufficient contrast in batch"
+          }
+        }
+      ]
+    },
+    "required_output": {
+      "hypotheses": "3 to 4 items of {statement, site, substitution, direction}; each statement at most 25 words",
+      "selection": "exactly 96 variant ids taken from the shortlist, as a flat JSON array of strings and nothing else",
+      "reasons": "mapping from variant id to a reason of at most 15 words, for 5 picks",
+      "output_limit": "return these three keys only; no commentary, no per-variant annotations beyond the five reasons"
+    }
+  },
+  "response": "{\"hypotheses\": [{\"statement\": \"Aromatic at 39 (W/F/Y) with small polar 40 (N/S/T) boosts enrichment above hydrophobic 40.\", \"site\": 40, \"substitution\": \"N/S/T\", \"direction\": \"increase\"}, {\"statement\": \"Position 41 L outperforms F when 39 is aromatic and 40 is polar.\", \"site\": 41, \"substitution\": \"L\", \"direction\": \"increase\"}, {\"statement\": \"Position 54 G is near-optimal; non-G at 54 reduces enrichment regardless of other sites.\", \"site\": 54, \"substitution\": \"G\", \"direction\": \"increase\"}, {\"statement\": \"39L with 40W and 41L yields top enrichment, showing 39 need not be aromatic.\", \"site\": 39, \"substitution\": \"L\", \"direction\": \"increase\"}], \"selection\": [\"WNLG\", \"WRLG\", \"WKFG\", \"WRFG\", \"WWLG\", \"WNFG\", \"WFLG\", \"WSLG\", \"FRLG\", \"WLLG\", \"YRLG\", \"VNLG\", \"WWFG\", \"EILG\", \"WLFG\", \"WFFG\", \"LRFG\", \"VAFG\", \"AALG\", \"YWLG\", \"MALG\", \"WQLG\", \"YRFG\", \"WSFG\", \"WMLG\", \"IALG\", \"HIFG\", \"CALG\", \"FWLG\", \"VRLG\", \"YSLG\", \"AYLG\", \"HALG\", \"MYLG\", \"VCFG\", \"EIFG\", \"CAFG\", \"IYLG\", \"ANLG\", \"WICG\", \"AKLG\", \"MNLG\", \"WTLG\", \"MKLG\", \"CYLG\", \"PILG\", \"ACLG\", \"TILG\", \"INLG\", \"IKLG\", \"WQFG\", \"QALG\", \"AAFG\", \"EALG\", \"VWLG\", \"VRFG\", \"WMFG\", \"WDFG\", \"VFLG\", \"KILG\", \"ICLG\", \"HYLG\", \"CKLG\", \"WELG\", \"HNLG\", \"CCFG\", \"YICG\", \"VSLG\", \"YWFG\", \"ARLG\", \"CCLG\", \"HKLG\", \"VNFG\", \"YLFG\", \"MRLG\", \"WTFG\", \"TIFG\", \"WGFG\", \"PIFG\", \"CRFG\", \"LWFG\", \"HCLG\", \"ACFG\", \"WGLG\", \"YFFG\", \"VKFG\", \"KIFG\", \"IRLG\", \"QYLG\", \"EYLG\", \"WEFG\", \"MAFG\", \"GILG\", \"ENLG\", \"VLLG\", \"CRLG\", \"LSFG\", \"FQLG\", \"VYFG\", \"CKFG\"], \"reasons\": {\"WNLG\": \"Top model pick; tests polar N at 40 with aromatic 39.\", \"WRLG\": \"Charged R at 40 probes whether positive charge helps binding.\", \"WNFG\": \"Contrasts 41F vs 41L at polar-40 background, testing hypothesis 2.\", \"VNLG\": \"Wild-type 39 with N40/L41 isolates 40-41 effect without 39W.\", \"WSLG\": \"Small polar S at 40 tests hypothesis 1 against N/T alternatives.\"}}"
+}

@@ -1,0 +1,27 @@
+{
+  "arms": [
+    "prior_fixed"
+  ],
+  "seeds": [
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315
+  ],
+  "rounds": 3,
+  "batch_size": 96,
+  "backend": "mock",
+  "llm_calls": 0,
+  "llm_spend_usd": 0
+}

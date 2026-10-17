@@ -1,0 +1,424 @@
+{
+  "free_structure": "RCSB 2GB1 chain A (NMR, 56 residues)",
+  "complex_structure": "RCSB 1FCC chains A/B = IgG1 Fc, chain C = protein G C2 domain",
+  "alignment": {
+    "offset_b1_to_1fcc_chainC": 0,
+    "identical_positions": 53,
+    "aligned_length": 56
+  },
+  "method": "Shrake-Rupley SASA (probe 1.4 A, 256 points, Bondi radii), relative to Tien et al. 2013 theoretical maxima",
+  "sites": {
+    "39": {
+      "wild_type": "V",
+      "rel_sasa": 0.064,
+      "burial": "buried",
+      "phi": -91.1,
+      "psi": 139.6,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+        "34": 3.02,
+        "37": 3.34,
+        "56": 3.53,
+        "54": 3.81,
+        "35": 4.0,
+        "12": 4.12,
+        "41": 4.18,
+        "7": 4.38,
+        "9": 4.76
+      },
+      "interface": {
+        "mapped_resseq": 39,
+        "mapped_aa": "V",
+        "min_distance_to_fc": 3.28,
+        "buried_surface_on_binding_A2": 1.7,
+        "at_interface": false
+      },
+      "wt_volume": 140.0,
+      "packing_headroom": {
+        "virtual_cbeta_nearest": [
+          {
+            "distance": 3.51,
+            "resseq": 34,
+            "atom": "O"
+          },
+          {
+            "distance": 4.05,
+            "resseq": 34,
+            "atom": "CB"
+          },
+          {
+            "distance": 4.1,
+            "resseq": 34,
+            "atom": "C"
+          },
+          {
+            "distance": 4.18,
+            "resseq": 34,
+            "atom": "CA"
+          }
+        ],
+        "free_radius": 3.51
+      }
+    },
+    "40": {
+      "wild_type": "D",
+      "rel_sasa": 0.654,
+      "burial": "exposed",
+      "phi": -151.4,
+      "psi": 90.4,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+        "56": 2.9,
+        "38": 4.01,
+        "42": 4.75,
+        "54": 4.78,
+        "55": 4.9
+      },
+      "interface": {
+        "mapped_resseq": 40,
+        "mapped_aa": "D",
+        "min_distance_to_fc": 3.37,
+        "buried_surface_on_binding_A2": 41.9,
+        "at_interface": true
+      },
+      "wt_volume": 111.1,
+      "packing_headroom": {
+        "virtual_cbeta_nearest": [
+          {
+            "distance": 4.13,
+            "resseq": 56,
+            "atom": "OE2"
+          },
+          {
+            "distance": 4.99,
+            "resseq": 38,
+            "atom": "O"
+          },
+          {
+            "distance": 5.18,
+            "resseq": 56,
+            "atom": "CD"
+          },
+          {
+            "distance": 5.35,
+            "resseq": 56,
+            "atom": "CG"
+          }
+        ],
+        "free_radius": 4.13
+      }
+    },
+    "41": {
+      "wild_type": "G",
+      "rel_sasa": 0.269,
+      "burial": "partially exposed",
+      "phi": -137.6,
+      "psi": -159.8,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta_low",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+        "55": 3.07,
+        "43": 3.66,
+        "54": 3.67,
+        "56": 4.05,
+        "39": 4.18
+      },
+      "interface": {
+        "mapped_resseq": 41,
+        "mapped_aa": "G",
+        "min_distance_to_fc": 3.59,
+        "buried_surface_on_binding_A2": 7.2,
+        "at_interface": false
+      },
+      "wt_volume": 60.1,
+      "packing_headroom": {
+        "virtual_cbeta_nearest": [
+          {
+            "distance": 2.11,
+            "resseq": 55,
+            "atom": "O"
+          },
+          {
+            "distance": 2.48,
+            "resseq": 55,
+            "atom": "C"
+          },
+          {
+            "distance": 2.98,
+            "resseq": 56,
+            "atom": "N"
+          },
+          {
+            "distance": 3.12,
+            "resseq": 55,
+            "atom": "N"
+          }
+        ],
+        "free_radius": 2.11
+      }
+    },
+    "54": {
+      "wild_type": "V",
+      "rel_sasa": 0.011,
+      "burial": "buried",
+      "phi": -121.2,
+      "psi": 140.1,
+      "left_handed_backbone": false,
+      "ramachandran_region": "beta",
+      "glycine_only_backbone": false,
+      "contacts_within_5A": {
+        "8": 2.83,
+        "6": 2.89,
+        "42": 3.09,
+        "41": 3.67,
+        "43": 3.68,
+        "7": 3.79,
+        "39": 3.81,
+        "5": 4.22,
+        "56": 4.39,
+        "52": 4.43,
+        "9": 4.56,
+        "40": 4.78,
+        "34": 4.84
+      },
+      "interface": {
+        "mapped_resseq": 54,
+        "mapped_aa": "V",
+        "min_distance_to_fc": 4.62,
+        "buried_surface_on_binding_A2": 0.5,
+        "at_interface": false
+      },
+      "wt_volume": 140.0,
+      "packing_headroom": {
+        "virtual_cbeta_nearest": [
+          {
+            "distance": 3.69,
+            "resseq": 43,
+            "atom": "CE2"
+          },
+          {
+            "distance": 3.82,
+            "resseq": 43,
+            "atom": "CZ2"
+          },
+          {
+            "distance": 3.93,
+            "resseq": 43,
+            "atom": "CD2"
+          },
+          {
+            "distance": 4.07,
+            "resseq": 42,
+            "atom": "O"
+          }
+        ],
+        "free_radius": 3.69
+      }
+    }
+  },
+  "pair_side_chain_distances": {
+    "39-40": 6.35,
+    "39-41": 6.36,
+    "39-54": 5.76,
+    "40-41": 4.89,
+    "40-54": 8.45,
+    "41-54": 5.09
+  },
+  "fc_contact_residues_b1_numbering": [
+    {
+      "b1_resseq": 23,
+      "aa": "A",
+      "distance": 3.91,
+      "buried_surface_A2": 10.4
+    },
+    {
+      "b1_resseq": 24,
+      "aa": "A",
+      "distance": 3.41,
+      "buried_surface_A2": 42.0
+    },
+    {
+      "b1_resseq": 25,
+      "aa": "T",
+      "distance": 4.37,
+      "buried_surface_A2": 25.6
+    },
+    {
+      "b1_resseq": 27,
+      "aa": "E",
+      "distance": 2.49,
+      "buried_surface_A2": 65.5
+    },
+    {
+      "b1_resseq": 28,
+      "aa": "K",
+      "distance": 2.73,
+      "buried_surface_A2": 138.8
+    },
+    {
+      "b1_resseq": 31,
+      "aa": "K",
+      "distance": 3.06,
+      "buried_surface_A2": 73.3
+    },
+    {
+      "b1_resseq": 32,
+      "aa": "Q",
+      "distance": 3.27,
+      "buried_surface_A2": 55.5
+    },
+    {
+      "b1_resseq": 34,
+      "aa": "A",
+      "distance": 3.13,
+      "buried_surface_A2": 1.4
+    },
+    {
+      "b1_resseq": 35,
+      "aa": "N",
+      "distance": 2.44,
+      "buried_surface_A2": 75.5
+    },
+    {
+      "b1_resseq": 39,
+      "aa": "V",
+      "distance": 3.28,
+      "buried_surface_A2": 1.7
+    },
+    {
+      "b1_resseq": 40,
+      "aa": "D",
+      "distance": 3.37,
+      "buried_surface_A2": 41.9
+    },
+    {
+      "b1_resseq": 41,
+      "aa": "G",
+      "distance": 3.59,
+      "buried_surface_A2": 7.2
+    },
+    {
+      "b1_resseq": 42,
+      "aa": "E",
+      "distance": 2.68,
+      "buried_surface_A2": 39.2
+    },
+    {
+      "b1_resseq": 43,
+      "aa": "W",
+      "distance": 2.81,
+      "buried_surface_A2": 60.3
+    },
+    {
+      "b1_resseq": 44,
+      "aa": "T",
+      "distance": 3.59,
+      "buried_surface_A2": 12.6
+    },
+    {
+      "b1_resseq": 45,
+      "aa": "Y",
+      "distance": 3.69,
+      "buried_surface_A2": 25.6
+    }
+  ],
+  "nmr_crosscheck_2gb1": {
+    "39": {
+      "phi": -118.2,
+      "psi": 89.6,
+      "ramachandran_region": "bridge",
+      "rel_sasa": 0.03
+    },
+    "40": {
+      "phi": -133.9,
+      "psi": 126.6,
+      "ramachandran_region": "beta",
+      "rel_sasa": 0.352
+    },
+    "41": {
+      "phi": -176.3,
+      "psi": -97.4,
+      "ramachandran_region": "outside non-glycine favoured regions",
+      "rel_sasa": 0.52
+    },
+    "54": {
+      "phi": -136.4,
+      "psi": 150.3,
+      "ramachandran_region": "beta",
+      "rel_sasa": 0.0
+    }
+  },
+  "amino_acid_properties": {
+    "volume": {
+      "A": 88.6,
+      "R": 173.4,
+      "N": 114.1,
+      "D": 111.1,
+      "C": 108.5,
+      "Q": 143.8,
+      "E": 138.4,
+      "G": 60.1,
+      "H": 153.2,
+      "I": 166.7,
+      "L": 166.7,
+      "K": 168.6,
+      "M": 162.9,
+      "F": 189.9,
+      "P": 112.7,
+      "S": 89.0,
+      "T": 116.1,
+      "W": 227.8,
+      "Y": 193.6,
+      "V": 140.0
+    },
+    "hydropathy": {
+      "A": 1.8,
+      "R": -4.5,
+      "N": -3.5,
+      "D": -3.5,
+      "C": 2.5,
+      "Q": -3.5,
+      "E": -3.5,
+      "G": -0.4,
+      "H": -3.2,
+      "I": 4.5,
+      "L": 3.8,
+      "K": -3.9,
+      "M": 1.9,
+      "F": 2.8,
+      "P": -1.6,
+      "S": -0.8,
+      "T": -0.7,
+      "W": -0.9,
+      "Y": -1.3,
+      "V": 4.2
+    },
+    "charge": {
+      "A": 0,
+      "C": 0,
+      "D": -1,
+      "E": -1,
+      "F": 0,
+      "G": 0,
+      "H": 0.1,
+      "I": 0,
+      "K": 1,
+      "L": 0,
+      "M": 0,
+      "N": 0,
+      "P": 0,
+      "Q": 0,
+      "R": 1,
+      "S": 0,
+      "T": 0,
+      "V": 0,
+      "W": 0,
+      "Y": 0
+    }
+  }
+}

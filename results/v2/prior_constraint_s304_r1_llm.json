@@ -1,0 +1,388 @@
+{
+  "payload": {
+    "round": 1,
+    "task": "Set the rules for this round: hypotheses, constraint updates, and the prior/model weights. The program selects the batch under them.",
+    "evidence_prior": {
+      "components": [
+        {
+          "name": "mpnn",
+          "weight": 1.0,
+          "provenance": "ProteinMPNN ProteinMPNN soluble v_48_002 log-odds on RCSB 2GB1 chain A (56 aa NMR structure of the GB1 domain); muted at site (40,) because zero-shot scores mis-rank that position"
+        },
+        {
+          "name": "packing_headroom",
+          "weight": 1.0,
+          "provenance": "penalty for added side-chain volume, scaled by the clash severity of the reconstructed C-beta in 1PGA (per-site severity {39: 0.0, 40: 0.0, 41: 0.93, 54: 0.0})"
+        },
+        {
+          "name": "burial_charge",
+          "weight": 0.6,
+          "provenance": "desolvation penalty for a formal charge, scaled by relative SASA in 1PGA"
+        },
+        {
+          "name": "interface_bonus",
+          "weight": 0.8,
+          "provenance": "bonus for large/aromatic side chains at positions that bury surface against IgG-Fc in 1FCC (buried area per site: {39: 1.7, 40: 41.9, 41: 7.2, 54: 0.5})"
+        },
+        {
+          "name": "pair_volume_compensation",
+          "weight": 0.8,
+          "provenance": "volume transfer between sites 41 and 54: the strongest published positive epistasis (G41L/V54G) works by moving side-chain volume from the buried core to the loop, and V54A flips site-41 substitutions from deleterious to beneficial"
+        },
+        {
+          "name": "literature",
+          "weight": 1.0,
+          "provenance": "per-substitution claims from the curated evidence base, weighted by confidence; rows derived from the oracle DMS excluded"
+        }
+      ],
+      "top_substitutions_per_site": {
+        "39": [
+          "V(+3.52)",
+          "I(+2.41)",
+          "C(+1.04)",
+          "T(+0.91)",
+          "A(+0.68)",
+          "L(+0.45)"
+        ],
+        "40": [
+          "W(+1.62)",
+          "F(+1.13)",
+          "I(+1.13)",
+          "L(+1.13)",
+          "M(+1.13)",
+          "Y(+1.13)"
+        ],
+        "41": [
+          "G(+3.83)",
+          "L(+2.93)",
+          "A(+2.06)",
+          "S(+2.06)",
+          "D(+1.62)",
+          "N(+1.58)"
+        ],
+        "54": [
+          "A(+5.25)",
+          "G(+3.25)",
+          "V(+2.11)",
+          "I(+1.37)",
+          "T(+1.22)",
+          "C(+0.89)"
+        ]
+      }
+    },
+    "current_constraints": [
+      {
+        "id": "C1_no_remeasure",
+        "kind": "filter",
+        "description": "a variant whose label is already known is never selected again",
+        "params": {},
+        "evidence": "campaign protocol",
+        "active": true
+      },
+      {
+        "id": "C2_volume_window",
+        "kind": "filter",
+        "description": "where the backbone leaves no room, added side-chain volume is capped",
+        "params": {
+          "sites": [
+            41
+          ],
+          "max_added_volume": 60.0
+        },
+        "evidence": "reconstructed C-beta within 3.0 A of a neighbouring heavy atom at sites [41] (1PGA); a cap, not a ban, because the published G41L/V54G pair shows the strain can be compensated elsewhere",
+        "active": true
+      },
+      {
+        "id": "C3_buried_charge",
+        "kind": "penalty",
+        "description": "burying a formal charge costs score",
+        "params": {
+          "sites": [
+            39,
+            54
+          ],
+          "weight": 0.8
+        },
+        "evidence": "buried sites [39, 54]; desolvation penalty for charged side chains",
+        "active": true
+      },
+      {
+        "id": "C4_charge_pair_balance",
+        "kind": "penalty",
+        "description": "two new buried charges in one variant are penalised together",
+        "params": {
+          "sites": [
+            39,
+            54
+          ],
+          "weight": 0.5
+        },
+        "evidence": "desolvation cost is super-additive when several charges are buried",
+        "active": true
+      },
+      {
+        "id": "C5_batch_diversity",
+        "kind": "quota",
+        "description": "each site shows at least k distinct amino acids in the batch",
+        "params": {
+          "min_distinct_aa_per_site": 6,
+          "max_fraction_same_aa_per_site": 0.45
+        },
+        "evidence": "exploration requirement: a batch that collapses onto one motif cannot inform the next model",
+        "active": true
+      },
+      {
+        "id": "C6_exploration_quota",
+        "kind": "quota",
+        "description": "a fixed share of the batch comes from outside the top of the ranking",
+        "params": {
+          "fraction": 0.3
+        },
+        "evidence": "epistatic landscape: the ranking is trained on few labels and is unreliable in the tail",
+        "active": true
+      },
+      {
+        "id": "C7_interface_contact",
+        "kind": "penalty",
+        "description": "candidates that remove every large side chain from the Fc contact positions are penalised",
+        "params": {
+          "sites": [
+            40
+          ],
+          "weight": 0.4
+        },
+        "evidence": "sites burying >= 10 A^2 against IgG-Fc in 1FCC: [40] (off by default; the agent may switch it on)",
+        "active": true
+      },
+      {
+        "id": "C8_refuted_substitutions",
+        "kind": "penalty",
+        "description": "substitutions whose registered hypothesis was refuted lose score",
+        "params": {
+          "substitutions": {},
+          "weight": 1.0
+        },
+        "evidence": "set from the program's verdict on the previous round's hypotheses",
+        "active": true
+      }
+    ],
+    "labelled_data_summary": {
+      "n_known": 192,
+      "best_known_fitness": 2.797,
+      "wild_type_fitness": 1.0,
+      "top_known": [
+        {
+          "variant": "WHLV",
+          "fitness": 2.797
+        },
+        {
+          "variant": "MTAA",
+          "fitness": 1.662
+        },
+        {
+          "variant": "LCGM",
+          "fitness": 1.659
+        },
+        {
+          "variant": "FLAG",
+          "fitness": 1.658
+        },
+        {
+          "variant": "IGYG",
+          "fitness": 0.656
+        },
+        {
+          "variant": "ANGC",
+          "fitness": 0.582
+        },
+        {
+          "variant": "ICVG",
+          "fitness": 0.572
+        },
+        {
+          "variant": "YYCS",
+          "fitness": 0.518
+        }
+      ]
+    },
+    "per_site_statistics_of_labelled_data": {
+      "39": {
+        "W": {
+          "n": 10,
+          "mean": 0.333,
+          "best": 2.797
+        },
+        "L": {
+          "n": 11,
+          "mean": 0.181,
+          "best": 1.659
+        },
+        "F": {
+          "n": 11,
+          "mean": 0.158,
+          "best": 1.658
+        },
+        "I": {
+          "n": 9,
+          "mean": 0.141,
+          "best": 0.656
+        },
+        "M": {
+          "n": 17,
+          "mean": 0.131,
+          "best": 1.662
+        },
+        "A": {
+          "n": 7,
+          "mean": 0.084,
+          "best": 0.582
+        },
+        "Y": {
+          "n": 11,
+          "mean": 0.056,
+          "best": 0.518
+        },
+        "G": {
+          "n": 12,
+          "mean": 0.031,
+          "best": 0.359
+        }
+      },
+      "40": {
+        "H": {
+          "n": 6,
+          "mean": 0.48,
+          "best": 2.797
+        },
+        "C": {
+          "n": 9,
+          "mean": 0.261,
+          "best": 1.659
+        },
+        "T": {
+          "n": 8,
+          "mean": 0.21,
+          "best": 1.662
+        },
+        "L": {
+          "n": 14,
+          "mean": 0.122,
+          "best": 1.658
+        },
+        "Y": {
+          "n": 7,
+          "mean": 0.091,
+          "best": 0.518
+        },
+        "N": {
+          "n": 9,
+          "mean": 0.07,
+          "best": 0.582
+        },
+        "G": {
+          "n": 14,
+          "mean": 0.055,
+          "best": 0.656
+        },
+        "R": {
+          "n": 9,
+          "mean": 0.05,
+          "best": 0.423
+        }
+      },
+      "41": {
+        "L": {
+          "n": 5,
+          "mean": 0.574,
+          "best": 2.797
+        },
+        "G": {
+          "n": 9,
+          "mean": 0.358,
+          "best": 1.659
+        },
+        "A": {
+          "n": 10,
+          "mean": 0.339,
+          "best": 1.662
+        },
+        "V": {
+          "n": 6,
+          "mean": 0.117,
+          "best": 0.572
+        },
+        "C": {
+          "n": 8,
+          "mean": 0.072,
+          "best": 0.518
+        },
+        "M": {
+          "n": 8,
+          "mean": 0.059,
+          "best": 0.325
+        },
+        "Y": {
+          "n": 16,
+          "mean": 0.055,
+          "best": 0.656
+        },
+        "F": {
+          "n": 6,
+          "mean": 0.019,
+          "best": 0.068
+        }
+      },
+      "54": {
+        "G": {
+          "n": 11,
+          "mean": 0.292,
+          "best": 1.658
+        },
+        "V": {
+          "n": 12,
+          "mean": 0.247,
+          "best": 2.797
+        },
+        "A": {
+          "n": 9,
+          "mean": 0.198,
+          "best": 1.662
+        },
+        "M": {
+          "n": 9,
+          "mean": 0.19,
+          "best": 1.659
+        },
+        "S": {
+          "n": 7,
+          "mean": 0.126,
+          "best": 0.518
+        },
+        "C": {
+          "n": 11,
+          "mean": 0.069,
+          "best": 0.582
+        },
+        "Y": {
+          "n": 7,
+          "mean": 0.064,
+          "best": 0.423
+        },
+        "F": {
+          "n": 13,
+          "mean": 0.031,
+          "best": 0.359
+        }
+      }
+    },
+    "previous_round_feedback": null,
+    "previous_round_constraint_audit": null,
+    "required_output": {
+      "hypotheses": "3 to 4 items of {statement, site, substitution, direction}; each statement at most 25 words and testable by the next batch",
+      "constraint_updates": "list of {id, params, active, reason}; only ids listed in current_constraints; reason at most 25 words; [] is allowed",
+      "weights": "{prior: float in [0,2], model: float in [0,2]} for this round's score",
+      "rationale": "at most 60 words on why these rules follow from the evidence so far"
+    }
+  },
+  "response": "{\"hypotheses\":[{\"statement\":\"At site 41, glycine or alanine paired with a small site-54 residue will exceed wild-type fitness\",\"site\":41,\"substitution\":\"G\",\"direction\":\"positive\"},{\"statement\":\"At site 54, alanine will raise fitness above wild type in most sequence contexts tested\",\"site\":54,\"substitution\":\"A\",\"direction\":\"positive\"},{\"statement\":\"At site 39, tryptophan will show the highest mean fitness among substitutions at that site\",\"site\":39,\"substitution\":\"W\",\"direction\":\"positive\"},{\"statement\":\"At site 40, histidine will outperform other polar or charged substitutions in mean fitness\",\"site\":40,\"substitution\":\"H\",\"direction\":\"positive\"}],\"constraint_updates\":[{\"id\":\"C7_interface_contact\",\"params\":{\"sites\":[40],\"weight\":0.4},\"active\":true,\"reason\":\"Site 40 buries 41.9 A^2 against Fc; keep some large side chains there to test interface relevance\"},{\"id\":\"C6_exploration_quota\",\"params\":{\"fraction\":0.3},\"active\":true,\"reason\":\"Epistasis is strong and labels sparse; more tail sampling improves model calibration\"},{\"id\":\"C5_batch_diversity\",\"params\":{\"min_distinct_aa_per_site\":6,\"max_fraction_same_aa_per_site\":0.45},\"active\":true,\"reason\":\"Tighten diversity slightly to avoid motif collapse while testing site-41/54 pairs\"}],\"weights\":{\"prior\":1.0,\"model\":1.0},\"rationale\":\"Known labels show strong site-41/54 epistasis and a standout WHLV variant; prior and model should be balanced early. Enabling mild interface pressure at site 40 and raising exploration tests whether large Fc-contact side chains matter beyond the current top variant.\"}"
+}

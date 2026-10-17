@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Run the five-arm directed-evolution comparison."""
+"""Run the six-arm directed-evolution comparison."""
 from __future__ import annotations
 
 import argparse
@@ -16,6 +16,7 @@ from gb1agent.llm import DeepSeekBackend, Ledger, MockBackend
 from gb1agent.loop import ARMS, LLM_ARMS, run_arm
 from gb1agent.predictors import ModelSpec, select_model
 from gb1agent.priors import load_log_odds, score_variants, zscore_by_substitution
+from gb1agent import evidence as evidence_mod
 
 
 def main() -> None:
@@ -30,6 +31,14 @@ def main() -> None:
     ap.add_argument("--model", default="deepseek-chat")
     ap.add_argument("--prior", default="config/mpnn_log_odds.json")
     ap.add_argument("--budget-usd", type=float, default=3.0)
+    ap.add_argument("--structure-evidence", default="knowledge/structure_evidence.json")
+    ap.add_argument("--evidence-base", default="knowledge/evidence_base.json")
+    ap.add_argument("--allow-dms-derived-evidence", action="store_true",
+                    help="include evidence rows taken from the oracle DMS (leakage; "
+                         "for the labelled upper-bound analysis only)")
+    ap.add_argument("--prior-weights", default="",
+                    help='JSON overriding the evidence-prior component weights, e.g. '
+                         '\'{"literature": 0}\' for an ablation')
     args = ap.parse_args()
 
     out = Path(args.out)
@@ -42,6 +51,16 @@ def main() -> None:
     if prior_path.exists():
         table = zscore_by_substitution(load_log_odds(prior_path))
         prior_scores = score_variants(variants, table)
+
+    structure_evidence = evidence_prior = None
+    if Path(args.structure_evidence).exists():
+        structure_evidence = json.loads(Path(args.structure_evidence).read_text())
+        weights = json.loads(args.prior_weights) if args.prior_weights else None
+        evidence_prior = evidence_mod.load(
+            structure_path=args.structure_evidence, mpnn_path=args.prior,
+            evidence_path=args.evidence_base, weights=weights,
+            allow_dms_derived=args.allow_dms_derived_evidence)
+        (out / "evidence_prior.json").write_text(json.dumps(evidence_prior.to_dict(), indent=2))
 
     ledger = Ledger(path=out / "llm_ledger.json", cap_usd=args.budget_usd)
     if args.backend == "deepseek":
@@ -63,7 +82,8 @@ def main() -> None:
             records = run_arm(
                 arm, df, split, oracle, spec, seed=seed, rounds=args.rounds,
                 batch_size=args.batch_size, backend=backend, prior_scores=prior_scores,
-                log_dir=out,
+                log_dir=out, evidence_prior=evidence_prior,
+                structure_evidence=structure_evidence,
             )
             for r in records:
                 all_records.append(

@@ -29,43 +29,43 @@ Three things make the comparison informative:
    site-level hypotheses before labels are revealed; the code, not the model,
    decides whether each one was supported or refuted.
 
-## Results actually measured in this repository
+## Results (v2: evidence prior + explicit constraints)
 
-Protocol: 192 starting labels, 3 rounds x 96 picks, 3 seeds, identical start and budget for every arm;
-candidate pool = the 139,169 unobserved variants, which contains the global optimum FWAA (fitness 8.762).
+Protocol: 192 starting labels, 3 rounds x 96 picks, **15 seeds**, identical start and budget for every arm.
+Candidate pool = the 139,169 unobserved variants, which contains the global optimum FWAA (fitness 8.762).
 
-| arm | final best-so-far (mean of 3 seeds) | per-seed | hits the global optimum | batch diversity |
+| arm | final best (mean of 15 seeds) | median | hits the global optimum | batch diversity |
 |---|---|---|---|---|
-| random | **4.376** | 3.88 / 4.37 / 4.88 | 0/3 | 3.80 |
-| predictor-greedy | **7.670** | 8.76 / 6.69 / 7.56 | 1/3 | 2.43 |
-| predictor + 25% exploration | **7.670** | 8.76 / 6.69 / 7.56 | 1/3 | 3.04 |
-| LLM agent (DeepSeek) | **7.732** | 8.76 / 6.88 / 7.56 | 1/3 | 2.44 |
-| knowledge-augmented LLM agent | **7.732** | 8.76 / 6.88 / 7.56 | 1/3 | 2.44 |
+| random | 4.336 | 4.437 | 0/15 | 3.80 |
+| predictor-greedy | 7.595 | 7.313 | 3/15 | 2.45 |
+| predictor + 25% exploration | 7.129 | 7.313 | 3/15 | 2.99 |
+| LLM agent (DeepSeek) | 7.617 | 7.555 | 3/15 | 2.45 |
+| LLM + knowledge block | 7.595 | 7.313 | 3/15 | 2.47 |
+| **evidence prior + constraints, no LLM** | 8.031 | 8.762 | 9/15 | 3.15 |
+| evidence prior + constraints, LLM-steered | 8.070 | 8.762 | 9/15 | 3.27 |
 
-* **Model guidance is what matters.** Every arm with a predictor in it ends near 7.7; random ends at 4.38.
-* **The language model adds little here.** Round 1 the agent picks exactly the predictor's top-96
-  (batch overlap 1.00); by round 3 overlap has fallen to 0.82, and the final best-so-far is 7.73 vs 7.67.
-  The knowledge block changes almost nothing (overlap between the two LLM arms stays >= 0.99).
-* **Hypotheses are graded, not narrated.** 72 registered hypotheses:
-  20 supported, 15 refuted, 37 undetermined.
-* **Predictors from 192 labels are weak at the top.** Spearman 0.35, top-5% precision 0.28 on a held-out
-  10,000-variant test set; on the official FLIP `sampled` split (6,988 training labels) the same model
-  reaches Spearman 0.919 and top-100 recall 0.76.
-* **Structure confidence carries no usable signal for binding.** 146 variants spanning the whole fitness
-  range were folded with NVIDIA-hosted Boltz-2 (5 rotating keys, 146/146 succeeded, 25 rate limits
-  absorbed by rotation). pLDDT at the four sites correlates with fitness at Spearman
-  +0.21 against +0.56
-  for the sequence model; adding the structure columns moves 5-fold CV Spearman by
-  -0.002 and top-5% precision by +0.000.
-* **Why the optimum is hard.** Epistasis carries 83% of the
-  pairwise model's weight, and two of the four components of FWAA (V39F, G41A) are deleterious on their own.
-* **Cost.** 18 DeepSeek requests, 0.0758 USD, every call in
-  `results/llm_deepseek/llm_ledger.json`.
+**What the comparison shows**
 
-Report: [`report/GB1_agent_report.pdf`](report/GB1_agent_report.pdf) (3 pages, Chinese).
-Rebuild everything with `scripts/run_baselines.py`, `scripts/run_experiment.py`,
-`scripts/run_structure_ablation.py`, `scripts/analyze_structure.py`, `scripts/run_interpret.py`,
-`scripts/make_figures.py`, `scripts/make_report.py`.
+1. *Evidence beats more model rounds.* A prior built only from the crystal structure, biophysics and
+   62 curated literature rows — no multi-mutant label — ranks the landscape at Spearman
+   rho = +0.295 on the >=3-mutation subset, matching the measured-single-mutant upper
+   bound (+0.294) that uses oracle labels.
+2. *Constraints triple the hit rate.* Evidence prior + constraints reaches the global optimum in 9/15 seeds
+   against 3/15 for predictor-greedy (paired McNemar, 6 vs 0 discordant seeds, exact p = 0.031).
+3. *The language model adds nothing on top.* Letting DeepSeek rewrite the constraint set each round is
+   indistinguishable from freezing the rules (8.070 vs 8.031, Wilcoxon p = 1.00), and using the LLM as a
+   *picker* reproduces predictor-greedy on 14 of 15 seeds.
+4. *Zero-shot folding scores are not binding predictors.* ProteinMPNN alone reaches rho = +0.170;
+   NVIDIA-hosted Boltz-2 confidence correlates with fitness at +0.21 and adds -0.002 Spearman as a feature.
+5. *A structural assumption was falsified mid-project.* The common "glycine is required at 41" rule is not
+   supported by the crystal structure (phi/psi -137.6/-159.8 in 1PGA, ordinary beta region); the real
+   constraint there is side-chain packing, compensable at site 54. The filter was removed.
+
+Paper: [`paper/main.pdf`](paper/main.pdf) (7 pages, Chinese, LaTeX/XeLaTeX, real citations).
+Figures: `figures/paper/` — built to `figures/FIGURE_CONTRACT.md` and passing panel-alignment,
+PDF text-collision and 5 pt glyph audits.
+Evidence base: `knowledge/evidence_base.json` (62 rows, 21 sources) + `knowledge/references.bib`.
+Cost: 154 DeepSeek calls across both campaigns, $0.523 total; ledgers under `results/`.
 
 ## Install
 

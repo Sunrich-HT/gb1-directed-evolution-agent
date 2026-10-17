@@ -1,0 +1,48 @@
+{
+  "pdf": "figures/paper/fig4_mechanism.pdf",
+  "auditable": true,
+  "verdict": "REVIEW REQUIRED",
+  "page_count": 1,
+  "visible_text_box_count": 76,
+  "text_trace_count": 84,
+  "stroke_path_count": 101,
+  "filled_region_count": 95,
+  "image_region_count": 2,
+  "summary": {
+    "fail": 0,
+    "warn": 1,
+    "contained_fill_overlays": 5,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "1.37",
+      "text_bbox": [
+        364.1829528808594,
+        154.688232421875,
+        375.87841796875,
+        160.688232421875
+      ],
+      "other_text": null,
+      "other_bbox": [
+        300.952880859375,
+        157.18637084960938,
+        484.7243957519531,
+        236.9763946533203
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        92000
+      ]
+    }
+  ]
+}

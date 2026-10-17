@@ -129,6 +129,17 @@ class MockBackend:
 
     def chat(self, messages, tag: str = "", **__) -> str:
         payload = json.loads(messages[-1]["content"])
+        if "constraint_updates" in (payload.get("required_output") or {}):
+            # rule-setting protocol: return a deterministic, schema-valid rule update
+            return json.dumps({
+                "hypotheses": [{"statement": "Fixture: large side chains at site 40 help.",
+                                "site": 40, "substitution": "W", "direction": "beneficial"}],
+                "constraint_updates": [{"id": "C6_exploration_quota",
+                                        "params": {"fraction": 0.25},
+                                        "reason": "fixture: keep the exploration quota"}],
+                "weights": {"prior": 1.0, "model": 1.0},
+                "rationale": "deterministic fixture, no scientific content",
+            })
         shortlist = [c["variant"] for c in payload["shortlist"]]
         k = payload["batch_size"]
         exploit = shortlist[: int(k * 0.75)]

@@ -1,0 +1,22 @@
+{
+  "arms": [
+    "random",
+    "greedy",
+    "greedy_explore",
+    "llm_agent",
+    "llm_knowledge",
+    "prior_constraint"
+  ],
+  "seeds": [
+    301,
+    302,
+    303,
+    304,
+    305
+  ],
+  "rounds": 3,
+  "batch_size": 96,
+  "backend": "deepseek",
+  "llm_calls": 45,
+  "llm_spend_usd": 0.1472
+}

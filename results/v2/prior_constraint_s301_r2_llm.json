@@ -1,0 +1,521 @@
+{
+  "payload": {
+    "round": 2,
+    "task": "Set the rules for this round: hypotheses, constraint updates, and the prior/model weights. The program selects the batch under them.",
+    "evidence_prior": {
+      "components": [
+        {
+          "name": "mpnn",
+          "weight": 1.0,
+          "provenance": "ProteinMPNN ProteinMPNN soluble v_48_002 log-odds on RCSB 2GB1 chain A (56 aa NMR structure of the GB1 domain); muted at site (40,) because zero-shot scores mis-rank that position"
+        },
+        {
+          "name": "packing_headroom",
+          "weight": 1.0,
+          "provenance": "penalty for added side-chain volume, scaled by the clash severity of the reconstructed C-beta in 1PGA (per-site severity {39: 0.0, 40: 0.0, 41: 0.93, 54: 0.0})"
+        },
+        {
+          "name": "burial_charge",
+          "weight": 0.6,
+          "provenance": "desolvation penalty for a formal charge, scaled by relative SASA in 1PGA"
+        },
+        {
+          "name": "interface_bonus",
+          "weight": 0.8,
+          "provenance": "bonus for large/aromatic side chains at positions that bury surface against IgG-Fc in 1FCC (buried area per site: {39: 1.7, 40: 41.9, 41: 7.2, 54: 0.5})"
+        },
+        {
+          "name": "pair_volume_compensation",
+          "weight": 0.8,
+          "provenance": "volume transfer between sites 41 and 54: the strongest published positive epistasis (G41L/V54G) works by moving side-chain volume from the buried core to the loop, and V54A flips site-41 substitutions from deleterious to beneficial"
+        },
+        {
+          "name": "literature",
+          "weight": 1.0,
+          "provenance": "per-substitution claims from the curated evidence base, weighted by confidence; rows derived from the oracle DMS excluded"
+        }
+      ],
+      "top_substitutions_per_site": {
+        "39": [
+          "V(+3.52)",
+          "I(+2.41)",
+          "C(+1.04)",
+          "T(+0.91)",
+          "A(+0.68)",
+          "L(+0.45)"
+        ],
+        "40": [
+          "W(+1.62)",
+          "F(+1.13)",
+          "I(+1.13)",
+          "L(+1.13)",
+          "M(+1.13)",
+          "Y(+1.13)"
+        ],
+        "41": [
+          "G(+3.83)",
+          "L(+2.93)",
+          "A(+2.06)",
+          "S(+2.06)",
+          "D(+1.62)",
+          "N(+1.58)"
+        ],
+        "54": [
+          "A(+5.25)",
+          "G(+3.25)",
+          "V(+2.11)",
+          "I(+1.37)",
+          "T(+1.22)",
+          "C(+0.89)"
+        ]
+      }
+    },
+    "current_constraints": [
+      {
+        "id": "C1_no_remeasure",
+        "kind": "filter",
+        "description": "a variant whose label is already known is never selected again",
+        "params": {},
+        "evidence": "campaign protocol",
+        "active": true
+      },
+      {
+        "id": "C2_volume_window",
+        "kind": "filter",
+        "description": "where the backbone leaves no room, added side-chain volume is capped",
+        "params": {
+          "sites": [
+            41
+          ],
+          "max_added_volume": 60.0
+        },
+        "evidence": "reconstructed C-beta within 3.0 A of a neighbouring heavy atom at sites [41] (1PGA); a cap, not a ban, because the published G41L/V54G pair shows the strain can be compensated elsewhere",
+        "active": true
+      },
+      {
+        "id": "C3_buried_charge",
+        "kind": "penalty",
+        "description": "burying a formal charge costs score",
+        "params": {
+          "sites": [
+            39,
+            54
+          ],
+          "weight": 0.8
+        },
+        "evidence": "buried sites [39, 54]; desolvation penalty for charged side chains",
+        "active": true
+      },
+      {
+        "id": "C4_charge_pair_balance",
+        "kind": "penalty",
+        "description": "two new buried charges in one variant are penalised together",
+        "params": {
+          "sites": [
+            39,
+            54
+          ],
+          "weight": 0.5
+        },
+        "evidence": "desolvation cost is super-additive when several charges are buried",
+        "active": true
+      },
+      {
+        "id": "C5_batch_diversity",
+        "kind": "quota",
+        "description": "each site shows at least k distinct amino acids in the batch",
+        "params": {
+          "min_distinct_aa_per_site": 6,
+          "max_fraction_same_aa_per_site": 0.5
+        },
+        "evidence": "exploration requirement: a batch that collapses onto one motif cannot inform the next model",
+        "active": true
+      },
+      {
+        "id": "C6_exploration_quota",
+        "kind": "quota",
+        "description": "a fixed share of the batch comes from outside the top of the ranking",
+        "params": {
+          "fraction": 0.35
+        },
+        "evidence": "epistatic landscape: the ranking is trained on few labels and is unreliable in the tail",
+        "active": true
+      },
+      {
+        "id": "C7_interface_contact",
+        "kind": "penalty",
+        "description": "candidates that remove every large side chain from the Fc contact positions are penalised",
+        "params": {
+          "sites": [
+            40
+          ],
+          "weight": 0.5
+        },
+        "evidence": "sites burying >= 10 A^2 against IgG-Fc in 1FCC: [40] (off by default; the agent may switch it on)",
+        "active": true
+      },
+      {
+        "id": "C8_refuted_substitutions",
+        "kind": "penalty",
+        "description": "substitutions whose registered hypothesis was refuted lose score",
+        "params": {
+          "substitutions": {
+            "V54A": -0.5,
+            "V39M": -0.5,
+            "D40G": 1.0
+          },
+          "weight": 1.0
+        },
+        "evidence": "set from the program's verdict on the previous round's hypotheses",
+        "active": true
+      }
+    ],
+    "labelled_data_summary": {
+      "n_known": 288,
+      "best_known_fitness": 5.157,
+      "wild_type_fitness": 1.0,
+      "top_known": [
+        {
+          "variant": "VYAA",
+          "fitness": 5.157
+        },
+        {
+          "variant": "MWAA",
+          "fitness": 4.492
+        },
+        {
+          "variant": "IGAA",
+          "fitness": 4.183
+        },
+        {
+          "variant": "FYGV",
+          "fitness": 4.113
+        },
+        {
+          "variant": "MRAA",
+          "fitness": 3.994
+        },
+        {
+          "variant": "MSAA",
+          "fitness": 3.495
+        },
+        {
+          "variant": "MAAA",
+          "fitness": 3.457
+        },
+        {
+          "variant": "MNAA",
+          "fitness": 3.398
+        }
+      ]
+    },
+    "per_site_statistics_of_labelled_data": {
+      "39": {
+        "M": {
+          "n": 55,
+          "mean": 1.026,
+          "best": 4.492
+        },
+        "F": {
+          "n": 17,
+          "mean": 0.84,
+          "best": 4.113
+        },
+        "V": {
+          "n": 12,
+          "mean": 0.549,
+          "best": 5.157
+        },
+        "W": {
+          "n": 9,
+          "mean": 0.319,
+          "best": 1.265
+        },
+        "I": {
+          "n": 15,
+          "mean": 0.307,
+          "best": 4.183
+        },
+        "S": {
+          "n": 15,
+          "mean": 0.295,
+          "best": 2.831
+        },
+        "L": {
+          "n": 15,
+          "mean": 0.268,
+          "best": 2.26
+        },
+        "C": {
+          "n": 15,
+          "mean": 0.184,
+          "best": 1.172
+        }
+      },
+      "40": {
+        "Y": {
+          "n": 13,
+          "mean": 1.157,
+          "best": 5.157
+        },
+        "W": {
+          "n": 13,
+          "mean": 0.864,
+          "best": 4.492
+        },
+        "I": {
+          "n": 20,
+          "mean": 0.42,
+          "best": 3.313
+        },
+        "A": {
+          "n": 9,
+          "mean": 0.399,
+          "best": 3.457
+        },
+        "G": {
+          "n": 41,
+          "mean": 0.384,
+          "best": 4.183
+        },
+        "Q": {
+          "n": 16,
+          "mean": 0.379,
+          "best": 1.14
+        },
+        "V": {
+          "n": 14,
+          "mean": 0.359,
+          "best": 3.311
+        },
+        "F": {
+          "n": 9,
+          "mean": 0.349,
+          "best": 2.591
+        }
+      },
+      "41": {
+        "A": {
+          "n": 58,
+          "mean": 1.224,
+          "best": 5.157
+        },
+        "G": {
+          "n": 18,
+          "mean": 1.001,
+          "best": 4.113
+        },
+        "L": {
+          "n": 6,
+          "mean": 0.336,
+          "best": 1.14
+        },
+        "S": {
+          "n": 11,
+          "mean": 0.227,
+          "best": 1.64
+        },
+        "C": {
+          "n": 20,
+          "mean": 0.219,
+          "best": 1.265
+        },
+        "N": {
+          "n": 11,
+          "mean": 0.087,
+          "best": 0.852
+        },
+        "F": {
+          "n": 11,
+          "mean": 0.075,
+          "best": 0.45
+        },
+        "W": {
+          "n": 12,
+          "mean": 0.034,
+          "best": 0.363
+        }
+      },
+      "54": {
+        "A": {
+          "n": 65,
+          "mean": 1.219,
+          "best": 5.157
+        },
+        "V": {
+          "n": 19,
+          "mean": 0.796,
+          "best": 4.113
+        },
+        "L": {
+          "n": 14,
+          "mean": 0.29,
+          "best": 2.831
+        },
+        "G": {
+          "n": 7,
+          "mean": 0.051,
+          "best": 0.205
+        },
+        "T": {
+          "n": 11,
+          "mean": 0.044,
+          "best": 0.29
+        },
+        "N": {
+          "n": 10,
+          "mean": 0.03,
+          "best": 0.262
+        },
+        "S": {
+          "n": 19,
+          "mean": 0.029,
+          "best": 0.24
+        },
+        "C": {
+          "n": 11,
+          "mean": 0.025,
+          "best": 0.176
+        }
+      }
+    },
+    "previous_round_feedback": {
+      "round": 1,
+      "selected_mean": 0.9638945766086543,
+      "selected_best": 5.15691840607,
+      "incumbent_now": 5.15691840607,
+      "top_results": [
+        {
+          "variant": "VYAA",
+          "predicted": 0.251,
+          "measured": 5.157
+        },
+        {
+          "variant": "MWAA",
+          "predicted": 0.474,
+          "measured": 4.492
+        },
+        {
+          "variant": "IGAA",
+          "predicted": 0.425,
+          "measured": 4.183
+        },
+        {
+          "variant": "FYGV",
+          "predicted": 0.189,
+          "measured": 4.113
+        },
+        {
+          "variant": "MRAA",
+          "predicted": 0.467,
+          "measured": 3.994
+        },
+        {
+          "variant": "MSAA",
+          "predicted": 0.493,
+          "measured": 3.495
+        },
+        {
+          "variant": "MAAA",
+          "predicted": 0.502,
+          "measured": 3.457
+        },
+        {
+          "variant": "MNAA",
+          "predicted": 0.442,
+          "measured": 3.398
+        },
+        {
+          "variant": "MYAA",
+          "predicted": 0.497,
+          "measured": 3.377
+        },
+        {
+          "variant": "MIAA",
+          "predicted": 0.425,
+          "measured": 3.313
+        }
+      ],
+      "hypothesis_verdicts": [
+        {
+          "statement": "At site 54, alanine is the single strongest substitution, exceeding wild-type valine in mean fitness across the batch.",
+          "verdict": "supported",
+          "evidence": {
+            "n_with_substitution": 52,
+            "mean_with": 1.4497,
+            "mean_without": 0.3897,
+            "delta": 1.06
+          }
+        },
+        {
+          "statement": "At site 41, glycine and leucine are the top substitutions, outperforming wild-type glycine's alternatives on average.",
+          "verdict": "undetermined",
+          "evidence": {
+            "n_with_substitution": 0,
+            "reason": "insufficient contrast in batch"
+          }
+        },
+        {
+          "statement": "At site 39, methionine is the best substitution, exceeding valine and other hydrophobic alternatives in mean fitness.",
+          "verdict": "supported",
+          "evidence": {
+            "n_with_substitution": 45,
+            "mean_with": 1.2093,
+            "mean_without": 0.7474,
+            "delta": 0.4619
+          }
+        },
+        {
+          "statement": "At site 40, glycine and glutamine outperform bulky aromatics like tryptophan and phenylalanine in mean fitness.",
+          "verdict": "refuted",
+          "evidence": {
+            "n_with_substitution": 34,
+            "mean_with": 0.4045,
+            "mean_without": 1.2707,
+            "delta": -0.8662
+          }
+        }
+      ]
+    },
+    "previous_round_constraint_audit": {
+      "n_pool": 139169,
+      "n_legal_after_filters": 56450,
+      "filters_removed": {
+        "C1_no_remeasure": 0,
+        "C2_volume_window": 82719
+      },
+      "penalty_mean_contribution": {
+        "C3_buried_charge": 0.3021,
+        "C4_charge_pair_balance": 0.0169,
+        "C7_interface_contact": 0.0764
+      },
+      "exploration_quota": 24,
+      "diversity_blocks": 304,
+      "distinct_aa_per_site": [
+        19,
+        20,
+        8,
+        20
+      ],
+      "diversity_satisfied": true,
+      "changed_vs_unconstrained": 44,
+      "active_constraints": [
+        "C1_no_remeasure",
+        "C2_volume_window",
+        "C3_buried_charge",
+        "C4_charge_pair_balance",
+        "C5_batch_diversity",
+        "C6_exploration_quota",
+        "C7_interface_contact",
+        "C8_refuted_substitutions"
+      ]
+    },
+    "required_output": {
+      "hypotheses": "3 to 4 items of {statement, site, substitution, direction}; each statement at most 25 words and testable by the next batch",
+      "constraint_updates": "list of {id, params, active, reason}; only ids listed in current_constraints; reason at most 25 words; [] is allowed",
+      "weights": "{prior: float in [0,2], model: float in [0,2]} for this round's score",
+      "rationale": "at most 60 words on why these rules follow from the evidence so far"
+    }
+  },
+  "response": "{\"hypotheses\":[{\"statement\":\"At site 41, alanine and glycine exceed leucine in mean fitness among variants with site-54 alanine.\",\"site\":41,\"substitution\":\"A/G vs L\",\"direction\":\"A,G > L\"},{\"statement\":\"At site 39, methionine exceeds valine in mean fitness when site-54 is alanine.\",\"site\":39,\"substitution\":\"M vs V\",\"direction\":\"M > V\"},{\"statement\":\"At site 40, aromatic residues (Y,W,F) exceed glycine in mean fitness among site-41-alanine variants.\",\"site\":40,\"substitution\":\"Y/W/F vs G\",\"direction\":\"aromatics > G\"},{\"statement\":\"At site 54, alanine exceeds valine in mean fitness among variants carrying site-39 methionine.\",\"site\":54,\"substitution\":\"A vs V\",\"direction\":\"A > V\"}],\"constraint_updates\":[{\"id\":\"C2_volume_window\",\"params\":{\"sites\":[41],\"max_added_volume\":60.0},\"active\":false,\"reason\":\"Round 1 removed 82719 candidates and site 41 needs contrast; G41L/V54G shows strain is compensable.\"},{\"id\":\"C7_interface_contact\",\"params\":{\"sites\":[40],\"weight\":0.5},\"active\":false,\"reason\":\"Round 1 refuted the claim that small residues at 40 beat aromatics; drop the penalty to allow aromatic exploration.\"},{\"id\":\"C8_refuted_substitutions\",\"params\":{\"substitutions\":{\"V54A\":-0.5,\"V39M\":-0.5,\"D40G\":1.0},\"weight\":1.0},\"active\":false,\"reason\":\"V54A and V39M are now supported by data; penalising them contradicts the evidence.\"},{\"id\":\"C6_exploration_quota\",\"params\":{\"fraction\":0.35},\"active\":true,\"reason\":\"Model underpredicted top variants badly; more tail exploration is warranted.\"}],\"weights\":{\"prior\":1.2,\"model\":0.8},\"rationale\":\"Round 1 showed the fitted model badly underpredicted strong variants, so shift weight toward the evidence prior and raise exploration. Relaxing the site-41 volume cap and the site-40 interface penalty opens contrast needed to test epistasis between 39/40/41 and 54.\"}"
+}

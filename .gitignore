@@ -13,3 +13,8 @@ vendor/proteinmpnn/soluble_model_weights/
 # everything under results/ IS committed on purpose: the per-round prompts,
 # responses, API receipts and the spend ledger are the evidence behind the
 # report.  They contain no credentials (keys are referenced by index only).
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg

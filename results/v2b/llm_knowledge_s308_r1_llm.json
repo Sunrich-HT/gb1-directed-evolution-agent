@@ -1,0 +1,1747 @@
+{
+  "payload": {
+    "batch_size": 96,
+    "known_data_summary": {
+      "n_known": 192,
+      "best_known_fitness": 2.831,
+      "wild_type_fitness": 1.0,
+      "top_known": [
+        {
+          "variant": "SWGL",
+          "fitness": 2.831
+        },
+        {
+          "variant": "FVCG",
+          "fitness": 2.207
+        },
+        {
+          "variant": "TQCA",
+          "fitness": 1.715
+        },
+        {
+          "variant": "TECA",
+          "fitness": 0.848
+        },
+        {
+          "variant": "HKMG",
+          "fitness": 0.689
+        },
+        {
+          "variant": "TWMG",
+          "fitness": 0.473
+        },
+        {
+          "variant": "LRLS",
+          "fitness": 0.415
+        },
+        {
+          "variant": "VESA",
+          "fitness": 0.388
+        }
+      ]
+    },
+    "shortlist": [
+      {
+        "variant": "TVCA",
+        "mutations": "V39T/D40V/G41C/V54A",
+        "predicted": 0.699,
+        "source": "model_top",
+        "structure_prior": -0.347
+      },
+      {
+        "variant": "IWGL",
+        "mutations": "V39I/D40W/V54L",
+        "predicted": 0.684,
+        "source": "model_top",
+        "structure_prior": 2.848
+      },
+      {
+        "variant": "TWGL",
+        "mutations": "V39T/D40W/V54L",
+        "predicted": 0.678,
+        "source": "model_top",
+        "structure_prior": 1.994
+      },
+      {
+        "variant": "WWGL",
+        "mutations": "V39W/D40W/V54L",
+        "predicted": 0.675,
+        "source": "model_top",
+        "structure_prior": 1.656
+      },
+      {
+        "variant": "YWGL",
+        "mutations": "V39Y/D40W/V54L",
+        "predicted": 0.675,
+        "source": "model_top",
+        "structure_prior": 1.754
+      },
+      {
+        "variant": "RWGL",
+        "mutations": "V39R/D40W/V54L",
+        "predicted": 0.671,
+        "source": "model_top",
+        "structure_prior": 1.403
+      },
+      {
+        "variant": "AWGL",
+        "mutations": "V39A/D40W/V54L",
+        "predicted": 0.658,
+        "source": "model_top",
+        "structure_prior": 1.24
+      },
+      {
+        "variant": "TSCA",
+        "mutations": "V39T/D40S/G41C/V54A",
+        "predicted": 0.654,
+        "source": "model_top",
+        "structure_prior": 0.224
+      },
+      {
+        "variant": "FWGL",
+        "mutations": "V39F/D40W/V54L",
+        "predicted": 0.654,
+        "source": "model_top",
+        "structure_prior": 1.743
+      },
+      {
+        "variant": "TTCA",
+        "mutations": "V39T/D40T/G41C/V54A",
+        "predicted": 0.651,
+        "source": "model_top",
+        "structure_prior": 0.415
+      },
+      {
+        "variant": "TNCA",
+        "mutations": "V39T/D40N/G41C/V54A",
+        "predicted": 0.646,
+        "source": "model_top",
+        "structure_prior": 0.304
+      },
+      {
+        "variant": "KWGL",
+        "mutations": "V39K/D40W/V54L",
+        "predicted": 0.643,
+        "source": "model_top",
+        "structure_prior": 1.405
+      },
+      {
+        "variant": "TDCA",
+        "mutations": "V39T/G41C/V54A",
+        "predicted": 0.641,
+        "source": "model_top",
+        "structure_prior": 0.255
+      },
+      {
+        "variant": "VWGL",
+        "mutations": "D40W/V54L",
+        "predicted": 0.64,
+        "source": "model_top",
+        "structure_prior": 3.36
+      },
+      {
+        "variant": "TKCA",
+        "mutations": "V39T/D40K/G41C/V54A",
+        "predicted": 0.638,
+        "source": "model_top",
+        "structure_prior": 0.101
+      },
+      {
+        "variant": "SSGL",
+        "mutations": "V39S/D40S/V54L",
+        "predicted": 0.636,
+        "source": "model_top",
+        "structure_prior": 1.117
+      },
+      {
+        "variant": "DWGL",
+        "mutations": "V39D/D40W/V54L",
+        "predicted": 0.636,
+        "source": "model_top",
+        "structure_prior": 1.675
+      },
+      {
+        "variant": "SKGL",
+        "mutations": "V39S/D40K/V54L",
+        "predicted": 0.635,
+        "source": "model_top",
+        "structure_prior": 0.994
+      },
+      {
+        "variant": "STGL",
+        "mutations": "V39S/D40T/V54L",
+        "predicted": 0.635,
+        "source": "model_top",
+        "structure_prior": 1.308
+      },
+      {
+        "variant": "TRCA",
+        "mutations": "V39T/D40R/G41C/V54A",
+        "predicted": 0.633,
+        "source": "model_top",
+        "structure_prior": 0.253
+      },
+      {
+        "variant": "THCA",
+        "mutations": "V39T/D40H/G41C/V54A",
+        "predicted": 0.631,
+        "source": "model_top",
+        "structure_prior": 0.496
+      },
+      {
+        "variant": "CWGL",
+        "mutations": "V39C/D40W/V54L",
+        "predicted": 0.63,
+        "source": "model_top",
+        "structure_prior": 2.265
+      },
+      {
+        "variant": "SYGL",
+        "mutations": "V39S/D40Y/V54L",
+        "predicted": 0.63,
+        "source": "model_top",
+        "structure_prior": 1.465
+      },
+      {
+        "variant": "SGGL",
+        "mutations": "V39S/D40G/V54L",
+        "predicted": 0.628,
+        "source": "model_top",
+        "structure_prior": 0.253
+      },
+      {
+        "variant": "TYCA",
+        "mutations": "V39T/D40Y/G41C/V54A",
+        "predicted": 0.626,
+        "source": "model_top",
+        "structure_prior": 0.572
+      },
+      {
+        "variant": "MWGL",
+        "mutations": "V39M/D40W/V54L",
+        "predicted": 0.626,
+        "source": "model_top",
+        "structure_prior": 1.74
+      },
+      {
+        "variant": "TMCA",
+        "mutations": "V39T/D40M/G41C/V54A",
+        "predicted": 0.624,
+        "source": "model_top",
+        "structure_prior": 0.51
+      },
+      {
+        "variant": "SRGL",
+        "mutations": "V39S/D40R/V54L",
+        "predicted": 0.623,
+        "source": "model_top",
+        "structure_prior": 1.146
+      },
+      {
+        "variant": "QWGL",
+        "mutations": "V39Q/D40W/V54L",
+        "predicted": 0.621,
+        "source": "model_top",
+        "structure_prior": 1.628
+      },
+      {
+        "variant": "TPCA",
+        "mutations": "V39T/D40P/G41C/V54A",
+        "predicted": 0.621,
+        "source": "model_top",
+        "structure_prior": 0.554
+      },
+      {
+        "variant": "TGCA",
+        "mutations": "V39T/D40G/G41C/V54A",
+        "predicted": 0.619,
+        "source": "model_top",
+        "structure_prior": -0.64
+      },
+      {
+        "variant": "SDGL",
+        "mutations": "V39S/V54L",
+        "predicted": 0.614,
+        "source": "model_top",
+        "structure_prior": 1.147
+      },
+      {
+        "variant": "SFGL",
+        "mutations": "V39S/D40F/V54L",
+        "predicted": 0.613,
+        "source": "model_top",
+        "structure_prior": 1.454
+      },
+      {
+        "variant": "GWGL",
+        "mutations": "V39G/D40W/V54L",
+        "predicted": 0.612,
+        "source": "model_top",
+        "structure_prior": 1.378
+      },
+      {
+        "variant": "NWGL",
+        "mutations": "V39N/D40W/V54L",
+        "predicted": 0.602,
+        "source": "model_top",
+        "structure_prior": 1.659
+      },
+      {
+        "variant": "TCCA",
+        "mutations": "V39T/D40C/G41C/V54A",
+        "predicted": 0.6,
+        "source": "model_top",
+        "structure_prior": -0.234
+      },
+      {
+        "variant": "SVGL",
+        "mutations": "V39S/D40V/V54L",
+        "predicted": 0.6,
+        "source": "model_top",
+        "structure_prior": 0.546
+      },
+      {
+        "variant": "TFCA",
+        "mutations": "V39T/D40F/G41C/V54A",
+        "predicted": 0.599,
+        "source": "model_top",
+        "structure_prior": 0.561
+      },
+      {
+        "variant": "SPGL",
+        "mutations": "V39S/D40P/V54L",
+        "predicted": 0.598,
+        "source": "model_top",
+        "structure_prior": 1.447
+      },
+      {
+        "variant": "TICA",
+        "mutations": "V39T/D40I/G41C/V54A",
+        "predicted": 0.597,
+        "source": "model_top",
+        "structure_prior": 0.205
+      },
+      {
+        "variant": "TLCA",
+        "mutations": "V39T/D40L/G41C/V54A",
+        "predicted": 0.594,
+        "source": "model_top",
+        "structure_prior": 0.564
+      },
+      {
+        "variant": "TWCA",
+        "mutations": "V39T/D40W/G41C/V54A",
+        "predicted": 0.59,
+        "source": "model_top",
+        "structure_prior": 0.466
+      },
+      {
+        "variant": "SQGL",
+        "mutations": "V39S/D40Q/V54L",
+        "predicted": 0.585,
+        "source": "model_top",
+        "structure_prior": 1.345
+      },
+      {
+        "variant": "TQAA",
+        "mutations": "V39T/D40Q/G41A/V54A",
+        "predicted": 0.577,
+        "source": "model_top",
+        "structure_prior": 1.957
+      },
+      {
+        "variant": "SAGL",
+        "mutations": "V39S/D40A/V54L",
+        "predicted": 0.577,
+        "source": "model_top",
+        "structure_prior": 0.142
+      },
+      {
+        "variant": "TQLA",
+        "mutations": "V39T/D40Q/G41L/V54A",
+        "predicted": 0.576,
+        "source": "model_top",
+        "structure_prior": 0.971
+      },
+      {
+        "variant": "TQFA",
+        "mutations": "V39T/D40Q/G41F/V54A",
+        "predicted": 0.576,
+        "source": "model_top",
+        "structure_prior": 1.356
+      },
+      {
+        "variant": "SHGL",
+        "mutations": "V39S/D40H/V54L",
+        "predicted": 0.568,
+        "source": "model_top",
+        "structure_prior": 1.389
+      },
+      {
+        "variant": "TQTA",
+        "mutations": "V39T/D40Q/G41T/V54A",
+        "predicted": 0.566,
+        "source": "model_top",
+        "structure_prior": 0.795
+      },
+      {
+        "variant": "TVCG",
+        "mutations": "V39T/D40V/G41C/V54G",
+        "predicted": 0.565,
+        "source": "model_top",
+        "structure_prior": -1.701
+      },
+      {
+        "variant": "TQDA",
+        "mutations": "V39T/D40Q/G41D/V54A",
+        "predicted": 0.561,
+        "source": "model_top",
+        "structure_prior": 2.4
+      },
+      {
+        "variant": "SIGL",
+        "mutations": "V39S/D40I/V54L",
+        "predicted": 0.561,
+        "source": "model_top",
+        "structure_prior": 1.098
+      },
+      {
+        "variant": "TQPA",
+        "mutations": "V39T/D40Q/G41P/V54A",
+        "predicted": 0.559,
+        "source": "model_top",
+        "structure_prior": 1.418
+      },
+      {
+        "variant": "TQMA",
+        "mutations": "V39T/D40Q/G41M/V54A",
+        "predicted": 0.557,
+        "source": "model_top",
+        "structure_prior": 1.213
+      },
+      {
+        "variant": "TQVA",
+        "mutations": "V39T/D40Q/G41V/V54A",
+        "predicted": 0.556,
+        "source": "model_top",
+        "structure_prior": 0.06
+      },
+      {
+        "variant": "TQYA",
+        "mutations": "V39T/D40Q/G41Y/V54A",
+        "predicted": 0.556,
+        "source": "model_top",
+        "structure_prior": 1.381
+      },
+      {
+        "variant": "SEGL",
+        "mutations": "V39S/D40E/V54L",
+        "predicted": 0.55,
+        "source": "model_top",
+        "structure_prior": 1.301
+      },
+      {
+        "variant": "TQQA",
+        "mutations": "V39T/D40Q/G41Q/V54A",
+        "predicted": 0.547,
+        "source": "model_top",
+        "structure_prior": 1.98
+      },
+      {
+        "variant": "FQCG",
+        "mutations": "V39F/D40Q/G41C/V54G",
+        "predicted": 0.546,
+        "source": "model_top",
+        "structure_prior": -1.153
+      },
+      {
+        "variant": "SCGL",
+        "mutations": "V39S/D40C/V54L",
+        "predicted": 0.543,
+        "source": "model_top",
+        "structure_prior": 0.659
+      },
+      {
+        "variant": "SMGL",
+        "mutations": "V39S/D40M/V54L",
+        "predicted": 0.54,
+        "source": "model_top",
+        "structure_prior": 1.403
+      },
+      {
+        "variant": "SLGL",
+        "mutations": "V39S/D40L/V54L",
+        "predicted": 0.539,
+        "source": "model_top",
+        "structure_prior": 1.457
+      },
+      {
+        "variant": "TQSA",
+        "mutations": "V39T/D40Q/G41S/V54A",
+        "predicted": 0.537,
+        "source": "model_top",
+        "structure_prior": 2.162
+      },
+      {
+        "variant": "TQCG",
+        "mutations": "V39T/D40Q/G41C/V54G",
+        "predicted": 0.532,
+        "source": "model_top",
+        "structure_prior": -0.902
+      },
+      {
+        "variant": "FKCG",
+        "mutations": "V39F/D40K/G41C/V54G",
+        "predicted": 0.529,
+        "source": "model_top",
+        "structure_prior": -1.504
+      },
+      {
+        "variant": "TQKA",
+        "mutations": "V39T/D40Q/G41K/V54A",
+        "predicted": 0.528,
+        "source": "model_top",
+        "structure_prior": 2.461
+      },
+      {
+        "variant": "TACA",
+        "mutations": "V39T/D40A/G41C/V54A",
+        "predicted": 0.526,
+        "source": "model_top",
+        "structure_prior": -0.751
+      },
+      {
+        "variant": "TQEA",
+        "mutations": "V39T/D40Q/G41E/V54A",
+        "predicted": 0.523,
+        "source": "model_top",
+        "structure_prior": 2.125
+      },
+      {
+        "variant": "TQIA",
+        "mutations": "V39T/D40Q/G41I/V54A",
+        "predicted": 0.523,
+        "source": "model_top",
+        "structure_prior": 0.254
+      },
+      {
+        "variant": "TQWA",
+        "mutations": "V39T/D40Q/G41W/V54A",
+        "predicted": 0.521,
+        "source": "model_top",
+        "structure_prior": 1.282
+      },
+      {
+        "variant": "FQCA",
+        "mutations": "V39F/D40Q/G41C/V54A",
+        "predicted": 0.519,
+        "source": "model_top",
+        "structure_prior": 0.201
+      },
+      {
+        "variant": "TQRA",
+        "mutations": "V39T/D40Q/G41R/V54A",
+        "predicted": 0.518,
+        "source": "model_top",
+        "structure_prior": 2.182
+      },
+      {
+        "variant": "FNCG",
+        "mutations": "V39F/D40N/G41C/V54G",
+        "predicted": 0.517,
+        "source": "model_top",
+        "structure_prior": -1.301
+      },
+      {
+        "variant": "FSCG",
+        "mutations": "V39F/D40S/G41C/V54G",
+        "predicted": 0.516,
+        "source": "model_top",
+        "structure_prior": -1.381
+      },
+      {
+        "variant": "TQNA",
+        "mutations": "V39T/D40Q/G41N/V54A",
+        "predicted": 0.514,
+        "source": "model_top",
+        "structure_prior": 2.316
+      },
+      {
+        "variant": "TQHA",
+        "mutations": "V39T/D40Q/G41H/V54A",
+        "predicted": 0.509,
+        "source": "model_top",
+        "structure_prior": 1.911
+      },
+      {
+        "variant": "FTCG",
+        "mutations": "V39F/D40T/G41C/V54G",
+        "predicted": 0.508,
+        "source": "model_top",
+        "structure_prior": -1.19
+      },
+      {
+        "variant": "FYCG",
+        "mutations": "V39F/D40Y/G41C/V54G",
+        "predicted": 0.507,
+        "source": "model_top",
+        "structure_prior": -1.033
+      },
+      {
+        "variant": "IVCG",
+        "mutations": "V39I/D40V/G41C/V54G",
+        "predicted": 0.505,
+        "source": "model_top",
+        "structure_prior": -0.847
+      },
+      {
+        "variant": "RVCG",
+        "mutations": "V39R/D40V/G41C/V54G",
+        "predicted": 0.503,
+        "source": "model_top",
+        "structure_prior": -2.292
+      },
+      {
+        "variant": "FECG",
+        "mutations": "V39F/D40E/G41C/V54G",
+        "predicted": 0.502,
+        "source": "model_top",
+        "structure_prior": -1.197
+      },
+      {
+        "variant": "FDCG",
+        "mutations": "V39F/G41C/V54G",
+        "predicted": 0.502,
+        "source": "model_top",
+        "structure_prior": -1.351
+      },
+      {
+        "variant": "TQCH",
+        "mutations": "V39T/D40Q/G41C/V54H",
+        "predicted": 0.501,
+        "source": "model_top",
+        "structure_prior": -1.199
+      },
+      {
+        "variant": "SWYL",
+        "mutations": "V39S/D40W/G41Y/V54L",
+        "predicted": 0.499,
+        "source": "model_top",
+        "structure_prior": -0.323
+      },
+      {
+        "variant": "FMCG",
+        "mutations": "V39F/D40M/G41C/V54G",
+        "predicted": 0.499,
+        "source": "model_top",
+        "structure_prior": -1.095
+      },
+      {
+        "variant": "TQCP",
+        "mutations": "V39T/D40Q/G41C/V54P",
+        "predicted": 0.497,
+        "source": "model_top",
+        "structure_prior": -0.787
+      },
+      {
+        "variant": "TQCE",
+        "mutations": "V39T/D40Q/G41C/V54E",
+        "predicted": 0.496,
+        "source": "model_top",
+        "structure_prior": -1.307
+      },
+      {
+        "variant": "TQCT",
+        "mutations": "V39T/D40Q/G41C/V54T",
+        "predicted": 0.494,
+        "source": "model_top",
+        "structure_prior": -0.305
+      },
+      {
+        "variant": "SWFL",
+        "mutations": "V39S/D40W/G41F/V54L",
+        "predicted": 0.493,
+        "source": "model_top",
+        "structure_prior": -0.347
+      },
+      {
+        "variant": "FLCG",
+        "mutations": "V39F/D40L/G41C/V54G",
+        "predicted": 0.493,
+        "source": "model_top",
+        "structure_prior": -1.041
+      },
+      {
+        "variant": "TQCY",
+        "mutations": "V39T/D40Q/G41C/V54Y",
+        "predicted": 0.492,
+        "source": "model_top",
+        "structure_prior": -0.807
+      },
+      {
+        "variant": "TQCN",
+        "mutations": "V39T/D40Q/G41C/V54N",
+        "predicted": 0.492,
+        "source": "model_top",
+        "structure_prior": -1.38
+      },
+      {
+        "variant": "TQCL",
+        "mutations": "V39T/D40Q/G41C/V54L",
+        "predicted": 0.492,
+        "source": "model_top",
+        "structure_prior": -0.63
+      },
+      {
+        "variant": "QVCG",
+        "mutations": "V39Q/D40V/G41C/V54G",
+        "predicted": 0.491,
+        "source": "model_top",
+        "structure_prior": -2.067
+      },
+      {
+        "variant": "SWRL",
+        "mutations": "V39S/D40W/G41R/V54L",
+        "predicted": 0.49,
+        "source": "model_top",
+        "structure_prior": 0.478
+      },
+      {
+        "variant": "FICG",
+        "mutations": "V39F/D40I/G41C/V54G",
+        "predicted": 0.489,
+        "source": "model_top",
+        "structure_prior": -1.4
+      },
+      {
+        "variant": "IQCA",
+        "mutations": "V39I/D40Q/G41C/V54A",
+        "predicted": 0.489,
+        "source": "model_top",
+        "structure_prior": 1.306
+      },
+      {
+        "variant": "HVCG",
+        "mutations": "V39H/D40V/G41C/V54G",
+        "predicted": 0.487,
+        "source": "model_top",
+        "structure_prior": -2.004
+      },
+      {
+        "variant": "FHCG",
+        "mutations": "V39F/D40H/G41C/V54G",
+        "predicted": 0.485,
+        "source": "model_top",
+        "structure_prior": -1.109
+      },
+      {
+        "variant": "AVCG",
+        "mutations": "V39A/D40V/G41C/V54G",
+        "predicted": 0.484,
+        "source": "model_top",
+        "structure_prior": -2.455
+      },
+      {
+        "variant": "CVCG",
+        "mutations": "V39C/D40V/G41C/V54G",
+        "predicted": 0.483,
+        "source": "model_top",
+        "structure_prior": -1.43
+      },
+      {
+        "variant": "SWLL",
+        "mutations": "V39S/D40W/G41L/V54L",
+        "predicted": 0.482,
+        "source": "model_top",
+        "structure_prior": -0.733
+      },
+      {
+        "variant": "WVCG",
+        "mutations": "V39W/D40V/G41C/V54G",
+        "predicted": 0.481,
+        "source": "model_top",
+        "structure_prior": -2.039
+      },
+      {
+        "variant": "SWWL",
+        "mutations": "V39S/D40W/G41W/V54L",
+        "predicted": 0.479,
+        "source": "model_top",
+        "structure_prior": -0.421
+      },
+      {
+        "variant": "GVCG",
+        "mutations": "V39G/D40V/G41C/V54G",
+        "predicted": 0.478,
+        "source": "model_top",
+        "structure_prior": -2.317
+      },
+      {
+        "variant": "LVCG",
+        "mutations": "V39L/D40V/G41C/V54G",
+        "predicted": 0.478,
+        "source": "model_top",
+        "structure_prior": -1.702
+      },
+      {
+        "variant": "DVCG",
+        "mutations": "V39D/D40V/G41C/V54G",
+        "predicted": 0.471,
+        "source": "model_top",
+        "structure_prior": -2.02
+      },
+      {
+        "variant": "KVCG",
+        "mutations": "V39K/D40V/G41C/V54G",
+        "predicted": 0.47,
+        "source": "model_top",
+        "structure_prior": -2.29
+      },
+      {
+        "variant": "QQCA",
+        "mutations": "V39Q/D40Q/G41C/V54A",
+        "predicted": 0.468,
+        "source": "model_top",
+        "structure_prior": 0.086
+      },
+      {
+        "variant": "DQCA",
+        "mutations": "V39D/D40Q/G41C/V54A",
+        "predicted": 0.468,
+        "source": "model_top",
+        "structure_prior": 0.133
+      },
+      {
+        "variant": "FCCG",
+        "mutations": "V39F/D40C/G41C/V54G",
+        "predicted": 0.467,
+        "source": "model_top",
+        "structure_prior": -1.839
+      },
+      {
+        "variant": "HQCA",
+        "mutations": "V39H/D40Q/G41C/V54A",
+        "predicted": 0.466,
+        "source": "model_top",
+        "structure_prior": 0.149
+      },
+      {
+        "variant": "FWCG",
+        "mutations": "V39F/D40W/G41C/V54G",
+        "predicted": 0.466,
+        "source": "model_top",
+        "structure_prior": -1.139
+      },
+      {
+        "variant": "TQCV",
+        "mutations": "V39T/D40Q/G41C",
+        "predicted": 0.465,
+        "source": "model_top",
+        "structure_prior": -0.175
+      },
+      {
+        "variant": "SWEL",
+        "mutations": "V39S/D40W/G41E/V54L",
+        "predicted": 0.465,
+        "source": "model_top",
+        "structure_prior": 0.422
+      },
+      {
+        "variant": "TQCM",
+        "mutations": "V39T/D40Q/G41C/V54M",
+        "predicted": 0.464,
+        "source": "model_top",
+        "structure_prior": -0.563
+      },
+      {
+        "variant": "SWTL",
+        "mutations": "V39S/D40W/G41T/V54L",
+        "predicted": 0.464,
+        "source": "model_top",
+        "structure_prior": -0.909
+      },
+      {
+        "variant": "CQCA",
+        "mutations": "V39C/D40Q/G41C/V54A",
+        "predicted": 0.463,
+        "source": "model_top",
+        "structure_prior": 0.723
+      },
+      {
+        "variant": "TQCI",
+        "mutations": "V39T/D40Q/G41C/V54I",
+        "predicted": 0.463,
+        "source": "model_top",
+        "structure_prior": -0.408
+      },
+      {
+        "variant": "FVCC",
+        "mutations": "V39F/D40V/G41C/V54C",
+        "predicted": 0.462,
+        "source": "model_top",
+        "structure_prior": -0.635
+      },
+      {
+        "variant": "WQCA",
+        "mutations": "V39W/D40Q/G41C/V54A",
+        "predicted": 0.461,
+        "source": "model_top",
+        "structure_prior": 0.114
+      },
+      {
+        "variant": "YVCG",
+        "mutations": "V39Y/D40V/G41C/V54G",
+        "predicted": 0.461,
+        "source": "model_top",
+        "structure_prior": -1.941
+      },
+      {
+        "variant": "FVCP",
+        "mutations": "V39F/D40V/G41C/V54P",
+        "predicted": 0.46,
+        "source": "model_top",
+        "structure_prior": -1.837
+      },
+      {
+        "variant": "FACG",
+        "mutations": "V39F/D40A/G41C/V54G",
+        "predicted": 0.459,
+        "source": "model_top",
+        "structure_prior": -2.356
+      },
+      {
+        "variant": "SWVL",
+        "mutations": "V39S/D40W/G41V/V54L",
+        "predicted": 0.459,
+        "source": "model_top",
+        "structure_prior": -1.643
+      },
+      {
+        "variant": "FVCN",
+        "mutations": "V39F/D40V/G41C/V54N",
+        "predicted": 0.459,
+        "source": "model_top",
+        "structure_prior": -2.43
+      },
+      {
+        "variant": "FFCG",
+        "mutations": "V39F/D40F/G41C/V54G",
+        "predicted": 0.457,
+        "source": "model_top",
+        "structure_prior": -1.044
+      },
+      {
+        "variant": "SWQL",
+        "mutations": "V39S/D40W/G41Q/V54L",
+        "predicted": 0.457,
+        "source": "model_top",
+        "structure_prior": 0.276
+      },
+      {
+        "variant": "SWGC",
+        "mutations": "V39S/D40W/V54C",
+        "predicted": 0.456,
+        "source": "model_top",
+        "structure_prior": 2.404
+      },
+      {
+        "variant": "SWGT",
+        "mutations": "V39S/D40W/V54T",
+        "predicted": 0.456,
+        "source": "model_top",
+        "structure_prior": 1.683
+      },
+      {
+        "variant": "FVCL",
+        "mutations": "V39F/D40V/G41C/V54L",
+        "predicted": 0.455,
+        "source": "model_top",
+        "structure_prior": -1.68
+      },
+      {
+        "variant": "TQGL",
+        "mutations": "V39T/D40Q/V54L",
+        "predicted": 0.451,
+        "source": "model_top",
+        "structure_prior": 1.981
+      },
+      {
+        "variant": "FVCY",
+        "mutations": "V39F/D40V/G41C/V54Y",
+        "predicted": 0.451,
+        "source": "model_top",
+        "structure_prior": -1.857
+      },
+      {
+        "variant": "GQCA",
+        "mutations": "V39G/D40Q/G41C/V54A",
+        "predicted": 0.451,
+        "source": "model_top",
+        "structure_prior": -0.164
+      },
+      {
+        "variant": "SQCA",
+        "mutations": "V39S/D40Q/G41C/V54A",
+        "predicted": 0.45,
+        "source": "model_top",
+        "structure_prior": -0.183
+      },
+      {
+        "variant": "VQCA",
+        "mutations": "D40Q/G41C/V54A",
+        "predicted": 0.45,
+        "source": "model_top",
+        "structure_prior": 1.818
+      },
+      {
+        "variant": "FVCW",
+        "mutations": "V39F/D40V/G41C/V54W",
+        "predicted": 0.449,
+        "source": "model_top",
+        "structure_prior": -1.556
+      },
+      {
+        "variant": "TQCR",
+        "mutations": "V39T/D40Q/G41C/V54R",
+        "predicted": 0.449,
+        "source": "model_top",
+        "structure_prior": -0.939
+      },
+      {
+        "variant": "SWGY",
+        "mutations": "V39S/D40W/V54Y",
+        "predicted": 0.449,
+        "source": "model_top",
+        "structure_prior": 1.181
+      },
+      {
+        "variant": "RQCA",
+        "mutations": "V39R/D40Q/G41C/V54A",
+        "predicted": 0.448,
+        "source": "model_top",
+        "structure_prior": -0.139
+      },
+      {
+        "variant": "FGCG",
+        "mutations": "V39F/D40G/G41C/V54G",
+        "predicted": 0.448,
+        "source": "model_top",
+        "structure_prior": -2.245
+      },
+      {
+        "variant": "PVCG",
+        "mutations": "V39P/D40V/G41C/V54G",
+        "predicted": 0.448,
+        "source": "model_top",
+        "structure_prior": -1.982
+      },
+      {
+        "variant": "FVCH",
+        "mutations": "V39F/D40V/G41C/V54H",
+        "predicted": 0.447,
+        "source": "model_top",
+        "structure_prior": -2.249
+      },
+      {
+        "variant": "SWGE",
+        "mutations": "V39S/D40W/V54E",
+        "predicted": 0.446,
+        "source": "model_top",
+        "structure_prior": 0.682
+      },
+      {
+        "variant": "PQCA",
+        "mutations": "V39P/D40Q/G41C/V54A",
+        "predicted": 0.446,
+        "source": "model_top",
+        "structure_prior": 0.171
+      },
+      {
+        "variant": "FVCE",
+        "mutations": "V39F/D40V/G41C/V54E",
+        "predicted": 0.446,
+        "source": "model_top",
+        "structure_prior": -2.357
+      },
+      {
+        "variant": "SWGR",
+        "mutations": "V39S/D40W/V54R",
+        "predicted": 0.446,
+        "source": "model_top",
+        "structure_prior": 1.049
+      },
+      {
+        "variant": "SWPL",
+        "mutations": "V39S/D40W/G41P/V54L",
+        "predicted": 0.446,
+        "source": "model_top",
+        "structure_prior": -0.285
+      },
+      {
+        "variant": "SWNL",
+        "mutations": "V39S/D40W/G41N/V54L",
+        "predicted": 0.446,
+        "source": "model_top",
+        "structure_prior": 0.613
+      },
+      {
+        "variant": "SWGP",
+        "mutations": "V39S/D40W/V54P",
+        "predicted": 0.444,
+        "source": "model_top",
+        "structure_prior": 1.202
+      },
+      {
+        "variant": "SWGS",
+        "mutations": "V39S/D40W/V54S",
+        "predicted": 0.442,
+        "source": "model_top",
+        "structure_prior": 1.143
+      },
+      {
+        "variant": "FVMG",
+        "mutations": "V39F/D40V/G41M/V54G",
+        "predicted": 0.439,
+        "source": "model_top",
+        "structure_prior": -1.192
+      },
+      {
+        "variant": "EVCG",
+        "mutations": "V39E/D40V/G41C/V54G",
+        "predicted": 0.439,
+        "source": "model_top",
+        "structure_prior": -2.023
+      },
+      {
+        "variant": "SWGQ",
+        "mutations": "V39S/D40W/V54Q",
+        "predicted": 0.438,
+        "source": "model_top",
+        "structure_prior": 0.827
+      },
+      {
+        "variant": "EQCA",
+        "mutations": "V39E/D40Q/G41C/V54A",
+        "predicted": 0.437,
+        "source": "model_top",
+        "structure_prior": 0.13
+      },
+      {
+        "variant": "SWCL",
+        "mutations": "V39S/D40W/G41C/V54L",
+        "predicted": 0.435,
+        "source": "model_top",
+        "structure_prior": -1.251
+      },
+      {
+        "variant": "SWGH",
+        "mutations": "V39S/D40W/V54H",
+        "predicted": 0.434,
+        "source": "model_top",
+        "structure_prior": 0.79
+      },
+      {
+        "variant": "FVCT",
+        "mutations": "V39F/D40V/G41C/V54T",
+        "predicted": 0.433,
+        "source": "model_top",
+        "structure_prior": -1.355
+      },
+      {
+        "variant": "MQCA",
+        "mutations": "V39M/D40Q/G41C/V54A",
+        "predicted": 0.433,
+        "source": "model_top",
+        "structure_prior": 0.198
+      },
+      {
+        "variant": "NQCA",
+        "mutations": "V39N/D40Q/G41C/V54A",
+        "predicted": 0.433,
+        "source": "model_top",
+        "structure_prior": 0.117
+      },
+      {
+        "variant": "KQCA",
+        "mutations": "V39K/D40Q/G41C/V54A",
+        "predicted": 0.431,
+        "source": "model_top",
+        "structure_prior": -0.137
+      },
+      {
+        "variant": "SWDL",
+        "mutations": "V39S/D40W/G41D/V54L",
+        "predicted": 0.431,
+        "source": "model_top",
+        "structure_prior": 0.697
+      },
+      {
+        "variant": "YQCA",
+        "mutations": "V39Y/D40Q/G41C/V54A",
+        "predicted": 0.429,
+        "source": "model_top",
+        "structure_prior": 0.212
+      },
+      {
+        "variant": "FVCS",
+        "mutations": "V39F/D40V/G41C/V54S",
+        "predicted": 0.428,
+        "source": "model_top",
+        "structure_prior": -1.896
+      },
+      {
+        "variant": "SWAL",
+        "mutations": "V39S/D40W/G41A/V54L",
+        "predicted": 0.426,
+        "source": "model_top",
+        "structure_prior": 0.254
+      },
+      {
+        "variant": "SWGI",
+        "mutations": "V39S/D40W/V54I",
+        "predicted": 0.425,
+        "source": "model_top",
+        "structure_prior": 1.58
+      },
+      {
+        "variant": "TWGA",
+        "mutations": "V39T/D40W/V54A",
+        "predicted": 0.422,
+        "source": "model_top",
+        "structure_prior": 3.076
+      },
+      {
+        "variant": "SWGM",
+        "mutations": "V39S/D40W/V54M",
+        "predicted": 0.421,
+        "source": "model_top",
+        "structure_prior": 1.426
+      },
+      {
+        "variant": "TQCS",
+        "mutations": "V39T/D40Q/G41C/V54S",
+        "predicted": 0.418,
+        "source": "model_top",
+        "structure_prior": -0.846
+      },
+      {
+        "variant": "LQCA",
+        "mutations": "V39L/D40Q/G41C/V54A",
+        "predicted": 0.417,
+        "source": "model_top",
+        "structure_prior": 0.451
+      },
+      {
+        "variant": "TQCK",
+        "mutations": "V39T/D40Q/G41C/V54K",
+        "predicted": 0.417,
+        "source": "model_top",
+        "structure_prior": -1.068
+      },
+      {
+        "variant": "SWGF",
+        "mutations": "V39S/D40W/V54F",
+        "predicted": 0.415,
+        "source": "model_top",
+        "structure_prior": 1.227
+      },
+      {
+        "variant": "SWHL",
+        "mutations": "V39S/D40W/G41H/V54L",
+        "predicted": 0.414,
+        "source": "model_top",
+        "structure_prior": 0.207
+      },
+      {
+        "variant": "SWGW",
+        "mutations": "V39S/D40W/V54W",
+        "predicted": 0.413,
+        "source": "model_top",
+        "structure_prior": 1.483
+      },
+      {
+        "variant": "FVCF",
+        "mutations": "V39F/D40V/G41C/V54F",
+        "predicted": 0.41,
+        "source": "model_top",
+        "structure_prior": -1.811
+      },
+      {
+        "variant": "SWGA",
+        "mutations": "V39S/D40W/V54A",
+        "predicted": 0.41,
+        "source": "model_top",
+        "structure_prior": 2.441
+      },
+      {
+        "variant": "SWIL",
+        "mutations": "V39S/D40W/G41I/V54L",
+        "predicted": 0.406,
+        "source": "model_top",
+        "structure_prior": -1.45
+      },
+      {
+        "variant": "IVCA",
+        "mutations": "V39I/D40V/G41C/V54A",
+        "predicted": 0.401,
+        "source": "model_top",
+        "structure_prior": 0.507
+      },
+      {
+        "variant": "FVCM",
+        "mutations": "V39F/D40V/G41C/V54M",
+        "predicted": 0.401,
+        "source": "model_top",
+        "structure_prior": -1.613
+      },
+      {
+        "variant": "FVCI",
+        "mutations": "V39F/D40V/G41C/V54I",
+        "predicted": 0.399,
+        "source": "model_top",
+        "structure_prior": -1.459
+      },
+      {
+        "variant": "SISD",
+        "mutations": "V39S/D40I/G41S/V54D",
+        "predicted": 0.021,
+        "source": "diverse",
+        "structure_prior": -0.604
+      },
+      {
+        "variant": "HHGK",
+        "mutations": "V39H/D40H/V54K",
+        "predicted": 0.044,
+        "source": "diverse",
+        "structure_prior": 1.283
+      },
+      {
+        "variant": "WACA",
+        "mutations": "V39W/D40A/G41C/V54A",
+        "predicted": 0.207,
+        "source": "diverse",
+        "structure_prior": -1.089
+      },
+      {
+        "variant": "HDLQ",
+        "mutations": "V39H/G41L/V54Q",
+        "predicted": 0.026,
+        "source": "diverse",
+        "structure_prior": -1.144
+      },
+      {
+        "variant": "WIDM",
+        "mutations": "V39W/D40I/G41D/V54M",
+        "predicted": 0.014,
+        "source": "diverse",
+        "structure_prior": 0.8
+      },
+      {
+        "variant": "DYNG",
+        "mutations": "V39D/D40Y/G41N/V54G",
+        "predicted": 0.041,
+        "source": "diverse",
+        "structure_prior": 0.763
+      },
+      {
+        "variant": "WASM",
+        "mutations": "V39W/D40A/G41S/V54M",
+        "predicted": 0.019,
+        "source": "diverse",
+        "structure_prior": -0.395
+      },
+      {
+        "variant": "RNFC",
+        "mutations": "V39R/D40N/G41F/V54C",
+        "predicted": 0.037,
+        "source": "diverse",
+        "structure_prior": 0.579
+      },
+      {
+        "variant": "EAIR",
+        "mutations": "V39E/D40A/G41I/V54R",
+        "predicted": 0.006,
+        "source": "diverse",
+        "structure_prior": -2.663
+      },
+      {
+        "variant": "FDLT",
+        "mutations": "V39F/G41L/V54T",
+        "predicted": 0.041,
+        "source": "diverse",
+        "structure_prior": -0.236
+      },
+      {
+        "variant": "PDMM",
+        "mutations": "V39P/G41M/V54M",
+        "predicted": 0.027,
+        "source": "diverse",
+        "structure_prior": -0.282
+      },
+      {
+        "variant": "KQEA",
+        "mutations": "V39K/D40Q/G41E/V54A",
+        "predicted": 0.129,
+        "source": "diverse",
+        "structure_prior": 1.536
+      },
+      {
+        "variant": "SDPQ",
+        "mutations": "V39S/G41P/V54Q",
+        "predicted": 0.026,
+        "source": "diverse",
+        "structure_prior": -1.029
+      },
+      {
+        "variant": "YGLS",
+        "mutations": "V39Y/D40G/G41L/V54S",
+        "predicted": 0.062,
+        "source": "diverse",
+        "structure_prior": -1.66
+      },
+      {
+        "variant": "TGPC",
+        "mutations": "V39T/D40G/G41P/V54C",
+        "predicted": 0.12,
+        "source": "diverse",
+        "structure_prior": 0.289
+      },
+      {
+        "variant": "CCQE",
+        "mutations": "V39C/D40C/G41Q/V54E",
+        "predicted": 0.013,
+        "source": "diverse",
+        "structure_prior": -0.194
+      },
+      {
+        "variant": "LQAW",
+        "mutations": "V39L/D40Q/G41A/V54W",
+        "predicted": 0.042,
+        "source": "diverse",
+        "structure_prior": 0.999
+      },
+      {
+        "variant": "VITA",
+        "mutations": "D40I/G41T/V54A",
+        "predicted": 0.101,
+        "source": "diverse",
+        "structure_prior": 1.914
+      },
+      {
+        "variant": "DAEL",
+        "mutations": "V39D/D40A/G41E/V54L",
+        "predicted": 0.029,
+        "source": "diverse",
+        "structure_prior": -0.479
+      },
+      {
+        "variant": "PTIE",
+        "mutations": "V39P/D40T/G41I/V54E",
+        "predicted": 0.003,
+        "source": "diverse",
+        "structure_prior": -1.824
+      },
+      {
+        "variant": "FQIA",
+        "mutations": "V39F/D40Q/G41I/V54A",
+        "predicted": 0.16,
+        "source": "diverse",
+        "structure_prior": 0.003
+      },
+      {
+        "variant": "YIPH",
+        "mutations": "V39Y/D40I/G41P/V54H",
+        "predicted": 0.006,
+        "source": "diverse",
+        "structure_prior": -0.72
+      },
+      {
+        "variant": "GSVC",
+        "mutations": "V39G/D40S/G41V/V54C",
+        "predicted": 0.019,
+        "source": "diverse",
+        "structure_prior": -0.822
+      },
+      {
+        "variant": "RKYI",
+        "mutations": "V39R/D40K/G41Y/V54I",
+        "predicted": 0.011,
+        "source": "diverse",
+        "structure_prior": -0.423
+      },
+      {
+        "variant": "NYWC",
+        "mutations": "V39N/D40Y/G41W/V54C",
+        "predicted": 0.039,
+        "source": "diverse",
+        "structure_prior": 1.029
+      },
+      {
+        "variant": "TVNM",
+        "mutations": "V39T/D40V/G41N/V54M",
+        "predicted": 0.082,
+        "source": "diverse",
+        "structure_prior": 0.502
+      },
+      {
+        "variant": "MEAR",
+        "mutations": "V39M/D40E/G41A/V54R",
+        "predicted": 0.023,
+        "source": "diverse",
+        "structure_prior": 0.267
+      },
+      {
+        "variant": "VLYF",
+        "mutations": "D40L/G41Y/V54F",
+        "predicted": 0.009,
+        "source": "diverse",
+        "structure_prior": 1.645
+      },
+      {
+        "variant": "IIAL",
+        "mutations": "V39I/D40I/G41A/V54L",
+        "predicted": 0.063,
+        "source": "diverse",
+        "structure_prior": 1.482
+      },
+      {
+        "variant": "LMFW",
+        "mutations": "V39L/D40M/G41F/V54W",
+        "predicted": 0.026,
+        "source": "diverse",
+        "structure_prior": 0.455
+      },
+      {
+        "variant": "GQIR",
+        "mutations": "V39G/D40Q/G41I/V54R",
+        "predicted": 0.015,
+        "source": "diverse",
+        "structure_prior": -1.754
+      },
+      {
+        "variant": "QESD",
+        "mutations": "V39Q/D40E/G41S/V54D",
+        "predicted": 0.061,
+        "source": "diverse",
+        "structure_prior": -0.132
+      },
+      {
+        "variant": "DHRV",
+        "mutations": "V39D/D40H/G41R",
+        "predicted": 0.003,
+        "source": "diverse",
+        "structure_prior": 1.28
+      },
+      {
+        "variant": "SNMN",
+        "mutations": "V39S/D40N/G41M/V54N",
+        "predicted": 0.016,
+        "source": "diverse",
+        "structure_prior": -1.404
+      },
+      {
+        "variant": "HDPW",
+        "mutations": "V39H/G41P/V54W",
+        "predicted": 0.01,
+        "source": "diverse",
+        "structure_prior": -0.041
+      },
+      {
+        "variant": "EQQE",
+        "mutations": "V39E/D40Q/G41Q/V54E",
+        "predicted": 0.029,
+        "source": "diverse",
+        "structure_prior": -0.101
+      },
+      {
+        "variant": "GDMF",
+        "mutations": "V39G/G41M/V54F",
+        "predicted": 0.015,
+        "source": "diverse",
+        "structure_prior": -0.815
+      },
+      {
+        "variant": "FHLT",
+        "mutations": "V39F/D40H/G41L/V54T",
+        "predicted": 0.041,
+        "source": "diverse",
+        "structure_prior": 0.006
+      },
+      {
+        "variant": "DEGA",
+        "mutations": "V39D/D40E/V54A",
+        "predicted": 0.147,
+        "source": "diverse",
+        "structure_prior": 2.699
+      },
+      {
+        "variant": "WDQW",
+        "mutations": "V39W/G41Q/V54W",
+        "predicted": 0.018,
+        "source": "diverse",
+        "structure_prior": 0.486
+      },
+      {
+        "variant": "EHYI",
+        "mutations": "V39E/D40H/G41Y/V54I",
+        "predicted": 0.007,
+        "source": "diverse",
+        "structure_prior": 0.242
+      },
+      {
+        "variant": "VTVL",
+        "mutations": "D40T/G41V/V54L",
+        "predicted": 0.057,
+        "source": "diverse",
+        "structure_prior": 0.307
+      },
+      {
+        "variant": "EFWL",
+        "mutations": "V39E/D40F/G41W/V54L",
+        "predicted": 0.048,
+        "source": "diverse",
+        "structure_prior": -0.013
+      },
+      {
+        "variant": "CFMR",
+        "mutations": "V39C/D40F/G41M/V54R",
+        "predicted": 0.027,
+        "source": "diverse",
+        "structure_prior": 0.2
+      },
+      {
+        "variant": "RIMM",
+        "mutations": "V39R/D40I/G41M/V54M",
+        "predicted": 0.03,
+        "source": "diverse",
+        "structure_prior": -0.641
+      },
+      {
+        "variant": "EPYT",
+        "mutations": "V39E/D40P/G41Y/V54T",
+        "predicted": 0.009,
+        "source": "diverse",
+        "structure_prior": 0.403
+      },
+      {
+        "variant": "TSAY",
+        "mutations": "V39T/D40S/G41A/V54Y",
+        "predicted": 0.132,
+        "source": "diverse",
+        "structure_prior": 0.47
+      },
+      {
+        "variant": "GQYT",
+        "mutations": "V39G/D40Q/G41Y/V54T",
+        "predicted": 0.026,
+        "source": "diverse",
+        "structure_prior": 0.007
+      },
+      {
+        "variant": "VIWF",
+        "mutations": "D40I/G41W/V54F",
+        "predicted": 0.009,
+        "source": "diverse",
+        "structure_prior": 1.187
+      },
+      {
+        "variant": "GKCQ",
+        "mutations": "V39G/D40K/G41C/V54Q",
+        "predicted": 0.049,
+        "source": "diverse",
+        "structure_prior": -2.129
+      },
+      {
+        "variant": "RCAL",
+        "mutations": "V39R/D40C/G41A/V54L",
+        "predicted": 0.062,
+        "source": "diverse",
+        "structure_prior": -0.402
+      },
+      {
+        "variant": "SPEM",
+        "mutations": "V39S/D40P/G41E/V54M",
+        "predicted": 0.016,
+        "source": "diverse",
+        "structure_prior": 0.576
+      },
+      {
+        "variant": "MANI",
+        "mutations": "V39M/D40A/G41N/V54I",
+        "predicted": 0.004,
+        "source": "diverse",
+        "structure_prior": -0.002
+      },
+      {
+        "variant": "QQYV",
+        "mutations": "V39Q/D40Q/G41Y",
+        "predicted": 0.026,
+        "source": "diverse",
+        "structure_prior": 0.388
+      },
+      {
+        "variant": "LAYP",
+        "mutations": "V39L/D40A/G41Y/V54P",
+        "predicted": 0.02,
+        "source": "diverse",
+        "structure_prior": -1.062
+      },
+      {
+        "variant": "ALQL",
+        "mutations": "V39A/D40L/G41Q/V54L",
+        "predicted": 0.031,
+        "source": "diverse",
+        "structure_prior": 0.256
+      },
+      {
+        "variant": "MPLG",
+        "mutations": "V39M/D40P/G41L/V54G",
+        "predicted": 0.046,
+        "source": "diverse",
+        "structure_prior": -0.536
+      },
+      {
+        "variant": "IPRM",
+        "mutations": "V39I/D40P/G41R/V54M",
+        "predicted": 0.008,
+        "source": "diverse",
+        "structure_prior": 2.122
+      },
+      {
+        "variant": "LKET",
+        "mutations": "V39L/D40K/G41E/V54T",
+        "predicted": 0.028,
+        "source": "diverse",
+        "structure_prior": 1.015
+      },
+      {
+        "variant": "NWWA",
+        "mutations": "V39N/D40W/G41W/V54A",
+        "predicted": 0.1,
+        "source": "diverse",
+        "structure_prior": 0.96
+      }
+    ],
+    "previous_round_feedback": null,
+    "required_output": {
+      "hypotheses": "3 to 4 items of {statement, site, substitution, direction}; each statement at most 25 words",
+      "selection": "exactly 96 variant ids taken from the shortlist, as a flat JSON array of strings and nothing else",
+      "reasons": "mapping from variant id to a reason of at most 15 words, for 5 picks",
+      "output_limit": "return these three keys only; no commentary, no per-variant annotations beyond the five reasons"
+    },
+    "knowledge": {
+      "structural_context": [
+        "GB1 is a 56-residue IgG-Fc binding domain with a four-strand beta-sheet packed against one alpha-helix; positions 39, 40, 41 sit in the beta3-beta4 turn region and 54 on the last strand.",
+        "Positions 39/41 pack against the hydrophobic core side; 40 is the most solvent-exposed of the four and tolerates the widest range of substitutions."
+      ],
+      "biophysical_rules": [
+        "Charged side chains change the local electrostatic environment in a context-dependent way; the sign of the effect is not fixed a priori.",
+        "Side-chain volume and hydrophobicity affect packing; a backbone-compatible substitution is not automatically a binding improvement.",
+        "Glycine and proline change backbone flexibility and are frequent sources of epistasis.",
+        "A substitution that is deleterious on its own can be beneficial in combination: do not discard a substitution only because its single-mutant value is low."
+      ],
+      "zero_shot_note": "structure_prior is a ProteinMPNN inverse-folding log-odds score (soluble v_48_002) on the 2GB1 backbone: log p(substitution | backbone) - log p(wild type | backbone). It reflects how compatible a residue is with the fold, which is NOT the same thing as binding to IgG-Fc; on this landscape it correlates only weakly with measured fitness."
+    }
+  },
+  "response": "{\"hypotheses\": [{\"statement\": \"D40W is the dominant beneficial substitution; variants carrying it will outperform model-ranked variants lacking it.\", \"site\": \"40\", \"substitution\": \"D40W\", \"direction\": \"beneficial\"}, {\"statement\": \"V54L combined with D40W improves packing and binding more than V54A or V54G alternatives.\", \"site\": \"54\", \"substitution\": \"V54L\", \"direction\": \"beneficial\"}, {\"statement\": \"At position 39, aromatic or large hydrophobic residues (W, Y, F, I) with D40W/V54L exceed polar/charged alternatives.\", \"site\": \"39\", \"substitution\": \"V39W/Y/F/I\", \"direction\": \"beneficial\"}, {\"statement\": \"G41C with V54A (TQCA-like) is suboptimal versus G41L or G41 absent when D40W is present.\", \"site\": \"41\", \"substitution\": \"G41C\", \"direction\": \"deleterious\"}], \"selection\": [\"IWGL\", \"TWGL\", \"WWGL\", \"YWGL\", \"RWGL\", \"AWGL\", \"FWGL\", \"KWGL\", \"VWGL\", \"DWGL\", \"CWGL\", \"MWGL\", \"QWGL\", \"GWGL\", \"NWGL\", \"SSGL\", \"SKGL\", \"STGL\", \"SYGL\", \"SGGL\", \"SRGL\", \"SDGL\", \"SFGL\", \"SVGL\", \"SPGL\", \"SQGL\", \"SAGL\", \"SHGL\", \"SIGL\", \"SEGL\", \"SCGL\", \"SMGL\", \"SLGL\", \"SWGL\", \"SWYL\", \"SWFL\", \"SWRL\", \"SWLL\", \"SWWL\", \"SWEL\", \"SWTL\", \"SWQL\", \"SWVL\", \"SWGC\", \"SWGT\", \"SWGY\", \"SWGE\", \"SWGR\", \"SWPL\", \"SWNL\", \"SWGP\", \"SWGS\", \"SWGQ\", \"SWGH\", \"SWDL\", \"SWAL\", \"SWGI\", \"SWGM\", \"SWGF\", \"SWHL\", \"SWGW\", \"SWGA\", \"SWIL\", \"SWCL\", \"TWGA\", \"TVCA\", \"TSCA\", \"TTCA\", \"TNCA\", \"TDCA\", \"TKCA\", \"TRCA\", \"THCA\", \"TYCA\", \"TMCA\", \"TPCA\", \"TGCA\", \"TCCA\", \"TFCA\", \"TICA\", \"TLCA\", \"TWCA\", \"TQAA\", \"TQLA\", \"TQFA\", \"TQTA\", \"TQDA\", \"TQPA\", \"TQMA\", \"TQVA\", \"TQYA\", \"TQQA\", \"TQSA\", \"TQKA\", \"TQEA\", \"TQIA\", \"TQWA\", \"TQRA\", \"TQNA\", \"TQHA\", \"TQGL\", \"VQCA\", \"IQCA\", \"IVCA\", \"FQCA\", \"FQCG\", \"FQIA\", \"DEGA\", \"VITA\", \"KQEA\", \"TQCG\", \"TQCV\"], \"reasons\": {\"IWGL\": \"D40W/V54L core with V39I; highest structure prior among WGL variants.\", \"TWGL\": \"D40W/V54L with polar V39T; strong model rank and fold-compatible.\", \"WWGL\": \"Aromatic V39W plus D40W/V54L; tests bulky hydrophobic packing at site 39.\", \"VWGL\": \"Wild-type V39 with D40W/V54L; isolates the D40W/V54L pair effect.\", \"SWGL\": \"Known best variant; included to confirm reproducibility and anchor model calibration.\"}}"
+}

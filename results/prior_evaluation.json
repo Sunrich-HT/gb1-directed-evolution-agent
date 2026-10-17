@@ -1,0 +1,830 @@
+{
+  "n_variants": 149361,
+  "global_optimum": {
+    "variant": "FWAA",
+    "fitness": 8.76196565571
+  },
+  "note": "leakage_measured_single_mutants uses measured values from the same deep mutational scan that serves as the oracle; it is an upper bound, not a prior the campaign is allowed to use",
+  "priors": {
+    "evidence_prior": {
+      "spearman_all": 0.30566462674005423,
+      "spearman_hd3plus": 0.29468723799843066,
+      "top5pct_precision": 0.27035350830208893,
+      "best_in_top96": 6.12380479492,
+      "enrichment_top1pct": 17.71556848626926,
+      "recall_top100_in_prior_top1pct": 0.35
+    },
+    "ablate_mpnn": {
+      "spearman_all": 0.29268229630899295,
+      "spearman_hd3plus": 0.28566662686579436,
+      "top5pct_precision": 0.23955543652919123,
+      "best_in_top96": 7.31265639682,
+      "enrichment_top1pct": 46.89415187541862,
+      "recall_top100_in_prior_top1pct": 0.33
+    },
+    "ablate_packing_headroom": {
+      "spearman_all": 0.3110786210899295,
+      "spearman_hd3plus": 0.30206738585811727,
+      "top5pct_precision": 0.25053561863952867,
+      "best_in_top96": 6.12380479492,
+      "enrichment_top1pct": 18.75766075016745,
+      "recall_top100_in_prior_top1pct": 0.29
+    },
+    "ablate_burial_charge": {
+      "spearman_all": 0.2846219867329412,
+      "spearman_hd3plus": 0.2732622756663165,
+      "top5pct_precision": 0.2687466523835029,
+      "best_in_top96": 6.12380479492,
+      "enrichment_top1pct": 16.673476222371065,
+      "recall_top100_in_prior_top1pct": 0.35
+    },
+    "ablate_interface_bonus": {
+      "spearman_all": 0.3102008172176503,
+      "spearman_hd3plus": 0.2992885564060744,
+      "top5pct_precision": 0.28173540439207284,
+      "best_in_top96": 4.64959878129,
+      "enrichment_top1pct": 14.589291694574683,
+      "recall_top100_in_prior_top1pct": 0.24
+    },
+    "ablate_pair_volume_compensation": {
+      "spearman_all": 0.27926352079209027,
+      "spearman_hd3plus": 0.26749589686205816,
+      "top5pct_precision": 0.28347616497054096,
+      "best_in_top96": 6.12380479492,
+      "enrichment_top1pct": 15.631383958472874,
+      "recall_top100_in_prior_top1pct": 0.29
+    },
+    "ablate_literature": {
+      "spearman_all": 0.2508479350562138,
+      "spearman_hd3plus": 0.23840158551162044,
+      "top5pct_precision": 0.25026780931976433,
+      "best_in_top96": 6.12380479492,
+      "enrichment_top1pct": 27.09439886135298,
+      "recall_top100_in_prior_top1pct": 0.22
+    },
+    "only_mpnn": {
+      "spearman_all": 0.1829513566533581,
+      "spearman_hd3plus": 0.17013800789985645,
+      "top5pct_precision": 0.18800214247455813,
+      "best_in_top96": 3.90146075608,
+      "enrichment_top1pct": 11.463014902880106,
+      "recall_top100_in_prior_top1pct": 0.12
+    },
+    "only_packing_headroom": {
+      "spearman_all": 0.10504948405630618,
+      "spearman_hd3plus": 0.09061680994232774,
+      "top5pct_precision": 0.2940546331012319,
+      "best_in_top96": 3.93032801791,
+      "enrichment_top1pct": 7.294645847287342,
+      "recall_top100_in_prior_top1pct": 0.0
+    },
+    "only_burial_charge": {
+      "spearman_all": 0.18207281522641847,
+      "spearman_hd3plus": 0.1788461325166087,
+      "top5pct_precision": 0.09306373861810391,
+      "best_in_top96": 1.65895588096,
+      "enrichment_top1pct": 0.0,
+      "recall_top100_in_prior_top1pct": 0.01
+    },
+    "only_interface_bonus": {
+      "spearman_all": 0.010665694456481117,
+      "spearman_hd3plus": 0.011411091612700716,
+      "top5pct_precision": 0.07659346545259775,
+      "best_in_top96": 7.22866005298,
+      "enrichment_top1pct": 6.252553583389149,
+      "recall_top100_in_prior_top1pct": 0.2
+    },
+    "only_pair_volume_compensation": {
+      "spearman_all": 0.25183895440645054,
+      "spearman_hd3plus": 0.2499409874724036,
+      "top5pct_precision": 0.15184788430637386,
+      "best_in_top96": 1.6206666754,
+      "enrichment_top1pct": 0.0,
+      "recall_top100_in_prior_top1pct": 0.0
+    },
+    "only_literature": {
+      "spearman_all": 0.21506415404770976,
+      "spearman_hd3plus": 0.21901170198740635,
+      "top5pct_precision": 0.11877343331547938,
+      "best_in_top96": 7.31265639682,
+      "enrichment_top1pct": 27.09439886135298,
+      "recall_top100_in_prior_top1pct": 0.11
+    },
+    "with_symmetric_volume": {
+      "spearman_all": 0.28495747417614137,
+      "spearman_hd3plus": 0.27394919353474206,
+      "top5pct_precision": 0.26941617568291376,
+      "best_in_top96": 6.12380479492,
+      "enrichment_top1pct": 16.673476222371065,
+      "recall_top100_in_prior_top1pct": 0.24
+    },
+    "with_asymmetric_volume": {
+      "spearman_all": 0.27781873886680153,
+      "spearman_hd3plus": 0.26692635218223926,
+      "top5pct_precision": 0.2592394215318693,
+      "best_in_top96": 6.12380479492,
+      "enrichment_top1pct": 17.71556848626926,
+      "recall_top100_in_prior_top1pct": 0.25
+    },
+    "reference_mpnn_raw": {
+      "spearman_all": 0.15252604301367012,
+      "spearman_hd3plus": 0.1390435096473,
+      "top5pct_precision": 0.16590787359400108,
+      "best_in_top96": 4.68261199992,
+      "enrichment_top1pct": 6.252553583389149,
+      "recall_top100_in_prior_top1pct": 0.07
+    },
+    "reference_mpnn_zscored": {
+      "spearman_all": 0.11214090346138808,
+      "spearman_hd3plus": 0.09732301225988918,
+      "top5pct_precision": 0.1921531869309052,
+      "best_in_top96": 4.4857497292,
+      "enrichment_top1pct": 22.926029805760212,
+      "recall_top100_in_prior_top1pct": 0.11
+    },
+    "leakage_measured_single_mutants": {
+      "spearman_all": 0.30549272447677867,
+      "spearman_hd3plus": 0.29449951987266976,
+      "top5pct_precision": 0.2963310123192287,
+      "best_in_top96": 5.77203220934,
+      "enrichment_top1pct": 63.56762809778968,
+      "recall_top100_in_prior_top1pct": 0.24
+    },
+    "reference_random": {
+      "spearman_all": -0.001726824919541169,
+      "spearman_hd3plus": -0.0013183616245423648,
+      "top5pct_precision": 0.049143010176754154,
+      "best_in_top96": 1.12912963572,
+      "enrichment_top1pct": 0.0,
+      "recall_top100_in_prior_top1pct": 0.03
+    }
+  },
+  "detail": {
+    "evidence_prior": {
+      "components": [
+        "mpnn",
+        "packing_headroom",
+        "burial_charge",
+        "interface_bonus",
+        "pair_volume_compensation",
+        "literature"
+      ],
+      "weights": {
+        "mpnn": 1.0,
+        "packing_headroom": 1.0,
+        "burial_charge": 0.6,
+        "interface_bonus": 0.8,
+        "pair_volume_compensation": 0.8,
+        "literature": 1.0,
+        "burial_volume": 0.0
+      }
+    }
+  },
+  "prior_table": {
+    "weights": {
+      "mpnn": 1.0,
+      "packing_headroom": 1.0,
+      "burial_charge": 0.6,
+      "interface_bonus": 0.8,
+      "pair_volume_compensation": 0.8,
+      "literature": 1.0,
+      "burial_volume": 0.0
+    },
+    "allow_dms_derived": false,
+    "zero_shot_muted_sites": [
+      40
+    ],
+    "components": [
+      {
+        "name": "mpnn",
+        "weight": 1.0,
+        "provenance": "ProteinMPNN ProteinMPNN soluble v_48_002 log-odds on RCSB 2GB1 chain A (56 aa NMR structure of the GB1 domain); muted at site (40,) because zero-shot scores mis-rank that position",
+        "evidence_ids": [
+          "EV053",
+          "EV049",
+          "EV057"
+        ],
+        "kind": "site",
+        "top_per_site": {
+          "39": [
+            [
+              "V",
+              3.21
+            ],
+            [
+              "I",
+              2.1
+            ],
+            [
+              "C",
+              0.73
+            ],
+            [
+              "T",
+              0.6
+            ],
+            [
+              "A",
+              0.38
+            ]
+          ],
+          "40": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "41": [
+            [
+              "G",
+              2.04
+            ],
+            [
+              "K",
+              1.27
+            ],
+            [
+              "N",
+              1.13
+            ],
+            [
+              "D",
+              1.11
+            ],
+            [
+              "A",
+              0.99
+            ]
+          ],
+          "54": [
+            [
+              "V",
+              2.14
+            ],
+            [
+              "A",
+              1.95
+            ],
+            [
+              "I",
+              1.39
+            ],
+            [
+              "T",
+              1.24
+            ],
+            [
+              "C",
+              0.92
+            ]
+          ]
+        }
+      },
+      {
+        "name": "packing_headroom",
+        "weight": 1.0,
+        "provenance": "penalty for added side-chain volume, scaled by the clash severity of the reconstructed C-beta in 1PGA (per-site severity {39: 0.0, 40: 0.0, 41: 0.93, 54: 0.0})",
+        "evidence_ids": [
+          "EV031",
+          "EV033",
+          "EV004"
+        ],
+        "kind": "site",
+        "top_per_site": {
+          "39": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "40": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "41": [
+            [
+              "G",
+              2.01
+            ],
+            [
+              "A",
+              1.31
+            ],
+            [
+              "S",
+              1.3
+            ],
+            [
+              "C",
+              0.81
+            ],
+            [
+              "D",
+              0.75
+            ]
+          ],
+          "54": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ]
+        }
+      },
+      {
+        "name": "burial_charge",
+        "weight": 0.6,
+        "provenance": "desolvation penalty for a formal charge, scaled by relative SASA in 1PGA",
+        "evidence_ids": [
+          "EV028",
+          "EV031"
+        ],
+        "kind": "site",
+        "top_per_site": {
+          "39": [
+            [
+              "A",
+              0.51
+            ],
+            [
+              "C",
+              0.51
+            ],
+            [
+              "F",
+              0.51
+            ],
+            [
+              "G",
+              0.51
+            ],
+            [
+              "I",
+              0.51
+            ]
+          ],
+          "40": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "41": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "54": [
+            [
+              "A",
+              0.51
+            ],
+            [
+              "C",
+              0.51
+            ],
+            [
+              "F",
+              0.51
+            ],
+            [
+              "G",
+              0.51
+            ],
+            [
+              "I",
+              0.51
+            ]
+          ]
+        }
+      },
+      {
+        "name": "interface_bonus",
+        "weight": 0.8,
+        "provenance": "bonus for large/aromatic side chains at positions that bury surface against IgG-Fc in 1FCC (buried area per site: {39: 1.7, 40: 41.9, 41: 7.2, 54: 0.5})",
+        "evidence_ids": [
+          "EV034",
+          "EV037"
+        ],
+        "kind": "site",
+        "top_per_site": {
+          "39": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "40": [
+            [
+              "W",
+              2.03
+            ],
+            [
+              "F",
+              1.41
+            ],
+            [
+              "I",
+              1.41
+            ],
+            [
+              "L",
+              1.41
+            ],
+            [
+              "M",
+              1.41
+            ]
+          ],
+          "41": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "54": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ]
+        }
+      },
+      {
+        "name": "pair_volume_compensation",
+        "weight": 0.8,
+        "provenance": "volume transfer between sites 41 and 54: the strongest published positive epistasis (G41L/V54G) works by moving side-chain volume from the buried core to the loop, and V54A flips site-41 substitutions from deleterious to beneficial",
+        "evidence_ids": [
+          "EV020",
+          "EV019",
+          "EV007"
+        ],
+        "kind": "pair",
+        "top_pairs": [
+          {
+            "site_41": "V",
+            "site_54": "G",
+            "score": 2.86
+          },
+          {
+            "site_41": "Q",
+            "site_54": "G",
+            "score": 2.82
+          },
+          {
+            "site_41": "E",
+            "site_54": "G",
+            "score": 2.8
+          },
+          {
+            "site_41": "H",
+            "site_54": "G",
+            "score": 2.74
+          },
+          {
+            "site_41": "M",
+            "site_54": "G",
+            "score": 2.65
+          }
+        ]
+      },
+      {
+        "name": "literature",
+        "weight": 1.0,
+        "provenance": "per-substitution claims from the curated evidence base, weighted by confidence; rows derived from the oracle DMS excluded",
+        "evidence_ids": [
+          "EV019",
+          "EV020"
+        ],
+        "kind": "site",
+        "top_per_site": {
+          "39": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "40": [
+            [
+              "A",
+              0.0
+            ],
+            [
+              "C",
+              0.0
+            ],
+            [
+              "D",
+              0.0
+            ],
+            [
+              "E",
+              0.0
+            ],
+            [
+              "F",
+              0.0
+            ]
+          ],
+          "41": [
+            [
+              "L",
+              4.36
+            ],
+            [
+              "A",
+              -0.23
+            ],
+            [
+              "C",
+              -0.23
+            ],
+            [
+              "D",
+              -0.23
+            ],
+            [
+              "E",
+              -0.23
+            ]
+          ],
+          "54": [
+            [
+              "A",
+              3.0
+            ],
+            [
+              "G",
+              3.0
+            ],
+            [
+              "C",
+              -0.33
+            ],
+            [
+              "D",
+              -0.33
+            ],
+            [
+              "E",
+              -0.33
+            ]
+          ]
+        }
+      }
+    ],
+    "table": {
+      "39": {
+        "A": 0.685,
+        "C": 1.04,
+        "D": -1.556,
+        "E": -1.781,
+        "F": -0.198,
+        "G": -0.346,
+        "H": -0.362,
+        "I": 2.41,
+        "K": -1.61,
+        "L": 0.45,
+        "M": -0.245,
+        "N": 0.239,
+        "P": -0.532,
+        "Q": -0.46,
+        "R": -1.806,
+        "S": 0.118,
+        "T": 0.912,
+        "V": 3.517,
+        "W": -0.345,
+        "Y": -0.132
+      },
+      "40": {
+        "A": -0.52,
+        "C": -0.52,
+        "D": -0.52,
+        "E": -0.52,
+        "F": 1.13,
+        "G": -0.52,
+        "H": -0.52,
+        "I": 1.13,
+        "K": -0.52,
+        "L": 1.13,
+        "M": 1.13,
+        "N": -0.52,
+        "P": -0.52,
+        "Q": -0.52,
+        "R": -0.52,
+        "S": -0.52,
+        "T": -0.52,
+        "V": -0.52,
+        "W": 1.625,
+        "Y": 1.13
+      },
+      "41": {
+        "A": 2.064,
+        "C": -0.268,
+        "D": 1.624,
+        "E": 0.787,
+        "F": -2.283,
+        "G": 3.827,
+        "H": -0.74,
+        "I": -1.924,
+        "K": 0.368,
+        "L": 2.931,
+        "M": -1.655,
+        "N": 1.575,
+        "P": -0.721,
+        "Q": -0.111,
+        "R": -0.45,
+        "S": 2.057,
+        "T": -0.21,
+        "V": -1.13,
+        "W": -3.47,
+        "Y": -2.27
+      },
+      "54": {
+        "A": 5.254,
+        "C": 0.894,
+        "D": -2.476,
+        "E": -2.348,
+        "F": -0.722,
+        "G": 3.255,
+        "H": -1.23,
+        "I": 1.369,
+        "K": -1.707,
+        "L": 0.459,
+        "M": -0.23,
+        "N": -0.616,
+        "P": -1.247,
+        "Q": -0.937,
+        "R": -1.849,
+        "S": 0.264,
+        "T": 1.216,
+        "V": 2.111,
+        "W": -0.794,
+        "Y": -0.665
+      }
+    }
+  }
+}

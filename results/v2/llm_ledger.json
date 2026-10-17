@@ -1,0 +1,322 @@
+{
+  "cap_usd": 3.0,
+  "spent_usd": 0.14724564,
+  "n_calls": 45,
+  "calls": [
+    {
+      "tag": "llm_agent_s301_r1",
+      "prompt_tokens": 10288,
+      "completion_tokens": 728,
+      "cost_usd": 0.00357856,
+      "ts": 1792228203.2037992
+    },
+    {
+      "tag": "llm_agent_s301_r2",
+      "prompt_tokens": 10848,
+      "completion_tokens": 749,
+      "cost_usd": 0.0037528600000000002,
+      "ts": 1792228209.2059705
+    },
+    {
+      "tag": "llm_agent_s301_r3",
+      "prompt_tokens": 10852,
+      "completion_tokens": 745,
+      "cost_usd": 0.0037495400000000004,
+      "ts": 1792228215.1765974
+    },
+    {
+      "tag": "llm_knowledge_s301_r1",
+      "prompt_tokens": 12971,
+      "completion_tokens": 825,
+      "cost_usd": 0.00440967,
+      "ts": 1792228221.558652
+    },
+    {
+      "tag": "llm_knowledge_s301_r2",
+      "prompt_tokens": 13506,
+      "completion_tokens": 784,
+      "cost_usd": 0.004509020000000001,
+      "ts": 1792228228.440848
+    },
+    {
+      "tag": "llm_knowledge_s301_r3",
+      "prompt_tokens": 13534,
+      "completion_tokens": 736,
+      "cost_usd": 0.00446378,
+      "ts": 1792228235.0363002
+    },
+    {
+      "tag": "prior_constraint_s301_r1",
+      "prompt_tokens": 2637,
+      "completion_tokens": 438,
+      "cost_usd": 0.0011937900000000001,
+      "ts": 1792228241.1697514
+    },
+    {
+      "tag": "prior_constraint_s301_r2",
+      "prompt_tokens": 3494,
+      "completion_tokens": 506,
+      "cost_usd": 0.0014999800000000002,
+      "ts": 1792228248.592723
+    },
+    {
+      "tag": "prior_constraint_s301_r3",
+      "prompt_tokens": 3422,
+      "completion_tokens": 510,
+      "cost_usd": 0.0014849400000000001,
+      "ts": 1792228255.337979
+    },
+    {
+      "tag": "llm_agent_s302_r1",
+      "prompt_tokens": 10229,
+      "completion_tokens": 737,
+      "cost_usd": 0.0035725300000000004,
+      "ts": 1792228296.1461334
+    },
+    {
+      "tag": "llm_agent_s302_r2",
+      "prompt_tokens": 10913,
+      "completion_tokens": 764,
+      "cost_usd": 0.0037869100000000005,
+      "ts": 1792228302.6527631
+    },
+    {
+      "tag": "llm_agent_s302_r3",
+      "prompt_tokens": 10949,
+      "completion_tokens": 775,
+      "cost_usd": 0.00380873,
+      "ts": 1792228309.1317916
+    },
+    {
+      "tag": "llm_knowledge_s302_r1",
+      "prompt_tokens": 12917,
+      "completion_tokens": 798,
+      "cost_usd": 0.00436539,
+      "ts": 1792228315.9560466
+    },
+    {
+      "tag": "llm_knowledge_s302_r2",
+      "prompt_tokens": 13630,
+      "completion_tokens": 1364,
+      "cost_usd": 0.0051805,
+      "ts": 1792228323.8733659
+    },
+    {
+      "tag": "llm_knowledge_s302_r3",
+      "prompt_tokens": 13647,
+      "completion_tokens": 784,
+      "cost_usd": 0.00454709,
+      "ts": 1792228330.4905446
+    },
+    {
+      "tag": "prior_constraint_s302_r1",
+      "prompt_tokens": 2635,
+      "completion_tokens": 413,
+      "cost_usd": 0.0011657500000000001,
+      "ts": 1792228336.6151412
+    },
+    {
+      "tag": "prior_constraint_s302_r2",
+      "prompt_tokens": 3484,
+      "completion_tokens": 475,
+      "cost_usd": 0.0014631800000000001,
+      "ts": 1792228343.8528204
+    },
+    {
+      "tag": "prior_constraint_s302_r3",
+      "prompt_tokens": 3527,
+      "completion_tokens": 529,
+      "cost_usd": 0.00153419,
+      "ts": 1792228350.812944
+    },
+    {
+      "tag": "llm_agent_s303_r1",
+      "prompt_tokens": 10060,
+      "completion_tokens": 626,
+      "cost_usd": 0.0034048000000000004,
+      "ts": 1792228391.2100918
+    },
+    {
+      "tag": "llm_agent_s303_r2",
+      "prompt_tokens": 10817,
+      "completion_tokens": 764,
+      "cost_usd": 0.0037609900000000005,
+      "ts": 1792228398.0015554
+    },
+    {
+      "tag": "llm_agent_s303_r3",
+      "prompt_tokens": 10754,
+      "completion_tokens": 726,
+      "cost_usd": 0.0037021800000000002,
+      "ts": 1792228405.918367
+    },
+    {
+      "tag": "llm_knowledge_s303_r1",
+      "prompt_tokens": 12762,
+      "completion_tokens": 1431,
+      "cost_usd": 0.005019840000000001,
+      "ts": 1792228415.5391223
+    },
+    {
+      "tag": "llm_knowledge_s303_r2",
+      "prompt_tokens": 13445,
+      "completion_tokens": 1387,
+      "cost_usd": 0.00515585,
+      "ts": 1792228424.266829
+    },
+    {
+      "tag": "llm_knowledge_s303_r3",
+      "prompt_tokens": 13510,
+      "completion_tokens": 1360,
+      "cost_usd": 0.0051437,
+      "ts": 1792228433.1082618
+    },
+    {
+      "tag": "prior_constraint_s303_r1",
+      "prompt_tokens": 2637,
+      "completion_tokens": 468,
+      "cost_usd": 0.0012267900000000002,
+      "ts": 1792228440.3398075
+    },
+    {
+      "tag": "prior_constraint_s303_r2",
+      "prompt_tokens": 3517,
+      "completion_tokens": 523,
+      "cost_usd": 0.00152489,
+      "ts": 1792228447.3650324
+    },
+    {
+      "tag": "prior_constraint_s303_r3",
+      "prompt_tokens": 3474,
+      "completion_tokens": 618,
+      "cost_usd": 0.00161778,
+      "ts": 1792228455.7551835
+    },
+    {
+      "tag": "llm_agent_s304_r1",
+      "prompt_tokens": 10002,
+      "completion_tokens": 1352,
+      "cost_usd": 0.0041877400000000006,
+      "ts": 1792228489.0648148
+    },
+    {
+      "tag": "llm_agent_s304_r2",
+      "prompt_tokens": 10867,
+      "completion_tokens": 747,
+      "cost_usd": 0.00375579,
+      "ts": 1792228494.6580741
+    },
+    {
+      "tag": "llm_agent_s304_r3",
+      "prompt_tokens": 10839,
+      "completion_tokens": 732,
+      "cost_usd": 0.00373173,
+      "ts": 1792228499.3172047
+    },
+    {
+      "tag": "llm_knowledge_s304_r1",
+      "prompt_tokens": 12684,
+      "completion_tokens": 795,
+      "cost_usd": 0.0042991800000000005,
+      "ts": 1792228505.1457117
+    },
+    {
+      "tag": "llm_knowledge_s304_r2",
+      "prompt_tokens": 13558,
+      "completion_tokens": 789,
+      "cost_usd": 0.004528560000000001,
+      "ts": 1792228510.4212308
+    },
+    {
+      "tag": "llm_knowledge_s304_r3",
+      "prompt_tokens": 13560,
+      "completion_tokens": 814,
+      "cost_usd": 0.0045566,
+      "ts": 1792228515.9268608
+    },
+    {
+      "tag": "prior_constraint_s304_r1",
+      "prompt_tokens": 2634,
+      "completion_tokens": 391,
+      "cost_usd": 0.0011412800000000002,
+      "ts": 1792228520.549092
+    },
+    {
+      "tag": "prior_constraint_s304_r2",
+      "prompt_tokens": 3501,
+      "completion_tokens": 457,
+      "cost_usd": 0.0014479700000000002,
+      "ts": 1792228525.4834998
+    },
+    {
+      "tag": "prior_constraint_s304_r3",
+      "prompt_tokens": 3519,
+      "completion_tokens": 444,
+      "cost_usd": 0.0014385300000000001,
+      "ts": 1792228530.5311363
+    },
+    {
+      "tag": "llm_agent_s305_r1",
+      "prompt_tokens": 10161,
+      "completion_tokens": 756,
+      "cost_usd": 0.00357507,
+      "ts": 1792228580.3083005
+    },
+    {
+      "tag": "llm_agent_s305_r2",
+      "prompt_tokens": 10797,
+      "completion_tokens": 765,
+      "cost_usd": 0.00375669,
+      "ts": 1792228587.6468925
+    },
+    {
+      "tag": "llm_agent_s305_r3",
+      "prompt_tokens": 10792,
+      "completion_tokens": 1419,
+      "cost_usd": 0.00447474,
+      "ts": 1792228597.6965868
+    },
+    {
+      "tag": "llm_knowledge_s305_r1",
+      "prompt_tokens": 12864,
+      "completion_tokens": 799,
+      "cost_usd": 0.004352180000000001,
+      "ts": 1792228604.273925
+    },
+    {
+      "tag": "llm_knowledge_s305_r2",
+      "prompt_tokens": 13512,
+      "completion_tokens": 886,
+      "cost_usd": 0.0046228400000000005,
+      "ts": 1792228613.1684675
+    },
+    {
+      "tag": "llm_knowledge_s305_r3",
+      "prompt_tokens": 13572,
+      "completion_tokens": 800,
+      "cost_usd": 0.00454444,
+      "ts": 1792228621.0989904
+    },
+    {
+      "tag": "prior_constraint_s305_r1",
+      "prompt_tokens": 2637,
+      "completion_tokens": 477,
+      "cost_usd": 0.00123669,
+      "ts": 1792228627.5566113
+    },
+    {
+      "tag": "prior_constraint_s305_r2",
+      "prompt_tokens": 3484,
+      "completion_tokens": 519,
+      "cost_usd": 0.0015115800000000002,
+      "ts": 1792228635.201301
+    },
+    {
+      "tag": "prior_constraint_s305_r3",
+      "prompt_tokens": 3520,
+      "completion_tokens": 464,
+      "cost_usd": 0.0014608000000000002,
+      "ts": 1792228641.4332838
+    }
+  ]
+}

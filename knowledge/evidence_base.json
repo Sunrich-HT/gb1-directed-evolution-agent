@@ -1,0 +1,2135 @@
+{
+  "generated_at": "2026-10-17T08:54:59Z",
+  "target": {
+    "protein": "Immunoglobulin-binding domain B1 of streptococcal protein G (GB1)",
+    "length": 56,
+    "reference_sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVDGEWTYDDATKTFTVTE",
+    "mutable_sites": [
+      39,
+      40,
+      41,
+      54
+    ],
+    "wild_type_at_sites": {
+      "39": "V",
+      "40": "D",
+      "41": "G",
+      "54": "V"
+    },
+    "objective": "joint folding stability and IgG-Fc binding (see EV002)"
+  },
+  "scope_statement": "Evidence usable to design round 1 BEFORE any four-site multi-mutant label is observed. No row is derived from the measured four-site multi-mutant fitness values that serve as the virtual oracle. Rows citing Wu et al. 2016 quote that paper's own published analyses and named examples; rows citing Olson et al. 2014 use published single- and double-mutant measurements from a separate, earlier experiment.",
+  "schema": {
+    "id": "stable row id",
+    "statement": "one precise sentence",
+    "scope": "site | pair | global | method",
+    "sites": "list of GB1 positions the row applies to; [] for method rows, except for the four method rows (EV018, EV051, EV052, EV054) whose methodological evidence was generated on this exact four-site GB1 landscape and is therefore site-tagged",
+    "substitutions": "list like ['D40W'], [] for rules",
+    "direction": "beneficial | deleterious | tolerant | constraint | method",
+    "strength": "measured | structural | inferred",
+    "confidence": "0-1",
+    "confidence_reason": "one line",
+    "source": "{type,id,doi,pmid,bibkey,title,year,locator}",
+    "proposed_use": "exactly how the row enters a quantitative prior or a batch constraint",
+    "computed_in_this_work": "present only where a number was computed here from deposited coordinates"
+  },
+  "counts": {
+    "total": 62,
+    "by_scope": {
+      "global": 20,
+      "pair": 7,
+      "site": 13,
+      "method": 22
+    },
+    "by_direction": {
+      "beneficial": 6,
+      "constraint": 20,
+      "deleterious": 3,
+      "tolerant": 6,
+      "method": 27
+    },
+    "by_strength": {
+      "measured": 52,
+      "structural": 10
+    },
+    "by_source_type": {
+      "paper": 62,
+      "patent": 0
+    }
+  },
+  "sources": [
+    {
+      "bibkey": "bu2012single",
+      "type": "paper",
+      "title": "Single Molecule Force Spectroscopy Reveals Critical Roles of Hydrophobic Core Packing in Determining the Mechanical Stability of Protein GB1",
+      "year": 2012,
+      "venue": "Langmuir",
+      "doi": "10.1021/la301940g",
+      "pmid": "22823458",
+      "authors": [
+        "Tianjia Bu",
+        "Hui‐Chuan Eileen Wang",
+        "Hongbin Li"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "dauparas2022robust",
+      "type": "paper",
+      "title": "Robust deep learning–based protein sequence design using ProteinMPNN",
+      "year": 2022,
+      "venue": "Science",
+      "doi": "10.1126/science.add2187",
+      "pmid": "36108050",
+      "authors": [
+        "Justas Dauparas",
+        "Ivan V. Anishchenko",
+        "Nathaniel R. Bennett",
+        "Hua Bai",
+        "Robert J. Ragotte",
+        "Lukas F. Milles",
+        "Basile I. M. Wicky",
+        "Alexis Courbet",
+        "Robbert J. de Haas",
+        "Neville P. Bethel",
+        "Philip J. Y. Leung",
+        "Timothy F. Huddy",
+        "Samuel J. Pellock",
+        "Doug Tischer",
+        "F. Chan",
+        "Brian Koepnick",
+        "Hannah Nguyen",
+        "Alex Kang",
+        "Banumathi Sankaran",
+        "Asim K. Bera",
+        "Neil P. King",
+        "David A. Baker"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    },
+    {
+      "bibkey": "derrick1994third",
+      "type": "paper",
+      "title": "The Third IgG-Binding Domain from Streptococcal Protein G",
+      "year": 1994,
+      "venue": "Journal of Molecular Biology",
+      "doi": "10.1006/jmbi.1994.1691",
+      "pmid": "7966308",
+      "authors": [
+        "Jeremy P. Derrick",
+        "Dale B. Wigley"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "ding2024modify",
+      "type": "paper",
+      "title": "Machine learning-guided co-optimization of fitness and diversity facilitates combinatorial library design in enzyme engineering",
+      "year": 2024,
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-024-50698-y",
+      "pmid": "39080249",
+      "authors": [
+        "Kerr Ding",
+        "Michael Chin",
+        "Yunlong Zhao",
+        "Wei Huang",
+        "Binh Khanh Mai",
+        "Huanan Wang",
+        "Peng Liu",
+        "Yang Yang",
+        "Yunan Luo"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    },
+    {
+      "bibkey": "gallagher1994two",
+      "type": "paper",
+      "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+      "year": 1994,
+      "venue": "Biochemistry",
+      "doi": "10.1021/bi00181a032",
+      "pmid": "8161530",
+      "authors": [
+        "Travis Gallagher",
+        "Patrick Alexander",
+        "Philip N. Bryan",
+        "Gary L. Gilliland"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "gronenborn1991novel",
+      "type": "paper",
+      "title": "A Novel, Highly Stable Fold of the Immunoglobulin Binding Domain of Streptococcal Protein G",
+      "year": 1991,
+      "venue": "Science",
+      "doi": "10.1126/science.1871600",
+      "pmid": "1871600",
+      "authors": [
+        "Angela M. Gronenborn",
+        "David R. Filpula",
+        "Nina Z. Essig",
+        "Aniruddha Achari",
+        "Marc D. Whitlow",
+        "Paul T. Wingfield",
+        "G. Marius Clore"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "gronenborn1993identification",
+      "type": "paper",
+      "title": "Identification of the Contact Surface of a Streptococcal Protein G Domain Complexed with a Human Fc Fragment",
+      "year": 1993,
+      "venue": "Journal of Molecular Biology",
+      "doi": "10.1006/jmbi.1993.1514",
+      "pmid": "8411147",
+      "authors": [
+        "Angela M. Gronenborn",
+        "G. Marius Clore"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "gulich2002engineering",
+      "type": "paper",
+      "title": "Engineering streptococcal protein G for increased alkaline stability",
+      "year": 2002,
+      "venue": "Protein Engineering Design and Selection",
+      "doi": "10.1093/protein/15.10.835",
+      "pmid": "12468718",
+      "authors": [
+        "Susanne Gülich",
+        "Martin Linhult",
+        "Stefan Ståhl",
+        "Sophia Hober"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "hopf2017mutation",
+      "type": "paper",
+      "title": "Mutation effects predicted from sequence co-variation",
+      "year": 2017,
+      "venue": "Nature Biotechnology",
+      "doi": "10.1038/nbt.3769",
+      "pmid": "28092658",
+      "authors": [
+        "Thomas A. Hopf",
+        "John Ingraham",
+        "Frank J. Poelwijk",
+        "Charlotta Schärfe",
+        "Michael Springer",
+        "Chris Sander",
+        "Debora S. Marks"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    },
+    {
+      "bibkey": "hsu2022learning",
+      "type": "paper",
+      "title": "Learning protein fitness models from evolutionary and assay-labeled data",
+      "year": 2022,
+      "venue": "Nature Biotechnology",
+      "doi": "10.1038/s41587-021-01146-5",
+      "pmid": "35039677",
+      "authors": [
+        "Chloe Hsu",
+        "Hunter Nisonoff",
+        "Clara Fannjiang",
+        "Jennifer Listgarten"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "meier2021language",
+      "type": "paper",
+      "title": "Language models enable zero-shot prediction of the effects of mutations on protein function",
+      "year": 2021,
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "doi": "10.1101/2021.07.09.450648",
+      "pmid": null,
+      "authors": [
+        "Joshua Meier",
+        "Roshan Rao",
+        "Robert Verkuil",
+        "Jason J. Liu",
+        "Tom Sercu",
+        "Alexander W. Rives"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "notin2023proteingym",
+      "type": "paper",
+      "title": "ProteinGym: Large-Scale Benchmarks for Protein Design and Fitness Prediction",
+      "year": 2023,
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "doi": "10.1101/2023.12.07.570727",
+      "pmid": "38106144",
+      "authors": [
+        "Pascal Notin",
+        "Aaron W. Kollasch",
+        "Daniel Ritter",
+        "Lood van Niekerk",
+        "Steffan B. Paul",
+        "Hansen Spinner",
+        "Nathan J. Rollins",
+        "Ada Y. Shaw",
+        "Ruben Weitzman",
+        "Jonathan Frazer",
+        "Mafalda Dias",
+        "Dinko Franceschi",
+        "Rose Orenbuch",
+        "Yarin Gal",
+        "Debora S. Marks"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "olson2014comprehensive",
+      "type": "paper",
+      "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+      "year": 2014,
+      "venue": "Current Biology",
+      "doi": "10.1016/j.cub.2014.09.072",
+      "pmid": "25455030",
+      "authors": [
+        "C. Anders Olson",
+        "Nicholas C. Wu",
+        "Ren Sun"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    },
+    {
+      "bibkey": "palmer2008design",
+      "type": "paper",
+      "title": "Design of stability at extreme alkaline pH in streptococcal protein G",
+      "year": 2008,
+      "venue": "Journal of Biotechnology",
+      "doi": "10.1016/j.jbiotec.2007.12.009",
+      "pmid": "18304667",
+      "authors": [
+        "B PALMER",
+        "Katy Angus",
+        "L TAYLOR",
+        "Jim Warwicker",
+        "Jeremy P. Derrick"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "qiu2021cluster",
+      "type": "paper",
+      "title": "Cluster learning-assisted directed evolution",
+      "year": 2021,
+      "venue": "Nature Computational Science",
+      "doi": "10.1038/s43588-021-00168-y",
+      "pmid": "35811998",
+      "authors": [
+        "Yuchi Qiu",
+        "Jian Hu",
+        "Guo‐Wei Wei"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    },
+    {
+      "bibkey": "sauereriksson1995crystal",
+      "type": "paper",
+      "title": "Crystal structure of the C2 fragment of streptococcal protein G in complex with the Fc domain of human IgG",
+      "year": 1995,
+      "venue": "Structure",
+      "doi": "10.1016/s0969-2126(01)00157-5",
+      "pmid": "7788293",
+      "authors": [
+        "A.E. Sauer-Eriksson",
+        "Gerard J. Kleywegt",
+        "Mathias Uhlén",
+        "T. Alwyn Jones"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "tran2026multievolve",
+      "type": "paper",
+      "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+      "year": 2026,
+      "venue": "Science",
+      "doi": "10.1126/science.aea1820",
+      "pmid": "41712694",
+      "authors": [
+        "Vincent Q. Tran",
+        "Matthew Nemeth",
+        "Liam J. Bartie",
+        "Sita S. Chandrasekaran",
+        "Alison Fanton",
+        "Hyungseok C. Moon",
+        "Brian Hie",
+        "Silvana Konermann",
+        "Patrick D. Hsu"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    },
+    {
+      "bibkey": "vankempen2025structzeroshot",
+      "type": "paper",
+      "title": "Exploring zero-shot structure-based protein fitness prediction",
+      "year": 2025,
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2504.16886",
+      "pmid": null,
+      "authors": [],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "wittmann2021informed",
+      "type": "paper",
+      "title": "Informed training set design enables efficient machine learning-assisted directed protein evolution",
+      "year": 2021,
+      "venue": "Cell Systems",
+      "doi": "10.1016/j.cels.2021.07.008",
+      "pmid": "34416172",
+      "authors": [
+        "Bruce J. Wittmann",
+        "Yisong Yue",
+        "Frances H. Arnold"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": false
+    },
+    {
+      "bibkey": "wu2016adaptation",
+      "type": "paper",
+      "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+      "year": 2016,
+      "venue": "eLife",
+      "doi": "10.7554/elife.16965",
+      "pmid": "27391790",
+      "authors": [
+        "Nicholas C. Wu",
+        "Lei Dai",
+        "C. Anders Olson",
+        "James O. Lloyd‐Smith",
+        "Ren X. Sun"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    },
+    {
+      "bibkey": "yang2025active",
+      "type": "paper",
+      "title": "Active learning-assisted directed evolution",
+      "year": 2025,
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-55987-8",
+      "pmid": "39821082",
+      "authors": [
+        "Jason Yang",
+        "Ravi Lal",
+        "James C. Bowden",
+        "Raul Astudillo",
+        "Mikhail A. Hameedi",
+        "Sukhvinder Kaur",
+        "Matthew Hill",
+        "Yisong Yue",
+        "Frances H. Arnold"
+      ],
+      "retrieved_via": "PubMed/PMC + OpenAlex connectors",
+      "full_text_read": true
+    }
+  ],
+  "structures": [
+    {
+      "type": "structure",
+      "pdb_id": "1PGA",
+      "description": "GB1 B1 domain, X-ray 2.07 A",
+      "primary_citation_bibkey": "gallagher1994two",
+      "used_for": [
+        "EV027",
+        "EV028",
+        "EV029",
+        "EV030",
+        "EV031",
+        "EV032",
+        "EV033"
+      ]
+    },
+    {
+      "type": "structure",
+      "pdb_id": "2GB1",
+      "description": "GB1 B1 domain, solution NMR",
+      "primary_citation_bibkey": "gronenborn1991novel",
+      "used_for": [
+        "EV032"
+      ]
+    },
+    {
+      "type": "structure",
+      "pdb_id": "1FCC",
+      "description": "Protein G IgG-binding domain in complex with human IgG Fc, X-ray 3.5 A",
+      "primary_citation_bibkey": "sauereriksson1995crystal",
+      "used_for": [
+        "EV034",
+        "EV035"
+      ]
+    },
+    {
+      "type": "structure",
+      "pdb_id": "1IGC",
+      "description": "Protein G domain III alone and in complex with a Fab fragment",
+      "primary_citation_bibkey": "derrick1994third",
+      "used_for": [
+        "EV037"
+      ]
+    }
+  ],
+  "patent_search": {
+    "type": "patent_search",
+    "access_requested": [
+      "api.patentsview.org",
+      "patents.google.com"
+    ],
+    "access_granted": true,
+    "outcome": "no_patent_evidence_rows",
+    "detail": "api.patentsview.org is retired: the legacy /patents/query endpoint 301-redirects to data.uspto.gov, which is outside the sandbox allowlist, so no query could be issued. patents.google.com was granted and returned exactly one usable batch of results (five keyword queries) before the XHR search endpoint began returning HTTP 503 rate-limit pages; three further attempts spaced 45-240 s apart, and direct patent-page fetches, all returned 503. No claim text could therefore be read for any patent, and no patent evidence row was created. The publication numbers below were seen in the one successful result batch (title, assignee and grant date only) and are recorded for provenance, NOT as evidence: their claims were not retrieved and nothing is asserted about them.",
+    "screened_titles_only": [
+      {
+        "publication_number": "US20230331870A1",
+        "title": "Mutated immunoglobulin-binding polypeptides",
+        "assignee": "Cytiva Bioprocess R&D AB",
+        "date": "2023-10-19"
+      },
+      {
+        "publication_number": "US10308690B2",
+        "title": "Mutated immunoglobulin-binding polypeptides",
+        "assignee": "GE Healthcare Bioprocess R&D AB",
+        "date": "2019-06-04"
+      },
+      {
+        "publication_number": "US8354510B2",
+        "title": "Mutant protein",
+        "assignee": "GE Healthcare Bio-Sciences AB",
+        "date": "2013-01-15"
+      },
+      {
+        "publication_number": "US20190263870A1",
+        "title": "Protein capable of binding specifically to immunoglobulin, and immunoglobulin-binding affinity ligand",
+        "assignee": "Kaneka Corporation",
+        "date": "2019-08-29"
+      },
+      {
+        "publication_number": "CN107922483B",
+        "title": "Novel immunoglobulin binding proteins and their use in affinity purification",
+        "assignee": "Navigo Proteins GmbH",
+        "date": "2021-07-30"
+      },
+      {
+        "publication_number": "US20240034750A1",
+        "title": "Affinity chromatography ligands with mild elution pH",
+        "assignee": "Bioprocessia Technologies LLC",
+        "date": "2024-02-01"
+      }
+    ],
+    "literature_substitute": "Rows EV061 and EV062 cover the same question from the peer-reviewed protein G affinity-ligand literature and show that the industrial objective (caustic stability) is pursued at asparagine positions 8/35/37, not at 39/40/41/54."
+  },
+  "evidence": [
+    {
+      "id": "EV001",
+      "statement": "The four mutable positions V39, D40, G41 and V54 were selected because, among all pairwise interactions measured across GB1, 12 of the 20 most positively epistatic pairs fall inside this set of four sites.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "beneficial",
+      "strength": "measured",
+      "confidence": 0.95,
+      "confidence_reason": "Stated directly in the Results as the design rationale of the cited dataset.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Empirical determination of a four-site fitness landscape'"
+      },
+      "proposed_use": "Set a positive prior mean on pairwise interaction terms between these sites; justifies spending round-1 budget on multi-site combinations rather than single-site scans."
+    },
+    {
+      "id": "EV002",
+      "statement": "Fitness in this system is a joint read-out of folding stability (fraction folded) and IgG-Fc binding affinity, measured by mRNA display coupled to Illumina sequencing.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.95,
+      "confidence_reason": "Explicit definition of the measured observable in the Results and Methods.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Empirical determination of a four-site fitness landscape'; Methods, 'Affinity selection by mRNA display'"
+      },
+      "proposed_use": "The prior must be a sum of a stability term and an Fc-binding term; a prior built only from interface geometry, or only from a folding/inverse-folding score, is structurally incomplete."
+    },
+    {
+      "id": "EV003",
+      "statement": "Across the four-site library most variants are worse than wild type; only 2.4% of variants are beneficial (fitness > 1).",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "deleterious",
+      "strength": "measured",
+      "confidence": 0.95,
+      "confidence_reason": "Single reported summary statistic of the published landscape.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Empirical determination of a four-site fitness landscape'"
+      },
+      "proposed_use": "Base rate for the batch model: a uniformly random 96-variant round-1 batch is expected to contain only ~2 beneficial variants, which sets the bar any designed batch must beat and bounds the expected information gain of random designs."
+    },
+    {
+      "id": "EV004",
+      "statement": "The side chains of sites 39, 41 and 54 can physically contact each other in the hydrophobic core, and combinations at these three sites destabilise the protein through steric effects.",
+      "scope": "pair",
+      "sites": [
+        39,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Stated as the structural interpretation of the authors' own Fourier/epistasis analysis.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Evidence and impacts of higher-order epistasis'"
+      },
+      "proposed_use": "Hard constraint on joint side-chain volume: penalise (or reject) variants whose summed side-chain volume increase over VDGV at sites 39+41+54 exceeds a threshold; add an explicit 3-way interaction term for {39,41,54}."
+    },
+    {
+      "id": "EV005",
+      "statement": "Higher-order (third- and fourth-order) epistasis is present in this landscape: a second-order Fourier expansion does not reproduce the measured fitness, and higher-order interactions are enriched among specific amino-acid combinations at sites 39, 41 and 54.",
+      "scope": "pair",
+      "sites": [
+        39,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Derived from the authors' Fourier decomposition of the full landscape.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Evidence and impacts of higher-order epistasis'"
+      },
+      "proposed_use": "Any surrogate model used after round 1 must carry at least a 3-way term over {39,41,54}; an additive-plus-pairwise model is known a priori to be mis-specified here."
+    },
+    {
+      "id": "EV006",
+      "statement": "Site 40 is largely excluded from higher-order epistasis in this landscape.",
+      "scope": "site",
+      "sites": [
+        40
+      ],
+      "substitutions": [],
+      "direction": "tolerant",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Stated as a direct reading of the authors' epistasis map; qualitative ('mostly') rather than quantified.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Evidence and impacts of higher-order epistasis'"
+      },
+      "proposed_use": "Treat site 40 as approximately additive: its substitution scores can be transferred across backgrounds, so site 40 is the cheapest place to spend exploration budget and the safest place to fix a choice early."
+    },
+    {
+      "id": "EV007",
+      "statement": "Epistasis between G41L and V54H is positive when site 39 carries isoleucine but becomes negative when site 39 carries tyrosine or tryptophan.",
+      "scope": "pair",
+      "sites": [
+        39,
+        41,
+        54
+      ],
+      "substitutions": [
+        "V39I",
+        "V39Y",
+        "V39W",
+        "G41L",
+        "V54H"
+      ],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "A specific, named example given in the text of the cited analysis.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Evidence and impacts of higher-order epistasis'"
+      },
+      "proposed_use": "Conditional rule in the prior: give the pair (G41L, V54H) a positive bonus only in an I39 background, and a penalty in Y39/W39 backgrounds; forbid the triple W39+G41L+V54H in round 1."
+    },
+    {
+      "id": "EV008",
+      "statement": "Tyrosine or tryptophan at site 39 participate in the strongest higher-order interactions in this landscape and frequently flip the sign of pairwise epistasis at the other sites.",
+      "scope": "site",
+      "sites": [
+        39
+      ],
+      "substitutions": [
+        "V39Y",
+        "V39W"
+      ],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Stated as a general pattern of the authors' epistasis map, illustrated with named examples.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Evidence and impacts of higher-order epistasis'"
+      },
+      "proposed_use": "Treat V39Y/V39W as 'context-switching' substitutions: variants containing them must be sampled with their own sub-batch so the model can learn the switched regime, rather than being scored with couplings fitted on other 39 backgrounds."
+    },
+    {
+      "id": "EV009",
+      "statement": "Background-dependent epistasis of the same kind was also reported for the pairs G41F/V54A and V39W/V54H.",
+      "scope": "pair",
+      "sites": [
+        39,
+        41,
+        54
+      ],
+      "substitutions": [
+        "G41F",
+        "V54A",
+        "V39W",
+        "V54H"
+      ],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Named examples in the text, without per-pair numbers being given.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Evidence and impacts of higher-order epistasis'"
+      },
+      "proposed_use": "Include these specific pairs in the interaction prior with background-conditional signs; use them as diagnostic variants in round 1 to identify which regime the campaign is in."
+    },
+    {
+      "id": "EV010",
+      "statement": "The quadruple mutant WLFA (W at 39, L at 40, F at 41, A at 54) is reported as a beneficial quadruple mutant that is the only fitness peak in its subgraph, reachable from wild type by a single accessible direct path.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [
+        "V39W",
+        "D40L",
+        "G41F",
+        "V54A"
+      ],
+      "direction": "beneficial",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Named explicitly in the text as the most extreme of 29 analysed subgraphs; the fitness value itself is not quoted here.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Direct paths of adaptation are constrained by pairwise epistasis'"
+      },
+      "proposed_use": "Seed the round-1 batch with WLFA and its 1- and 2-mutant neighbours as a literature-justified anchor; its single accessible path is also the canonical example of why a greedy single-site walk fails."
+    },
+    {
+      "id": "EV011",
+      "statement": "The inferred complete four-site landscape contains 30 local fitness maxima, of which 15 exceed wild-type fitness, and the basins of attraction of those 15 peaks cover 99% of sequence space.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Quantitative result of the authors' regularised fitness model, hence partly model-dependent (they say so explicitly).",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Indirect paths promote evolutionary accessibility'"
+      },
+      "proposed_use": "Diversity quota: a 96-variant round-1 batch should place probe variants in at least ~10-15 well-separated regions of the four-site space, because a single-mode batch can at best find one of >=15 above-WT optima."
+    },
+    {
+      "id": "EV012",
+      "statement": "Adaptation in this landscape is dominated by 'conversion' steps that change the amino acid at an already-mutated site (17%, 41% and 59% of mutational steps under the greedy, correlated-fixation and equal-fixation models respectively), while 'detour' steps that add and later remove a mutation are rare (0.1%, 1.3% and 3.7%).",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Direct simulation output over the full landscape, reported as percentages per model.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Indirect paths promote evolutionary accessibility'"
+      },
+      "proposed_use": "Later-round move set must include re-substitution at an already-mutated site, not only the addition of a new mutated site; a Hamming-monotone acquisition rule is provably sub-optimal here."
+    },
+    {
+      "id": "EV013",
+      "statement": "Many adaptive paths in this landscape require more than four mutational steps, which is the maximum length of a direct path between any two variants in a four-site space.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Follows from the authors' path-length distributions; stated qualitatively ('many').",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Indirect paths promote evolutionary accessibility'"
+      },
+      "proposed_use": "Do not constrain a 3-round campaign to monotone Hamming descent toward the current best variant; allow revisiting and reverting sites between rounds."
+    },
+    {
+      "id": "EV014",
+      "statement": "Allowing indirect paths raises the fraction of genotypes with an accessible path to all 15 above-wild-type peaks from 34% to 93%.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "beneficial",
+      "strength": "measured",
+      "confidence": 0.8,
+      "confidence_reason": "Quantitative but computed on the imputed landscape, so it inherits the imputation model's assumptions.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Indirect paths promote evolutionary accessibility'"
+      },
+      "proposed_use": "Supports an exploration quota that is kept non-zero in every round: accessibility, not local gradient, is the limiting factor in this landscape."
+    },
+    {
+      "id": "EV015",
+      "statement": "Ruggedness induced by pairwise epistasis correlates positively with the number of selectively inaccessible direct paths (Pearson correlation 0.66 across 29 subgraphs).",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Reported correlation coefficient over a defined set of 29 subgraphs.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Direct paths of adaptation are constrained by pairwise epistasis'"
+      },
+      "proposed_use": "Justifies penalising greedy single-step acquisition in the first round and budgeting for sign-epistasis traps."
+    },
+    {
+      "id": "EV016",
+      "statement": "10,639 variants (6.6% of the four-site space) had fewer than 10 sequencing reads in the input library and their fitness values were imputed rather than measured.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Explicit count and percentage given in the Results.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Results, 'Indirect paths promote evolutionary accessibility'"
+      },
+      "proposed_use": "Evaluation constraint, not a design prior: any variant the campaign selects should be flagged if it falls in the imputed 6.6%, and claims about 'the global optimum' must acknowledge this coverage gap."
+    },
+    {
+      "id": "EV017",
+      "statement": "The authors' own fitness model for this landscape consists of single-mutation main effects, all pairwise interactions, and three-way interactions restricted to sites 39, 41 and 54, fitted by regularised regression after knowledge-based predictor selection.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "The model form is specified in the Methods of the source dataset paper.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:27391790",
+        "doi": "10.7554/elife.16965",
+        "pmid": "27391790",
+        "bibkey": "wu2016adaptation",
+        "title": "Adaptation in protein fitness landscapes is facilitated by indirect paths",
+        "year": 2016,
+        "locator": "Methods, 'Inference of the fitness landscape'"
+      },
+      "proposed_use": "Adopt this exact functional form as the surrogate-model prior: 4x19 main effects + pairwise terms + {39,41,54} three-way terms, with L1/L2 regularisation; it is the published, landscape-specific parameterisation."
+    },
+    {
+      "id": "EV018",
+      "statement": "All single mutants and all double mutants between all positions of GB1 were measured and published before the four-site landscape, giving a label source for the 80 single substitutions at sites 39, 40, 41 and 54 that is independent of the four-site multi-mutant data.",
+      "scope": "method",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.95,
+      "confidence_reason": "Scope of the cited dataset stated in its abstract and Results.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Abstract; Results, 'A comprehensive fitness map of GB1'"
+      },
+      "proposed_use": "Build the additive part of the round-1 prior from these published single-mutant fitness values, which are legitimately available before any four-site label is observed."
+    },
+    {
+      "id": "EV019",
+      "statement": "V54A is functionally neutral on its own, yet in the V54A background substitutions at Gly41 change from deleterious to beneficial.",
+      "scope": "pair",
+      "sites": [
+        41,
+        54
+      ],
+      "substitutions": [
+        "V54A"
+      ],
+      "direction": "beneficial",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Named as a worked example of background-dependent fitness in the cited figure-level analysis.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'A comprehensive fitness map of GB1' (V54A background panel)"
+      },
+      "proposed_use": "Conditional bonus: raise the prior on all non-glycine substitutions at 41 when 54 is alanine; include V54A+41X variants as a dedicated round-1 sub-batch."
+    },
+    {
+      "id": "EV020",
+      "statement": "The most extreme case of positive epistasis in the GB1 double-mutant map, G41L/V54G, works by exchanging side-chain volume from the buried C-terminal core residue Val54 to the alpha-beta3 loop at position 41.",
+      "scope": "pair",
+      "sites": [
+        41,
+        54
+      ],
+      "substitutions": [
+        "G41L",
+        "V54G"
+      ],
+      "direction": "beneficial",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Explicitly described mechanism for a named pair in the cited Results.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'Biophysical mechanisms of epistasis'"
+      },
+      "proposed_use": "Volume-compensation prior: score pairs at (41,54) by |dV41 + dV54| using amino-acid side-chain volumes and give a bonus when the sum is near zero; this is a mechanistic rule, usable before any four-site label."
+    },
+    {
+      "id": "EV021",
+      "statement": "Positions showing generally positive epistasis in GB1 include the C-terminal end of the alpha-helix through the alpha-beta3 loop (33, 37, 38, 40) and the C-terminal beta4 residues (54, 56).",
+      "scope": "site",
+      "sites": [
+        40,
+        54
+      ],
+      "substitutions": [],
+      "direction": "beneficial",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Positions are enumerated in the text; the effect is an average over pairs, not a per-substitution claim.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'Frequency and proximity of epistatic interactions'"
+      },
+      "proposed_use": "Positive prior on interaction terms involving 40 and 54; combined with EV006 it implies 40 is additive-with-positive-couplings, i.e. a low-risk site to diversify."
+    },
+    {
+      "id": "EV022",
+      "statement": "Large negative epistasis in GB1 is largely explained by threshold robustness: two individually tolerated destabilising substitutions can exhaust the stability reservoir, reducing the folded fraction and with it binding function.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Central mechanistic conclusion of the cited paper, supported by their stability estimates.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'Biophysical mechanisms of epistasis'; Discussion"
+      },
+      "proposed_use": "Hard filter on batch composition: cap the number of substitutions per variant that are predicted to be strongly destabilising (e.g. at the buried sites 39 and 54), and penalise variants by the summed predicted ddG rather than by each substitution independently."
+    },
+    {
+      "id": "EV023",
+      "statement": "Stabilising substitutions in GB1 are rare and small in magnitude compared with destabilising ones, so additive destabilisation dominates the epistatic signal.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "deleterious",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Stated as a property of the cited screen, consistent with the general literature they cite.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'Biophysical mechanisms of epistasis'"
+      },
+      "proposed_use": "Asymmetric prior: default expectation for any untested substitution is mildly deleterious; require positive evidence before raising a substitution's prior above the wild-type value."
+    },
+    {
+      "id": "EV024",
+      "statement": "Core residues of GB1 are sensitive to substitution, either through severe destabilisation or through small structural rearrangements that accommodate core volume changes and adversely affect binding affinity.",
+      "scope": "site",
+      "sites": [
+        39,
+        54
+      ],
+      "substitutions": [],
+      "direction": "deleterious",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "General statement about core positions in the cited paper, applied here to the two buried sites of the four.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'A comprehensive fitness map of GB1'"
+      },
+      "proposed_use": "Penalty term proportional to burial (see EV027, EV030) times side-chain volume change at 39 and 54; do not let the round-1 batch spend more than a fixed quota on double-core substitutions."
+    },
+    {
+      "id": "EV025",
+      "statement": "Deleterious single mutations in GB1 are frequently 'cryptically beneficial': 240 of 678 deleterious mutations reverse sign in at least one alternative single-mutant background.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "tolerant",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Explicit count reported in the cited Results.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'Cryptically beneficial mutations'"
+      },
+      "proposed_use": "Forbids a hard filter that removes a substitution purely because its single-mutant fitness is below wild type; instead down-weight it and reserve an explicit exploration quota (~35% of the deleterious set is recoverable) for such substitutions in combination."
+    },
+    {
+      "id": "EV026",
+      "statement": "Wild type is the optimal amino acid at 17 of the 55 mutable positions of GB1, yet beneficial mutations appear within 10 of those 17 positions once compensatory mutations are allowed.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "tolerant",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Explicit counts reported in the cited Results.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:25455030",
+        "doi": "10.1016/j.cub.2014.09.072",
+        "pmid": "25455030",
+        "bibkey": "olson2014comprehensive",
+        "title": "A Comprehensive Biophysical Description of Pairwise Epistasis throughout an Entire Protein Domain",
+        "year": 2014,
+        "locator": "Results, 'Cryptically beneficial mutations'"
+      },
+      "proposed_use": "Do not treat 'wild type is best at this site' as a terminal constraint; keep at least one combinatorial probe per site that violates it."
+    },
+    {
+      "id": "EV027",
+      "statement": "In the 2.07 A crystal structure of the GB1 domain (PDB 1PGA) the secondary structure is a helix spanning residues 23-36 and a four-stranded sheet formed by residues 1-9, 12-20, 42-46 and 50-56; sites 39, 40 and 41 therefore lie in the loop between the helix and strand beta3, while site 54 lies inside strand beta4.",
+      "scope": "site",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "structural",
+      "confidence": 0.95,
+      "confidence_reason": "Read directly from the HELIX/SHEET records of the deposited coordinates of the cited structure.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8161530",
+        "doi": "10.1021/bi00181a032",
+        "pmid": "8161530",
+        "bibkey": "gallagher1994two",
+        "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+        "year": 1994,
+        "locator": "PDB 1PGA, HELIX and SHEET records"
+      },
+      "proposed_use": "Architectural partition of the prior: 39/40/41 are loop positions whose backbone is comparatively permissive, whereas any substitution at 54 must remain compatible with beta-strand backbone geometry and with inter-strand hydrogen bonding.",
+      "computed_in_this_work": "Parsed HELIX/SHEET records of struct/1pga.pdb with Biopython."
+    },
+    {
+      "id": "EV028",
+      "statement": "Val39 is almost completely buried in the folded domain: its relative solvent accessibility in PDB 1PGA is 4.3% (7.5 A^2 absolute).",
+      "scope": "site",
+      "sites": [
+        39
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "structural",
+      "confidence": 0.9,
+      "confidence_reason": "Computed here by Shrake-Rupley on the deposited coordinates and normalised to Tien et al. theoretical maxima; absolute value depends on the probe/normalisation convention.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8161530",
+        "doi": "10.1021/bi00181a032",
+        "pmid": "8161530",
+        "bibkey": "gallagher1994two",
+        "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+        "year": 1994,
+        "locator": "PDB 1PGA, chain A, residue 39 (computed)"
+      },
+      "proposed_use": "Burial-weighted volume penalty at site 39: reject or strongly penalise substitutions that increase side-chain volume by more than ~30 A^3 unless paired with a compensating reduction at 41 or 54.",
+      "computed_in_this_work": "Biopython ShrakeRupley on struct/1pga.pdb; SASA 7.5 A^2, RSA 4.3%."
+    },
+    {
+      "id": "EV029",
+      "statement": "Asp40 is solvent-exposed: its relative solvent accessibility in PDB 1PGA is 60.7% (117.2 A^2 absolute), and its side chain is 5.6-6.8 A from the side chains of 39, 41 and 54.",
+      "scope": "site",
+      "sites": [
+        40
+      ],
+      "substitutions": [],
+      "direction": "tolerant",
+      "strength": "structural",
+      "confidence": 0.9,
+      "confidence_reason": "Computed here from the deposited coordinates; the large exposure is unambiguous and robust to convention.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8161530",
+        "doi": "10.1021/bi00181a032",
+        "pmid": "8161530",
+        "bibkey": "gallagher1994two",
+        "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+        "year": 1994,
+        "locator": "PDB 1PGA, chain A, residue 40 (computed)"
+      },
+      "proposed_use": "No steric/volume constraint at site 40: allow the full 20-letter alphabet there and give site 40 the largest diversity quota of the four sites in round 1.",
+      "computed_in_this_work": "Biopython ShrakeRupley and side-chain minimum-distance calculation on struct/1pga.pdb."
+    },
+    {
+      "id": "EV030",
+      "statement": "Val54 is the most buried of the four sites, with 0.7% relative solvent accessibility (1.2 A^2) in PDB 1PGA, and it packs directly against the core aromatic Trp43 (minimum side-chain heavy-atom distance 3.68 A).",
+      "scope": "site",
+      "sites": [
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "structural",
+      "confidence": 0.9,
+      "confidence_reason": "Computed here from the deposited coordinates; burial and the W43 contact are both unambiguous.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8161530",
+        "doi": "10.1021/bi00181a032",
+        "pmid": "8161530",
+        "bibkey": "gallagher1994two",
+        "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+        "year": 1994,
+        "locator": "PDB 1PGA, chain A, residues 54 and 43 (computed)"
+      },
+      "proposed_use": "Strongest volume/polarity constraint of the four sites: penalise charged and large aromatic substitutions at 54, and treat any such substitution as consuming the whole per-variant destabilisation budget of EV022.",
+      "computed_in_this_work": "Biopython ShrakeRupley and side-chain minimum-distance calculation on struct/1pga.pdb."
+    },
+    {
+      "id": "EV031",
+      "statement": "Gly41 is partially buried (26.8% relative solvent accessibility, 27.9 A^2) and a modelled C-beta at position 41 would sit in a crowded environment, with 29 protein heavy atoms within 6 A excluding the flanking residues.",
+      "scope": "site",
+      "sites": [
+        41
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "structural",
+      "confidence": 0.85,
+      "confidence_reason": "Computed here; the C-beta position is an idealised construction from backbone N, CA and C, so the atom count is indicative rather than exact.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8161530",
+        "doi": "10.1021/bi00181a032",
+        "pmid": "8161530",
+        "bibkey": "gallagher1994two",
+        "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+        "year": 1994,
+        "locator": "PDB 1PGA, chain A, residue 41 (computed)"
+      },
+      "proposed_use": "Graded, not absolute, volume penalty at site 41: small residues are preferred, but the site is not sealed - consistent with EV019/EV020 where larger residues at 41 are tolerated once 54 is shrunk.",
+      "computed_in_this_work": "Virtual C-beta construction plus 6 A/8 A heavy-atom counts on struct/1pga.pdb."
+    },
+    {
+      "id": "EV032",
+      "statement": "Gly41 does not occupy a glycine-specific backbone conformation: its phi/psi angles are approximately -138/-160 degrees in PDB 1PGA and -176/-97 degrees in the NMR structure PDB 2GB1, both in the broadly allowed beta region, in contrast to Gly38 of the same loop whose phi is about +77 degrees.",
+      "scope": "site",
+      "sites": [
+        41
+      ],
+      "substitutions": [],
+      "direction": "tolerant",
+      "strength": "structural",
+      "confidence": 0.9,
+      "confidence_reason": "Dihedrals computed here from two independent deposited structures that agree on the sign of phi; the NMR entry is a single model of an ensemble.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8161530",
+        "doi": "10.1021/bi00181a032",
+        "pmid": "8161530",
+        "bibkey": "gallagher1994two",
+        "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+        "year": 1994,
+        "locator": "PDB 1PGA and PDB 2GB1, chain A, residues 38 and 41 (computed)"
+      },
+      "proposed_use": "Negative/limiting evidence that removes a constraint: do NOT impose a 'glycine required at 41' filter on backbone grounds. The real constraint at 41 is side-chain packing (EV031), which is relieved by compensation at 54 (EV020).",
+      "computed_in_this_work": "Biopython internal-coordinate dihedrals on struct/1pga.pdb and struct/2gb1.pdb."
+    },
+    {
+      "id": "EV033",
+      "statement": "Sites 39, 41 and 54 form a mutually contacting cluster in the folded domain - minimum side-chain heavy-atom distances V39-V54 3.81 A and Gly41(CA)-V54 3.78 A - whereas site 40 points away from that cluster.",
+      "scope": "pair",
+      "sites": [
+        39,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "structural",
+      "confidence": 0.9,
+      "confidence_reason": "Computed here from the deposited coordinates; independently corroborates the structural interpretation in EV004.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8161530",
+        "doi": "10.1021/bi00181a032",
+        "pmid": "8161530",
+        "bibkey": "gallagher1994two",
+        "title": "Two Crystal Structures of the B1 Immunoglobulin-Binding Domain of Streptococcal Protein G and Comparison with NMR",
+        "year": 1994,
+        "locator": "PDB 1PGA, chain A (computed)"
+      },
+      "proposed_use": "Defines the coupling topology of the prior: couple {39,41,54} strongly and couple 40 to the others only weakly, matching the published model form in EV017.",
+      "computed_in_this_work": "Pairwise side-chain minimum distances on struct/1pga.pdb."
+    },
+    {
+      "id": "EV034",
+      "statement": "In the crystal structure of a protein G IgG-binding domain bound to the Fc fragment of human IgG (PDB 1FCC), Asp40 buries about 38 A^2 of solvent-accessible surface on complex formation, Gly41 about 4 A^2, and Val39 and Val54 about 1 A^2 each; the dominant interface residues are Ala24, Glu27, Lys28, Lys31, Gln32, Asn35, Glu42, Trp43 and Tyr45.",
+      "scope": "site",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "structural",
+      "confidence": 0.85,
+      "confidence_reason": "Computed here as the per-residue SASA difference between the isolated and complexed chains; the structure is at 3.5 A resolution, so individual small values (1-5 A^2) should be read as 'not at the interface' rather than as precise numbers.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:7788293",
+        "doi": "10.1016/s0969-2126(01)00157-5",
+        "pmid": "7788293",
+        "bibkey": "sauereriksson1995crystal",
+        "title": "Crystal structure of the C2 fragment of streptococcal protein G in complex with the Fc domain of human IgG",
+        "year": 1995,
+        "locator": "PDB 1FCC, chains C and A (computed)"
+      },
+      "proposed_use": "Partitions the prior by mechanism: only site 40 can act through the Fc interface, so direct binding-interface reasoning (charge complementarity with Fc) applies at 40 alone, while 39/41/54 can only act through stability and through their effect on the 40-bearing loop.",
+      "computed_in_this_work": "Shrake-Rupley delta-SASA between isolated chain C and the C+A complex of struct/1fcc.pdb."
+    },
+    {
+      "id": "EV035",
+      "statement": "The protein G domain in PDB 1FCC differs from the GB1 sequence used in the four-site landscape at only three positions (1, 6 and 7), none of which is a mutable site, so the Fc-interface mapping transfers to GB1 numbering without adjustment.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "structural",
+      "confidence": 0.9,
+      "confidence_reason": "Direct sequence comparison of the deposited chain against the GB1 reference sequence.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:7788293",
+        "doi": "10.1016/s0969-2126(01)00157-5",
+        "pmid": "7788293",
+        "bibkey": "sauereriksson1995crystal",
+        "title": "Crystal structure of the C2 fragment of streptococcal protein G in complex with the Fc domain of human IgG",
+        "year": 1995,
+        "locator": "PDB 1FCC, chain C (computed)"
+      },
+      "proposed_use": "Provenance guard: lets the 1FCC-derived interface prior be applied to GB1 positions directly, and documents the three positions where it does not strictly apply.",
+      "computed_in_this_work": "Sequence alignment of struct/1fcc.pdb chain C against the 1PGA sequence."
+    },
+    {
+      "id": "EV036",
+      "statement": "NMR chemical-shift mapping of the free B1 domain against the IgG-Fc fragment places the major interaction surface on parts of beta-strand 3 and the alpha-helix.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Solution-state mapping of the actual B1 domain, independent of the crystal structure; it is a surface assignment rather than a per-residue energy.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:8411147",
+        "doi": "10.1006/jmbi.1993.1514",
+        "pmid": "8411147",
+        "bibkey": "gronenborn1993identification",
+        "title": "Identification of the Contact Surface of a Streptococcal Protein G Domain Complexed with a Human Fc Fragment",
+        "year": 1993,
+        "locator": "Abstract; Results"
+      },
+      "proposed_use": "Independent confirmation of EV034 that the four mutable sites sit at the edge of, and mostly outside, the Fc-binding surface; use it to cap the weight given to any interface-geometry term at 39, 41 and 54."
+    },
+    {
+      "id": "EV037",
+      "statement": "In the crystal structure of a protein G domain bound to a Fab fragment (PDB 1IGC) the residues equivalent to GB1 39, 40, 41 and 54 bury no solvent-accessible surface at all; the Fab epitope is formed by beta-strand 2 (GB1 positions ~11-17) and the C-terminal part of the helix with its following loop (GB1 ~33-38).",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "structural",
+      "confidence": 0.9,
+      "confidence_reason": "Computed here after establishing the +5 numbering offset of the deposited domain-III construct relative to GB1; all four equivalent residues give exactly zero buried area.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:7966308",
+        "doi": "10.1006/jmbi.1994.1691",
+        "pmid": "7966308",
+        "bibkey": "derrick1994third",
+        "title": "The Third IgG-Binding Domain from Streptococcal Protein G",
+        "year": 1994,
+        "locator": "PDB 1IGC, chains A and H/L (computed)"
+      },
+      "proposed_use": "Negative evidence that scopes the literature search: Fab-binding studies of protein G give no usable constraint at these four sites, so Fab-interface papers and Fab-directed patents should not be mined for this prior.",
+      "computed_in_this_work": "Delta-SASA between isolated chain A and the full complex of struct/1igc.pdb."
+    },
+    {
+      "id": "EV038",
+      "statement": "The B1 domain is a 56-residue, disulfide-free, unusually stable fold consisting of a four-stranded beta sheet packed against a single long helix.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "tolerant",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Primary structural characterisation of the domain.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:1871600",
+        "doi": "10.1126/science.1871600",
+        "pmid": "1871600",
+        "bibkey": "gronenborn1991novel",
+        "title": "A Novel, Highly Stable Fold of the Immunoglobulin Binding Domain of Streptococcal Protein G",
+        "year": 1991,
+        "locator": "Abstract"
+      },
+      "proposed_use": "Justifies a non-zero stability reservoir in the threshold-robustness term of EV022: one destabilising substitution per variant is usually survivable, two often are not."
+    },
+    {
+      "id": "EV039",
+      "statement": "Single-molecule force spectroscopy on GB1 shows that hydrophobic-core packing, probed by side-chain truncation, is a critical determinant of the domain's mechanical stability.",
+      "scope": "site",
+      "sites": [
+        39,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.7,
+      "confidence_reason": "Mechanical unfolding is a different observable from thermodynamic stability or binding, so this is corroborating rather than primary evidence for the two buried sites.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:22823458",
+        "doi": "10.1021/la301940g",
+        "pmid": "22823458",
+        "bibkey": "bu2012single",
+        "title": "Single Molecule Force Spectroscopy Reveals Critical Roles of Hydrophobic Core Packing in Determining the Mechanical Stability of Protein GB1",
+        "year": 2012,
+        "locator": "Abstract"
+      },
+      "proposed_use": "Low-weight corroboration of the burial-based penalty at 39 and 54; should not be given independent weight beyond EV024/EV028/EV030."
+    },
+    {
+      "id": "EV040",
+      "statement": "Protein-language-model fold-change log-likelihood scores are systematically biased against particular residue types, notably proline and bulky aromatics, and z-scoring the fold-change scores separately for each substituted amino-acid type removes that bias while preserving hit rates.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Benchmarked by the authors across 73 deep mutational scanning datasets and adopted as their production scoring scheme.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:41712694",
+        "doi": "10.1126/science.aea1820",
+        "pmid": "41712694",
+        "bibkey": "tran2026multievolve",
+        "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+        "year": 2026,
+        "locator": "Results, PLM zero-shot ensemble section"
+      },
+      "proposed_use": "Normalisation rule for the zero-shot prior term: convert raw log-likelihood ratios to z-scores within each target amino acid across the 4x20 table before they enter the prior, otherwise W/F/Y/P at every site are suppressed for reasons unrelated to GB1."
+    },
+    {
+      "id": "EV041",
+      "statement": "Individual PLM zero-shot methods identify few function-enhancing mutations and can fail entirely for a given protein when their learned evolutionary bias does not match the function being optimised; ensembling several methods mitigates these method-specific failures.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Conclusion of the same 73-dataset benchmark; the failure mode is the authors' stated motivation for the ensemble.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:41712694",
+        "doi": "10.1126/science.aea1820",
+        "pmid": "41712694",
+        "bibkey": "tran2026multievolve",
+        "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+        "year": 2026,
+        "locator": "Results, PLM zero-shot ensemble section"
+      },
+      "proposed_use": "Use an ensemble (or at least a second, non-PLM scorer) for the zero-shot term, and treat the spread across scorers as the uncertainty that sets how much round-1 budget goes to exploration."
+    },
+    {
+      "id": "EV042",
+      "statement": "The recommended first experimental step of MULTI-evolve is to take the top ~15 function-enhancing single mutations and measure all of their pairwise combinations, at most C(15,2) = 105 variants, as a compact dataset that captures the key epistatic interactions.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Explicit protocol statement, matched to the authors' own three applications.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:41712694",
+        "doi": "10.1126/science.aea1820",
+        "pmid": "41712694",
+        "bibkey": "tran2026multievolve",
+        "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+        "year": 2026,
+        "locator": "Results, 'In practice, MULTI-evolve operates as follows'"
+      },
+      "proposed_use": "Direct template for a 96-variant round 1: select ~15 candidate substitutions across the four sites, then fill the batch with their pairwise combinations rather than with the surrogate model's top-96 ranking."
+    },
+    {
+      "id": "EV043",
+      "statement": "Function enhancement in MULTI-evolve campaigns was observed up to seven simultaneous mutations, and the authors recommend restricting nominated multi-mutants to at most seven mutations.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.8,
+      "confidence_reason": "An empirical ceiling observed across three proteins, not a theoretical bound; the GB1 task is capped at four mutations anyway.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:41712694",
+        "doi": "10.1126/science.aea1820",
+        "pmid": "41712694",
+        "bibkey": "tran2026multievolve",
+        "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+        "year": 2026,
+        "locator": "Results, 'In practice, MULTI-evolve operates as follows'"
+      },
+      "proposed_use": "Mutational-load constraint. For a four-site problem it is non-binding, but its corollary is binding: do not restrict round 1 to single and double mutants, since combinations well beyond the double-mutant shell are productive."
+    },
+    {
+      "id": "EV044",
+      "statement": "In MULTI-evolve's hyperparameter search, one-hot sequence encodings consistently outperformed physicochemical descriptors (AAindex, Georgiev) and protein-language-model embeddings (ESM2-3B, ESMC-6B), and performance degraded as hidden layers were added.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Reported as the outcome of an explicit grid search over encodings and architectures.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:41712694",
+        "doi": "10.1126/science.aea1820",
+        "pmid": "41712694",
+        "bibkey": "tran2026multievolve",
+        "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+        "year": 2026,
+        "locator": "Results, APEX engineering section"
+      },
+      "proposed_use": "Model-class constraint for the campaign's surrogate: one-hot (or one-hot plus the 4x19 prior) with a shallow model; do not spend the round-1 budget on PLM-embedding regressors."
+    },
+    {
+      "id": "EV045",
+      "statement": "MULTI-evolve models trained on fewer than 300 variants, under 10% of the available single and double mutants, still predicted multi-mutant activity accurately (Pearson R 0.64 against 0.56 for training on the full single-plus-double set).",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "A low-N resampling benchmark reported with explicit correlation values; the subsampled result being higher than the full-data result suggests variance across the resampling, so treat the comparison as 'no worse', not 'better'.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:41712694",
+        "doi": "10.1126/science.aea1820",
+        "pmid": "41712694",
+        "bibkey": "tran2026multievolve",
+        "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+        "year": 2026,
+        "locator": "Results, model benchmarking section"
+      },
+      "proposed_use": "Supports a small, information-dense round 1: 96 well-chosen variants is enough training data for an epistasis-aware surrogate, so round 1 should optimise coverage of interactions, not batch size."
+    },
+    {
+      "id": "EV046",
+      "statement": "Epistasis-aware MULTI-evolve models outperformed alignment-based models, PLM zero-shot predictors, inverse-folding models and few-shot approaches at predicting high-fitness multi-mutants with 3-10 mutations, exceeding 50% precision for the top fifth percentile in 7 of 12 proteins against 4 of 12 for the next best method.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Head-to-head benchmark with reported precision counts across 12 proteins.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:41712694",
+        "doi": "10.1126/science.aea1820",
+        "pmid": "41712694",
+        "bibkey": "tran2026multievolve",
+        "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+        "year": 2026,
+        "locator": "Results, model benchmarking section"
+      },
+      "proposed_use": "Ranks the evidence sources for the prior: measured single-and-double-mutant data with an explicit epistasis term outranks any zero-shot sequence or structure score, so zero-shot terms should be the fallback where measured data are absent, not the backbone."
+    },
+    {
+      "id": "EV047",
+      "statement": "On an epistatic, hole-filled four-site combinatorial fitness landscape, the dominant determinant of machine-learning-assisted directed evolution success was the use of training-set designs that reduce the inclusion of 'holes' - variants with zero or extremely low fitness - and the optimised protocol reached the global fitness maximum up to 81-fold more often than single-step greedy optimisation.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Headline quantitative result of the cited paper's abstract; the landscape described matches the GB1 four-site data used here, but the abstract does not name it, so the identification is contextual.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:34416172",
+        "doi": "10.1016/j.cels.2021.07.008",
+        "pmid": "34416172",
+        "bibkey": "wittmann2021informed",
+        "title": "Informed training set design enables efficient machine learning-assisted directed protein evolution",
+        "year": 2021,
+        "locator": "Abstract"
+      },
+      "proposed_use": "Primary design objective for round 1: maximise the expected number of *measurably functional* variants in the batch, not the predicted maximum. Operationally, filter candidates by a functionality prior first, then diversify, then rank."
+    },
+    {
+      "id": "EV048",
+      "statement": "The ALDE study's design choices were fixed by simulations on two four-site combinatorial landscapes, one of them the GB1 IgG-binding landscape, using a random initial batch of 96 variants followed by four rounds of 96 with the surrogate retrained each round.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Simulation protocol stated in the cited Methods, with GB1 named as one of the two landscapes.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:39821082",
+        "doi": "10.1038/s41467-025-55987-8",
+        "pmid": "39821082",
+        "bibkey": "yang2025active",
+        "title": "Active learning-assisted directed evolution",
+        "year": 2025,
+        "locator": "Methods, simulations on GB1 and TrpB landscapes"
+      },
+      "proposed_use": "Establishes the random-96 start as the published baseline a designed round-1 batch must beat, and fixes the round/batch geometry used for comparison."
+    },
+    {
+      "id": "EV049",
+      "statement": "In the ALDE wet-lab campaign the authors deliberately chose random selection for the initial library rather than zero-shot enrichment, because they could not assume that zero-shot predictors correlate with a non-native objective; retrospective analysis confirmed the objective was not strongly correlated with conventional zero-shot predictors.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Explicit statement of the authors' reasoning plus their retrospective check.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:39821082",
+        "doi": "10.1038/s41467-025-55987-8",
+        "pmid": "39821082",
+        "bibkey": "yang2025active",
+        "title": "Active learning-assisted directed evolution",
+        "year": 2025,
+        "locator": "Results, ParLQ campaign, round 1"
+      },
+      "proposed_use": "Constraint on how much weight the zero-shot term may carry in round 1: the weight must be justified by evidence that the score tracks *this* objective (IgG-Fc binding plus folding), not assumed. See EV053 for direct evidence that it does not at site 40."
+    },
+    {
+      "id": "EV050",
+      "statement": "In ALDE simulations, protein-language-model embeddings offered little benefit over one-hot and low-dimensional encodings, and the final wet-lab configuration was one-hot encoding with a five-model bootstrapped deep-ensemble and Thompson sampling as the acquisition function.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Both the simulation conclusion and the resulting production configuration are stated explicitly.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:39821082",
+        "doi": "10.1038/s41467-025-55987-8",
+        "pmid": "39821082",
+        "bibkey": "yang2025active",
+        "title": "Active learning-assisted directed evolution",
+        "year": 2025,
+        "locator": "Results, simulation summary; Methods, wet-lab campaign"
+      },
+      "proposed_use": "Fixes the later-round acquisition rule: ensemble-based Thompson sampling over a one-hot surrogate, which supplies the exploration that a pure greedy top-96 rule lacks."
+    },
+    {
+      "id": "EV051",
+      "statement": "Clustering the GB1 four-site landscape into three k-means clusters on physicochemical amino-acid encodings produced strongly heterogeneous high-fitness density - one cluster held 911 high-fitness variants against 80 and 59 in the other two - and exploiting that heterogeneity raised the global-maximum hit rate to 40.2% at a budget of 90 variants, about 2.2-fold over random-sampling MLDE.",
+      "scope": "method",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Quantitative, GB1-specific result with explicit cluster populations and hit rates.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:35811998",
+        "doi": "10.1038/s43588-021-00168-y",
+        "pmid": "35811998",
+        "bibkey": "qiu2021cluster",
+        "title": "Cluster learning-assisted directed evolution",
+        "year": 2021,
+        "locator": "Results, clustering of the GB1 landscape"
+      },
+      "proposed_use": "Round-1 batch-composition constraint: stratify the 96 picks across sequence-space clusters rather than sampling uniformly, and allocate more picks to clusters whose amino-acid composition matches the high-fitness cluster (hydrophobic/aromatic-enriched at 39/41/54)."
+    },
+    {
+      "id": "EV052",
+      "statement": "On the GB1 four-site space, NNK degenerate-codon libraries spread sequences evenly across the landscape but are dominated by low-fitness variants and contain stop codons, whereas library designs placed on the Pareto frontier between expected fitness and sequence diversity avoid both failure modes.",
+      "scope": "method",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "constraint",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Shown by the cited paper's direct comparison of five library-design methods on the GB1 landscape.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:39080249",
+        "doi": "10.1038/s41467-024-50698-y",
+        "pmid": "39080249",
+        "bibkey": "ding2024modify",
+        "title": "Machine learning-guided co-optimization of fitness and diversity facilitates combinatorial library design in enzyme engineering",
+        "year": 2024,
+        "locator": "Results, GB1 library design comparison"
+      },
+      "proposed_use": "Two explicit constraints: (i) reject any candidate containing a stop codon or requiring a degenerate codon that implies one; (ii) select the batch on an expected-fitness vs diversity Pareto frontier instead of by rank alone."
+    },
+    {
+      "id": "EV053",
+      "statement": "A zero-shot ensemble of unsupervised models predicted all 19 possible substitutions at GB1 position D40 to be disadvantageous, whereas the measured data show the opposite for most of them, and the same models over-represent the wild-type amino acid.",
+      "scope": "site",
+      "sites": [
+        40
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.95,
+      "confidence_reason": "A site-specific, explicitly reported failure of zero-shot prediction on exactly one of the four sites of this task; the strongest available negative evidence.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:39080249",
+        "doi": "10.1038/s41467-024-50698-y",
+        "pmid": "39080249",
+        "bibkey": "ding2024modify",
+        "title": "Machine learning-guided co-optimization of fitness and diversity facilitates combinatorial library design in enzyme engineering",
+        "year": 2024,
+        "locator": "Results, MODIFY-informed residue-level diversity control"
+      },
+      "proposed_use": "Hard override: set the weight of the zero-shot term at site 40 to approximately zero and drive site 40 from published single-mutant measurements and from its solvent exposure (EV029) instead. Also implies a global correction against wild-type over-representation in the 4x20 table."
+    },
+    {
+      "id": "EV054",
+      "statement": "Prior knowledge of a protein's measured single-mutant fitness can be injected into zero-shot library design through residue-level diversity control, and obtaining it costs only 20 x (number of sites) variants - 80 for the GB1 four-site problem.",
+      "scope": "method",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Stated as the cited paper's 'informed' design mode, with the 20 x 4 = 80 arithmetic given explicitly.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:39080249",
+        "doi": "10.1038/s41467-024-50698-y",
+        "pmid": "39080249",
+        "bibkey": "ding2024modify",
+        "title": "Machine learning-guided co-optimization of fitness and diversity facilitates combinatorial library design in enzyme engineering",
+        "year": 2024,
+        "locator": "Results, MODIFY-informed library design"
+      },
+      "proposed_use": "Specifies the interface between evidence and design: the prior is a 4x20 table whose entries are (published single-mutant fitness) where available, and (z-normalised ensemble zero-shot score) elsewhere, with per-site weights set by EV053 and EV049."
+    },
+    {
+      "id": "EV055",
+      "statement": "Protein language models score variant effects zero-shot by masked-marginal log-likelihood ratios between the mutant and wild-type residue at the mutated position, requiring no labelled data.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "Definition of the scoring procedure in the cited work that introduced it as a zero-shot protocol.",
+      "source": {
+        "type": "paper",
+        "id": "DOI:10.1101/2021.07.09.450648",
+        "doi": "10.1101/2021.07.09.450648",
+        "pmid": null,
+        "bibkey": "meier2021language",
+        "title": "Language models enable zero-shot prediction of the effects of mutations on protein function",
+        "year": 2021,
+        "locator": "Methods, scoring strategies"
+      },
+      "proposed_use": "Defines the functional form of the zero-shot prior term; it is single-site by construction, so it contributes only to the additive part of the prior and cannot supply the {39,41,54} coupling required by EV005."
+    },
+    {
+      "id": "EV056",
+      "statement": "Models that explicitly include pairwise couplings inferred from sequence co-variation predict mutation effects better than site-independent models, including for higher-order combinations.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Central result of the cited method paper; benchmarked broadly rather than on GB1 specifically.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:28092658",
+        "doi": "10.1038/nbt.3769",
+        "pmid": "28092658",
+        "bibkey": "hopf2017mutation",
+        "title": "Mutation effects predicted from sequence co-variation",
+        "year": 2017,
+        "locator": "Abstract; Results"
+      },
+      "proposed_use": "Justifies adding an evolutionary-coupling term over site pairs - in particular the {39,41,54} cluster - rather than summing four independent single-site scores."
+    },
+    {
+      "id": "EV057",
+      "statement": "ProteinMPNN is a structure-conditioned sequence-design model whose reported accuracy metric is native-sequence recovery on protein backbones (52.4%, against 32.9% for Rosetta); it is not reported as, and is not trained as, a predictor of binding affinity.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.9,
+      "confidence_reason": "The cited paper's own characterisation and benchmark; the absence of a binding-affinity claim is itself the evidence.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:36108050",
+        "doi": "10.1126/science.add2187",
+        "pmid": "36108050",
+        "bibkey": "dauparas2022robust",
+        "title": "Robust deep learning–based protein sequence design using ProteinMPNN",
+        "year": 2022,
+        "locator": "Abstract; Results"
+      },
+      "proposed_use": "Scope limit on any inverse-folding prior: a ProteinMPNN log-probability term may be used as a foldability/packing prior at the buried sites 39, 41 and 54, and must not be used as a proxy for the IgG-Fc binding component of fitness (EV002)."
+    },
+    {
+      "id": "EV058",
+      "statement": "Structure-based zero-shot fitness predictors are sensitive to which structure they are given, can be misled by predicted structures in poorly ordered regions, and are best used inside simple multimodal ensembles.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.75,
+      "confidence_reason": "Preprint, benchmark-level evidence; relevant here mainly as a caution, since GB1 has high-resolution experimental structures and no disordered region among the four sites.",
+      "source": {
+        "type": "paper",
+        "id": "DOI:10.48550/arXiv.2504.16886",
+        "doi": "10.48550/arXiv.2504.16886",
+        "pmid": null,
+        "bibkey": "vankempen2025structzeroshot",
+        "title": "Exploring zero-shot structure-based protein fitness prediction",
+        "year": 2025,
+        "locator": "Abstract"
+      },
+      "proposed_use": "Requires that any structure-based term be computed on an experimental GB1 structure (1PGA or 2GB1) rather than a predicted model, and be ensembled rather than used alone."
+    },
+    {
+      "id": "EV059",
+      "statement": "Zero-shot variant-effect performance varies strongly across protein families in standardised benchmarks, so a benchmark-average score cannot be assumed to transfer to a specific target.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Motivation and headline finding of the cited benchmark resource; the GB1 assays are among the datasets it assembles.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:38106144",
+        "doi": "10.1101/2023.12.07.570727",
+        "pmid": "38106144",
+        "bibkey": "notin2023proteingym",
+        "title": "ProteinGym: Large-Scale Benchmarks for Protein Design and Fitness Prediction",
+        "year": 2023,
+        "locator": "Abstract"
+      },
+      "proposed_use": "Calibration constraint: the weight on the zero-shot term must be set from GB1-specific evidence (EV053 and the published single-mutant data) rather than from reported benchmark averages."
+    },
+    {
+      "id": "EV060",
+      "statement": "Simple models that combine an unsupervised evolutionary score with a small amount of assay-labelled data are a strong baseline for protein fitness prediction, particularly in low-data regimes.",
+      "scope": "method",
+      "sites": [],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "Main claim of the cited method paper, supported by benchmarks across many assays.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:35039677",
+        "doi": "10.1038/s41587-021-01146-5",
+        "pmid": "35039677",
+        "bibkey": "hsu2022learning",
+        "title": "Learning protein fitness models from evolutionary and assay-labeled data",
+        "year": 2022,
+        "locator": "Abstract"
+      },
+      "proposed_use": "Prescribes the round-2 update rule: keep the round-1 prior as a fixed feature or offset in the supervised model rather than discarding it once 96 labels exist."
+    },
+    {
+      "id": "EV061",
+      "statement": "Engineering alkaline stability into the IgG-binding domain of streptococcal protein G was pursued by substituting its asparagine residues; GB1 carries asparagine only at positions 8, 35 and 37, none of which is one of the four mutable sites.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.85,
+      "confidence_reason": "The substitution strategy is explicit in the cited study; the asparagine positions are read off the GB1 reference sequence.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:12468718",
+        "doi": "10.1093/protein/15.10.835",
+        "pmid": "12468718",
+        "bibkey": "gulich2002engineering",
+        "title": "Engineering streptococcal protein G for increased alkaline stability",
+        "year": 2002,
+        "locator": "Abstract; Results"
+      },
+      "proposed_use": "Negative evidence that bounds the search: the industrial protein G engineering literature optimises caustic stability at asparagine positions and therefore yields no prior at 39/40/41/54. Do not import its substitution preferences."
+    },
+    {
+      "id": "EV062",
+      "statement": "Replacing all three asparagine residues in the protein G IgG-binding domain improved stability towards caustic alkali only about eight-fold, and the domain unfolds progressively between pH 11.5 and 13.0.",
+      "scope": "global",
+      "sites": [
+        39,
+        40,
+        41,
+        54
+      ],
+      "substitutions": [],
+      "direction": "method",
+      "strength": "measured",
+      "confidence": 0.8,
+      "confidence_reason": "Quantitative result of the cited study; included to document the scope of the industrial literature rather than to constrain the four sites.",
+      "source": {
+        "type": "paper",
+        "id": "PMID:18304667",
+        "doi": "10.1016/j.jbiotec.2007.12.009",
+        "pmid": "18304667",
+        "bibkey": "palmer2008design",
+        "title": "Design of stability at extreme alkaline pH in streptococcal protein G",
+        "year": 2008,
+        "locator": "Abstract"
+      },
+      "proposed_use": "Confirms EV061: the objective optimised in the affinity-ligand literature (caustic stability, elution pH) is orthogonal to the IgG-Fc binding/folding objective of this campaign, so that literature contributes no substitution-level prior here."
+    }
+  ]
+}
