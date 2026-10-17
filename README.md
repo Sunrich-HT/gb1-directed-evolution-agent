@@ -1,9 +1,26 @@
 # GB1 Directed-Evolution Agent
 
-A machine-learning-guided directed-evolution agent for the GB1 four-site fitness
-landscape, built as a controlled comparison: **random**, **predictor-greedy**,
-**predictor-greedy + exploration**, **LLM agent**, and **knowledge-augmented LLM
-agent**, all starting from the same labels and spending the same budget.
+A directed-evolution agent for the GB1 four-site fitness landscape, built as a
+controlled comparison of **seven arms** that share one starting set of 192 labels
+and one budget of 3 x 96 measurements: `random`, `greedy`, `greedy_explore`,
+`llm_agent`, `llm_knowledge`, `prior_fixed` (evidence prior + explicit constraints,
+rules frozen, **no language model**) and `prior_constraint` (the same, with the
+model allowed to edit rule parameters each round).
+
+Round 1 is driven by an evidence prior compiled from crystal/NMR structures, the
+IgG-Fc complex and 62 curated literature claims - it uses **no multi-mutant label**
+and still ranks variants as well as a prior built from measured single mutants.
+Every later round applies explicit non-sequence constraints, and every rule that
+fires leaves an audit record.
+
+**Headline result.** The prior and the constraints do the work: they lift the rate
+of reaching the global optimum from 20% (3/15 seeds, predictor-greedy) to 60%
+(9/15), paired McNemar p = 0.031. The language model adds nothing measurable on top
+of them - freezing the rules changes nothing (Wilcoxon p = 1.000), and used as a
+picker it reproduces greedy on 14 of 15 seeds.
+
+- **Demo page (one complete case, input to output):** [`demo/index.html`](demo/index.html) - open in a browser, self-contained.
+- **Paper:** [`paper/main.pdf`](paper/main.pdf) (XeLaTeX sources in `paper/`).
 
 The measured landscape is used as a *virtual* evaluator. No wet-lab experiment is
 performed or claimed anywhere in this repository.
