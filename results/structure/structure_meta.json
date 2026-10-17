@@ -1,0 +1,22 @@
+{
+  "service": "NVIDIA hosted Boltz-2 (health.api.nvidia.com/v1/biology/mit/boltz2/predict)",
+  "n_requested": 146,
+  "n_folded": 146,
+  "n_keys_rotated": 5,
+  "calls_per_key": {
+    "0": 35,
+    "1": 34,
+    "2": 34,
+    "3": 34,
+    "4": 34
+  },
+  "http_status_counts": {
+    "200": 146,
+    "429": 25
+  },
+  "median_latency_s": 7.3,
+  "recycling_steps": 3,
+  "sampling_steps": 50,
+  "sample_seed": 907,
+  "sampling": "equal count per equal-width log1p(fitness) bin of the full landscape"
+}

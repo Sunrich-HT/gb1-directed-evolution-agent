@@ -1,0 +1,133 @@
+{
+  "cap_usd": 3.0,
+  "spent_usd": 0.07576344,
+  "n_calls": 18,
+  "calls": [
+    {
+      "tag": "llm_agent_s301_r1",
+      "prompt_tokens": 10288,
+      "completion_tokens": 725,
+      "cost_usd": 0.0035752600000000002,
+      "ts": 1792221004.8844593
+    },
+    {
+      "tag": "llm_agent_s301_r2",
+      "prompt_tokens": 10825,
+      "completion_tokens": 758,
+      "cost_usd": 0.00375655,
+      "ts": 1792221010.7614827
+    },
+    {
+      "tag": "llm_agent_s301_r3",
+      "prompt_tokens": 10825,
+      "completion_tokens": 729,
+      "cost_usd": 0.0037246500000000004,
+      "ts": 1792221016.1797442
+    },
+    {
+      "tag": "llm_knowledge_s301_r1",
+      "prompt_tokens": 12971,
+      "completion_tokens": 790,
+      "cost_usd": 0.004371170000000001,
+      "ts": 1792221022.2512646
+    },
+    {
+      "tag": "llm_knowledge_s301_r2",
+      "prompt_tokens": 13489,
+      "completion_tokens": 748,
+      "cost_usd": 0.00446483,
+      "ts": 1792221027.8834677
+    },
+    {
+      "tag": "llm_knowledge_s301_r3",
+      "prompt_tokens": 13488,
+      "completion_tokens": 749,
+      "cost_usd": 0.004465660000000001,
+      "ts": 1792221033.6356058
+    },
+    {
+      "tag": "llm_agent_s302_r1",
+      "prompt_tokens": 10229,
+      "completion_tokens": 715,
+      "cost_usd": 0.0035483300000000006,
+      "ts": 1792221043.3350918
+    },
+    {
+      "tag": "llm_agent_s302_r2",
+      "prompt_tokens": 10889,
+      "completion_tokens": 744,
+      "cost_usd": 0.00375843,
+      "ts": 1792221048.8319178
+    },
+    {
+      "tag": "llm_agent_s302_r3",
+      "prompt_tokens": 10901,
+      "completion_tokens": 1344,
+      "cost_usd": 0.00442167,
+      "ts": 1792221056.308643
+    },
+    {
+      "tag": "llm_knowledge_s302_r1",
+      "prompt_tokens": 12917,
+      "completion_tokens": 764,
+      "cost_usd": 0.00432799,
+      "ts": 1792221062.4185438
+    },
+    {
+      "tag": "llm_knowledge_s302_r2",
+      "prompt_tokens": 13589,
+      "completion_tokens": 1390,
+      "cost_usd": 0.00519803,
+      "ts": 1792221070.405419
+    },
+    {
+      "tag": "llm_knowledge_s302_r3",
+      "prompt_tokens": 13634,
+      "completion_tokens": 796,
+      "cost_usd": 0.004556780000000001,
+      "ts": 1792221077.7692583
+    },
+    {
+      "tag": "llm_agent_s303_r1",
+      "prompt_tokens": 10060,
+      "completion_tokens": 1339,
+      "cost_usd": 0.0041891,
+      "ts": 1792221090.8840938
+    },
+    {
+      "tag": "llm_agent_s303_r2",
+      "prompt_tokens": 10808,
+      "completion_tokens": 759,
+      "cost_usd": 0.0037530600000000003,
+      "ts": 1792221097.570139
+    },
+    {
+      "tag": "llm_agent_s303_r3",
+      "prompt_tokens": 10860,
+      "completion_tokens": 717,
+      "cost_usd": 0.0037209,
+      "ts": 1792221104.166475
+    },
+    {
+      "tag": "llm_knowledge_s303_r1",
+      "prompt_tokens": 12762,
+      "completion_tokens": 1398,
+      "cost_usd": 0.004983540000000001,
+      "ts": 1792221112.4584007
+    },
+    {
+      "tag": "llm_knowledge_s303_r2",
+      "prompt_tokens": 13426,
+      "completion_tokens": 753,
+      "cost_usd": 0.00445332,
+      "ts": 1792221118.5905583
+    },
+    {
+      "tag": "llm_knowledge_s303_r3",
+      "prompt_tokens": 13561,
+      "completion_tokens": 757,
+      "cost_usd": 0.0044941700000000005,
+      "ts": 1792221125.2628155
+    }
+  ]
+}

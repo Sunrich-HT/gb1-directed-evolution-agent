@@ -1,0 +1,41 @@
+{
+  "n_folded": 146,
+  "n_requested": 146,
+  "n_keys_rotated": 5,
+  "calls_per_key": {
+    "0": 35,
+    "1": 34,
+    "2": 34,
+    "3": 34,
+    "4": 34
+  },
+  "n_calls": 171,
+  "median_latency_s": 7.3,
+  "service": "NVIDIA hosted Boltz-2 (health.api.nvidia.com/v1/biology/mit/boltz2/predict)",
+  "spearman_vs_fitness": {
+    "plddt_mean": 0.17608090000289206,
+    "plddt_sites": 0.2096825503937995,
+    "ptm": 0.21308358960022372,
+    "sequence_model": 0.5588944694552361
+  },
+  "max_abs_rho": 0.21308358960022372,
+  "ablation": {
+    "sequence_only": {
+      "spearman": 0.5203339342350073,
+      "top5pct_precision": 0.14285714285714285
+    },
+    "sequence_plus_structure": {
+      "spearman": 0.5186334146317952,
+      "top5pct_precision": 0.14285714285714285
+    },
+    "delta_spearman": -0.0017005196032120473,
+    "delta_top5pct": 0.0,
+    "protocol": "5-fold CV inside the folded sample; identical folds for both models"
+  },
+  "notes": {
+    "plddt_mean": "整链平均置信度；四点突变几乎不改变折叠",
+    "plddt_sites": "仅取 39/40/41/54 四个位点的置信度",
+    "ptm": "整体拓扑置信度",
+    "sequence_model": "仅用 192 条标签训练的成对编码岭回归，作为对照上限"
+  }
+}

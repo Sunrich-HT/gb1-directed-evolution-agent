@@ -1,0 +1,17 @@
+{
+  "arms": [
+    "random",
+    "greedy",
+    "greedy_explore"
+  ],
+  "seeds": [
+    301,
+    302,
+    303
+  ],
+  "rounds": 3,
+  "batch_size": 96,
+  "backend": "mock",
+  "llm_calls": 0,
+  "llm_spend_usd": 0
+}
