@@ -2,7 +2,7 @@
 PY ?= python
 DATA ?= data/gb1_flip.zip
 
-.PHONY: help install test hygiene data prior baselines campaign figures significance demo all clean
+.PHONY: help install test hygiene data prior baselines campaign figures significance animation demo all clean
 
 help:
 	@grep -E '^[a-z-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
@@ -41,6 +41,10 @@ figures:  ## rebuild every figure
 	$(PY) scripts/make_paper_figures.py --data $(DATA) --records results/v2/records_final.json
 	$(PY) scripts/make_structure_figures.py --data $(DATA)
 
+animation:  ## render the step-by-step case animation (GIF + MP4) and the loop animation
+	$(PY) scripts/make_case_animation.py
+	$(PY) scripts/make_loop_animation.py
+
 demo:  ## rebuild the call-trace demo page
 	$(PY) scripts/capture_trace.py --data $(DATA)
 	$(PY) scripts/capture_structure_trace.py
@@ -49,7 +53,7 @@ demo:  ## rebuild the call-trace demo page
 recommend:  ## one-shot recommendation from the wild-type sequence
 	$(PY) scripts/recommend.py --top-k 10
 
-all: test hygiene prior baselines analysis significance figures demo  ## everything that does not need API keys
+all: test hygiene prior baselines analysis significance figures animation demo  ## everything that does not need API keys
 
 clean:  ## remove caches
 	rm -rf .pytest_cache **/__pycache__

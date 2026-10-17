@@ -26,3 +26,6 @@ _view_*.png
 
 # the manuscript build is not part of this repository
 paper/
+figures/animation/_demo_img*.jpg
+figures/animation/_mp4frames/
+/*.png

@@ -360,6 +360,15 @@ body{margin:0;background:var(--bg);color:var(--ink);
 font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif}
 .wrap{max-width:900px;margin:0 auto;padding:48px 20px 90px}
 h1{font-size:25px;line-height:1.45;margin:0 0 8px;letter-spacing:-.01em}
+.replaybar{display:flex;align-items:center;gap:9px;margin:-22px 0 30px}
+.btn{font:inherit;font-size:12.5px;color:#1b2733;background:#fff;border:1px solid var(--line);
+border-radius:7px;padding:5px 12px;cursor:pointer}
+.btn:hover{background:#f7f8f9}
+.btn.primary{background:#1b2733;color:#fff;border-color:#1b2733}
+.pg{font-size:12px;color:var(--mut)}
+body.replay .turn{opacity:0;transform:translateY(8px)}
+body.replay .turn.shown{opacity:1;transform:none;transition:opacity .45s ease,transform .45s ease}
+@media (prefers-reduced-motion: reduce){body.replay .turn{opacity:1;transform:none}}
 .kicker{font-size:14px;line-height:1.5;color:#1b2733;font-weight:600;margin:0 0 2px}
 .byline{font-size:12.5px;color:#64748b;margin:0 0 18px}
 .byline a{color:inherit}
@@ -426,6 +435,41 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:v
 @media(max-width:700px){.two{grid-template-columns:1fr}}
 """
 
+    replay_js = r"""<script>
+(function () {
+  var turns = Array.prototype.slice.call(document.querySelectorAll('.turn'));
+  var play = document.getElementById('play');
+  var showall = document.getElementById('showall');
+  var pg = document.getElementById('progress');
+  var tot = document.getElementById('pgtot');
+  var timer = null;
+  tot.textContent = turns.length;
+  function stop() { if (timer) { clearTimeout(timer); timer = null; } }
+  function reveal(i) {
+    if (i >= turns.length) { play.textContent = '▶ 重新播放'; pg.innerHTML = '播放完毕，共 <b>' + turns.length + '</b> 步'; return; }
+    turns[i].classList.add('shown');
+    turns[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    pg.innerHTML = '第 <b>' + (i + 1) + '</b> / ' + turns.length + ' 步';
+    timer = setTimeout(function () { reveal(i + 1); }, 1500);
+  }
+  play.addEventListener('click', function () {
+    stop();
+    document.body.classList.add('replay');
+    turns.forEach(function (t) { t.classList.remove('shown'); });
+    play.textContent = '▶ 播放中…';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    timer = setTimeout(function () { reveal(0); }, 500);
+  });
+  showall.addEventListener('click', function () {
+    stop();
+    document.body.classList.remove('replay');
+    turns.forEach(function (t) { t.classList.add('shown'); });
+    play.textContent = '▶ 逐步播放';
+    pg.innerHTML = '共 <b>' + turns.length + '</b> 步';
+  });
+})();
+</script>"""
+
     doc = f"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -441,6 +485,11 @@ trace 由 <code>scripts/capture_trace.py</code> 抓取（结构文件是现场�
   <span class="chip">抓取时间 {T['captured_at']}</span>
   <span class="chip">{len(T['steps'])} 次工具调用（本节）</span>
   <span class="chip"><a href="https://github.com/Sunrich-HT/gb1-directed-evolution-agent">源码与完整 trace</a></span>
+</div>
+<div class="replaybar">
+  <button id="play" class="btn primary">▶ 逐步播放</button>
+  <button id="showall" class="btn">全部展开</button>
+  <span id="progress" class="pg">共 <b id="pgtot">0</b> 步</span>
 </div>
 
 <section class="turn user">
@@ -460,6 +509,7 @@ trace 由 <code>scripts/capture_trace.py</code> 抓取（结构文件是现场�
 {struct_html}
 <footer>本页是 results/trace_seed302.json 的视图，由 scripts/make_demo_page.py 渲染；
 页面上的每个数字都能在该 trace 文件中找到对应字段。</footer>
+{replay_js}
 </div></body></html>"""
 
     out = Path(args.out)

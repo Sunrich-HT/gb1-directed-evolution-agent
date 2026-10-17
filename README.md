@@ -18,6 +18,24 @@ to **60 %** (9/15), paired McNemar *p* = 0.031. The language model adds nothing
 measurable on top of them — freezing the rules changes nothing (Wilcoxon *p* = 1.000),
 and used as a picker it reproduces greedy on 14 of 15 seeds.
 
+### One complete round, step by step
+
+![step-by-step walkthrough of one round](figures/animation/case.gif)
+
+Fifteen real tool calls: RCSB download, structural analysis, inverse folding, the
+evidence prior, the predictor, the language model setting the rules, the constraint
+engine, the frozen batch, the verdicts, and the hosted structure service — including
+the docking check that **refused** an interface constraint and the packing relation
+that was accepted instead. Same content as
+[`demo/index.html`](demo/index.html), which plays through the steps in the browser;
+[`figures/animation/case.mp4`](figures/animation/case.mp4) is the same walkthrough as video.
+
+![the loop under constraints](figures/animation/loop.gif)
+
+What each round does to the candidate pool: the hard filters cut 139,169 candidates
+down to the legal set, 96 go to the evaluator under a SHA-256 commitment, and the
+labels come back — the global optimum lands in round 2.
+
 | | |
 |---|---|
 | Call-trace demo | [`demo/index.html`](demo/index.html) — one round's 15 tool calls, inputs and outputs, raw JSON expandable |
