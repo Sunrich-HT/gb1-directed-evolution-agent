@@ -471,6 +471,121 @@ def figure4(interp: dict, df, struct: dict, out: Path) -> Path:
     return save(fig, out, "fig4_mechanism")
 
 
+def fig_architecture(out: Path) -> Path:
+    """Method architecture on a strict grid: every box occupies its own cell and every
+    arrow runs in an empty gutter, so no text can be overlapped or occluded."""
+    from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
+
+    fig = plt.figure(figsize=(180 * MM, 108 * MM))
+    ax = fig.add_axes([0.012, 0.012, 0.976, 0.976])
+    ax.set_xlim(-1, 123)
+    ax.set_ylim(-1, 73)
+    ax.axis("off")
+
+    EV, PRIOR, MODEL, SCORE = "#4c72b0", "#c44e52", "#55a868", "#8172b3"
+    GREY, AGENT = "#5f5f5f", "#937860"
+
+    # --- grid: 4 columns x 4 rows, gutters are 6 units wide and stay empty
+    COLW, GUT = 26.0, 5.0
+    COLX = [2.0 + i * (COLW + GUT) for i in range(4)]
+    ROWY = {1: 56.0, 2: 40.0, 3: 24.0, 4: 6.0}
+    ROWH = {1: 14.0, 2: 13.0, 3: 13.0, 4: 13.0}
+
+    def cell(col, row, span=1):
+        x = COLX[col]
+        w = COLW * span + GUT * (span - 1)
+        return x, ROWY[row], w, ROWH[row]
+
+    def box(rect, title, lines, color, ls="-"):
+        x, y, w, h = rect
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.0,rounding_size=1.0",
+                                    linewidth=1.0, edgecolor=color, linestyle=ls,
+                                    facecolor="white", zorder=2))
+        ax.text(x + w / 2, y + h - 2.6, title, ha="center", va="center", fontsize=6.8,
+                fontweight="bold", color=color, zorder=3)
+        for i, ln in enumerate(lines):
+            ax.text(x + w / 2, y + h - 6.0 - i * 2.6, ln, ha="center", va="center",
+                    fontsize=5.6, color="#222222", zorder=3)
+
+    def vline(x, y0, y1, color=GREY, ls="-"):
+        ax.add_patch(FancyArrowPatch((x, y0), (x, y1), arrowstyle="-|>", mutation_scale=8,
+                                     linewidth=1.0, color=color, linestyle=ls, zorder=1))
+
+    def hline(y, x0, x1, color=GREY, ls="-"):
+        ax.add_patch(FancyArrowPatch((x0, y), (x1, y), arrowstyle="-|>", mutation_scale=8,
+                                     linewidth=1.0, color=color, linestyle=ls, zorder=1))
+
+    # row 1 — evidence sources
+    box(cell(0, 1), "Structural evidence", ["1PGA crystal, 1FCC complex",
+                                            "burial, backbone dihedrals",
+                                            "C-beta packing headroom"], EV)
+    box(cell(1, 1), "Biophysical evidence", ["side-chain volume",
+                                             "hydropathy, formal charge"], EV)
+    box(cell(2, 1), "Published evidence", ["62 curated rows, 21 sources",
+                                           "each row maps to one prior",
+                                           "term or one constraint"], EV)
+    box(cell(3, 1), "Labelled data", ["192 random variants (D0)",
+                                      "the only labels at the start"], MODEL)
+
+    # row 2 — prior and model
+    box(cell(0, 2, span=3), "Evidence prior   (no multi-mutant label; rho = +0.31)",
+        ["inverse folding, muted at site 40   |   packing headroom   |   buried-charge penalty",
+         "Fc-interface bonus   |   41/54 volume compensation   |   literature claims"], PRIOR)
+    box(cell(3, 2), "Fitness predictor", ["ridge / RF / FCNN,",
+                                          "cross-validated,",
+                                          "retrained each round"], MODEL)
+
+    # row 3 — scoring and rules
+    box(cell(0, 3), "Combined score", ["w_prior x prior", "+ w_model x model"], SCORE)
+    box(cell(1, 3), "Constraint engine", ["hard filters, soft penalties,",
+                                          "composition quotas,",
+                                          "audited every round"], SCORE)
+    box(cell(2, 3), "Batch of 96", ["frozen by SHA-256 before",
+                                    "any label is revealed"], GREY)
+    box(cell(3, 3), "Virtual oracle", ["published DMS lookup,",
+                                       "every query logged"], GREY)
+
+    # row 4 — agent and verdicts
+    box(cell(0, 4), "LLM agent (optional)", ["edits constraint parameters",
+                                             "and weights; never names",
+                                             "a variant"], AGENT, ls="--")
+    box(cell(1, 4), "Program verdicts", ["each hypothesis judged",
+                                         "after the labels:",
+                                         "supported / refuted"], GREY)
+    box(cell(2, 4, span=2), "Outcome", ["best-so-far, cumulative gain, batch diversity,",
+                                        "and a per-round audit of every rule that fired"], GREY)
+
+    # arrows, all inside empty gutters
+    for col in (0, 1, 2):
+        vline(COLX[col] + COLW / 2, ROWY[1], ROWY[2] + ROWH[2], EV)
+    vline(COLX[3] + COLW / 2, ROWY[1], ROWY[2] + ROWH[2], MODEL)
+    vline(COLX[0] + COLW / 2, ROWY[2], ROWY[3] + ROWH[3], PRIOR)
+    # predictor feeds the combined score along the row-2/row-3 gutter
+    ax.plot([COLX[3] + COLW / 2, COLX[3] + COLW / 2], [ROWY[2], ROWY[2] - 2.6], color=MODEL, lw=1.0)
+    ax.plot([COLX[3] + COLW / 2, COLX[0] + COLW / 2 + 4.0], [ROWY[2] - 2.6, ROWY[2] - 2.6],
+            color=MODEL, lw=1.0)
+    vline(COLX[0] + COLW / 2 + 4.0, ROWY[2] - 2.6, ROWY[3] + ROWH[3], MODEL)
+    hline(ROWY[3] + ROWH[3] / 2, COLX[0] + COLW, COLX[1], SCORE)
+    hline(ROWY[3] + ROWH[3] / 2, COLX[1] + COLW, COLX[2], SCORE)
+    hline(ROWY[3] + ROWH[3] / 2, COLX[2] + COLW, COLX[3], GREY)
+    # oracle -> verdicts, verdicts -> outcome, agent -> constraint engine
+    ax.plot([COLX[3] + COLW / 2, COLX[3] + COLW / 2], [ROWY[3], ROWY[3] - 3.0], color=GREY, lw=1.0)
+    ax.plot([COLX[3] + COLW / 2, COLX[1] + COLW / 2], [ROWY[3] - 3.0, ROWY[3] - 3.0],
+            color=GREY, lw=1.0)
+    vline(COLX[1] + COLW / 2, ROWY[3] - 3.0, ROWY[4] + ROWH[4], GREY)
+    hline(ROWY[4] + ROWH[4] / 2, COLX[1] + COLW, COLX[2], GREY)
+    hline(ROWY[4] + ROWH[4] / 2, COLX[0] + COLW, COLX[1], AGENT, ls="--")
+    # verdicts feed back into the rules (dashed, up the column-1 gutter)
+    ax.plot([COLX[1] + COLW - 3.0, COLX[1] + COLW - 3.0], [ROWY[4] + ROWH[4], ROWY[3] - 1.5],
+            color=AGENT, ls="--", lw=1.0)
+    vline(COLX[1] + COLW - 3.0, ROWY[3] - 1.5, ROWY[3], AGENT, ls="--")
+    # new labels retrain the predictor (up the right-hand gutter)
+    ax.plot([COLX[3] + COLW - 2.5, COLX[3] + COLW - 2.5], [ROWY[3], ROWY[2] - 1.0],
+            color=MODEL, lw=1.0)
+    vline(COLX[3] + COLW - 2.5, ROWY[2] - 1.0, ROWY[2], MODEL)
+    return save(fig, out, "fig5_architecture")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", required=True)
@@ -489,7 +604,8 @@ def main() -> None:
     interp = json.loads((R / "interpretability.json").read_text())
     df = load_landscape(args.data)
 
-    made = [figure1(struct, prior, prior_eval, out),
+    made = [fig_architecture(out),
+            figure1(struct, prior, prior_eval, out),
             figure2(records, out),
             figure3(records, out),
             figure4(interp, df, struct, out)]

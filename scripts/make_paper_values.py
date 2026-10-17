@@ -203,7 +203,7 @@ def main() -> None:
     table = ("\\begin{tabular}{lcccccc}\n\\toprule\n"
              "方法 & 末轮最好（均值） & 中位数 & 范围 & 命中全局最优 & 累计收益 & 批次多样性 \\\\\n"
              "\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n")
-    (out / "table_arms.tex").write_text(table)
+    (out / "table_arms.tex").write_text("\\resizebox{\\textwidth}{!}{%\n" + table + "}\n")
 
     # prior table
     prows = []
@@ -223,7 +223,7 @@ def main() -> None:
     ptable = ("\\begin{tabular}{lccccc}\n\\toprule\n"
               "先验 & $\\rho$（全景） & $\\rho$（$\\geq$3 突变） & top-5\\% 精度 & 前 96 内最好 & top-1\\% 富集 \\\\\n"
               "\\midrule\n" + "\n".join(prows) + "\n\\bottomrule\n\\end{tabular}\n")
-    (out / "table_priors.tex").write_text(ptable)
+    (out / "table_priors.tex").write_text("\\resizebox{\\textwidth}{!}{%\n" + ptable + "}\n")
 
     print(f"wrote {len(macros)} macros, 2 tables to {out}")
 

@@ -1,0 +1,72 @@
+{
+  "pdf": "figures/paper/fig5_architecture.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 46,
+  "text_trace_count": 46,
+  "stroke_path_count": 39,
+  "filled_region_count": 24,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 1,
+    "warn": 1,
+    "contained_fill_overlays": 41,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 1 stroked path(s)",
+      "text": "LLM agent (optional): edits rules and weights, registers falsifiable hypotheses",
+      "text_bbox": [
+        129.8131103515625,
+        9.662962913513184,
+        370.44635009765625,
+        16.162961959838867
+      ],
+      "other_text": null,
+      "other_bbox": [
+        133.61045837402344,
+        2.9834136962890625,
+        366.6251220703125,
+        23.518035888671875
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        39
+      ]
+    },
+    {
+      "severity": "WARN",
+      "kind": "text-fill-edge",
+      "page": 1,
+      "message": "Text partially overlaps the edge of 1 filled region(s)",
+      "text": "LLM agent (optional): edits rules and weights, registers falsifiable hypotheses",
+      "text_bbox": [
+        129.8131103515625,
+        9.662962913513184,
+        370.44635009765625,
+        16.162961959838867
+      ],
+      "other_text": null,
+      "other_bbox": [
+        133.61045837402344,
+        2.9834136962890625,
+        366.6251220703125,
+        23.518035888671875
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        39
+      ]
+    }
+  ]
+}

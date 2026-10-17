@@ -1,0 +1,28 @@
+{
+  "seed": 302,
+  "prior_rank_FWAA": 911,
+  "n_landscape": 149361,
+  "fwaa_attribution": {
+    "mpnn": 2.427,
+    "packing_headroom": 1.305,
+    "burial_charge": 0.618,
+    "interface_bonus": 1.625,
+    "pair_volume_compensation": 0.827,
+    "literature": 2.771,
+    "total": 9.573
+  },
+  "wt_attribution": {
+    "mpnn": 7.389,
+    "packing_headroom": 2.012,
+    "burial_charge": 0.618,
+    "interface_bonus": -0.52,
+    "pair_volume_compensation": 0.284,
+    "literature": -0.563,
+    "total": 9.22
+  },
+  "fwaa_predicted_round2": 0.932,
+  "fwaa_measured": 8.762,
+  "greedy_final": 6.878,
+  "prior_fixed_final": 8.762,
+  "prior_llm_final": 8.762
+}
