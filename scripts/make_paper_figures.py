@@ -109,8 +109,8 @@ def save(fig, out: Path, name: str) -> Path:
 
 # ----------------------------------------------------------------- figure 1
 def figure1(struct: dict, prior: dict, prior_eval: dict, out: Path) -> Path:
-    fig = plt.figure(figsize=(180 * MM, 95 * MM))
-    gs = fig.add_gridspec(2, 2, hspace=0.70, wspace=0.42,
+    fig = plt.figure(figsize=(170 * MM, 58 * MM))
+    gs = fig.add_gridspec(1, 2, wspace=0.42,
                           left=0.17, right=0.95, top=0.92, bottom=0.10)
 
     # (a) mechanism split
@@ -150,46 +150,10 @@ def figure1(struct: dict, prior: dict, prior_eval: dict, out: Path) -> Path:
     panel_letter(ax, "b")
 
     # (c) prior quality
-    ax = fig.add_subplot(gs[1, 0])
-    show = [("reference_random", "random"),
-            ("only_mpnn", "inverse folding only"),
-            ("only_literature", "literature only"),
-            ("only_packing_headroom", "packing headroom only"),
-            ("evidence_prior", "full evidence prior"),
-            ("leakage_measured_single_mutants", "measured single mutants*")]
-    vals = [prior_eval["priors"][k]["spearman_hd3plus"] for k, _ in show]
-    colors = ["#9e9e9e", "#4c72b0", "#55a868", "#8172b3", "#c44e52", "#333333"]
-    ax.barh(range(len(show)), vals, color=colors, height=0.62)
-    ax.set_yticks(range(len(show)))
-    ax.set_yticklabels([lab for _, lab in show])
-    ax.invert_yaxis()
-    ax.axvline(prior_eval["priors"]["leakage_measured_single_mutants"]["spearman_hd3plus"],
-               color="#333333", lw=0.7, ls=":")
-    ax.set_xlabel("Spearman ρ against measured fitness (≥3 mutations)")
-    ax.set_title("Evidence alone matches the labelled upper bound")
-    ax.margins(x=0.12)
-    panel_letter(ax, "c")
-
-    # (d) operational metric
-    ax = fig.add_subplot(gs[1, 1])
-    vals = [prior_eval["priors"][k]["best_in_top96"] for k, _ in show]
-    ax.barh(range(len(show)), vals, color=colors, height=0.62)
-    ax.set_yticks(range(len(show)))
-    ax.set_yticklabels([])
-    ax.invert_yaxis()
-    opt = prior_eval["global_optimum"]["fitness"]
-    ax.axvline(opt, color="#c44e52", lw=0.8, ls="--")
-    ax.text(opt, -0.75, f"global optimum {opt:.2f}", color="#c44e52", fontsize=5.5, ha="right")
-    ax.set_xlabel("best measured fitness inside the prior's top 96")
-    ax.set_title("What one batch of 96 would have caught")
-    ax.margins(x=0.12, y=0.12)
-    panel_letter(ax, "d")
-
     stamp_letters(fig)
     return save(fig, out, "fig1_prior")
 
 
-# ----------------------------------------------------------------- figure 2
 def _arm_curves(records, arms, seeds):
     out = {}
     for arm in arms:
@@ -209,9 +173,9 @@ def figure2(records, out: Path, n_initial: int = 192, batch: int = 96) -> Path:
     curves = _arm_curves(records, arms, seeds)
     rounds = sorted({r["round"] for r in records})
 
-    fig = plt.figure(figsize=(180 * MM, 95 * MM))
-    gs = fig.add_gridspec(2, 2, hspace=1.30, wspace=0.26,
-                          left=0.09, right=0.97, top=0.94, bottom=0.27)
+    fig = plt.figure(figsize=(170 * MM, 74 * MM))
+    gs = fig.add_gridspec(1, 2, wspace=0.26,
+                          left=0.085, right=0.985, top=0.92, bottom=0.40)
 
     # (a) campaign trace
     ax = fig.add_subplot(gs[0, 0])
@@ -225,26 +189,14 @@ def figure2(records, out: Path, n_initial: int = 192, batch: int = 96) -> Path:
     handles, labels = ax.get_legend_handles_labels()
     ax.margins(0.04)
     panel_letter(ax, "a")
-    fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=5.5,
-               bbox_to_anchor=(0.5, 0.005), columnspacing=1.4, handlelength=1.5)
+    fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=6,
+               frameon=False, bbox_to_anchor=(0.5, 0.005),
+               columnspacing=1.8, handlelength=1.5, labelspacing=0.4)
 
     # (b) per-seed endpoint
-    ax = fig.add_subplot(gs[0, 1])
-    rng = np.random.default_rng(0)
-    for i, arm in enumerate(arms):
-        finals = curves[arm][:, -1]
-        ax.scatter(np.full(len(finals), i) + rng.uniform(-0.12, 0.12, len(finals)), finals,
-                   s=14, color=ARM_COLOR[arm], alpha=0.85, edgecolor="none", zorder=3)
-        ax.plot([i - 0.26, i + 0.26], [np.median(finals)] * 2, color="#333333", lw=1.2, zorder=4)
-    ax.set_xticks(range(len(arms)))
-    ax.set_xticklabels([SHORT[a] for a in arms], rotation=90, ha="center", fontsize=5.5)
-    ax.set_ylabel("final best fitness")
-    ax.set_title("Every seed, with the median marked")
-    ax.margins(y=0.12)
-    panel_letter(ax, "b")
 
     # (c) per-round gain
-    ax = fig.add_subplot(gs[1, 0])
+    ax = fig.add_subplot(gs[0, 1])
     width = 0.8 / len(arms)
     for i, arm in enumerate(arms):
         means = [np.mean([r["metrics"]["gain"] for r in records
@@ -256,21 +208,9 @@ def figure2(records, out: Path, n_initial: int = 192, batch: int = 96) -> Path:
     ax.set_ylabel("gain over the incumbent")
     ax.set_title("Where each arm's improvement happens")
     ax.margins(y=0.12)
-    panel_letter(ax, "c")
+    panel_letter(ax, "b")
 
     # (d) hit rate
-    ax = fig.add_subplot(gs[1, 1])
-    opt = max(r["best_so_far"] for r in records)
-    hits = [float(np.mean(curves[a][:, -1] >= opt - 1e-6)) * 100 for a in arms]
-    ax.bar(range(len(arms)), hits, color=[ARM_COLOR[a] for a in arms], width=0.62)
-    for i, h in enumerate(hits):
-        ax.text(i, h + 1.5, f"{h:.0f}%", ha="center", fontsize=6)
-    ax.set_xticks(range(len(arms)))
-    ax.set_xticklabels([SHORT[a] for a in arms], rotation=90, ha="center", fontsize=5.5)
-    ax.set_ylabel("seeds reaching it (%)")
-    ax.set_title(f"Hit rate of the global optimum ({opt:.2f})")
-    ax.margins(y=0.18)
-    panel_letter(ax, "d")
 
     stamp_letters(fig)
     return save(fig, out, "fig2_campaign")

@@ -147,7 +147,7 @@ $\beta$ 区，证据库中 EV032 进一步指出这条环上真正需要甘氨�
 真实折叠了两种设置：变体 + 单条 Fc 链（262 残基），以及变体 + 天然 Fc 同源二聚体（468 残基）。
 """]
     B.append(r"""
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{../figures/paper/fig7_docking_check.pdf}
 \caption{\textbf{预测复合物与晶体复合物的对照。} 灰色为预测的 IgG-Fc，已按它与结构域实际接触的那条链
@@ -155,7 +155,7 @@ $\beta$ 区，证据库中 EV032 进一步指出这条环上真正需要甘氨�
 两种设置下结构域分别相差 %.1f~\AA 与 %.1f~\AA。Fc 一侧的表位大体正确，但 GB1 一侧与晶体接触面的
 重合为 0/16：预测用错误的一面贴在正确的表面上。}
 \label{fig:docking}
-\end{figure}
+\end{figure*}
 """ % (min(r["fc_superposition_rmsd_A"] for r in rows_all),
        max(r["fc_superposition_rmsd_A"] for r in rows_all),
        check["setups"]["single_fc_chain"][-1]["gb1_pose_rmsd_to_crystal_A"],
@@ -173,7 +173,7 @@ $\beta$ 区，证据库中 EV032 进一步指出这条环上真正需要甘氨�
 """ % (len(rows_all), sum(1 for r in rows_all if r["native_binding_mode"])))
 
     B.append(r"""
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{../figures/paper/fig8_packing_basis.pdf}
 \caption{\textbf{单体预测支持的量，以及它的兑现。} \textbf{a}、\textbf{b} 为短名单中预测堆积密度最高与最低的
@@ -181,7 +181,7 @@ $\beta$ 区，证据库中 EV032 进一步指出这条环上真正需要甘氨�
 邻近重原子。\textbf{c} 为该量与实测适应度的关系（决策时标签未揭示）；虚线为中位数，
 右半边实测均值 %.2f、左半边 %.2f。}
 \label{fig:packing}
-\end{figure}
+\end{figure*}
 """ % (4.314, 3.315))
 
     B.append(r"""
@@ -236,16 +236,19 @@ $\beta$ 区，证据库中 EV032 进一步指出这条环上真正需要甘氨�
 另有 \texttt{demo/index.html}：一轮决策中 15 次工具调用的完整记录，每一步的输入参数与返回内容都可展开。
 
 \subsection*{C.3\quad 智能体模块与题目所列角色的对应}
+题目列出的五个角色在本文中都有对应的代码模块，见表~\ref{tab:roles}。
 """)
     C.append(r"""
-\begin{center}\small\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.68\textwidth}@{}}\toprule
+\begin{table*}[t]\centering\small\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\raggedright\arraybackslash}p{0.68\textwidth}@{}}\toprule
 题目所列角色 & 本文的实现 \\ \midrule
 Data Analyst & \texttt{protocol.site\_statistics}：逐位点统计已测标签，连同上一轮审计写入提示词 \\
 Hypothesis Generator & 语言模型按约定格式提出 3--4 条可检验陈述（位点、取代、方向） \\
 Mutation Designer & \texttt{constraints.ConstraintSet.select}：在合法候选上按合成分数与组成配额生成批次 \\
 Fitness Evaluator & \texttt{predictors.FitnessModel}，交叉验证选型，每轮重新拟合 \\
 Scientific Critic & \texttt{interpret}：标签揭示后由程序裁决每条假说，被推翻的取代转为下一轮惩罚项 \\
-\bottomrule\end{tabular}\end{center}
+\bottomrule\end{tabular}
+\caption{题目所列的五个智能体角色与本文代码模块的对应关系。}\label{tab:roles}
+\end{table*}
 """)
     C.append(r"""
 与题目示例的区别有两处，都是刻意的：候选序列由程序在约束下生成而非由语言模型点名
@@ -260,7 +263,8 @@ Scientific Critic & \texttt{interpret}：标签揭示后由程序裁决每条假
 因此现有的假说裁决逻辑需要加入「测量无效」这一类判定，否则一次移液失败会被当作一次阴性结果。
 
 \subsection*{C.5\quad 外部数据、模型与工具的来源与使用方式}
-\begin{center}\small\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.64\textwidth}@{}}\toprule
+全部外部依赖及其版本锁定方式列于表~\ref{tab:resources}。
+\begin{table*}[t]\centering\small\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.64\textwidth}@{}}\toprule
 资源 & 来源与使用方式 \\ \midrule
 GB1 四位点深度突变扫描 & FLIP 基准，固定提交 \texttt{62cace8}，文件校验和写死在加载器中；仅作虚拟评估器 \\
 实验结构 & RCSB 1PGA、2GB1、1FCC，脚本按需下载并记录回执；用于可及度、二面角、界面与堆积计算 \\
@@ -268,7 +272,9 @@ ProteinMPNN & soluble \texttt{v\_48\_002}，钉定提交与权重 SHA-256；提�
 Boltz-2 & NVIDIA 托管推理；单体与复合物折叠，回执逐条记录（附录~\ref{sec:structure}） \\
 DeepSeek-chat & 仅用于设定每轮的规则与权重；全部调用为真实 API，逐条记录随仓库提交 \\
 文献证据 & 21 个公开来源，逐条抽取为结构化陈述并标注出处与置信度 \\
-\bottomrule\end{tabular}\end{center}
+\bottomrule\end{tabular}
+\caption{本文用到的外部数据、模型与工具，及其版本锁定与使用方式。}\label{tab:resources}
+\end{table*}
 """)
     (out / "appendix_resources.tex").write_text("\n".join(C) + "\n")
     print("wrote appendix_structure.tex and appendix_resources.tex")

@@ -209,13 +209,14 @@ def main() -> None:
 \paragraph{这套推理值多少。}
 合成后的先验在不使用任何多突变标签的前提下，对三突变以上子集给出 Spearman $\rho=%+.3f$，
 与\emph{使用实测单突变标签}的加性上界（$%+.3f$）持平；其排序的前 96 名中最好变体实测 %.3f，
-top-1\%% 富集 %.1f 倍。下表是它对全局最优的打分拆解——这张表就是"为什么选它"的全部答案：
+top-1\%% 富集 %.1f 倍。表~\ref{tab:attribution} 是它对全局最优的打分拆解——这张表就是"为什么选它"的全部答案。
 """ % (pe["priors"]["evidence_prior"]["spearman_hd3plus"],
        pe["priors"]["leakage_measured_single_mutants"]["spearman_hd3plus"],
        pe["priors"]["evidence_prior"]["best_in_top96"],
        pe["priors"]["evidence_prior"]["enrichment_top1pct"]))
 
-    A(r"\begin{center}\small\begin{tabular}{lrrl}\toprule")
+    A(r"\begin{table*}[t]\centering\small")
+    A(r"\begin{tabular}{lrrl}\toprule")
     A(r"先验分量 & %s & 野生型 VDGV & 依据 \\ \midrule" % esc(target))
     why = {"mpnn": "ProteinMPNN，40 位静音", "packing_headroom": "虚拟 C$\\beta$ 间距（1PGA）",
            "burial_charge": "相对可及度（1PGA）", "interface_bonus": "$\\Delta$SASA（1FCC）",
@@ -225,7 +226,10 @@ top-1\%% 富集 %.1f 倍。下表是它对全局最优的打分拆解——这�
     A(r"\midrule")
     A(r"合计 & \textbf{%+.3f} & %+.3f & 先验排名 %s / %s（前 %.2f\%%） \\" % (
         att["total"], att_wt["total"], thousands(rank), thousands(len(variants)), pct))
-    A(r"\bottomrule\end{tabular}\end{center}")
+    A(r"\bottomrule\end{tabular}")
+    A(r"\caption{证据先验对全局最优 %s 的打分拆解，与野生型 VDGV 对照。"
+      r"每一项都对应一处可独立核查的结构或文献依据。}\label{tab:attribution}" % esc(target))
+    A(r"\end{table*}")
 
     # ---------------------------------------------------------------- A.2
     A(r"\subsection*{A.2\quad 每一轮如何把当前情况变成下一轮的约束}")
@@ -271,13 +275,14 @@ top-1\%% 富集 %.1f 倍。下表是它对全局最优的打分拆解——这�
                 e.get("mean_with", 0.0), e.get("mean_without", 0.0), e.get("delta", 0.0)))
 
     A(r"""
-三轮里智能体一共动了 %d 次规则，全部附有理由（下表为原话节选）。值得注意的是第 3 轮：
+三轮里智能体一共动了 %d 次规则，全部附有理由（表~\ref{tab:cupdates}，原话节选）。值得注意的是第 3 轮：
 它\emph{主动停用}了体积上限与界面惩罚两条规则，理由分别是"这条上限删掉了 139k 中的 62k，
 而 G41L/V54G 说明张力是可补偿的"以及"40 位最好的变体里就有 W 和 Y，惩罚大侧链与观测矛盾"。
 规则能被它自己的审计记录推翻，这正是把约束写成显式参数而不是写进代码分支的意义。
 """ % sum(len(rows[rd]["notes"].get("constraint_updates") or []) for rd in rows))
 
-    A(r"\begin{center}\small\renewcommand{\arraystretch}{1.15}"
+    A(r"\begin{table*}[t]\centering\small\renewcommand{\arraystretch}{1.15}")
+    A(
       r"\begin{tabular}{@{}c>{\raggedright\arraybackslash}p{0.235\textwidth}"
       r">{\raggedright\arraybackslash}p{0.205\textwidth}"
       r">{\raggedright\arraybackslash}p{0.44\textwidth}@{}}\toprule")
@@ -287,7 +292,10 @@ top-1\%% 富集 %.1f 倍。下表是它对全局最优的打分拆解——这�
             param = "停用" if u.get("active") is False else clip(fmt_params(u.get("after") or {}), 55)
             A(r"%d & %s & %s & %s \\" % (rd, esc(u["id"]), units(esc(param)),
                                          units(esc(clip(u.get("reason", ""), 120)))))
-    A(r"\bottomrule\end{tabular}\end{center}")
+    A(r"\bottomrule\end{tabular}")
+    A(r"\caption{三轮中智能体对约束参数的全部改动及其理由。"
+      r"规则是显式参数，因此可以被它自己的审计记录推翻。}\label{tab:cupdates}")
+    A(r"\end{table*}")
 
     # ---------------------------------------------------------------- A.3
     hit = [d for d in rows[2]["selected"] if d["variant"] == target]
@@ -308,9 +316,10 @@ top-1\%% 富集 %.1f 倍。下表是它对全局最优的打分拆解——这�
         if check:
             A(r"""
 为了把这一步讲清楚，我们做了一次事后核查：把三个臂各自第 1 轮的 96 条标签分别接在同一组
-192 条起始标签之后，用同样的交叉验证流程重新拟合预测器，再让它对同一个候选池排序。结果是：
+192 条起始标签之后，用同样的交叉验证流程重新拟合预测器，再让它对同一个候选池排序，结果见表~\ref{tab:firstbatch}。
 """)
-            A(r"\begin{center}\small\begin{tabular}{lccc}\toprule")
+            A(r"\begin{table*}[t]\centering\small")
+            A(r"\begin{tabular}{lccc}\toprule")
             A(r"第 1 轮批次来自 & 该批最好标签 & %s 在模型中的名次 & 模型自己前 96 名中的最好实测 \\ \midrule"
               % esc(target))
             zh_arm = {"prior_constraint": "证据先验+约束（LLM 调参）",
@@ -322,7 +331,10 @@ top-1\%% 富集 %.1f 倍。下表是它对全局最优的打分拆解——这�
                 A(r"%s & %.3f & %s / %s & %.3f \\" % (
                     zh_arm[arm], c["best_label_r1"], thousands(c["fwaa_rank"]),
                     thousands(c["n_pool"]), c["best_in_model_top96"]))
-            A(r"\bottomrule\end{tabular}\end{center}")
+            A(r"\bottomrule\end{tabular}")
+            A(r"\caption{第一批次的信息价值：同一组 192 条起始标签之后接上各臂第 1 轮的 96 条标签，"
+              r"重新拟合同一套预测器后对同一候选池排序。}\label{tab:firstbatch}")
+            A(r"\end{table*}")
             A(r"""
 贪心臂第 1 轮找到的最好标签其实\emph{更高}（%.3f 对 %.3f），但它训练出来的第 2 轮模型把全局最优排在
 第 %s 位、落在前 96 名之外，其模型自选前 96 名中最好只有 %.3f；而由先验与约束挑出的第 1 轮批次，
