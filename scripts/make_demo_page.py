@@ -360,6 +360,9 @@ body{margin:0;background:var(--bg);color:var(--ink);
 font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif}
 .wrap{max-width:900px;margin:0 auto;padding:48px 20px 90px}
 h1{font-size:25px;line-height:1.45;margin:0 0 8px;letter-spacing:-.01em}
+.kicker{font-size:14px;line-height:1.5;color:#1b2733;font-weight:600;margin:0 0 2px}
+.byline{font-size:12.5px;color:#64748b;margin:0 0 18px}
+.byline a{color:inherit}
 .sub{color:var(--mut);font-size:14px;margin:0 0 18px}
 .meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:34px}
 .chip{font-size:12px;color:var(--mut);background:#f4f4f5;border:1px solid var(--line);
@@ -426,15 +429,17 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:v
     doc = f"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GB1 定向进化智能体 · 一轮的真实调用过程</title>
+<title>先验与约束驱动的蛋白质定向进化智能体 · 一轮的真实调用过程</title>
 <style>{css}</style></head><body><div class="wrap">
+<div class="kicker">先验与约束驱动的蛋白质定向进化智能体：GB1 四位点景观上的七臂对照研究</div>
+<div class="byline">孙浩桐 · <a href="mailto:richsun821@gmail.com">richsun821@gmail.com</a></div>
 <h1>一轮决策的完整调用过程</h1>
 <p class="sub">种子 {T['seed']} 的第 {T['round']} 轮。下面每一步都是这次运行里真实发生的调用：
 左边是传给工具的参数，右边是工具返回的内容，原始 JSON 都可以展开。
 trace 由 <code>scripts/capture_trace.py</code> 抓取（结构文件是现场重新下载的）。</p>
 <div class="meta">
   <span class="chip">抓取时间 {T['captured_at']}</span>
-  <span class="chip">{len(T['steps'])} 次工具调用</span>
+  <span class="chip">{len(T['steps'])} 次工具调用（本节）</span>
   <span class="chip"><a href="https://github.com/Sunrich-HT/gb1-directed-evolution-agent">源码与完整 trace</a></span>
 </div>
 
