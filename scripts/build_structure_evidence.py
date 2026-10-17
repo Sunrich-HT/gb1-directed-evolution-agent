@@ -6,7 +6,7 @@ properties -- no measured multi-mutant fitness is used, so the output is a
 legitimate *prior* that exists before the campaign starts.
 
 Outputs knowledge/structure_evidence.json:
-  * relative solvent accessibility of every residue (Shrake-Rupley on 2GB1)
+  * relative solvent accessibility of every residue (Shrake-Rupley on the free structure)
   * backbone dihedrals phi/psi at the four sites (explains the glycine 41 case)
   * inter-site C-beta distances and heavy-atom contacts
   * distance from each site to the IgG-Fc interface, via 1FCC (protein G C2
@@ -305,7 +305,9 @@ def main() -> None:
         }
 
     out = {
-        "free_structure": "RCSB 2GB1 chain A (NMR, 56 residues)",
+        # label the file that was actually read, not a hard-coded guess
+        "free_structure": f"{Path(args.free).stem.upper()} ({len(phipsi)} residues "
+                          f"with backbone dihedrals)",
         "complex_structure": "RCSB 1FCC chains A/B = IgG1 Fc, chain C = protein G C2 domain",
         "alignment": {"offset_b1_to_1fcc_chainC": offset,
                       "identical_positions": identity, "aligned_length": n},

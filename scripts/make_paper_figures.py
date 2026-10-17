@@ -586,6 +586,122 @@ def fig_architecture(out: Path) -> Path:
     return save(fig, out, "fig5_architecture")
 
 
+# ----------------------------------------------------------------- figure 6
+def _parse_cif_ca(path: Path) -> dict:
+    """Boltz-2 returns line-broken atom_site rows; tokenise the whole loop."""
+    lines = path.read_text().splitlines()
+    i = next(k for k, l in enumerate(lines)
+             if l.strip() == "loop_" and lines[k + 1].strip().startswith("_atom_site."))
+    cols, j = [], i + 1
+    while lines[j].strip().startswith("_atom_site."):
+        cols.append(lines[j].strip().split(".", 1)[1]); j += 1
+    toks = []
+    while j < len(lines) and not lines[j].startswith(("#", "loop_", "_", "data_")):
+        toks += lines[j].split(); j += 1
+    n = len(cols)
+    rows = [dict(zip(cols, toks[k:k + n])) for k in range(0, len(toks) - n + 1, n)]
+    return {int(r["label_seq_id"]): (float(r["Cartn_x"]), float(r["Cartn_y"]),
+                                     float(r["Cartn_z"]), float(r.get("B_iso_or_equiv", 0.0)))
+            for r in rows if r["label_atom_id"] == "CA"}
+
+
+def _kabsch(P, Q):
+    """Superpose P onto Q; returns the rotated P, centred Q and the RMSD."""
+    Pc, Qc = P - P.mean(0), Q - Q.mean(0)
+    V, _, Wt = np.linalg.svd(Pc.T @ Qc)
+    d = np.sign(np.linalg.det(V @ Wt))
+    R = V @ np.diag([1.0, 1.0, d]) @ Wt
+    Pr = Pc @ R
+    return Pr, Qc, float(np.sqrt(((Pr - Qc) ** 2).sum(1).mean()))
+
+
+def figure6(cif_dir: Path, features: list, out: Path) -> Path:
+    """What the folding model actually returns, and why it carries no signal here."""
+    shown = ["VDGV", "FWAA", "RYLE"]
+    fit = {r["variant"]: r["fitness"] for r in features}
+    fit["VDGV"] = 1.0
+    label = {"VDGV": "VDGV (wild type, 1.00)", "FWAA": "FWAA (global optimum, 8.76)",
+             "RYLE": "RYLE (dead variant, 0.002)"}
+    colour = {"VDGV": "#777777", "FWAA": "#c0392b", "RYLE": "#2e6da4"}
+
+    S = {v: _parse_cif_ca(cif_dir / f"{v}.cif") for v in shown}
+    res = sorted(set.intersection(*[set(S[v]) for v in shown]))
+    X = {v: np.array([S[v][i][:3] for i in res]) for v in shown}
+    ref = X["VDGV"] - X["VDGV"].mean(0)
+    sup, rmsd = {"VDGV": ref}, {}
+    for v in ("FWAA", "RYLE"):
+        Pr, _, rm = _kabsch(X[v], X["VDGV"])
+        sup[v], rmsd[v] = Pr, rm
+
+    fig = plt.figure(figsize=(180 * MM, 68 * MM))
+    gs = fig.add_gridspec(1, 3, width_ratios=[1.0, 1.15, 1.0],
+                          left=0.07, right=0.985, top=0.87, bottom=0.26, wspace=0.42)
+
+    # a - superposed C-alpha traces, projected on the first two principal axes
+    axa = fig.add_subplot(gs[0, 0])
+    u, s, vt = np.linalg.svd(ref - ref.mean(0), full_matrices=False)
+    basis = vt[:2].T
+    for v in shown:
+        P = sup[v] @ basis
+        axa.plot(P[:, 0], P[:, 1], "-", color=colour[v], lw=1.0,
+                 alpha=0.95 if v != "VDGV" else 0.8, zorder=2 if v == "VDGV" else 3)
+    idx = {r: k for k, r in enumerate(res)}
+    for site in POSITIONS:
+        P = sup["FWAA"] @ basis
+        axa.plot(P[idx[site], 0], P[idx[site], 1], "o", ms=3.4, mfc="white",
+                 mec="#c0392b", mew=0.9, zorder=4)
+    axa.set_xlabel("principal axis 1 (\u00c5)")
+    axa.set_ylabel("principal axis 2 (\u00c5)")
+    axa.set_title("The predicted fold is the same", pad=3)
+    axa.set_aspect("equal")
+    # the note goes below the axes: inside the panel it would sit on the traces
+    axa.text(0.5, -0.30, f"C$\\alpha$ RMSD to wild type\nFWAA {rmsd['FWAA']:.2f} \u00c5"
+                         f"    RYLE {rmsd['RYLE']:.2f} \u00c5",
+             transform=axa.transAxes, fontsize=5.8, va="top", ha="center")
+    panel_letter(axa, "a")
+
+    # b - per-residue confidence
+    axb = fig.add_subplot(gs[0, 1])
+    for site in POSITIONS:
+        axb.axvspan(site - 0.5, site + 0.5, color="#f2c14e", alpha=0.28, lw=0, zorder=1)
+    for v in shown:
+        axb.plot(res, [S[v][i][3] for i in res], "-", color=colour[v], lw=1.0,
+                 label=label[v], zorder=3)
+    axb.set_xlabel("residue")
+    axb.set_ylabel("predicted confidence (pLDDT)")
+    axb.set_title("Confidence does not separate them either", pad=3)
+    axb.set_ylim(0.6, 1.02)
+    axb.legend(loc="lower center", bbox_to_anchor=(0.5, -0.02), fontsize=5.4,
+               handlelength=1.3, borderpad=0.1, labelspacing=0.25)
+    panel_letter(axb, "b")
+
+    # c - the whole folded set against measured fitness
+    axc = fig.add_subplot(gs[0, 2])
+    fv = np.array([r["fitness"] for r in features])
+    pv = np.array([r["plddt_sites"] for r in features])
+    axc.scatter(np.log1p(fv), pv, s=5, color="#9aa3ad", alpha=0.75, lw=0, zorder=2)
+    for v in ("FWAA", "RYLE"):
+        row = [r for r in features if r["variant"] == v]
+        if row:
+            axc.scatter([np.log1p(row[0]["fitness"])], [row[0]["plddt_sites"]], s=22,
+                        facecolor=colour[v], edgecolor="white", lw=0.6, zorder=4)
+            dx = 7 if v == "RYLE" else -7
+            axc.annotate(v, (np.log1p(row[0]["fitness"]), row[0]["plddt_sites"]),
+                         textcoords="offset points", xytext=(dx, 5),
+                         ha="left" if dx > 0 else "right",
+                         fontsize=5.8, color=colour[v])
+    rho = float(np.corrcoef(np.argsort(np.argsort(fv)), np.argsort(np.argsort(pv)))[0, 1])
+    axc.set_xlabel("log(1 + measured fitness)")
+    axc.set_ylabel("pLDDT at the four sites")
+    axc.set_title(f"All {len(features)} folded variants", pad=3)
+    axc.text(0.97, 0.05, f"Spearman $\\rho$ = {rho:+.2f}", transform=axc.transAxes,
+             fontsize=6, ha="right", va="bottom")
+    panel_letter(axc, "c")
+
+    stamp_letters(fig)
+    return save(fig, out, "fig6_structure")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", required=True)
@@ -608,7 +724,9 @@ def main() -> None:
             figure1(struct, prior, prior_eval, out),
             figure2(records, out),
             figure3(records, out),
-            figure4(interp, df, struct, out)]
+            figure4(interp, df, struct, out),
+            figure6(Path("results/structure/cif"),
+                    json.loads((R / "structure/structure_features.json").read_text()), out)]
     print("\n".join(str(p) for p in made))
 
 

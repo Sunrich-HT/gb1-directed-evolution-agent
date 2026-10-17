@@ -1,5 +1,5 @@
 {
-  "free_structure": "RCSB 2GB1 chain A (NMR, 56 residues)",
+  "free_structure": "1PGA (56 residues with backbone dihedrals)",
   "complex_structure": "RCSB 1FCC chains A/B = IgG1 Fc, chain C = protein G C2 domain",
   "alignment": {
     "offset_b1_to_1fcc_chainC": 0,

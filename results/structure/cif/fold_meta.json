@@ -1,0 +1,26 @@
+{
+  "VDGV": {
+    "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVDGEWTYDDATKTFTVTE",
+    "cif_bytes": 45310,
+    "confidence_scores": [
+      0.7563779354095459
+    ],
+    "metrics": {}
+  },
+  "FWAA": {
+    "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGFWAEWTYDDATKTFTATE",
+    "cif_bytes": 46133,
+    "confidence_scores": [
+      0.7462297081947327
+    ],
+    "metrics": {}
+  },
+  "RYLE": {
+    "sequence": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGRYLEWTYDDATKTFTETE",
+    "cif_bytes": 46623,
+    "confidence_scores": [
+      0.7421683073043823
+    ],
+    "metrics": {}
+  }
+}

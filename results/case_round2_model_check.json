@@ -1,0 +1,41 @@
+[
+ {
+  "arm": "prior_constraint",
+  "seed": 302,
+  "n_labels": 288,
+  "spec": "ridge[pairwise2480]",
+  "best_label_r1": 4.03463617661,
+  "target": "FWAA",
+  "fwaa_pred": 0.8698704996568735,
+  "fwaa_rank": 10,
+  "n_pool": 139073,
+  "in_top96": true,
+  "best_in_model_top96": 8.76196565571
+ },
+ {
+  "arm": "prior_fixed",
+  "seed": 302,
+  "n_labels": 288,
+  "spec": "ridge[pairwise2480]",
+  "best_label_r1": 4.03463617661,
+  "target": "FWAA",
+  "fwaa_pred": 0.9875560138694457,
+  "fwaa_rank": 9,
+  "n_pool": 139073,
+  "in_top96": true,
+  "best_in_model_top96": 8.76196565571
+ },
+ {
+  "arm": "greedy",
+  "seed": 302,
+  "n_labels": 288,
+  "spec": "ridge[pairwise2480]",
+  "best_label_r1": 4.5972626412,
+  "target": "FWAA",
+  "fwaa_pred": 0.5688154249792324,
+  "fwaa_rank": 2859,
+  "n_pool": 139073,
+  "in_top96": false,
+  "best_in_model_top96": 6.87794904259
+ }
+]
